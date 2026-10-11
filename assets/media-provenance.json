@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-10-11",
+  "referenceDesign": "https://www.jeanneandtheforest.com/",
+  "hotelSources": [
+    "https://www.casteldamandre.com/fr/",
+    "https://www.castel-damandre.fr/"
+  ],
+  "result": "Home hero replaced with the user-supplied castel-damandre-hero-1080p.mp4 on 2026-10-11. Complete 39.5-second sequence retained.",
+  "kind": "user-supplied-hero-video-and-original-photographs",
+  "motionFallback": "Static poster for reduced motion, data saver or blocked autoplay. No visible controls.",
+  "heroVideo": {
+    "source": "User attachment: castel-damandre-hero-1080p.mp4",
+    "kind": "user-supplied-ambience-video",
+    "durationSeconds": 39.5,
+    "asset": "/assets/castel-hero-20261011-web.mp4",
+    "mobileAsset": "/assets/castel-hero-20261011-mobile.mp4",
+    "poster": "/assets/castel-hero-20261011-poster.webp",
+    "processing": "Original H.264 1920x1080 at 30 fps retained without quality loss, remuxed as silent fast-start MP4. Mobile H.264 854x480 at 24 fps, target 650 kbps, capped at 900 kbps. Complete sequence; only selected version loads. WebP poster from 5 seconds.",
+    "fallback": "Poster for reduced motion, data saver, failed autoplay or video error. Pauses offscreen and in hidden tabs.",
+    "sourceLibraryId": "libfile_bacf3f01a5588191902df67c9f37d23d",
+    "sourceDimensions": "1920x1080"
+  },
+  "waterSectionVideo": {
+    "source": "User-supplied gemini_generated_video_7CB8EE3C.mp4",
+    "kind": "generated-ambience-video",
+    "asset": "/assets/cascade-background.mp4",
+    "poster": "/assets/cascade-poster.webp",
+    "processing": "H.264 CRF 21 at original dimensions, silent, fast-start.",
+    "placement": "Background only behind the existing framed gallery.",
+    "fallback": "Static first-frame poster for reduced motion, data saver or playback failure.",
+    "controls": "No visible controls, at user request."
+  }
+}

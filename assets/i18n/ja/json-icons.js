@@ -1,0 +1,10 @@
+/* JSON-driven local SVG keyframes, no remote player or raster animation. */
+(()=>{'use strict';const icons=[...document.querySelectorAll('[data-json-icon]')];if(!icons.length)return;const reduced=matchMedia('(prefers-reduced-motion: reduce)');let definitions=null,pending=null;
+async function ready(){if(definitions)return definitions;if(!pending)pending=fetch('/assets/booking-icons.json?v=1',{cache:'force-cache'}).then(r=>{if(!r.ok)throw new Error('Unavailable');return r.json();}).then(data=>definitions=data.icons).catch(()=>null);return pending;}
+async function play(icon){if(window.castelMotionOff?.()||reduced.matches||document.hidden||!icon.getClientRects().length)return;const defs=await ready();if(!defs||window.castelMotionOff?.()||reduced.matches||document.hidden||!icon.getClientRects().length)return;for(const item of defs[icon.dataset.jsonIcon]||[]){const part=icon.querySelector(`[data-icon-part="${item.part}"]`);if(!part||!part.animate)continue;part.getAnimations().forEach(a=>a.cancel());part.animate(item.keyframes,item.options);}}
+icons.forEach(icon=>{const trigger=icon.closest('button,a');if(!trigger)return;trigger.addEventListener('pointerenter',()=>play(icon));trigger.addEventListener('focus',()=>play(icon));trigger.addEventListener('click',()=>play(icon));});
+const dialog=document.querySelector('#booking');if(dialog)new MutationObserver(()=>{if(dialog.open)dialog.querySelectorAll('[data-json-icon]').forEach(play);else dialog.querySelectorAll('[data-icon-part]').forEach(p=>p.getAnimations?.().forEach(a=>a.cancel()));}).observe(dialog,{attributes:true,attributeFilter:['open']});
+reduced.addEventListener('change',()=>{if(reduced.matches)icons.forEach(i=>i.querySelectorAll('[data-icon-part]').forEach(p=>p.getAnimations?.().forEach(a=>a.cancel())));});
+// A single gentle introduction; later animations respond only to interaction.
+if(!window.castelMotionOff?.()&&!reduced.matches)requestAnimationFrame(()=>document.querySelectorAll('.chat-toggle [data-json-icon],.mobile-dock [data-json-icon]').forEach(play));
+})();

@@ -1,0 +1,182 @@
+/* Proportions adapted from Jeanne & The Forest's public layout, 9 October 2026.
+   Narrow reading canvas, wider photographic canvas, distinct section intervals. */
+:root{--content-width:1020px;--photo-width:1200px;--page-gutter:30px;--section-space:128px;--column-space:clamp(64px,8.3vw,120px);--image-gap:30px}
+.section{width:min(var(--content-width),calc(100% - var(--page-gutter)*2));max-width:none;padding:var(--section-space) 0;margin-inline:auto}
+.intro{grid-template-columns:1fr 1fr;gap:var(--column-space)}
+.intro p{max-width:440px}
+.section-head{gap:var(--column-space);margin-bottom:64px}
+.section-head h2{max-width:590px}
+.section-head p{max-width:320px}
+.cards,.event-grid{gap:48px var(--image-gap)}
+.home .booking-strip{max-width:1140px;padding:36px 0;margin-inline:auto}
+.home .booking-strip>div{padding-inline:24px}
+.editorial-intro{padding-top:130px;padding-bottom:128px}
+.editorial-intro .intro{grid-template-columns:1fr 1fr;gap:var(--column-space);align-items:start}
+.editorial-intro .intro h2{font-size:clamp(44px,4.2vw,61px);line-height:1.12;max-width:425px}
+.editorial-intro .intro .eyebrow{margin-bottom:50px}
+.editorial-intro .intro-description{position:relative;max-width:340px;margin:76px 0 0 auto}
+.editorial-intro .intro-description:before{content:'';position:absolute;width:72px;height:1px;background:var(--ink);top:12px;right:calc(100% + 28px);opacity:.55}
+.editorial-intro .intro p{font-size:14px;line-height:1.95;margin-bottom:25px}
+.editorial-intro .intro>div:last-child{padding-top:0}
+.intro-photograph{margin:0;min-width:0}
+.intro-photograph img{width:100%;height:620px;object-fit:cover;object-position:48% center}
+.intro-photograph figcaption{font:11px/1.7 var(--sans);letter-spacing:.035em;color:var(--muted);padding-top:20px}
+.home .immersive{width:100%;margin:0;min-height:620px}
+.water-composition{padding:152px 0}
+.water-heading{max-width:650px;padding-inline:var(--page-gutter)}
+.water-heading p{max-width:370px}
+.water-rule{height:100px;top:calc(100% + 38px)}
+.water-backdrop{width:min(744px,calc(100% - var(--page-gutter)*2));left:50%;right:auto;transform:translateX(-50%);top:385px;bottom:120px}
+.framed-gallery{margin-top:150px}
+.framed-track{--frame-width:clamp(250px,28vw,360px);gap:40px}
+.framed-card{border-width:5px}
+.framed-photo{height:auto;aspect-ratio:1}
+.framed-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.framed-track{scroll-padding-inline:calc((100% - var(--frame-width))/2)}
+.intro-photograph,.mosaic-image,.framed-photo{min-width:0}
+.framed-caption{padding:24px 16px 20px}
+.framed-caption h3{font-size:28px}
+.framed-caption p{font-size:12px}
+.water-discover{margin-top:32px}
+.mosaic-composition{width:min(var(--content-width),calc(100% - var(--page-gutter)*2));margin-inline:auto;padding:112px 0 128px}
+.mosaic-heading{max-width:620px;margin-bottom:64px}
+.experience-mosaic{gap:36px var(--image-gap);grid-template-rows:320px 320px 450px}
+.mosaic-title h3{font-size:36px}
+.mosaic-tile-1 .mosaic-title h3{font-size:46px}
+.mosaic-tile-4 .mosaic-title h3{font-size:48px}
+.mosaic-caption{padding-top:20px}
+.home #rendez-vous{padding-top:96px;padding-bottom:128px;border-top:0}
+.home #rendez-vous .section-head{margin-bottom:64px}
+.concierge-band{padding:100px max(var(--page-gutter),calc((100% - var(--content-width))/2));gap:80px;grid-template-columns:1fr 1fr}
+.concierge-band h2{font-size:52px}
+.split .copy{padding:100px clamp(45px,7.5vw,120px)}
+.footer{padding:96px max(var(--page-gutter),calc((100% - var(--content-width))/2)) 35px}
+.footer-top{gap:60px;grid-template-columns:1.2fr 1fr 1fr}
+.gallery{column-gap:var(--image-gap)}
+.grid-two{gap:var(--column-space)}
+@media(min-width:1600px){.section{padding-block:144px}.water-composition{padding-block:160px}}
+@media(min-width:761px) and (max-width:1100px){
+ :root{--column-space:48px;--image-gap:24px}
+ .home .booking-strip{width:calc(100% - 60px);grid-template-columns:1fr 1fr 1fr 1.2fr}
+ .editorial-intro .intro-description{margin-top:55px;max-width:none}
+ .editorial-intro .intro-description:before{display:none}
+ .intro-photograph img{height:560px}
+ .concierge-band{gap:48px}.concierge-band h2{font-size:46px}
+ .experience-mosaic{grid-template-rows:310px 310px 420px}
+ .mosaic-title h3{font-size:32px}.mosaic-tile-1 .mosaic-title h3{font-size:40px}
+}
+@media(max-width:760px){
+ :root{--section-space:80px;--column-space:40px;--image-gap:20px}
+ .section{padding:var(--section-space) 0}
+ .intro,.editorial-intro .intro,.grid-two{grid-template-columns:1fr;gap:40px}
+ .intro p{max-width:none}
+ .section-head,.home .section-head{margin-bottom:44px}
+ .section-head h2{max-width:100%;font-size:42px}
+ .section-head p{max-width:100%}
+ .editorial-intro{padding-top:64px;padding-bottom:96px}
+ .editorial-intro .intro{gap:64px}
+ .editorial-intro .intro .eyebrow{margin-bottom:30px}
+ .editorial-intro .intro h2{font-size:clamp(39px,10.5vw,51px);max-width:370px}
+ .editorial-intro .intro-description{max-width:none;margin-top:40px}
+ .editorial-intro .intro-description:before{display:none}
+ .editorial-intro .intro p{font-size:15px;line-height:1.9}
+ .intro-photograph{width:100%}
+ .intro-photograph img{height:auto;aspect-ratio:4/5}
+ .intro-photograph figcaption{padding-top:16px;font-size:11px}
+ .mobile-stay-prompt{padding:26px var(--page-gutter)}
+ .home .immersive{height:80svh;min-height:560px;padding:80px var(--page-gutter)}
+ .water-composition{padding:128px 0}
+ .water-heading{padding-inline:var(--page-gutter)}
+ .water-heading h2{font-size:43px}
+ .water-heading p{max-width:310px;margin-top:25px}
+ .water-rule{height:80px;top:calc(100% + 35px)}
+ .water-backdrop{top:365px;bottom:110px}
+ .framed-gallery{margin-top:130px}
+ .framed-track{--frame-width:clamp(220px,59vw,350px);gap:20px}
+ .framed-card{border-width:5px}
+ .framed-photo{height:auto;aspect-ratio:1}
+ .framed-caption{padding:23px 12px 19px}
+ .framed-caption h3{font-size:25px;line-height:1.2}
+ .framed-caption p{font-size:12px;line-height:1.8}
+ .framed-controls{margin-top:10px;gap:22px}
+ .water-discover{margin-top:26px}
+ .mosaic-composition{padding:80px 0 96px}
+ .mosaic-heading{margin-bottom:48px;padding:0}
+ .mosaic-heading h2{font-size:42px}
+ .experience-mosaic{gap:48px}
+ .mosaic-tile,.mosaic-tile-2,.mosaic-tile-3,.mosaic-tile-4{width:100%;align-self:stretch;margin-inline:0}
+ .mosaic-image,.mosaic-tile-1 .mosaic-image{aspect-ratio:4/5}
+ .mosaic-tile-4 .mosaic-image{aspect-ratio:1.07}
+ .mosaic-title h3,.mosaic-tile-1 .mosaic-title h3{font-size:32px}.mosaic-tile-4 .mosaic-title h3{font-size:36px}
+ .mosaic-caption{padding-top:20px}
+ .home #rendez-vous{padding-top:64px;padding-bottom:96px}
+ .home #rendez-vous .section-head{margin-bottom:44px}
+ .touch-rail,.cards.touch-rail,.event-grid.touch-rail,.home #rendez-vous>.event-grid{grid-auto-columns:86%;gap:20px;padding:0 var(--page-gutter) 15px;margin-inline:calc(-1 * var(--page-gutter));scroll-padding-left:var(--page-gutter)}
+ .concierge-band{padding:80px var(--page-gutter);grid-template-columns:1fr;gap:40px}
+ .concierge-band h2{font-size:42px}
+ .split .copy{padding:80px var(--page-gutter)}
+ .split .photo{height:auto;aspect-ratio:1;min-height:0}
+ .split .copy h2{font-size:42px}
+ .footer{padding:80px var(--page-gutter) 40px}.footer-top{grid-template-columns:1fr;gap:48px}
+ .footer-bottom{margin-top:56px}
+ .original-details{padding-inline:var(--page-gutter)}
+ .breadcrumbs{padding:30px var(--page-gutter) 0}
+ .nav-panel{padding-left:var(--page-gutter);padding-right:var(--page-gutter)}
+ .booking-sheet-content,.chat-body{padding-left:var(--page-gutter);padding-right:var(--page-gutter)}
+}
+
+/* Home agenda: dates and editorial text, without images or a horizontal rail. */
+.agenda-diary{display:block;border-top:1px solid var(--line)}
+.agenda-line{display:grid;grid-template-columns:190px minmax(0,1fr);align-items:center;gap:52px;padding:34px 0;border-bottom:1px solid var(--line)}
+.agenda-line-date{display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:9px 13px;color:var(--ink)}
+.agenda-date-stamp{display:flex;align-items:baseline;gap:7px;white-space:nowrap}
+.agenda-date-stamp strong{font:400 43px/1 var(--serif);letter-spacing:-.03em}
+.agenda-date-stamp>span{font:12px/1.4 var(--sans)}
+.agenda-date-to{font:italic 16px/1 var(--serif)}
+.agenda-date-year{flex-basis:100%;font:10px/1.5 var(--sans);letter-spacing:.14em;color:var(--muted)}
+.agenda-line-copy{min-width:0}.agenda-line h3{font:400 30px/1.22 var(--serif);letter-spacing:-.015em;margin:0}
+.agenda-line-link{display:flex;align-items:center;justify-content:space-between;gap:28px;min-height:44px}
+.agenda-line-link .ui-arrow{width:18px;height:18px;color:var(--muted)}
+.agenda-line-link:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
+.agenda-line-place{font:12px/1.8 var(--sans);color:var(--muted);margin:11px 0 0}
+.agenda-line-status{display:inline-block;margin-top:7px;color:var(--muted);font:italic 15px/1.5 var(--serif)}
+#agenda-preview-sync{margin:25px 0 0;font-size:10px;line-height:1.8;color:var(--muted)}
+/* Full agenda: consistent image proportions, dates on paper and restrained labels. */
+#agenda-results .event-image{aspect-ratio:4/3;background:#eceee6;border:5px solid #eeeee7}
+#agenda-results .event-image img{object-position:center;filter:saturate(.85)}
+#agenda-results .event-date{position:static;max-width:none;padding:0;margin:23px 0 18px;background:transparent}
+#agenda-results .event-date strong{font-size:30px;line-height:1.2}
+#agenda-results .event-date>span{display:block;margin-top:6px;font-size:10px;letter-spacing:.12em;color:var(--muted)}
+#agenda-results .event-category{font-size:10px;letter-spacing:.08em;line-height:1.8;margin:0 0 13px}
+#agenda-results .event-credit{font-size:10px;line-height:1.5;margin-top:9px}
+#agenda-results .event-card h3{font-size:29px;line-height:1.2;margin-bottom:18px}
+#agenda-results .event-town,#agenda-results .event-period{font-size:12px;line-height:1.8}
+#agenda-results .event-card{padding-bottom:32px}
+@media(max-width:760px){
+ .agenda-line{grid-template-columns:94px minmax(0,1fr);gap:22px;padding:28px 0;align-items:start}
+ .agenda-line-date{gap:7px 8px;padding-top:5px}
+ .agenda-date-stamp{gap:5px}.agenda-date-stamp strong{font-size:35px}.agenda-date-stamp>span{font-size:11px}
+ .agenda-date-to{flex-basis:100%;font-size:14px;padding-left:3px}
+ .agenda-date-year{font-size:10px;margin-top:2px;letter-spacing:.07em}
+ .agenda-line h3{font-size:25px;line-height:1.22}
+ .agenda-line-link{gap:12px;align-items:flex-start;overflow-wrap:anywhere}
+ .agenda-line-link .ui-arrow{width:15px;height:15px;min-width:15px;margin-top:8px}
+ .agenda-line-place{font-size:12px;margin-top:10px;line-height:1.8}
+ #agenda-preview-sync{font-size:10px;margin-top:22px}
+ #agenda-results .event-date{margin-top:22px}
+ #agenda-results .event-card h3{font-size:28px}
+}
+@media(max-width:360px){.agenda-line{grid-template-columns:82px minmax(0,1fr);gap:16px}.agenda-line h3{font-size:23px}.agenda-date-stamp strong{font-size:31px}}
+@media(max-width:360px){
+ :root{--page-gutter:24px}
+ .section-head h2,.mosaic-heading h2,.water-heading h2,.concierge-band h2,.split .copy h2{font-size:38px}
+ .editorial-intro .intro h2{font-size:38px}.framed-track{--frame-width:68vw}
+ .mosaic-title h3,.mosaic-tile-1 .mosaic-title h3{font-size:29px}
+}
+
+/* Keep the agenda's copy and rules inset from its tinted panel. */
+.home #rendez-vous{width:min(1148px,calc(100% - var(--page-gutter)*2));padding-inline:64px}
+.home #rendez-vous .section-head>div{min-width:0}
+@media(min-width:761px) and (max-width:1100px){.home #rendez-vous{padding-inline:40px}}
+@media(max-width:760px){.home #rendez-vous{width:calc(100% - 32px);padding-inline:24px}.home #rendez-vous .agenda-line{grid-template-columns:88px minmax(0,1fr);gap:20px}}
+@media(max-width:360px){.home #rendez-vous{width:calc(100% - 24px);padding-inline:20px}.home #rendez-vous .agenda-line{grid-template-columns:78px minmax(0,1fr);gap:14px}}
