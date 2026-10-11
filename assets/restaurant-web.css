@@ -1,0 +1,95 @@
+/* Native menus and a searchable cellar, in the house's editorial language. */
+.native-menus{scroll-margin-top:140px}
+.native-menu-lead{max-width:680px;margin-bottom:55px}
+.native-menu-lead h2{font-size:clamp(42px,5.2vw,80px);line-height:1.12;margin:18px 0 24px}
+.native-menu-lead p{font-size:17px;line-height:1.85}
+.native-menu-cards{display:grid;gap:40px}
+.native-menu-card{border-top:1px solid var(--ink);padding-top:28px;min-width:0}
+.native-menu-card header{display:flex;justify-content:space-between;align-items:start;gap:24px}
+.native-menu-card h3{font:400 clamp(30px,3vw,43px)/1.18 var(--serif);margin:0 0 18px;max-width:350px}
+.native-menu-price{font:400 58px/1 var(--serif);white-space:nowrap}
+.native-menu-price small{font:16px var(--sans);vertical-align:top;margin-left:5px}
+.native-menu-card>p{font-size:16px;line-height:1.8;max-width:520px}
+.native-menu-card details{margin-top:25px;border-bottom:1px solid var(--line);padding-bottom:18px}
+.native-menu-card summary,.wine-group summary,.wine-knowledge summary{list-style:none;cursor:pointer;min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:22px;line-height:1.55}
+.native-menu-card summary::-webkit-details-marker,.wine-group summary::-webkit-details-marker,.wine-knowledge summary::-webkit-details-marker{display:none}
+.native-menu-card summary::after,.wine-group summary::after,.wine-knowledge summary::after{content:'+';font:24px var(--sans);font-weight:300;flex-shrink:0}
+.native-menu-card details[open]>summary::after,.wine-group[open]>summary::after,.wine-knowledge[open]>summary::after{content:'−'}
+.native-menu-card summary:focus-visible,.wine-group summary:focus-visible,.wine-knowledge summary:focus-visible{outline:2px solid currentColor;outline-offset:6px}
+.native-course{border-top:1px solid var(--line);padding:25px 0 10px;margin-top:18px}
+.native-course .eyebrow{font-size:12px;margin-bottom:13px}
+.native-course h4{font:400 26px/1.3 var(--serif);margin:12px 0 7px}
+.native-course p{font-size:16px;line-height:1.8;margin:0 0 14px}
+.native-course .menu-choice{font:italic 22px var(--serif);margin:12px 0;color:var(--muted)}
+.native-menu-notes{display:grid;gap:22px;margin:45px 0 80px;padding:28px 0;border-block:1px solid var(--line)}
+.native-menu-notes h3{font:400 32px/1.25 var(--serif);margin-bottom:12px}
+.native-menu-notes p{font-size:16px;line-height:1.8;margin:0 0 12px}
+.native-alacarte-title{font:400 clamp(40px,4vw,62px)/1.2 var(--serif);margin:0 0 38px}
+.native-alacarte{display:grid;gap:48px}
+.native-alacarte section>h4{font:400 29px/1.3 var(--serif);margin:0 0 12px}
+.native-dish{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px;border-bottom:1px solid var(--line);padding:20px 0}
+.native-dish h5{font:400 23px/1.35 var(--serif);margin:0}
+.native-dish p{font-size:14px;line-height:1.75;margin:8px 0 0}
+.native-dish>span{font:17px/1.5 var(--sans);white-space:nowrap}
+.native-menu-seasonal{font-size:14px;line-height:1.8;margin-top:35px;max-width:800px;color:var(--muted)}
+.native-wine-invitation{display:grid;gap:28px;margin-top:90px;padding:50px 0;border-block:1px solid var(--line)}
+.native-wine-invitation h3{font:400 clamp(36px,4vw,62px)/1.2 var(--serif);margin:0 0 20px}
+.native-wine-invitation p{font-size:16px;line-height:1.85;max-width:650px}
+.restaurant-extra-story{margin-top:32px;padding-top:22px;border-top:1px solid #ffffff40}
+.restaurant-extra-story summary{min-height:48px;cursor:pointer;font:400 27px/1.5 var(--serif)}
+.restaurant-extra-story summary:focus-visible{outline:2px solid currentColor;outline-offset:6px}
+.restaurant-extra-story p{font-size:16px;line-height:1.85}
+.wine-page .hero.sub{min-height:480px;height:72svh;max-height:800px}
+.wine-page .hero.sub>img{object-position:center 55%}
+.wine-chapters{display:flex;flex-wrap:wrap;gap:12px 30px;padding:20px 7%;border-bottom:1px solid var(--line);font-size:16px}
+.wine-chapters a{min-height:44px;display:flex;align-items:center}
+.wine-intro{max-width:920px}
+.wine-intro h2,.wine-section-heading{font:400 clamp(39px,4.4vw,68px)/1.15 var(--serif);margin:0 0 28px}
+.wine-intro p{font-size:17px;line-height:1.9;max-width:750px}
+.wine-glass-grid{display:grid;gap:40px;margin:40px 0}
+.wine-glass-grid h3{font:400 32px/1.3 var(--serif);margin-bottom:22px}
+.wine-glass-item{border-top:1px solid var(--line);padding:18px 0}
+.wine-glass-item h4{font:400 24px/1.3 var(--serif);margin:0 0 7px}
+.wine-glass-item p{font-size:16px;line-height:1.8;margin:0}
+.wine-pairing-note{max-width:760px;padding:25px 0;border-top:1px solid var(--line);font-size:16px;line-height:1.9}
+.wine-catalog{background:#ebece3;scroll-margin-top:135px}
+.wine-controls{display:grid;gap:22px;margin:40px 0 24px}
+.wine-controls label{display:grid;gap:12px;font-size:16px;line-height:1.6}
+.wine-controls input,.wine-controls select{font:16px var(--sans);width:100%;min-width:0;min-height:54px;background:var(--paper);border:1px solid #61746a6b;border-radius:0;padding:14px;color:var(--ink)}
+.wine-controls input:focus,.wine-controls select:focus{outline:2px solid var(--ink);outline-offset:3px}
+.wine-filter-actions{display:flex;gap:12px 25px;flex-wrap:wrap;align-items:center;margin:14px 0 32px}
+.wine-filter-actions button{border:0;border-bottom:1px solid var(--ink);background:transparent;color:var(--ink);padding:10px 0;min-height:44px;font:16px/1.5 var(--sans);cursor:pointer}
+.wine-filter-status{font-size:14px;line-height:1.8;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.wine-group{border-top:1px solid #61746a5c;padding:6px 0}
+.wine-group summary{padding:22px 0}
+.wine-group-heading{display:grid;gap:8px;min-width:0}
+.wine-group-heading strong{font:400 clamp(26px,3vw,38px)/1.3 var(--serif)}
+.wine-group-heading small{font:12px/1.8 var(--sans);letter-spacing:.07em}
+.wine-group-heading .wine-group-count{font-size:13px;letter-spacing:0;color:var(--muted)}
+.wine-rows{list-style:none;padding:0 0 32px;margin:0;display:grid}
+.wine-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;padding:22px 0;border-top:1px solid #61746a30;min-width:0}
+.wine-row h4{font:400 25px/1.35 var(--serif);margin:0;overflow-wrap:anywhere}
+.wine-row p{font-size:16px;line-height:1.8;margin:6px 0 0;overflow-wrap:anywhere}
+.wine-row dl{display:grid;gap:8px;margin:0;text-align:right;align-content:start}
+.wine-row dl>div{display:grid;gap:4px}
+.wine-row dt{font-size:13px;line-height:1.5;letter-spacing:.03em}
+.wine-row dd{font-size:16px;line-height:1.5;margin:0;overflow-wrap:anywhere}
+.wine-empty{padding:32px 0;font-size:17px;line-height:1.8}
+.wine-knowledge{border-block-start:1px solid var(--line);margin-bottom:20px;padding:14px 0}
+.wine-knowledge summary{font:400 30px/1.4 var(--serif)}
+.wine-knowledge-content{padding:25px 0;display:grid;gap:30px}
+.wine-knowledge article h3{font:400 28px/1.3 var(--serif);margin:0 0 14px}
+.wine-knowledge p{font-size:16px;line-height:1.9;max-width:780px}
+.wine-maps{display:grid;gap:45px}
+.wine-maps figure{margin:0;min-width:0}
+.wine-maps img{width:100%;height:auto;display:block;background:white}
+.wine-maps figcaption{font-size:14px;line-height:1.8;margin:20px 0}
+.wine-classification-list{columns:2;column-gap:30px;list-style:none;padding:0;margin:22px 0}
+.wine-classification-list li{break-inside:avoid;padding:5px 0;font-size:16px;line-height:1.7}
+.wine-group[hidden],.wine-row[hidden],.wine-empty[hidden]{display:none!important}
+@media(min-width:850px){.native-menu-cards,.native-alacarte{grid-template-columns:repeat(2,minmax(0,1fr));gap:65px}.native-menu-notes{grid-template-columns:1fr 1fr;gap:60px}.native-wine-invitation{grid-template-columns:1.3fr .7fr;gap:55px;align-items:center}.wine-glass-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:50px}.wine-controls{grid-template-columns:1.5fr 1fr}.wine-rows{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:55px}.wine-maps{grid-template-columns:1fr 1fr;gap:55px}.wine-knowledge-content{grid-template-columns:1fr 1fr;gap:45px}}
+@media(max-width:480px){.native-menu-price{font-size:46px}.native-menu-card h3{font-size:30px}.wine-chapters{gap:8px 22px}.wine-classification-list{columns:1}.wine-row h4{font-size:23px}.wine-row{gap:12px}.wine-group-heading strong{font-size:27px}}
+html[data-text-enlarged=true] .native-menu-card header,html[data-text-enlarged=true] .wine-row{display:flex;flex-wrap:wrap}html[data-text-enlarged=true] .wine-row dl{display:flex;text-align:left;gap:24px;flex-wrap:wrap}
+
+.wine-group-heading strong,.native-menu-card h3{overflow-wrap:anywhere}
+html[data-text-enlarged=true] .wine-page .hero.sub{max-height:none;height:auto}

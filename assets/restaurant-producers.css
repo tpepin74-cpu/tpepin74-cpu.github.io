@@ -1,0 +1,62 @@
+/* A quiet editorial chapter, with independent transparent portrait layers. */
+.producer-journal{padding:clamp(80px,10vw,160px) 0 65px;background:#ecece3;scroll-margin-top:120px}
+.producer-journal-intro{padding:0 7%;max-width:1000px;margin:0 auto 95px;text-align:center}
+.producer-journal-intro .eyebrow{margin-bottom:30px;letter-spacing:.16em;font-size:12px}
+.producer-journal-intro h2{font-size:clamp(48px,6.7vw,96px);line-height:1.06;margin:0 0 28px;text-wrap:balance}
+.producer-journal-intro h2 em{display:block;font-weight:400}
+.producer-journal-intro p{max-width:570px;margin:0 auto;font-size:17px;line-height:1.85;text-wrap:pretty}
+.producer-feature{max-width:1500px;margin:0 auto;padding:0 7% 110px}
+.producer-feature+.producer-feature{padding-top:40px}
+.producer-feature-top{display:flex;align-items:center;gap:22px;padding-top:22px;margin-bottom:22px;border-top:1px solid #223b3250}
+.producer-ordinal{font:italic 30px/1 var(--serif);font-variant-numeric:lining-nums}
+.producer-feature-top .eyebrow{font-size:12px;letter-spacing:.11em;margin:0}
+.producer-layout{display:grid;grid-template-columns:1.3fr 1fr;align-items:center;column-gap:clamp(45px,7vw,110px)}
+.producer-art{position:relative;min-width:0;isolation:isolate;padding:38px 0 76px;margin:0}
+.producer-landscape{display:block;width:91%;height:auto;aspect-ratio:1.3;object-fit:cover;object-position:center}
+.producer-portrait{position:absolute;z-index:2;width:53%;height:auto;bottom:24px;right:-2%;max-height:94%;object-fit:contain;object-position:bottom;filter:drop-shadow(0 14px 12px #102a1f12)}
+.producer-art figcaption{position:relative;margin-top:24px;padding:0 58% 0 0;min-height:32px;font-size:13px;line-height:1.6;color:var(--muted)}
+.producer-copy{min-width:0;padding:25px 0 50px}
+.producer-copy .producer-house{font:400 clamp(31px,3vw,46px)/1.15 var(--serif);margin:0 0 16px;max-width:440px;text-wrap:balance}
+.producer-copy h3{font:400 clamp(40px,4.5vw,67px)/1.08 var(--serif);margin:0 0 30px;text-wrap:balance}
+.producer-copy .producer-role{display:block;font-size:13px;letter-spacing:.06em;line-height:1.65;margin-bottom:22px;text-transform:uppercase;color:var(--muted)}
+.producer-copy p{font-size:16px;line-height:1.9;margin:0 0 22px;text-wrap:pretty}
+.producer-copy .producer-footnote{border-top:1px solid #223b3230;margin-top:30px;padding-top:22px;font:italic 27px/1.35 var(--serif);color:var(--ink)}
+.producer-feature.reverse .producer-art{grid-column:2;grid-row:1}
+.producer-feature.reverse .producer-copy{grid-column:1;grid-row:1}
+.producer-feature.reverse .producer-layout{grid-template-columns:1fr 1.3fr}
+.producer-feature.reverse .producer-landscape{margin-left:auto;object-position:40% center}
+.producer-feature.reverse .producer-portrait{left:-2%;right:auto;width:54%}
+.producer-feature.reverse .producer-art figcaption{padding:0 0 0 60%;text-align:right}
+.producer-closing{border-top:1px solid #223b3235;padding:48px 0 0;margin:0 7%;display:grid;grid-template-columns:1fr 1.2fr;gap:25px 65px;align-items:start}
+.producer-closing h3{font:400 clamp(32px,3vw,44px)/1.15 var(--serif);margin:0 0 22px}
+.producer-closing p{font-size:16px;line-height:1.85;margin:0 0 26px}
+.producer-closing .textlink{font-size:16px;min-height:44px;gap:30px}
+.producer-journal .producer-visual-note{font-size:12px;line-height:1.7;max-width:none;margin:46px 7% 0;color:var(--muted)}
+@media(max-width:900px){
+ .producer-journal-intro{margin-bottom:65px}
+ .producer-layout,.producer-feature.reverse .producer-layout{grid-template-columns:minmax(0,1fr);gap:5px}
+ .producer-feature{padding:0 7% 75px;max-width:720px}
+ .producer-feature+.producer-feature{padding-top:25px}
+ .producer-feature.reverse .producer-art,.producer-feature.reverse .producer-copy{grid-column:auto;grid-row:auto}
+ .producer-copy{padding:12px 0 0}
+ .producer-art{padding-top:28px;padding-bottom:55px}
+ .producer-copy h3{font-size:clamp(42px,8vw,58px)}
+ .producer-copy .producer-house{font-size:34px}
+ .producer-closing{grid-template-columns:minmax(0,1fr);gap:5px}
+}
+@media(max-width:420px){
+ .producer-journal-intro h2{font-size:48px}
+ .producer-journal-intro{padding:0 7%}
+ .producer-feature-top{gap:16px}
+ .producer-feature-top .eyebrow{font-size:11px;letter-spacing:.07em}
+ .producer-art{padding-bottom:64px}
+ .producer-portrait{width:56%;bottom:25px}
+ .producer-feature.reverse .producer-portrait{width:57%}
+ .producer-art figcaption{font-size:12px}
+ .producer-copy h3{font-size:43px}
+}
+html[data-text-enlarged=true] .producer-art{padding-bottom:0}
+html[data-text-enlarged=true] .producer-art figcaption{padding:22px 0 0;clear:both;text-align:left}
+html[data-text-enlarged=true] .producer-portrait{position:relative;width:54%;max-height:none;float:right;margin:-50% 0 0;inset:auto}
+html[data-text-enlarged=true] .producer-journal :is(h2,h3,p){overflow-wrap:anywhere}
+@media(prefers-reduced-motion:reduce){.producer-journal *{animation:none!important;transition:none!important}}

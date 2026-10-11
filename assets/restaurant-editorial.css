@@ -1,0 +1,29 @@
+/* Restaurant photography: preserve real portrait framing and spacious editorial rhythm. */
+.restaurant-page .hero.sub:after{background:linear-gradient(90deg,rgba(12,28,21,.65),rgba(12,28,21,.12)),linear-gradient(0deg,rgba(12,28,21,.3),transparent 55%)}
+.restaurant-page .hero.sub>img{object-position:60% center}
+.restaurant-image-credit{position:absolute;right:28px;bottom:22px;font-size:10px;letter-spacing:.04em;color:#fff;z-index:2}
+.restaurant-team-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(48px,7vw,100px);align-items:center}
+.restaurant-team figure{margin:0;min-width:0}
+.restaurant-team figure img{display:block;width:100%;height:auto;max-width:100%}
+.restaurant-team figcaption{font-size:12px;line-height:1.6;color:var(--muted);padding:18px 0 0}
+.restaurant-team-copy{min-width:0;padding:18px 0}
+.restaurant-team-copy h2{margin:26px 0 34px;font-size:clamp(46px,4.6vw,72px);line-height:1.08}
+.restaurant-team-copy p{line-height:1.9}
+.restaurant-team-copy .button{margin-top:18px}
+.restaurant-process{position:relative;margin:0;min-width:0;align-self:stretch;overflow:hidden}
+.restaurant-process img{display:block;width:100%;height:100%;max-height:820px;object-fit:cover;object-position:center}
+.restaurant-process figcaption{position:absolute;bottom:0;left:0;right:0;padding:36px 24px 20px;background:linear-gradient(transparent,rgba(0,0,0,.65));color:#fff;font-size:11px;line-height:1.5}
+.restaurant-page .restaurant-producers .copy{padding:clamp(60px,7vw,110px)}
+.restaurant-page .restaurant-terrace:after{background:linear-gradient(90deg,rgba(12,28,21,.65),rgba(12,28,21,.12)),linear-gradient(0deg,rgba(12,28,21,.25),transparent)}
+.restaurant-page .restaurant-terrace>img{object-position:45% center}
+@media(max-width:760px){
+.restaurant-team-grid{grid-template-columns:1fr;gap:38px}
+.restaurant-team-copy{padding:0}
+.restaurant-team-copy h2{font-size:clamp(44px,9vw,62px);margin-top:22px}
+.restaurant-page .restaurant-producers .copy{padding:64px max(26px,7vw) 72px}
+.restaurant-process img{height:auto;max-height:none;object-fit:contain}
+.restaurant-page .hero.sub>img{object-position:61% center}
+.restaurant-image-credit{right:22px;bottom:18px;font-size:10px}
+.restaurant-page .restaurant-terrace>img{object-position:38% center}
+.restaurant-page .restaurant-terrace{min-height:580px}
+}
