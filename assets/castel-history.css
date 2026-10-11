@@ -1,0 +1,17 @@
+/* Family portrait stays uncropped, including on small screens. */
+.castel-history-heading{max-width:730px;margin:0 auto 60px;text-align:center}
+.castel-history-heading h2{margin:22px 0 28px;line-height:1.06}
+.castel-history-heading p{max-width:580px;margin-inline:auto;line-height:1.9}
+.castel-history-photo{margin:0 0 66px}
+.castel-history-photo img,.editorial-intro .castel-family-intro img{display:block;width:100%;height:auto;min-height:0;max-height:none;aspect-ratio:auto;object-fit:contain}
+.castel-family-intro a{display:block}
+.castel-history-photo figcaption{padding-top:18px;font-size:12px;line-height:1.6;color:var(--muted)}
+.castel-history-dates{list-style:none;padding:0;margin:0}
+.castel-history-dates li{display:grid;grid-template-columns:180px 1fr;gap:50px;border-top:1px solid var(--line);padding:36px 0}
+.castel-history-date{font-size:12px;letter-spacing:.1em;padding-top:11px}
+.castel-history-dates h3{font-size:clamp(30px,3.3vw,42px);margin:0 0 14px;line-height:1.15}
+.castel-history-dates p{max-width:650px;line-height:1.9;margin:0}
+.castel-history-source{border-top:1px solid var(--line);padding-top:28px;margin-top:18px;font-size:12px;line-height:1.9;color:var(--muted)}
+.castel-history-source a{display:inline-block;text-decoration:underline;text-underline-offset:5px;color:var(--ink);padding:10px 0}
+#histoire{scroll-margin-top:120px}
+@media(max-width:760px){.castel-history-heading{margin-bottom:36px;text-align:left}.castel-history-heading h2{font-size:clamp(43px,10vw,62px)}.castel-history-photo{margin-bottom:38px}.castel-history-dates li{grid-template-columns:1fr;gap:14px;padding:28px 0}.castel-history-date{padding-top:0}.castel-history-photo figcaption{font-size:11px}.castel-history-source{margin-top:8px}}

@@ -1,0 +1,26 @@
+/* One left-aligned line: stationary RE followed by the rotating invitation. */
+.hero-film .hero-film-copy{width:100%;max-width:1120px;padding-inline:0;margin-inline:auto;text-align:left}
+.hero-film .hero-film-copy>.eyebrow{margin:0 0 34px;letter-spacing:.28em;text-align:left}
+.hero-film h1.re-headline{font-size:clamp(64.4px,9.8vw,134.4px);font-weight:400;line-height:1.2;letter-spacing:-.025em;max-width:100%;margin:0;text-align:left}
+.re-accessible{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;clip-path:inset(50%);overflow:hidden;white-space:nowrap}
+.re-visual{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:baseline;gap:0;width:100%;text-align:left}
+.re-prefix{display:block;font-size:1em;font-weight:400;font-style:normal;line-height:1.3;letter-spacing:-.025em;white-space:nowrap}
+/* All endings begin at the same position, without moving the RE. */
+.re-words{display:grid;grid-template-columns:minmax(0,1fr);min-width:0;padding:.18em .08em .25em .015em;margin-block:-.18em -.25em;overflow:hidden;text-align:left}
+.re-word{grid-area:1/1;justify-self:stretch;align-self:center;font-style:italic;font-weight:400;line-height:1.3;opacity:0;transform:translateY(.14em);transition:opacity 750ms ease,transform 900ms cubic-bezier(.22,.61,.36,1);white-space:nowrap;pointer-events:none}
+.re-word.is-current{opacity:1;transform:translateY(0)}
+.re-word.is-leaving{opacity:0;transform:translateY(-.14em)}
+.hero-film h1.re-full-words{font-size:clamp(58.8px,9.1vw,128.8px)}
+.re-full-words .re-visual{grid-template-columns:minmax(0,1fr)}
+.re-full-words .re-word{white-space:normal;text-wrap:balance;overflow-wrap:break-word}
+html[lang^=ja] .re-word,html[lang^=zh] .re-word{font-style:normal;line-height:1.5}
+html[data-text-enlarged=true] .re-word{white-space:normal;overflow-wrap:anywhere;text-wrap:balance}
+html[data-text-enlarged=true] .re-words{overflow:visible}
+html[data-text-enlarged=true] .hero-film{height:auto;min-height:100svh;overflow:visible}
+html[data-motion-off=true] .re-word{transition:none;transform:none}
+@media(prefers-reduced-motion:reduce){.re-word{transition:none;transform:none}}
+@media(max-width:760px){
+ .hero-film h1.re-headline{font-size:clamp(39.2px,11.9vw,89.6px)}
+ .hero-film .hero-film-copy>.eyebrow{margin-bottom:36px;letter-spacing:.23em}
+ .hero-film h1.re-full-words{font-size:clamp(47.6px,11.76vw,81.2px)}
+}

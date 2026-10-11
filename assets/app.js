@@ -1,0 +1,56 @@
+'use strict';
+// Vector arrows keep the same fine, monochrome appearance on iOS and Android.
+function arrowIcon(direction='up-right'){
+ const paths={'up-right':'M6 18 18 6M6 6h12v12',right:'M4 12h16m-6-6 6 6-6 6',left:'M20 12H4m6-6-6 6 6 6',down:'M12 4v16m-6-6 6 6 6-6'};
+ const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+ const attrs={class:'ui-arrow',viewBox:'0 0 24 24',width:'18',height:'18',fill:'none',stroke:'currentColor','stroke-width':'1.3','stroke-linecap':'round','stroke-linejoin':'round','aria-hidden':'true',focusable:'false'};
+ Object.entries(attrs).forEach(([key,value])=>svg.setAttribute(key,value));
+ const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',paths[direction]||paths['up-right']);svg.append(path);return svg;
+}
+document.documentElement.classList.add('js');
+const $$ = (s, el=document) => Array.from(el.querySelectorAll(s));
+let returnFocus = null;
+function showPanel(id,trigger){
+ const el=document.getElementById(id);if(!el)return;
+ document.querySelectorAll('dialog[open]').forEach(panel=>closePanel(panel.id,false));
+ returnFocus=trigger||document.activeElement;el.hidden=false;
+ if(typeof el.showModal==='function')el.showModal();else el.setAttribute('open','');
+ document.body.classList.add('locked');
+ el.querySelector('[data-close],button,a,input')?.focus({preventScroll:true});
+ if(id==='concierge')$$('[data-chat]').forEach(b=>b.setAttribute('aria-expanded','true'));
+ if(id==='navigation')$$('[data-menu]').forEach(b=>b.setAttribute('aria-expanded','true'));
+}
+function closePanel(id,restore=true){
+ const el=document.getElementById(id);if(!el)return;
+ if(typeof el.close==='function'&&el.open)el.close();else el.removeAttribute('open');el.hidden=true;
+ if(!document.querySelector('dialog[open]'))document.body.classList.remove('locked');
+ if(id==='concierge')$$('[data-chat]').forEach(b=>b.setAttribute('aria-expanded','false'));
+ if(id==='navigation')$$('[data-menu]').forEach(b=>b.setAttribute('aria-expanded','false'));
+ if(restore&&returnFocus?.isConnected)returnFocus.focus({preventScroll:true});
+}
+$$('[data-close]').forEach(b=>b.addEventListener('click',()=>closePanel(b.dataset.close)));
+$$('[data-menu]').forEach(b=>b.addEventListener('click',e=>showPanel('navigation',e.currentTarget)));
+$$('dialog').forEach(panel=>{
+ panel.addEventListener('cancel',e=>{e.preventDefault();closePanel(panel.id);});
+ panel.addEventListener('click',e=>{if(e.target!==panel)return;const r=panel.getBoundingClientRect();if(panel.id==='lightbox'||e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closePanel(panel.id);});
+});
+$$('[data-lightbox]').forEach(b=>b.addEventListener('click',()=>{const im=document.getElementById('lightbox-img');im.src=b.dataset.lightbox;im.alt=b.dataset.caption;document.getElementById('lightbox-caption').textContent=b.dataset.caption;showPanel('lightbox',b);}));
+$$('.filters').forEach(group=>{$$('[data-filter]',group).forEach(b=>{b.setAttribute('aria-pressed',b.classList.contains('active')?'true':'false');b.addEventListener('click',()=>{$$('[data-filter]',group).forEach(x=>{x.classList.remove('active');x.setAttribute('aria-pressed','false');});b.classList.add('active');b.setAttribute('aria-pressed','true');const section=group.closest('section');$$('[data-category]',section).forEach(x=>{x.hidden=b.dataset.filter!=='all'&&!x.dataset.category.split(' ').includes(b.dataset.filter);});});});});
+if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.07});$$('.reveal').forEach(x=>io.observe(x));}else{$$('.reveal').forEach(x=>x.classList.add('visible'));}
+const dateStr=d=>new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10);
+$$('[data-booking]').forEach(form=>{const arrival=form.elements.date_arrival,departure=form.elements.date_departure;const today=new Date();today.setHours(0,0,0,0);arrival.min=dateStr(today);arrival.value=dateStr(today);const tomorrow=new Date(today);tomorrow.setDate(tomorrow.getDate()+1);departure.min=dateStr(tomorrow);departure.value=dateStr(tomorrow);
+const sync=()=>{if(!arrival.value)return;const d=new Date(arrival.value+'T00:00:00');d.setDate(d.getDate()+1);departure.min=dateStr(d);if(!departure.value||departure.value<=arrival.value)departure.value=dateStr(d);departure.setCustomValidity('');};arrival.addEventListener('change',sync);departure.addEventListener('change',()=>departure.setCustomValidity(departure.value<=arrival.value?'Le départ doit être après votre arrivée.':''));form.addEventListener('submit',e=>{if(departure.value<=arrival.value){e.preventDefault();departure.setCustomValidity('Choisissez un départ après votre arrivée.');departure.reportValidity();return;}const [year,month,day]=arrival.value.split('-');form.elements.fyear.value=year;form.elements.fmonth.value=Number(month);form.elements.fday.value=Number(day);form.elements.nbnights.value=Math.round((Date.parse(departure.value)-Date.parse(arrival.value))/86400000);});});
+const topics={agenda:{intro:"Retrouvez les événements à venir dans le Cœur du Jura, avec des filtres par période, commune et envie.",choices:[["Consulter l’agenda","/agenda.html"],["Sorties de ce week-end","/agenda.html?periode=weekend"],["Réserver un séjour","/reservation.html"]]},
+romance:{intro:'Pour une parenthèse à deux, choisissez une suite avec jacuzzi ou l’escapade romantique de la maison.',choices:[['L’escapade romantique · 362 € pour deux','/sejours.html#romantique'],['Les suites avec jacuzzi','/chambres.html'],['Voir les disponibilités','/reservation.html']]},
+food:{intro:'Une cuisine de saison, faite maison, et des produits du Jura. Découvrez notre table ou composez une escapade gourmande.',choices:[['La table, les menus & les vins','/restaurant.html'],['Séjour gastronomique · 399 € pour deux','/sejours.html#gastronomique'],['Réserver une table','/restaurant.html#table']]},
+nature:{intro:'Cascades, reculée et chemins de traverse : le Jura se découvre à votre rythme. Les activités proposées dans nos itinéraires ne sont pas incluses dans le séjour.',choices:[['Les événements autour de l’hôtel','/agenda.html'],['Mon itinéraire nature · 2 jours','/jura.html#nature'],['Explorer le Jura','/jura.html'],['Réserver mon refuge','/reservation.html']]},
+family:{intro:'La Suite Famille Jacuzzi accueille deux adultes, deux enfants et un bébé. Les chambres Privilège communicantes sont une autre possibilité, selon disponibilité.',choices:[['Découvrir la Suite Famille','/chambre-famille-jacuzzi.html'],['Les chambres Privilège communicantes','/chambre-privilege.html'],['Patrimoine & famille · idées de séjour','/jura.html#patrimoine'],['Réserver avec des enfants','https://secure.reservit.com/reservit/reserhotel.php?lang=FR&id=233&hotelid=2176']]},
+booking:{intro:'Pour les prix exacts et les disponibilités, le moteur officiel de l’hôtel prend le relais. Préférez-vous une chambre, une table ou un coffret cadeau ?',choices:[['Réserver une chambre','/reservation.html'],['Réserver une table','/restaurant.html#table'],['Choisir un coffret cadeau','https://casteldamandre.secretbox.fr/']]},
+event:{intro:'Un mariage, une réception ou un séminaire ? L’équipe du Castel peut vous proposer un événement sur mesure.',choices:[['Les possibilités & capacités','/evenements.html'],['Préparer une demande','/contact.html?objet=evenement'],['Appeler la maison','tel:+33384660817']]},
+practical:{intro:'La maison se situe aux Planches-près-Arbois, au 18 rue de la Cascade. Arrivée à partir de 15 h 30, départ avant 11 h.',choices:[['Accès & itinéraire','/contact.html'],['Tarifs & questions pratiques','/reservation.html'],['Contacter une personne de l’hôtel','tel:+33384660817']]},
+wine:{intro:'Arbois, Pupillin et Château-Chalon vous invitent à découvrir le vignoble jurassien. Les visites sont à organiser directement avec les domaines.',choices:[['Vignes & villages · 3 jours','/jura.html#vignobles'],['La carte des vins du Castel','/carte-vins.html'],['Séjour gastronomique','/sejours.html#gastronomique']]}}
+function renderChat(key){const body=document.getElementById('chat-body');body.replaceChildren();const p=document.createElement('p');p.textContent=key?topics[key].intro:'Bienvenue. Quelle envie vous amène au Castel ? Ce concierge vous guide parmi les pages et les services de la maison.';body.append(p);const choices=document.createElement('div');choices.className='chat-choices';body.append(choices);
+if(key){topics[key].choices.forEach(([label,url])=>{const a=document.createElement('a');a.href=url;a.textContent=label;a.append(arrowIcon());choices.append(a);});const back=document.createElement('button');back.className='chat-back';back.append(arrowIcon('left'),document.createTextNode('Explorer une autre envie'));back.addEventListener('click',()=>renderChat());body.append(back);}else{[['romance','Une escapade à deux'],['family','Un séjour en famille'],['food','Gastronomie & table'],['nature','Nature & cascades'],['wine','Vignes & villages'],['booking','Réserver ou offrir'],['event','Un événement'],['agenda','Les événements à proximité'],['practical','Les informations pratiques']].forEach(([id,label])=>{const b=document.createElement('button');b.textContent=label;b.append(arrowIcon());b.addEventListener('click',()=>renderChat(id));choices.append(b);});}const note=document.createElement('p');note.className='note';note.textContent='Guide à choix prédéfinis. Disponibilités et réservations confirmées par l’hôtel et ses services officiels.';body.append(note);}
+renderChat();$$('[data-chat]').forEach(b=>b.addEventListener('click',e=>{const el=document.getElementById('concierge');if(el.hidden){renderChat();showPanel('concierge',e.currentTarget);}else closePanel('concierge');}));$$('[data-intent]').forEach(b=>b.addEventListener('click',()=>{renderChat(b.dataset.intent);showPanel('concierge',b);}));
+$$('[data-contact]').forEach(form=>{const params=new URLSearchParams(location.search);const requested=params.get('objet');if(requested==='evenement')form.elements.objet.value='Un événement';if(requested==='seminaire')form.elements.objet.value='Un séminaire';const date=form.elements.date;date.min=dateStr(new Date());form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const data=new FormData(form);const lines=['Bonjour,','',...Object.entries({nom:'Nom',email:'E-mail',telephone:'Téléphone',objet:'Objet',date:'Date',personnes:'Personnes'}).map(([k,label])=>label+' : '+(data.get(k)||'Non renseigné')),'',String(data.get('message')),'','Merci de me confirmer les possibilités et les conditions.'];const url='mailto:hotel@casteldamandre.com?subject='+encodeURIComponent(data.get('objet')+' — Castel Damandre')+'&body='+encodeURIComponent(lines.join('\n'));const status=form.querySelector('[role=status]');status.textContent='Votre demande est prête. Envoyez-la depuis votre messagerie ; elle ne constitue pas une réservation confirmée.';const a=document.createElement('a');a.href=url;a.textContent=' Ouvrir de nouveau mon e-mail ';a.append(arrowIcon());status.append(a);location.href=url;});});
+$$('[data-privacy]').forEach(b=>b.addEventListener('click',()=>{location.href='/confidentialite.html#cookies-refonte';}));

@@ -1,0 +1,4 @@
+/* Replace only the pool-texture background; retain the existing composition. */
+.water-backdrop.cascade-backdrop{background:none;overflow:hidden}
+.cascade-backdrop video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;pointer-events:none}
+.cascade-backdrop:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#f7f5ef12 0%,#f7f5ef28 40%,#f7f5efcc 75%,var(--paper) 100%)}

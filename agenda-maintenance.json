@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "purpose": "Actualiser les rendez-vous à venir et en cours autour du Castel Damandre.",
+  "source": "https://www.coeurdujura-tourisme.com/sinspirer/agenda-jura-animations/",
+  "method": "Le serveur parcourt l'agenda officiel paginé, lit les dates des événements et conserve les références et photos de chaque fiche. Le flux RSS éditorial n'est pas utilisé comme date d'événement.",
+  "access": "Utiliser get_site pour le Site lié. Si un siwc_bypass_bearer_token est disponible, le transmettre uniquement à l'origine current_live_url comme OAI-Sites-Authorization: Bearer <token>. Ne jamais écrire le jeton dans des fichiers ou sorties.",
+  "update": "POST /api/agenda/refresh avec Content-Type: application/json et un corps {}. Puis GET /api/agenda. Comparer updatedAt et le nombre d'événements. Un résultat status=ok et la même valeur updatedAt à la relecture vérifient la persistance.",
+  "failure": "En cas d'erreur de source, la dernière synchronisation reste conservée et les événements terminés sont filtrés à la lecture. Signaler l'échec sans inventer d'événements et sans publier de nouveau code. Ne pas contourner une restriction d'accès.",
+  "rules": ["Fuseau Europe/Paris", "Exclure les événements terminés", "Conserver les périodes du début à la fin", "Dédupliquer les événements par identifiant touristique", "Ne pas modifier les autres pages", "Ne pas republier pour une mise à jour de données"]
+}

@@ -1,0 +1,39 @@
+/* Language navigation follows the quiet editorial palette of the house. */
+.language-picker{display:inline-flex;position:relative;align-items:center;justify-content:center;gap:7px;min-width:56px;min-height:44px;font:14px/1.2 var(--sans);letter-spacing:.07em;border-bottom:1px solid currentColor;color:inherit;flex-shrink:0}
+.language-picker select{position:absolute;inset:0;opacity:0;width:100%;height:100%;cursor:pointer;font-size:16px}
+.language-picker:focus-within{outline:2px solid currentColor;outline-offset:5px}
+.language-links{display:flex;gap:12px 22px;flex-wrap:wrap;align-items:center;font:14px/1.6 var(--sans);letter-spacing:0}
+.language-links a{display:inline-flex;min-height:44px;align-items:center;text-decoration:none;padding:2px 0;border-bottom:1px solid transparent}
+.language-links a[aria-current=true]{border-bottom-color:currentColor}
+.language-links a:hover,.language-links a:focus-visible{border-bottom-color:currentColor}
+.nav-contact{flex-wrap:wrap;gap:24px}.nav-contact .language-links{flex-basis:100%;order:2;gap:8px 20px}
+.footer>.language-links{margin-top:30px;padding-top:25px;border-top:1px solid #b4beb333;color:inherit;max-width:100%}
+.editorial-header .tools{gap:18px}.editorial-header .header-gift{display:none}
+html:not([lang^=fr]) .button,html:not([lang^=fr]) .outline{white-space:normal;text-align:center}
+html:not([lang^=fr]) .booking-tabs button{min-width:0;line-height:1.25}
+html:not([lang^=fr]) .mobile-dock>button,html:not([lang^=fr]) .mobile-dock>a{overflow-wrap:anywhere;text-align:center}
+html:not([lang^=fr]) .hero h1,html:not([lang^=fr]) .room-universe-title{overflow-wrap:anywhere;hyphens:auto}
+html[lang^=ja],html[lang^=zh]{--serif:"Noto Serif CJK JP","Noto Serif CJK SC","Yu Mincho","Songti SC",Georgia,serif;--sans:"Noto Sans CJK JP","Noto Sans CJK SC","Hiragino Sans","Microsoft YaHei",system-ui,sans-serif}
+html[lang^=ja] h1,html[lang^=zh] h1{line-height:1.35!important;font-size:clamp(38px,6vw,88px)}
+html[lang^=ja] h2,html[lang^=zh] h2{line-height:1.5;letter-spacing:.02em}
+html[lang^=ja] em,html[lang^=zh] em{font-style:normal}
+html[lang^=ja] p,html[lang^=zh] p{line-height:2;line-break:strict;word-break:normal}
+html[lang^=ru]{--serif:Georgia,"Times New Roman",serif}
+@media(max-width:760px){
+ .editorial-header .language-picker{display:none}
+ .editorial-header .tools{gap:0}
+ .language-links{gap:6px 18px;font-size:14px}
+ .nav-contact .language-links{gap:5px 18px}
+ html:not([lang^=fr]) .mobile-dock>button,html:not([lang^=fr]) .mobile-dock>a{font-size:10px;line-height:1.2;padding-inline:3px}
+ html:not([lang^=fr]) .mobile-dock [data-chat]>span{font-size:9px;line-height:1.2}
+ html:not([lang^=fr]) .booking-sheet h2{font-size:clamp(29px,8vw,45px);line-height:1.12}
+ html:not([lang^=fr]) .booking-tabs button{font-size:12px;padding:9px 6px;gap:7px}
+ html:not([lang^=fr]) .booking-table-panel h3{font-size:32px}
+ html:not([lang^=fr]) .booking-table-panel p{font-size:12px;line-height:1.55}
+ html[lang^=ja] .hero h1,html[lang^=zh] .hero h1{font-size:40px;line-height:1.45!important}
+ html[lang^=ja] .intro h2,html[lang^=zh] .intro h2,html[lang^=ja] .water-heading h2,html[lang^=zh] .water-heading h2{font-size:36px;line-height:1.5}
+}
+@media(max-width:365px){html:not([lang^=fr]) .mobile-dock>button,html:not([lang^=fr]) .mobile-dock>a{font-size:9px}}
+.nav-panel .language-links{display:flex;max-width:none}
+.nav-panel .language-links a{font:14px/1.6 var(--sans);padding:2px 0;min-height:44px;letter-spacing:0;gap:0}
+@media(min-width:1450px){.editorial-header .header-gift{display:inline-flex}}

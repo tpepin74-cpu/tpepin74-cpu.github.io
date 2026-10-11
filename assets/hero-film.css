@@ -1,0 +1,23 @@
+/* A single quiet film replaces the home photo slider. */
+.hero-film{position:relative;isolation:isolate;height:100svh;min-height:660px;overflow:hidden;padding:160px 30px 170px;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;text-align:center}
+.hero-film-video{position:absolute;inset:0;z-index:-2;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;pointer-events:none}
+.hero-film:after{background:linear-gradient(180deg,#10231c50 0%,#0d241c1f 25%,#0d241c52 55%,#0d241c6b 100%);pointer-events:none}
+.hero-film-copy{max-width:720px;padding:0 20px}
+.hero-film .eyebrow{font:400 10px/1.8 var(--sans);letter-spacing:.24em;margin:0 0 32px}
+.hero-film h1{font:400 clamp(72px,7.4vw,112px)/1 var(--serif);letter-spacing:-.035em;margin:0;text-shadow:0 2px 24px #10231c38}
+.hero-film h1 em{font-weight:400;font-size:1.05em}
+.hero-film-discover{position:absolute;bottom:54px;left:50%;transform:translateX(-50%);display:inline-flex;align-items:center;gap:20px;min-height:44px;font:11px/1.5 var(--sans);letter-spacing:.08em;white-space:nowrap}
+.hero-film-discover .ui-arrow{width:16px;height:16px}
+.hero-film-control{position:absolute;bottom:54px;right:5%;display:flex;align-items:center;gap:15px}
+.hero-film-control>span{font:9px/1.5 var(--sans);letter-spacing:.06em;color:#f7f5efcf}
+.hero-film a:focus-visible,.hero-film button:focus-visible{outline-color:var(--paper)}
+@media(max-width:760px){
+ .hero-film{height:100svh;min-height:650px;padding:150px 30px 200px}
+ .hero-film-copy{padding:0;max-width:440px}
+ .hero-film .eyebrow{font-size:9px;letter-spacing:.2em;margin-bottom:27px}
+ .hero-film h1{font-size:clamp(58px,15.8vw,84px);line-height:1.02}
+ .hero-film-discover{bottom:calc(106px + env(safe-area-inset-bottom));left:30px;transform:none;gap:14px;font-size:10px;letter-spacing:.03em}
+ .hero-film-control{bottom:calc(106px + env(safe-area-inset-bottom));right:30px;gap:9px}
+ .hero-film-control>span{position:absolute;right:0;bottom:49px;white-space:nowrap;font-size:8px}
+}
+@media(max-width:360px){.hero-film{padding-inline:24px}.hero-film h1{font-size:55px}.hero-film-discover{left:24px}.hero-film-control{right:24px}}

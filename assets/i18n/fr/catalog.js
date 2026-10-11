@@ -1,0 +1,1 @@
+window.CASTEL_LANGUAGE="fr";window.CASTEL_LOCALE="fr-FR";window.CASTEL_TRANSLATIONS={};
