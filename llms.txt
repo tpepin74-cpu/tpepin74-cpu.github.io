@@ -1,0 +1,48 @@
+# Castel Damandre
+
+Proposition privée de refonte, ne constitue pas le site officiel.
+Site officiel : https://www.casteldamandre.com/fr/
+
+## L’établissement
+Hôtel 4 étoiles au 18 rue de la Cascade, 39600 Les Planches-près-Arbois, France. Restaurant Le Castel, chambres et suites jacuzzi, piscine extérieure chauffée en saison. Contact : +33 3 84 66 08 17, hotel@casteldamandre.com.
+
+## Pages
+- [Hôtel de charme 4 étoiles à Arbois, Jura](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/): Le Castel Damandre : chambres et suites jacuzzi, restaurant gastronomique, cascade et piscine extérieure chauffée dans le Jura, près d’Arbois.
+- [Hôtel avec piscine dans le Jura](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/maison.html): Découvrez l’esprit du Castel Damandre, hôtel 4 étoiles aux Planches-près-Arbois : nature, hospitalité, piscine et gastronomie locale.
+- [Chambres et suites jacuzzi près d’Arbois](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/chambres.html): Découvrez toutes les chambres du Castel Damandre : Single, Classique, Supérieure, Privilège et suites jacuzzi pour deux ou en famille.
+- [Chambre Single dans le Jura](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/chambre-single.html): Chambre Single au Castel Damandre, près d’Arbois. Une parenthèse pour soi. 1 personne. Équipements et réservation en ligne.
+- [Chambre Classique dans le Jura](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/chambre-classique.html): Chambre Classique au Castel Damandre, près d’Arbois. La simplicité du bien-être. 2 personnes. Équipements et réservation en ligne.
+- [Chambre Supérieure dans le Jura](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/chambre-superieure.html): Chambre Supérieure au Castel Damandre, près d’Arbois. Ouvrir les yeux sur le Jura. 2 personnes. Équipements et réservation en ligne.
+- [Chambre Privilège dans le Jura](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/chambre-privilege.html): Chambre Privilège au Castel Damandre, près d’Arbois. Le charme, tout naturellement. 2 personnes. Équipements et réservation en ligne.
+- [Suite Junior Jacuzzi dans le Jura](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/chambre-junior-jacuzzi.html): Suite Junior Jacuzzi au Castel Damandre, près d’Arbois. La cascade pour horizon. 2 personnes. Équipements et réservation en ligne.
+- [Suite Junior Privilège Jacuzzi dans le Jura](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/chambre-junior-privilege.html): Suite Junior Privilège Jacuzzi au Castel Damandre, près d’Arbois. L’art de ne rien prévoir. 2 personnes. Équipements et réservation en ligne.
+- [Suite Famille Jacuzzi dans le Jura](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/chambre-famille-jacuzzi.html): Suite Famille Jacuzzi au Castel Damandre, près d’Arbois. Les beaux jours, ensemble. 2 adultes · 2 enfants · 1 bébé. Équipements et réservation en ligne.
+- [Restaurant gastronomique à Arbois, Jura](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/restaurant.html): La table du Castel Damandre : cuisine de Pascal Mathieu, produits locaux, poularde de Bresse, vin jaune et morilles. Menus et réservation de table.
+- [Séjours et week-ends dans le Jura](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/sejours.html): Escapades romantique et gastronomique au Castel Damandre, et idées de séjours autour d’Arbois : nature, vignobles et patrimoine.
+- [L’escapade romantique à Arbois](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/sejours.html#romantique): L’escapade romantique au Castel Damandre : une nuit pour deux, petit déjeuner et dîner. Offre à 362 €, selon disponibilités.
+- [L’escapade gastronomique à Arbois](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/sejours.html#gastronomique): L’escapade gastronomique au Castel Damandre : une nuit pour deux, petit déjeuner et dîner. Offre à 399 €, selon disponibilités.
+- [Que faire autour d’Arbois dans le Jura ?](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/jura.html): Découvrez cascades, reculées, vignobles et patrimoine autour du Castel Damandre. Idées de séjours inspirées des offices de tourisme du Jura.
+- [Nature & cascades autour d’Arbois](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/jura.html#nature): Nature & cascades : itinéraire d’inspiration au départ du Castel Damandre, près d’Arbois dans le Jura. 2 jours · Pour respirer.
+- [Vignes & villages autour d’Arbois](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/jura.html#vignobles): Vignes & villages : itinéraire d’inspiration au départ du Castel Damandre, près d’Arbois dans le Jura. 3 jours · Pour rencontrer.
+- [Patrimoine & famille autour d’Arbois](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/jura.html#patrimoine): Patrimoine & famille : itinéraire d’inspiration au départ du Castel Damandre, près d’Arbois dans le Jura. 3 jours · Pour découvrir.
+- [Mariages et séminaires près d’Arbois](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/evenements.html): Organisez un mariage, une réception ou un séminaire dans le Jura au Castel Damandre. Salle équipée, restauration et hébergement sur demande.
+- [Offres et coffrets cadeaux du Castel Damandre](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/sejours.html#cadeaux): Offrez un séjour romantique ou gastronomique au Castel Damandre dans le Jura. Accès à la boutique officielle de coffrets cadeaux.
+- [Réserver un hôtel 4 étoiles à Arbois](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/reservation.html): Tarifs, disponibilités et réservation officielle du Castel Damandre dans le Jura. Chambres, suites jacuzzi, demi-pension et informations pratiques.
+- [Contact et accès au Castel Damandre](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/contact.html): Adresse, itinéraire, téléphone et contact du Castel Damandre aux Planches-près-Arbois dans le Jura. Préparez votre demande de séjour ou d’événement.
+- [Photos du Castel Damandre](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/maison.html#galerie): Photographies des chambres, de la piscine, du restaurant, de la cascade et du Jura autour du Castel Damandre. Galerie et inspirations.
+- [Mentions légales](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/mentions-legales.html): Mentions légales du Castel Damandre, informations de l’établissement et de cette proposition de refonte.
+- [Confidentialité](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/confidentialite.html): Confidentialité du Castel Damandre, informations de l’établissement et de cette proposition de refonte.
+- [Le soutien du FEDER](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/feder.html): Le soutien du FEDER du Castel Damandre, informations de l’établissement et de cette proposition de refonte.
+
+## Réservations
+Les disponibilités, prix définitifs et paiements sont gérés par le moteur officiel Logis/Reservit. Table : module officiel RestoPro intégré à /restaurant.html#table, avec accès direct au service officiel. Cadeaux : casteldamandre.secretbox.fr.
+
+## Images
+Photos de l’hôtel provenant du site officiel. Trois visuels d’ambiance générés identifiés comme tels.
+
+## Agenda dynamique
+/agenda.html : événements à venir du Cœur du Jura, actualisés chaque matin. Source officielle : https://www.coeurdujura-tourisme.com/sinspirer/agenda-jura-animations/. Données actualisées : /api/agenda. Ne pas présenter les événements expirés ni les publications RSS comme des dates d’événements.
+
+## Menus et cave
+- [Menus et carte du restaurant](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/restaurant.html#menus) : compositions et tarifs intégrés en HTML, carte datée du 13 août 2026, à confirmer selon la saison.
+- [Carte des vins](https://castel-damandre-ecrin-jura.thibault-ds.chatgpt.site/carte-vins.html) : 375 références de bouteilles et 10 vins au verre, recherche par domaine, cuvée ou millésime, filtres par région et format. Disponibilités et prix confirmés par le sommelier.

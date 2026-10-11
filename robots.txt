@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+# Proposition privée : désactiver noindex et mettre à jour le domaine lors de la mise en production officielle.
