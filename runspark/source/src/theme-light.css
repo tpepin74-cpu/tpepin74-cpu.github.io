@@ -1,0 +1,158 @@
+/* Electric blue identity on white. Product photographs and finish swatches retain their colours. */
+:root {
+  color-scheme: light;
+  --paper: #ffffff;
+  --surface: #ffffff;
+  --soft: #f3f5f9;
+  --ink: #17233b;
+  --muted: #566176;
+  --accent: #2453ff;
+  --accent-hover: #123ad6;
+  --cyan: var(--accent);
+  --line: #dce1ea;
+  color: var(--ink);
+  background: var(--paper);
+}
+body, .app { background: var(--paper); color: var(--ink); }
+.runspark-logo { filter: invert(1) hue-rotate(230deg) saturate(2); mix-blend-mode: multiply; }
+.site-header { color: var(--ink); background: #fffffff5; border-color: var(--line); backdrop-filter: blur(16px); }
+.desktop-nav a { color: var(--muted); }
+.desktop-nav a:hover, .hero-explore:hover, .reference-button:hover,
+.footer-column > a:hover, .footer-column > button:hover, .footer-bottom a:hover,
+.menu-inner nav a:hover { color: var(--accent); }
+.header-icon { border-color: var(--line); background: var(--surface); }
+.header-icon:hover { background: var(--soft); border-color: var(--accent); }
+.site-header :focus-visible, .site-footer :focus-visible { outline-color: var(--accent); }
+::selection { background: var(--accent); color: white; }
+.button-primary, .header-order, .hero-highlight, .skip-link, .scene-fallback button,
+.rs-sections .rs-button-cyan { background: var(--accent); color: white; }
+.rs-sections .rs-eyebrow::before { background: var(--accent); }
+.rs-sections :where(button, a, summary, input):focus-visible { outline-color: var(--accent); }
+.rs-sections .rs-title span, .pc-config .pc-title > span { color: var(--accent); }
+.rs-sections .rs-lightbox-close:hover, .rs-sections .rs-lightbox-nav button:hover { background: var(--accent); color: white; }
+.button-primary:hover, .header-order:hover { background: var(--accent-hover); }
+
+/* A crisp, neutral studio for the interactive frame. */
+.sticky-stage { background: var(--paper); color: var(--ink); }
+.hero-watermark { color: #17233b06; }
+.hero-lead, .drag-hint strong, .phase-navigation .active,
+.phase-navigation button:hover { color: var(--ink); }
+.stage-eyebrow, .stage-description, .hero-reassurance, .object-heading,
+.interactive-label, .object-photo, .drag-hint, .rotation-value, .scene-fallback,
+.scroll-cue, .scroll-cue small, .phase-navigation button, .reference-button { color: var(--muted); }
+.hero-explore { color: var(--ink); border-color: var(--line); }
+.hero-explore:hover { border-color: var(--accent); }
+.hero-reassurance svg, .drag-hint > svg, .scroll-cue > svg,
+.phase-navigation .active > span { color: var(--accent); }
+.stage-eyebrow > span, .interactive-label i { background: var(--accent); }
+.scene-studio { background: radial-gradient(ellipse 51% 53% at 50% 47%, #ffffff 0%, #f3f5f9 30%, #e1e5ee80 55%, #ffffff00 80%); }
+.scene-studio::after { background: #62708e; opacity: .18; }
+.scene-orbit { border-color: #17233b12; }
+.scene-orbit::after { border-color: #17233b08; }
+.scene-tools { background: var(--surface); color: var(--ink); border-color: var(--line); box-shadow: 0 4px 16px #17233b08; }
+.scene-tools:focus-visible { outline-color: var(--accent); }
+.scene-loading { color: var(--muted); }
+.loading-frame { border-color: var(--accent); box-shadow: inset 0 0 0 4px var(--soft), inset 0 0 0 5px var(--accent); }
+.scene-tools button:hover:not(:disabled) { background: var(--soft); color: var(--accent); }
+.drag-hint strong { border-color: var(--line); }
+.tool-separator, .timeline-rail { background: var(--line); }
+.selected-part-note { color: var(--ink); background: #fffffff5; border-color: var(--accent); box-shadow: 0 12px 32px #17233b12; }
+.selected-part-note span { color: var(--muted); }
+.stage-bottom { border-color: var(--line); }
+
+/* White and cool neutral surfaces keep the electric blue prominent. */
+.rs-sections .rs-dark { background: var(--soft); color: var(--ink); }
+.rs-sections .rs-gallery { background: var(--paper); }
+.rs-sections .rs-dark .rs-eyebrow, .rs-sections .rs-dark .rs-lead,
+.rs-sections .rs-heading-copy { color: var(--muted); }
+.rs-sections .rs-dark .rs-title span { color: var(--accent); }
+.rs-sections .rs-dark .rs-eyebrow::before { background: var(--accent); }
+.rs-sections .rs-dark :where(button, a, summary, input):focus-visible { outline-color: var(--accent); }
+.rs-sections .rs-proof-band { background: var(--surface); color: var(--ink); border-color: var(--line); }
+.rs-sections .rs-proof-inner > div { border-color: var(--line); }
+.rs-sections .rs-proof-inner svg { color: var(--accent); }
+.rs-sections .rs-proof-inner small { color: var(--muted); }
+.rs-sections .rs-video-shell, .rs-sections .rs-video-shell video { background: var(--surface); border-color: var(--line); }
+.rs-sections .rs-video-caption, .rs-sections .rs-steps li,
+.rs-sections .rs-steps li:last-child, .rs-sections .rs-gallery .rs-section-heading { border-color: var(--line); }
+.rs-sections .rs-video-caption > span:last-child, .rs-sections .rs-steps p { color: var(--muted); }
+.rs-sections .rs-video-caption svg, .rs-sections .rs-text-button,
+.rs-sections .rs-step-number, .rs-sections .rs-step-action svg { color: var(--accent); }
+.rs-sections .rs-text-button:hover, .rs-sections .rs-step-action { color: var(--ink); }
+.rs-sections .rs-gallery-filters button { color: var(--muted); background: var(--surface); border-color: var(--line); }
+.rs-sections .rs-gallery-filters button:hover { color: var(--accent); border-color: var(--accent); }
+.rs-sections .rs-gallery-filters button[aria-pressed="true"] { color: white; background: var(--accent); border-color: var(--accent); }
+.rs-sections .rs-gallery-card { color: var(--ink); background: var(--surface); border-color: var(--line); }
+.rs-sections .rs-gallery-count, .rs-sections .rs-gallery-caption > span,
+.rs-sections .rs-gallery-note { color: var(--muted); }
+.rs-sections .rs-gallery-category, .rs-sections .rs-gallery-zoom { color: var(--ink); background: #fffffff2; border-color: #ffffffcc; }
+.rs-sections .buy-gallery-cta { background: var(--accent); color: white; }
+.rs-sections .buy-gallery-cta:hover { background: var(--accent-hover); }
+.rs-sections .buy-gallery-guide { color: var(--muted); }
+.rs-sections .rs-partner-login, .rs-sections .rs-partner-stat p,
+.rs-sections .rs-partner-process { color: var(--muted); }
+.rs-sections .rs-partner-login:hover, .rs-sections .rs-partner-stat > span,
+.rs-sections .rs-partner-process svg { color: var(--accent); }
+.rs-sections .rs-partner-stat, .rs-sections .rs-partner-stat:nth-child(2) { border-color: var(--line); }
+.rs-sections .rs-button-black { color: white; background: var(--accent); }
+.rs-sections .rs-button-black:hover { background: var(--accent-hover); }
+.rs-sections .rs-button-cyan:hover { background: var(--accent-hover); }
+.rs-sections .rs-final-cta { background: var(--soft); color: var(--ink); }
+.rs-sections .buy-course-grid > a { background: var(--surface); border-color: var(--line); }
+.rs-sections .buy-course-grid > a:hover { background: var(--soft); }
+.buy-course-grid small, .buy-course-note { color: var(--muted); }
+.buy-course-grid strong, .buy-course-note a { color: var(--ink); }
+.buy-course-grid span { color: var(--accent); }
+.buy-templates button[aria-pressed="true"], .buy-gift-card button { background: var(--accent); border-color: var(--accent); color: white; }
+.buy-gift-check input { accent-color: var(--accent); }
+.pc-config { --pc-ink: var(--ink); --pc-muted: var(--muted); --pc-paper: var(--paper); --pc-cyan: var(--cyan); --pc-line: var(--line); }
+.pc-config .pc-step { background: var(--accent); }
+.pc-config .pc-view-switch > button[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); }
+.pc-config .pc-dialog::backdrop { background: #17233b55; backdrop-filter: blur(7px); }
+
+/* Light footer and dialogs, including gallery and original product photos. */
+.site-footer { background: var(--soft); color: var(--muted); }
+.footer-column h2 { color: var(--ink); }
+.shipping-regions span, .footer-bottom { border-color: var(--line); }
+.footer-bottom { color: var(--muted); }
+.reference-dialog, .menu-dialog, .rs-sections .rs-lightbox { background: var(--surface); color: var(--ink); border-color: var(--line); }
+.reference-dialog::backdrop, .menu-dialog::backdrop, .rs-sections .rs-lightbox::backdrop { background: #17233b55; backdrop-filter: blur(7px); }
+.dialog-header > div > span, .reference-inner > p, .menu-eyebrow,
+.menu-inner nav a > span, .menu-account { color: var(--muted); }
+.dialog-header button, .menu-heading button, .menu-inner nav a { border-color: var(--line); }
+.rs-sections .rs-lightbox { box-shadow: 0 25px 100px #17233b26; }
+.rs-sections .rs-lightbox-top > span, .rs-sections .rs-lightbox-footer p,
+.rs-sections .rs-lightbox-nav > span { color: var(--muted); }
+.rs-sections .rs-lightbox-close, .rs-sections .rs-lightbox-nav button { color: var(--ink); border-color: var(--line); }
+.rs-sections .rs-lightbox-image { background: var(--soft); }
+.rs-sections .rs-lightbox :where(button):focus-visible { outline-color: var(--accent); }
+.rs-sections .buy-lightbox-cta { color: var(--accent); }
+
+@media (max-width: 767px), (max-width: 1023px) and (max-height: 500px) and (pointer: coarse) {
+  :root { --mobile-surface: #ffffff; --mobile-border: var(--line); }
+  .app[data-mobile-enabled="true"] { background: var(--paper); }
+  .app .site-header { background: #fffffff5; }
+  .app .header-icon { background: var(--surface); border-color: var(--line); }
+  .app .mobile-dock { background: #fffffff5; color: var(--muted); border-color: var(--line); box-shadow: 0 -8px 32px #17233b0a; }
+  .app .mobile-dock [aria-current="page"] { color: var(--accent); }
+  .app .mobile-dock [aria-current="page"] .mobile-dock-icon { background: var(--accent); color: white; }
+  .app .mobile-dock :focus-visible { outline-color: var(--accent); }
+  .app .hero-explore { background: var(--surface); border-color: var(--line); }
+  .app .object-panel { background: radial-gradient(ellipse at 50% 40%, #ffffff, #f3f5f9 65%, #e9edf4); border-color: var(--line); }
+  .app .scene-studio { opacity: 1; }
+  .app .object-controls { border-color: var(--line); }
+  .app .stage-bottom { background: var(--surface); border-color: var(--line); }
+  .app .phase-navigation button { color: var(--muted); }
+  .app .phase-navigation .active { color: white; background: var(--accent); }
+  .app .phase-navigation .active > span { color: white; }
+  .app .mobile-inspiration-card { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+  .app .mobile-inspiration-card > span { position: relative; background: var(--surface); }
+  .app .mobile-inspiration-card > span > span { color: var(--accent); }
+  .app .mobile-quick-links a { background: var(--surface); color: var(--ink); border-color: var(--line); }
+  .app .mobile-quick-links a > svg:first-child { color: var(--accent); }
+  .app .mobile-quick-links small, .app .mobile-menu-legal { color: var(--muted); }
+  .app .rs-sections .rs-gallery-card { background: var(--surface); border-color: var(--line); }
+  .app .menu-dialog, .app .pc-config .pc-dialog, .app .rs-sections .rs-lightbox,
+  .app .reference-dialog { border-color: var(--line); }
+  .app .pc-mobile-order > button { background: var(--accent); color: white; }
+}

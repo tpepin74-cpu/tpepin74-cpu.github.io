@@ -1,0 +1,212 @@
+/* App presentation is confined to phones; desktop keeps the full scrolling site. */
+.mobile-dock, .mobile-discover-cards, .mobile-menu-legal, .pc-mobile-order { display: none; }
+
+@media (max-width: 767px), (max-width: 1023px) and (max-height: 500px) and (pointer: coarse) {
+  :root {
+    --mobile-header-height: calc(64px + env(safe-area-inset-top, 0px));
+    --mobile-dock-height: calc(76px + env(safe-area-inset-bottom, 0px));
+    --header-height: var(--mobile-header-height);
+    --mobile-surface: #20242a;
+    --mobile-border: #ffffff20;
+  }
+  html.runspark-mobile { scroll-behavior: auto; scroll-padding-top: calc(var(--mobile-header-height) + 16px); }
+  html.runspark-mobile:has(dialog[open]) { overflow: hidden; }
+  .app[data-mobile-enabled="true"] { min-height: 100svh; padding-top: var(--mobile-header-height); padding-bottom: calc(var(--mobile-dock-height) + 24px); background: #14161a; }
+  .app[data-mobile-enabled="true"][data-mobile-screen="config"] { background: var(--soft); padding-bottom: calc(var(--mobile-dock-height) + 122px); }
+  .app[data-mobile-enabled="true"][data-mobile-screen="faq"],
+  .app[data-mobile-enabled="true"][data-mobile-screen="avis"] { background: var(--paper); }
+  .app[data-mobile-enabled="true"] > main > .experience,
+  .app[data-mobile-enabled="true"] .rs-sections > :not(dialog),
+  .app[data-mobile-enabled="true"] > .site-footer { display: none; }
+  .app[data-mobile-enabled="true"][data-mobile-screen="experience"] > main > .experience,
+  .app[data-mobile-enabled="true"][data-mobile-screen="config"] .rs-sections > #config,
+  .app[data-mobile-enabled="true"][data-mobile-screen="galerie"] .rs-sections > #galerie,
+  .app[data-mobile-enabled="true"][data-mobile-screen="montage"] .rs-sections > #montage,
+  .app[data-mobile-enabled="true"][data-mobile-screen="faq"] .rs-sections > #faq,
+  .app[data-mobile-enabled="true"][data-mobile-screen="partenaires"] .rs-sections > #partenaires,
+  .app[data-mobile-enabled="true"][data-mobile-screen="avis"] .rs-sections > #avis,
+  .app[data-mobile-enabled="true"][data-mobile-screen="faq"] > .site-footer { display: block; }
+  .app .site-header { height: var(--mobile-header-height); padding: env(safe-area-inset-top, 0px) max(18px, env(safe-area-inset-right, 0px)) 0 max(18px, env(safe-area-inset-left, 0px)); gap: 12px; background: #14161afa; }
+  .app .brand img { width: 145px; }
+  .app .header-actions { gap: 8px; }
+  .app .header-order, .app .desktop-nav, .app .account-link { display: none; }
+  .app .header-icon { width: 44px; height: 44px; background: #ffffff09; border-color: #ffffff24; }
+  .app .menu-toggle { display: none; }
+  .app :where(button, a, summary) { touch-action: manipulation; }
+  .app :where(button, a, summary):active { opacity: .76; }
+  .app :where(input, button, a, summary) { scroll-margin-top: calc(var(--mobile-header-height) + 20px); scroll-margin-bottom: calc(var(--mobile-dock-height) + 105px); }
+  .app :where(h1, h2)[tabindex="-1"]:focus { outline: none; }
+
+  /* Three direct destinations; the logo returns home. */
+  .app .mobile-dock { position: fixed; inset: auto 0 0; z-index: 45; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; min-height: var(--mobile-dock-height); padding: 8px max(12px, env(safe-area-inset-right, 0px)) calc(8px + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px)); border-top: 1px solid #ffffff22; border-radius: 24px 24px 0 0; background: #171b20f5; box-shadow: 0 -8px 32px #0002; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); color: #c1c7cd; }
+  .app .mobile-dock > a { min-width: 0; min-height: 60px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 3px 1px; border-radius: 14px; font-size: 12px; font-weight: 700; line-height: 1.4; }
+  .app .mobile-dock-icon { display: grid; place-items: center; width: 49px; height: 30px; border-radius: 12px; transition: color .15s, background .15s; }
+  .app .mobile-dock [aria-current="page"] { color: #00f0ff; }
+  .app .mobile-dock [aria-current="page"] .mobile-dock-icon { color: #14161a; background: #00f0ff; }
+  .app .mobile-dock :focus-visible { outline-color: #00f0ff; outline-offset: 1px; }
+  .app:has(.pc-input:focus) .mobile-dock, .app:has(.pc-input:focus) .pc-mobile-order { visibility: hidden; pointer-events: none; }
+
+  /* Discover: a compact interactive product screen, no multi-screen scroll trap. */
+  .app .experience { height: auto; min-height: 0; }
+  .app .sticky-stage { position: relative; top: auto; height: auto; min-height: 0; overflow: visible; }
+  .app .stage-layout { position: relative; inset: auto; display: flex; flex-direction: column; padding: 24px 18px 0; gap: 22px; align-items: stretch; }
+  .app .editorial-copy { padding: 0; }
+  .app .stage-eyebrow { display: flex; font-size: 10px; letter-spacing: .04em; margin-bottom: 16px; }
+  .app .phase-copy h1 { font-size: clamp(39px, 9.8vw, 58px); line-height: 1.06; }
+  .app .hero-lead { font-size: .52em; line-height: 1.25; margin-bottom: 8px; }
+  .app .hero-main { display: inline; margin-right: 9px; margin-bottom: 0; }
+  .app .hero-highlight { padding: 1px 7px 4px; margin-left: 0; }
+  .app .stage-description.mobile-description { display: block; min-height: 46px; margin-top: 16px; max-width: 500px; font-size: 14px; line-height: 1.65; }
+  .app .stage-description.desktop-description, .app .hero-reassurance, .app .hero-watermark { display: none; }
+  .app .hero-actions { display: grid; grid-template-columns: 1.05fr 1fr; gap: 16px; margin-top: 18px; }
+  .app .hero-actions .button-primary { min-height: 50px; padding: 13px 17px; justify-content: center; gap: 10px; font-size: 14px; transform: none; }
+  .app .hero-explore { justify-content: center; min-height: 50px; padding: 12px 8px; border: 1px solid #ffffff30; border-radius: 50px; font-size: 13px; }
+  .app .desktop-cta { display: none; }
+  .app .mobile-cta { display: inline; }
+  .app .object-panel { display: grid; grid-template-rows: 34px auto 58px; height: auto; padding: 10px 12px 0; border: 1px solid #ffffff18; border-radius: 24px; background: radial-gradient(ellipse at 50% 40%, #314448 0%, #20282d 58%, #1b2026 100%); overflow: hidden; }
+  .app .object-heading { font-size: 10px; padding: 0 2px; letter-spacing: 0; }
+  .app .object-heading .interactive-label { display: none; }
+  .app .scene-area { height: clamp(265px, 42svh, 390px); }
+  .app .scene-studio { opacity: .4; }
+  .app .scene-orbit { opacity: .35; }
+  .app .object-controls { justify-content: space-between; gap: 8px; padding: 0; border-top: 1px solid #ffffff15; }
+  .app .drag-hint { font-size: 11px; gap: 5px; }
+  .app .drag-hint .desktop-hint, .app .drag-hint strong { display: none; }
+  .app .drag-hint .touch-hint { display: inline; }
+  .app .scene-tools { gap: 0; padding: 0; margin: 0; }
+  .app .scene-tools button { min-width: 44px; min-height: 44px; }
+  .app .rotation-value { width: 24px; }
+  .app .stage-bottom { position: relative; inset: auto; display: block; height: auto; margin: 14px 18px 0; padding: 5px; border: 1px solid #ffffff1e; border-radius: 17px; background: #20242a; }
+  .app .stage-bottom .scroll-cue, .app .stage-bottom .reference-button, .app .timeline-rail { display: none; }
+  .app .phase-navigation { display: flex; gap: 4px; height: auto; }
+  .app .phase-navigation button { flex: 1; min-width: 0; min-height: 46px; padding: 9px 4px; border-radius: 12px; color: #bcc5cd; }
+  .app .phase-navigation strong { font-size: 12px; white-space: normal; }
+  .app .phase-navigation button > span, .app .phase-navigation .active::before { display: none; }
+  .app .phase-navigation .active { color: #14161a; background: #00f0ff; }
+  .app[data-mobile-screen="experience"] .mobile-discover-cards { display: grid; gap: 16px; padding: 24px 18px 12px; }
+  .app .mobile-inspiration-card { position: relative; min-height: 220px; overflow: hidden; border-radius: 22px; background: #20242a; color: white; }
+  .app .mobile-inspiration-card > img { display: block; width: 100%; height: 250px; object-fit: cover; }
+  .app .mobile-inspiration-card > span { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; padding: 22px; background: linear-gradient(180deg, transparent 15%, #0b1018e8); }
+  .app .mobile-inspiration-card small { font-size: 10px; letter-spacing: .07em; font-weight: 800; }
+  .app .mobile-inspiration-card strong { font-size: 24px; line-height: 1.25; letter-spacing: -.03em; }
+  .app .mobile-inspiration-card > span > span { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 700; color: #00f0ff; }
+  .app .mobile-quick-links { display: grid; gap: 10px; }
+  .app .mobile-quick-links a { display: flex; align-items: center; gap: 15px; min-height: 79px; padding: 16px 18px; border: 1px solid #ffffff20; border-radius: 18px; background: #20242a; color: #fff; }
+  .app .mobile-quick-links a > svg:first-child { color: #00f0ff; }
+  .app .mobile-quick-links a > svg:last-child { margin-left: auto; }
+  .app .mobile-quick-links strong { display: block; font-size: 15px; }
+  .app .mobile-quick-links small { display: block; margin-top: 3px; font-size: 12px; color: #b8c0c9; }
+
+  /* Create: live preview, grouped inputs and one fixed purchase action. */
+  .app .pc-config { padding: 25px 0 8px; background: var(--soft); scroll-margin-top: 0; }
+  .app .pc-config .pc-container { width: calc(100% - 36px); max-width: 680px; }
+  .app .pc-config .pc-intro { display: block; margin-bottom: 23px; }
+  .app .pc-config .pc-eyebrow { margin-bottom: 9px; font-size: 10px; }
+  .app .pc-config .pc-title { font-size: 36px; line-height: 1.12; }
+  .app .pc-config .pc-intro-copy { display: none; }
+  .app .pc-config .pc-layout { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .app .pc-config .pc-photo-column { position: static; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 10px 14px; padding: 14px; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); }
+  .app .pc-config .pc-photo-heading { grid-column: 1 / -1; margin: 0; gap: 6px; font-size: 11px; }
+  .app .pc-config .pc-photo-heading > p { font-size: 10px; letter-spacing: .04em; }
+  .app .pc-config .pc-photo-stage { height: 190px; grid-row: span 2; padding: 4px 4px 26px; border-radius: 13px; background: #edf0f5; }
+  .app .pc-config .pc-photo-expand { font-size: 10px; bottom: 5px; right: 5px; padding: 5px 7px; gap: 4px; }
+  .app .pc-config .pc-view-switch { flex-direction: column; align-self: start; margin-top: 0; }
+  .app .pc-config .pc-view-switch > button { min-height: 45px; font-size: 12px; }
+  .app .pc-config .pc-photo-note { margin: 0; font-size: 11px; line-height: 1.55; }
+  .app .pc-config .pc-form { padding: 20px 16px 10px; background: white; border: 1px solid var(--line); border-radius: 22px; }
+  .app .pc-config .pc-product-topline { font-size: 10px; letter-spacing: .06em; gap: 8px; }
+  .app .pc-config .pc-price { font-size: clamp(36px, 10vw, 46px); }
+  .app .pc-config .pc-price-row { gap: 12px; margin-top: 15px; }
+  .app .pc-config .pc-shipping { font-size: 11px; }
+  .app .pc-config .pc-shipping svg { display: none; }
+  .app .pc-config .pc-shipping small { max-width: 115px; font-size: 11px; }
+  .app .pc-config .pc-fieldset > legend { font-size: 16px; }
+  .app .pc-config .pc-finish-choices { gap: 10px; }
+  .app .pc-config .pc-finish-choice { padding: 8px 6px; border-radius: 12px; }
+  .app .pc-config .pc-finish-choice > img { height: 74px; }
+  .app .pc-config .pc-input { min-height: 54px; font-size: 16px; border-radius: 11px; background: var(--surface); }
+  .app .pc-config .pc-input-heading > label { font-size: 13px; }
+  .app .pc-config .pc-input-heading > label > span { display: block; margin-left: 0; }
+  .app .pc-config .pc-detail-choices { grid-template-columns: minmax(0, 1fr); }
+  .app .pc-config .pc-small-choice { flex-direction: row; min-height: 54px; }
+  .app .pc-config .pc-engraving-preview { border-radius: 9px; }
+  .app .pc-config .pc-style-options > summary { font-size: 12px; gap: 8px; min-height: 64px; }
+  .app .pc-config .pc-order-actions { display: none; }
+  .app .pc-config .pc-mobile-order { display: flex; position: fixed; z-index: 44; left: max(12px, env(safe-area-inset-left, 0px)); right: max(12px, env(safe-area-inset-right, 0px)); bottom: calc(var(--mobile-dock-height) + 9px); align-items: center; gap: 14px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 20px; background: #fffffff7; color: #14161a; box-shadow: 0 6px 30px #10171a20; }
+  .app .pc-mobile-order > span { flex: 0 0 auto; }
+  .app .pc-mobile-order strong { display: block; font: 700 20px/1.4 'Space Grotesk', Manrope, sans-serif; white-space: nowrap; }
+  .app .pc-mobile-order small { display: block; font-size: 11px; color: #60666b; }
+  .app .pc-mobile-order > button { display: flex; align-items: center; justify-content: center; gap: 8px; flex: 1; min-width: 0; min-height: 50px; padding: 10px 12px; border-radius: 14px; background: #00f0ff; color: #14161a; font-size: 14px; font-weight: 800; }
+  .app .pc-mobile-order > button:disabled { opacity: .6; cursor: progress; }
+
+  /* Inspirations and supporting screens share the same app spacing. */
+  .app .rs-sections { background: transparent; }
+  .app .rs-sections .rs-container { width: calc(100% - 36px); max-width: 680px; }
+  .app .rs-sections .rs-block { padding: 28px 0 16px; scroll-margin-top: 0; }
+  .app .rs-sections .rs-section-heading { padding: 0; margin-bottom: 24px; border: 0; gap: 15px; }
+  .app .rs-sections .rs-eyebrow { font-size: 10px; letter-spacing: .06em; margin-bottom: 13px; }
+  .app .rs-sections .rs-title { font-size: clamp(33px, 8.8vw, 48px); line-height: 1.13; }
+  .app .rs-sections .rs-heading-copy { font-size: 14px; line-height: 1.7; }
+  .app .rs-sections .rs-gallery-toolbar { gap: 12px; margin-bottom: 18px; }
+  .app .rs-sections .rs-gallery-filters { flex-wrap: nowrap; width: 100%; overflow-x: auto; padding: 4px 3px 7px; scroll-padding-inline: 3px; }
+  .app .rs-sections .rs-gallery-filters button { flex: 0 0 auto; min-height: 44px; font-size: 12px; padding-inline: 15px; }
+  .app .rs-sections .rs-gallery-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .app .rs-sections .rs-gallery-card { border-radius: 20px; border-color: #ffffff20; background: #20242a; }
+  .app .rs-sections .rs-gallery-caption { min-height: 90px; padding: 18px; }
+  .app .rs-sections .rs-gallery-caption strong { font-size: 17px; }
+  .app .rs-sections .rs-gallery-category { font-size: 10px; border-radius: 7px; }
+  .app .rs-sections .rs-gallery-zoom { right: 13px; bottom: 13px; }
+  .app .rs-sections .rs-gallery-note { font-size: 12px; }
+  .app .rs-sections .rs-faq-layout, .app .rs-sections .rs-review-layout, .app .rs-sections .rs-partner-layout { grid-template-columns: minmax(0, 1fr); gap: 25px; }
+  .app .rs-sections .rs-faq-intro { position: static; }
+  .app .rs-sections .rs-question { margin-top: 10px; padding-inline: 15px; border: 1px solid var(--line); border-radius: 16px; background: white; }
+  .app .rs-sections .rs-question summary { font-size: 14px; min-height: 78px; }
+  .app .rs-sections .rs-answer { padding: 0 5px 18px 34px; font-size: 15px; }
+  .app .rs-sections .rs-video-shell, .app .rs-sections .rs-rating-panel { border-radius: 20px; }
+  .app .rs-sections .rs-steps { display: block; }
+  .app .rs-sections .rs-steps li { display: grid; grid-template-columns: 36px 1fr; gap: 14px; }
+  .app .rs-sections .rs-steps p, .app .rs-sections .rs-lead { font-size: 16px; }
+  .app .site-footer { padding: 36px 18px 0; }
+
+  /* Native dialogs behave as dismissible bottom sheets. */
+  .app .menu-dialog, .app .pc-config .pc-dialog, .app .rs-sections .rs-lightbox, .app .reference-dialog { position: fixed; inset: auto 0 0; width: 100%; max-width: 720px; height: auto; max-height: calc(92dvh - env(safe-area-inset-top, 0px)); margin: 0 auto; border: 1px solid #ffffff24; border-bottom: 0; border-radius: 26px 26px 0 0; padding-bottom: env(safe-area-inset-bottom, 0px); overscroll-behavior: contain; }
+  .app .menu-dialog::before, .app .pc-config .pc-dialog::before, .app .rs-sections .rs-lightbox::before { content: ''; display: block; width: 38px; height: 4px; border-radius: 10px; background: #8a969f80; margin: 11px auto 0; }
+  .app .menu-inner { padding: 20px 24px 24px; }
+  .app .menu-heading img { width: 148px; }
+  .app .menu-eyebrow { margin: 22px 0 10px; font-size: 10px; }
+  .app .menu-inner nav { margin-bottom: 22px; }
+  .app .menu-inner nav a { min-height: 56px; padding: 14px 0; font-family: Manrope, Arial, sans-serif; font-size: 17px; text-transform: none; font-weight: 700; }
+  .app .mobile-menu-legal { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 14px; color: #b0c0c8; font-size: 12px; }
+  .app .mobile-menu-legal a { display: inline-flex; align-items: center; min-height: 44px; }
+  .app .pc-config .pc-dialog { padding: 0 16px calc(18px + env(safe-area-inset-bottom, 0px)); }
+  .app .pc-config .pc-dialog-heading { margin-top: 14px; }
+  .app .pc-config .pc-dialog-photo { height: min(55dvh, 620px); }
+  .app .pc-config .pc-dialog .pc-view-switch { flex-direction: row; flex-wrap: wrap; margin-top: 12px; }
+  .app .pc-config .pc-dialog .pc-view-switch > button { flex: 1 1 calc(50% - 5px); }
+  .app .rs-sections .rs-lightbox-content { padding: 14px 16px 22px; }
+  .app .rs-sections .rs-lightbox-image { height: min(48dvh, 500px); border-radius: 12px; }
+  .app .rs-sections .rs-lightbox-footer { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .app .rs-sections .rs-lightbox-nav { width: 100%; justify-content: space-between; }
+}
+
+@media (max-width: 360px) {
+  .app .drag-hint .touch-hint { display: none; }
+  .app .pc-mobile-order { gap: 10px; }
+  .app .pc-mobile-order strong { font-size: 18px; }
+  .app .pc-config .pc-style-options > summary { flex-wrap: wrap; }
+}
+@media (max-height: 500px) and (max-width: 1023px) and (pointer: coarse) {
+  .app .stage-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 22px; }
+  .app .stage-description.mobile-description { display: none; }
+  .app .phase-copy h1 { font-size: 34px; }
+  .app .hero-main { display: block; margin-bottom: 6px; }
+  .app .scene-area { height: 235px; }
+  .app .pc-config .pc-layout { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 20px; }
+  .app .pc-config .pc-photo-column { display: block; }
+  .app .pc-config .pc-photo-stage { margin-top: 12px; height: 230px; }
+  .app .pc-config .pc-view-switch { margin-top: 10px; }
+  .app .pc-config .pc-photo-note { margin-top: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-dock *, .mobile-discover-cards *, .pc-mobile-order * { transition: none !important; animation: none !important; }
+}

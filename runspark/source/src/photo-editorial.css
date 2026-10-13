@@ -1,0 +1,76 @@
+/* Photography adds atmosphere while the interface keeps its light surfaces. */
+.hero-race-backdrop { position: absolute; inset: var(--header-height) 0 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.hero-race-backdrop > img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: 60% 50%; }
+.hero-race-backdrop::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, #fffffffc 0%, #fffffff5 37%, #ffffffb3 64%, #ffffff80 100%), linear-gradient(0deg, #ffffff 0%, #ffffff00 32%); }
+.stage-layout { z-index: 1; }
+.photo-stories { padding: 80px max(56px, calc((100vw - 1320px) / 2)) 76px; background: var(--paper); }
+.photo-stories-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 34px; }
+.photo-eyebrow { color: var(--accent); font-size: 11px; letter-spacing: .13em; font-weight: 800; margin-bottom: 15px; }
+.photo-stories h2 { color: var(--ink); font: 400 clamp(40px, 4.1vw, 66px)/1.08 var(--display); letter-spacing: -.02em; text-transform: uppercase; }
+.photo-stories h2 span { color: var(--accent); }
+.photo-stories-heading > a { display: inline-flex; align-items: center; gap: 18px; min-height: 48px; padding: 9px 0; border-bottom: 1px solid var(--line); color: var(--accent); font-size: 14px; font-weight: 800; }
+.photo-stories-track { display: grid; grid-template-columns: 1.16fr 1fr 1fr; gap: 20px; align-items: start; }
+.photo-story { position: relative; display: block; min-width: 0; height: clamp(320px, 32vw, 460px); overflow: hidden; border-radius: 24px; background: var(--soft); isolation: isolate; }
+.photo-story:nth-child(2) { margin-top: 35px; }
+.photo-story > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 53% 50%; transition: transform .5s ease; }
+.photo-story-caption { position: absolute; bottom: 14px; left: 14px; right: 14px; padding: 16px 45px 16px 18px; border: 1px solid #ffffff99; border-radius: 15px; background: #fffffff2; color: var(--ink); backdrop-filter: blur(12px); }
+.photo-story-caption > span { display: block; margin-bottom: 4px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); }
+.photo-story-caption > strong { font-size: clamp(16px, 1.5vw, 21px); line-height: 1.4; }
+.photo-story-caption > svg { position: absolute; right: 16px; bottom: 20px; }
+.photo-stories-note { margin-top: 20px; color: var(--muted); font-size: 11px; line-height: 1.7; }
+.rs-sections .gift-editorial-photo { position: relative; margin: 30px 0 0; border-radius: 20px; overflow: hidden; background: var(--soft); }
+.gift-editorial-photo > img { display: block; width: 100%; height: auto; aspect-ratio: 1.5; object-fit: cover; }
+.gift-editorial-photo > figcaption { padding: 15px 18px; background: white; font-size: 14px; font-weight: 700; color: var(--ink); }
+.gift-editorial-photo small { display: block; margin-top: 4px; font-size: 10px; color: var(--muted); font-weight: 400; }
+.rs-sections .buy-course-grid > a { padding: 0; overflow: hidden; border-radius: 20px; }
+.course-card-photo { position: relative; overflow: hidden; }
+.course-card-photo > img { display: block; width: 100%; height: auto; aspect-ratio: 1.45; object-fit: cover; transition: transform .5s ease; }
+.course-card-photo > small { position: absolute; left: 12px; top: 12px; padding: 5px 8px; border-radius: 6px; background: #fffffff2; color: var(--ink); font-size: 9px; font-weight: 700; letter-spacing: .04em; }
+.course-card-copy { padding: 20px; }
+.rs-sections .buy-course-grid strong { margin: 8px 0; }
+.rs-sections .rs-final-cta { position: relative; overflow: hidden; isolation: isolate; background: var(--soft); }
+.final-race-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; z-index: -2; }
+.rs-sections .rs-final-cta::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #f3f5f9f7 0%, #f3f5f9ed 28%, #f3f5f980 55%, #f3f5f9e8 72%, #f3f5f9fa 100%); }
+.rs-sections .rs-final-action { padding: 24px; border: 1px solid #ffffffc0; border-radius: 20px; background: #fffffff0; }
+@media (hover: hover) and (pointer: fine) {
+  .photo-story:hover > img, .buy-course-grid > a:hover .course-card-photo > img { transform: scale(1.035); }
+  .photo-stories-heading > a:hover { border-color: var(--accent); }
+}
+@media (max-width: 1180px) {
+  .photo-stories { padding: 64px 36px; }
+  .photo-stories-track { gap: 15px; }
+  .photo-story-caption { left: 10px; right: 10px; bottom: 10px; padding-left: 13px; }
+}
+@media (max-width: 767px), (max-width: 1023px) and (max-height: 500px) and (pointer: coarse) {
+  .app .hero-race-backdrop { inset: 0; }
+  .app .hero-race-backdrop > img { object-position: 66% 50%; }
+  .app .hero-race-backdrop::after { background: linear-gradient(180deg, #fffffff5 0%, #ffffffeb 31%, #ffffff99 60%, #ffffff 100%); }
+  .app .object-panel { background: #f3f5f9e8; }
+  .app[data-mobile-enabled="true"] > main > .photo-stories { display: none; }
+  .app[data-mobile-enabled="true"][data-mobile-screen="experience"] > main > .photo-stories { display: block; }
+  .photo-stories { padding: 34px 18px 0; }
+  .photo-stories-heading { display: block; margin-bottom: 19px; }
+  .photo-eyebrow { font-size: 10px; margin-bottom: 11px; }
+  .photo-stories h2 { font-size: clamp(31px, 8.4vw, 42px); }
+  .photo-stories-heading > a { margin-top: 9px; font-size: 12px; }
+  .photo-stories-track { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%; gap: 12px; padding: 5px 3px 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: 3px; scrollbar-width: thin; scrollbar-color: #aab5ca transparent; }
+  .photo-story { height: 350px; border-radius: 21px; scroll-snap-align: start; }
+  .photo-story:nth-child(2) { margin-top: 0; }
+  .photo-story-caption > strong { font-size: 18px; }
+  .photo-stories-note { font-size: 10px; margin-top: 7px; }
+  .app .gift-editorial-photo { margin-top: 22px; border-radius: 18px; }
+  .gift-editorial-photo > figcaption { font-size: 13px; }
+  .app .rs-sections .buy-course-grid > a { padding: 0; border-radius: 17px; }
+  .course-card-copy { padding: 14px; }
+  .course-card-photo > small { top: 7px; left: 7px; font-size: 8px; padding: 4px 6px; }
+  .course-card-photo > img { aspect-ratio: 1.12; }
+  .app .buy-course-grid strong { font-size: 25px; }
+}
+@media (max-height: 500px) and (max-width: 1023px) and (pointer: coarse) {
+  .photo-stories-track { grid-auto-columns: 46%; }
+  .photo-story { height: 320px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-story > img, .course-card-photo > img { transition: none; }
+  .photo-story:hover > img, .buy-course-grid > a:hover .course-card-photo > img { transform: none; }
+}
