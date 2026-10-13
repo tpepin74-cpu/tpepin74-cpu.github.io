@@ -1,0 +1,186 @@
+{
+  "events": [
+    {
+      "id": "foire-du-jura",
+      "title": "Foire du Jura",
+      "start": "2026-10-16",
+      "end": "2026-10-25",
+      "place": "À côté de la Halle des expositions Rue Emile-Boéchat 60 2800 Delémont",
+      "region": "Jura",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/foire-du-jura/",
+      "source": "Neuchâtel Vins et Terroir",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/09/Capture-decran-2026-09-30-134208.png",
+        "width": 256,
+        "height": 234,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/foire-du-jura/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      }
+    },
+    {
+      "id": "salon-des-vins-lache-moi-la-grappe-2",
+      "title": "Salon des Vins Lâche-moi la Grappe",
+      "start": "2026-10-29",
+      "end": "2026-10-31",
+      "place": "Anciens Abattoirs, La Chaux-de-Fonds",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/salon-des-vins-lache-moi-la-grappe-2/",
+      "source": "Neuchâtel Vins et Terroir",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/09/Capture-decran-2026-09-28-152120.png",
+        "width": 831,
+        "height": 420,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/salon-des-vins-lache-moi-la-grappe-2/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      }
+    },
+    {
+      "id": "accords-mets-et-vins-avec-le-domaine-de-la-grillette",
+      "title": "Accords mets et vins avec le Domaine de La Grillette",
+      "start": "2026-10-22",
+      "end": "2026-10-22",
+      "place": "Restaurant La Maison du Prussien à Neuchâtel",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/accords-mets-et-vins-avec-le-domaine-de-la-grillette/",
+      "source": "Neuchâtel Vins et Terroir",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/09/Capture-decran-2026-09-22-111301.png",
+        "width": 462,
+        "height": 445,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/accords-mets-et-vins-avec-le-domaine-de-la-grillette/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      }
+    },
+    {
+      "id": "grande-torree-neuchateloise",
+      "title": "Grande torrée neuchâteloise",
+      "start": "2026-10-25",
+      "end": "2026-10-25",
+      "place": "Montagne de Chaumont",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/grande-torree-neuchateloise/",
+      "source": "Neuchâtel Vins et Terroir",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/09/Capture-decran-2026-09-14-162409-1.png",
+        "width": 473,
+        "height": 669,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/grande-torree-neuchateloise/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      }
+    },
+    {
+      "id": "caves-ouvertes-neuchateloises-2027",
+      "title": "Caves Ouvertes neuchâteloises 2027",
+      "start": "2027-04-23",
+      "end": "2027-04-24",
+      "place": "Dans tout le canton de Neuchâtel",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes-neuchateloises-2027/",
+      "source": "Neuchâtel Vins et Terroir",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/08/NVT_CavesOuvertes2026_09052026-49-1024x683.jpg",
+        "width": 1024,
+        "height": 683,
+        "fit": "cover",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes-neuchateloises-2027/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      }
+    },
+    {
+      "id": "caveau-des-vins-de-lentre-deux-lacs",
+      "title": "Caveau des vins de l’Entre-deux-Lacs",
+      "start": "2026-01-01",
+      "end": "2026-12-31",
+      "place": "Adresse Rue Vallier 1 2088 Cressier (NE)",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/caveau-des-vins-de-lentre-deux-lacs/",
+      "source": "Neuchâtel Vins et Terroir",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/06/Cressier-1-1024x767.jpg",
+        "width": 1024,
+        "height": 767,
+        "fit": "cover",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/caveau-des-vins-de-lentre-deux-lacs/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      }
+    },
+    {
+      "id": "caveau-de-degustation-des-vins-de-cortaillod",
+      "title": "Caveau de dégustation des vins de Cortaillod",
+      "start": "2026-04-17",
+      "end": "2026-10-31",
+      "place": "Petit-Cortaillod 19 · 2016 Cortaillod",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/caveau-de-degustation-des-vins-de-cortaillod/",
+      "source": "Neuchâtel Vins et Terroir",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/06/Cortaillod-1-1024x767.jpg",
+        "width": 1024,
+        "height": 767,
+        "fit": "cover",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/caveau-de-degustation-des-vins-de-cortaillod/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      }
+    },
+    {
+      "id": "caveau-de-degustation-des-vins-de-boudry",
+      "title": "Caveau de dégustation des vins de Boudry",
+      "start": "2026-06-05",
+      "end": "2026-10-31",
+      "place": "Ruelle du Château · 2017 Boudry",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/caveau-de-degustation-des-vins-de-boudry/",
+      "source": "Neuchâtel Vins et Terroir",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/06/Boudry-3.png",
+        "width": 643,
+        "height": 745,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/caveau-de-degustation-des-vins-de-boudry/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      }
+    },
+    {
+      "id": "marche-du-terroir",
+      "title": "Marché du terroir",
+      "start": "2026-10-24",
+      "end": "2026-10-25",
+      "place": "Mycorama Cernier",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/marche-du-terroir/",
+      "source": "Neuchâtel Vins et Terroir",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2025/07/VinTerroir_Mycorama-23-2-1024x683.jpg",
+        "width": 1024,
+        "height": 683,
+        "fit": "cover",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/marche-du-terroir/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      }
+    },
+    {
+      "id": "le-marche-de-neuchatel",
+      "title": "Marché de Neuchâtel",
+      "start": "2026-05-02",
+      "end": "2026-12-19",
+      "place": "Neuchâtel",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/le-marche-de-neuchatel/",
+      "source": "Neuchâtel Vins et Terroir",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2025/07/Marche-de-Neuchatel-une-journee-au-marche-en-ete-2023-43-8fbfd9a1-1024x637.webp",
+        "width": 1024,
+        "height": 637,
+        "fit": "cover",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/le-marche-de-neuchatel/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      }
+    }
+  ],
+  "updatedAt": "2026-10-07T10:49:59.405Z",
+  "source": "https://neuchatel-vins-terroir.ch/evenement/"
+}

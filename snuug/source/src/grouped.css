@@ -1,0 +1,57 @@
+.page-sections{display:flex;flex-wrap:wrap;gap:0 35px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:50px}
+.page-sections>a{display:flex;align-items:center;justify-content:space-between;gap:25px;min-height:64px;font-size:12px}
+.page-sections .arrow{width:16px;height:16px}
+.grouped-concept{padding-top:65px;padding-bottom:40px}
+.grouped-folds{padding-top:30px;padding-bottom:30px}
+.editorial-fold{border-top:1px solid var(--line);scroll-margin-top:105px}
+.editorial-fold:last-child{border-bottom:1px solid var(--line)}
+.editorial-fold>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:30px;padding:32px 0;cursor:pointer}
+.editorial-fold>summary::-webkit-details-marker{display:none}
+.editorial-fold>summary h2{font-size:clamp(30px,3.7vw,50px);line-height:1.13;margin-top:15px}
+.editorial-fold>summary>svg{flex-shrink:0;transition:transform .2s}
+.editorial-fold[open]>summary>svg{transform:rotate(45deg)}
+.editorial-fold>summary:focus-visible,.experience-itinerary>summary:focus-visible{outline:2px solid var(--olive);outline-offset:5px}
+.fold-body{padding:15px 0 45px}
+.fold-body .page-container{padding-left:0;padding-right:0}
+.fold-body .soft-panel{padding-left:5%;padding-right:5%;margin:20px 0}
+.fold-body .content-split:first-child,.fold-body .stay-timeline{padding-top:15px}
+.fold-body .content-wide-photo{display:none}
+.fold-intro{max-width:720px;margin-bottom:35px;color:var(--muted);font-size:14px}
+.grouped-reading{display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:center}
+.grouped-reading>.image{height:450px}
+.grouped-reading p{font-size:14px;line-height:1.9;margin:0 0 18px}
+.grouped-reading .serif-lead{font-size:30px;line-height:1.25;color:var(--ink)}
+.grouped-heading{padding-top:55px;padding-bottom:40px}
+.grouped-heading h2,.grouped-region h2{font-size:clamp(42px,5.3vw,76px);line-height:1.07;margin-top:24px}
+.grouped-experience{display:grid;grid-template-columns:1fr 1fr;gap:9%;align-items:center;padding:25px 0 85px;scroll-margin-top:100px}
+.grouped-experience.reverse .grouped-experience-photo{order:2}
+.grouped-experience-photo{position:relative;min-width:0}
+.grouped-experience-photo>.image{height:620px;max-height:85svh}
+.grouped-experience-photo>span{position:absolute;bottom:22px;left:22px;right:22px;color:white;font-size:10px;text-shadow:0 1px 8px #000}
+.grouped-experience-copy>.eyebrow{font-size:9px;line-height:1.8}
+.grouped-experience-copy h2{font-size:clamp(44px,5.3vw,76px);white-space:pre-line;line-height:1.02;margin:27px 0}
+.grouped-experience-copy p{font-size:13px;line-height:1.85;color:var(--muted);margin-bottom:17px}
+.grouped-experience-copy .experience-lead{font-size:15px;color:var(--ink)}
+.experience-itinerary{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:26px}
+.experience-itinerary summary{display:flex;align-items:center;justify-content:space-between;gap:20px;list-style:none;min-height:58px;font-size:12px;cursor:pointer}
+.experience-itinerary summary::-webkit-details-marker{display:none}
+.experience-itinerary article{padding:20px 0;border-top:1px solid var(--line)}
+.experience-itinerary h3{font-size:28px;line-height:1.15;margin:12px 0}
+.experience-itinerary .fineprint{font-size:10px}
+.grouped-region{margin-top:55px;padding-top:60px;padding-bottom:60px;background:var(--soft)}
+.grouped-contact{padding-top:20px}
+.grouped-contact .contact-layout{padding-bottom:30px}
+.grouped-privacy{border-top:1px solid var(--line);scroll-margin-top:100px}
+.grouped-privacy .legal-page{padding-top:60px}
+.grouped-privacy h2.privacy-title{font-size:clamp(42px,5vw,70px);margin:25px 0 40px}
+#suite,#concept,#equipements,#questions,#contact,#inspirations,#alentours,#vignes,#nature{scroll-margin-top:105px}
+.stay-story .activities-grid{grid-template-columns:1fr 1fr}
+.stay-story .activities-grid h3{font-size:30px}
+.reservation-collections{margin-top:60px;padding-top:45px;border-top:1px solid var(--line)}
+.reservation-collections>h2{font-size:clamp(36px,4vw,55px);margin:20px 0 30px}
+.reservation-collections .coming-grid{margin:0;gap:30px}
+.footer-more.compact-footer{display:flex;justify-content:space-between;align-items:center;padding-top:28px;margin-top:25px;gap:25px}
+.compact-footer>div{display:block}.compact-footer .eyebrow{margin-bottom:12px}.compact-footer .social-links{display:flex;flex-direction:row;margin:0}
+@media(max-width:850px){.grouped-experience{gap:6%}.grouped-experience-photo>.image{height:520px}.page-sections{gap:0 22px}.page-sections>a{font-size:11px;gap:16px}.grouped-reading{gap:6%}.grouped-experience-copy h2{font-size:51px}}
+@media(max-width:600px){.page-sections{display:grid;grid-template-columns:1fr 1fr;gap:0 20px;margin-bottom:30px}.page-sections>a{min-height:56px;font-size:11px;gap:10px;line-height:1.4}.page-sections .arrow{width:14px}.grouped-concept{padding-top:45px;padding-bottom:15px}.grouped-experience{display:block;padding-bottom:50px;scroll-margin-top:86px}.grouped-experience-photo>.image{height:430px;max-height:65svh}.grouped-experience-copy{padding-top:28px}.grouped-experience-copy h2{font-size:48px;margin:22px 0}.grouped-experience-copy p{font-size:13px}.grouped-experience-copy .experience-lead{font-size:14px}.grouped-experience-copy>.eyebrow{font-size:8px}.grouped-folds{padding-top:10px;padding-bottom:15px}.editorial-fold>summary{padding:27px 0;gap:20px}.editorial-fold>summary h2{font-size:31px}.editorial-fold>summary .eyebrow{font-size:8px;letter-spacing:1px;line-height:1.7}.fold-body{padding-top:5px;padding-bottom:30px}.grouped-reading{display:block}.grouped-reading>.image{height:330px;margin-bottom:27px}.grouped-reading p{font-size:13px}.grouped-reading .serif-lead{font-size:27px}.grouped-heading{padding-top:40px;padding-bottom:30px}.grouped-heading h2,.grouped-region h2{font-size:45px}.grouped-region{margin-top:35px;padding-top:45px;padding-bottom:45px}.grouped-contact{padding-top:10px}.editorial-fold,#concept,#suite,#equipements,#questions,#contact,#inspirations,#alentours,#vignes,#nature{scroll-margin-top:85px}.stay-story .activities-grid{grid-template-columns:1fr}.reservation-collections{margin-top:40px}.footer-more.compact-footer{display:block}.compact-footer .social-links{margin-top:10px}.grouped-privacy .legal-page{padding-top:35px}}
+@media(prefers-reduced-motion:reduce){.editorial-fold>summary>svg{transition:none}}
