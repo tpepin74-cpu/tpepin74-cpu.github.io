@@ -877,6 +877,22 @@ html,body{overflow-x:clip}
   .svc-copy,.svc.rev .svc-copy{padding:36px 20px 56px}
 }
 
+/* Transition entre les pages */
+.pt{position:fixed;inset:0;z-index:300;background:var(--bleu);color:var(--sur-sombre);display:grid;place-items:center;pointer-events:none;clip-path:inset(100% 0 0 0);visibility:hidden}
+.pt.in,.pt.hold{visibility:visible;clip-path:inset(0 0 0 0)}
+.pt.in{transition:clip-path .6s cubic-bezier(.77,0,.175,1)}
+.pt.out{visibility:visible;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.77,0,.175,1) .1s}
+.pt-in{display:grid;justify-items:center;gap:18px;text-align:center;padding:0 24px}
+.pt-in small{display:flex;align-items:center;gap:14px;font-size:11px;letter-spacing:.42em;text-transform:uppercase;opacity:.75}
+.pt-in small .sep{width:16px;height:16px;color:var(--laiton-clair)}
+.pt-in b{font-family:var(--f-display);font-weight:560;font-size:clamp(52px,10vw,170px);line-height:.95;letter-spacing:-.015em;color:var(--sur-sombre)}
+.pt.in .pt-in b{animation:pt-word .7s cubic-bezier(.23,1,.32,1) .18s both}
+.pt.in .pt-in small{animation:pt-word .6s cubic-bezier(.23,1,.32,1) .1s both}
+.pt.out .pt-in{transition:opacity .35s ease,transform .5s cubic-bezier(.23,1,.32,1);opacity:0;transform:translateY(-18px)}
+@keyframes pt-word{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.pt.epure-bg::before{opacity:.05}
+@media (prefers-reduced-motion:reduce){.pt{display:none}}
+
 .hero-video .pane video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .vid-toggle{background:none;border:0;color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
 .chat-dialog{z-index:80}
@@ -902,7 +918,9 @@ body[data-page="contact"] .launch,body[data-page="contact"] .chat-teaser{display
 .launch.min .launch-min{opacity:0;pointer-events:none}
 .launch .chat-launch .txt,.launch .chat-launch .go{transition:opacity .25s ease}
 @media (max-width:640px){.launch{display:none}}
-.nav a{font-size:12.5px;letter-spacing:.2em}
+.nav a{font-size:12.5px;letter-spacing:.2em;white-space:nowrap}
+@media (max-width:1500px){.nav{gap:clamp(14px,1.5vw,26px)}.nav a{font-size:11.5px;letter-spacing:.14em}}
+.head-actions .btn{white-space:nowrap}
 @media (min-width:901px){.menu-cols a{font-size:clamp(30px,2.6vw,44px)}.menu-cols a small{font-size:12.5px}.menu-cols h4{font-size:13px}.menu .bottom .wrap{font-size:12.5px}}
 .wordmark .wl{display:inline-block}
 .wm-ready .wordmark .wl{opacity:0;transform:translateY(.12em)}

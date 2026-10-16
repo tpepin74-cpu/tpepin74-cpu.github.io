@@ -204,7 +204,22 @@ function initAvis(root) {
   if (reduce) { paused = true; pb.setAttribute('aria-pressed', 'true'); }
   arm();
 }
+const PT = window.LISI_PT || {};
+function ptShow(label, cb) {
+  const o = document.getElementById('pt');
+  if (!o || reduce) { cb(); return; }
+  o.querySelector('b').textContent = label; o.classList.remove('out', 'hold'); void o.offsetWidth; o.classList.add('in');
+  setTimeout(cb, 620);
+}
+function ptHide() {
+  const o = document.getElementById('pt'); if (!o) return;
+  if (!o.classList.contains('in') && !o.classList.contains('hold')) return;
+  requestAnimationFrame(() => { o.classList.add('out'); setTimeout(() => o.classList.remove('in', 'hold', 'out'), 900); });
+}
+addEventListener('pageshow', e => { if (e.persisted) { const o = document.getElementById('pt'); if (o) o.classList.remove('in', 'hold', 'out'); } });
 function route() {
+  try { sessionStorage.removeItem('lisiPT'); } catch (e) {}
+  setTimeout(ptHide, 120);
   if (window.LISI_STATIC) { const key = document.body.dataset.page; current = { key, anchor: '' }; initPage(key); const h = location.hash.slice(1); const t = h && document.getElementById(h); if (t) requestAnimationFrame(() => t.scrollIntoView()); return; }
   const r = parseHash(); render(r.key, r.anchor);
 }
@@ -226,10 +241,18 @@ document.addEventListener('click', e => {
   if (href === '#') { e.preventDefault(); return; }
   if (href.startsWith('#') && !href.startsWith('#p-')) { e.preventDefault(); document.getElementById(href.slice(1))?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); return; }
   const m = href.match(/^([a-z]+)\.html(?:\?[^#]*)?(?:#([\w-]+))?$/);
+  if (window.LISI_STATIC && m && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey && a.target !== '_blank') {
+    if (m[1] === document.body.dataset.page && m[2]) return;
+    e.preventDefault(); a.closest('dialog')?.close();
+    const label = PT[m[1]] || a.textContent.trim();
+    try { sessionStorage.setItem('lisiPT', label); } catch (err) {}
+    ptShow(label, () => { location.href = href; });
+    return;
+  }
   if (!m || !PAGES[m[1]] || window.LISI_STATIC) { a.closest('dialog')?.close(); return; }
   e.preventDefault(); a.closest('dialog')?.close();
   if (current.key === m[1] && m[2] && document.getElementById(m[2])) { document.getElementById(m[2]).scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); return; }
-  go(m[1], m[2] || '');
+  ptShow(PT[m[1]] || a.textContent.trim(), () => { go(m[1], m[2] || ''); ptHide(); });
 });
 function a11yClose(el) { const d = el.closest('dialog'); if (d && d.id !== 'chat-dialog') d.close(); }
 
