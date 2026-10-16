@@ -235,6 +235,8 @@ function a11yClose(el) { const d = el.closest('dialog'); if (d && d.id !== 'chat
 
 /* ───────── Assistante Lisi ───────── */
 const IC = {
+  parler: '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M7 9h20v14H15l-6 5v-5H7z"/><path d="M27 15h6v13h-2v4l-5-4h-9v-5"/><path d="M12 14h10M12 18h7"/></svg>',
+  mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="13" rx="1"/><path d="m4 6.5 8 6.5 8-6.5"/></svg>',
   interieur: '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 6h20v8H8zM28 10h4v8H18v4"/><path d="M16 22h4v12h-4z"/></svg>',
   renovation: '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 18 20 6l14 12M10 15v19h20V15"/><path d="M10 28h20M14 34l4-6M20 34l4-6M26 34l4-6"/></svg>',
   facade: '<svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 34h28M9 34V14l11-8 11 8v20"/><path d="M14 18h4v5h-4zM22 18h4v5h-4zM17 34v-7h6v7"/></svg>',
@@ -256,18 +258,21 @@ const BESOINS = [
   ['interieur', 'Peinture intérieure', 'Murs / plafonds'],
   ['renovation', 'Rénovation complète', 'Peinture + sols'],
   ['facade', 'Peinture extérieure', 'Façade'],
-  ['autre', 'Autre projet', 'Rafraîchissement']
+  ['autre', 'Autre projet', 'Rafraîchissement'],
+  ['nsp', 'Je ne sais pas encore', 'J’aimerais en parler directement avec David']
 ];
 const SURF = [
   ['piece', 'Une pièce / studio', 'env. 20 à 30 m²'],
   ['appart', 'Appartement 2-3 pièces', 'env. 50 à 80 m²'],
   ['maison', 'Maison ou grand espace', 'plus de 100 m²'],
-  ['exact', 'Mes m² exacts', 'je préfère préciser']
+  ['exact', 'Mes m² exacts', 'je préfère préciser'],
+  ['nsp', 'Je ne suis pas sûr(e)', 'Nous mesurerons ensemble sur place']
 ];
 const ETATS = [
   ['bon', 'Bon état', 'Juste un coup de frais / nouvelle couleur'],
   ['moyen', 'État moyen', 'Quelques trous, fissures légères, papier à enlever'],
-  ['mauvais', 'Mauvais état', 'Murs abîmés, gros rebouchage ou enduit']
+  ['mauvais', 'Mauvais état', 'Murs abîmés, gros rebouchage ou enduit'],
+  ['nsp', 'Difficile à dire', 'David jugera lors de la visite']
 ];
 const fmt = n => n.toLocaleString('fr-FR').replace(/ | /g, ' ') + ' €';
 
@@ -279,6 +284,7 @@ class Chat {
 <button type="button" class="c-reset" aria-label="Recommencer l’estimation" title="Recommencer">${IC.reset}</button><a href="#" data-tel aria-label="Appeler l’atelier" title="Appeler l’atelier">${IC.tel}</a>${opt.inline ? '' : `<button type="button" class="c-close" aria-label="Fermer l’assistante">${IC.x}</button>`}</div>
 <div class="chat-progress" aria-hidden="true"><i></i></div>
 <div class="chat-log" role="log" aria-live="polite"></div><div class="chat-err" role="alert"></div><div class="chat-input" hidden></div>
+<div class="chat-quick"><a href="tel:+33632735038" data-tel class="q-tel">${IC.tel}<span><small>Appeler David</small>06 32 73 50 38</span></a>${opt.inline ? `<a href="mailto:david.lisi.38@hotmail.fr" class="q-contact">${IC.mail}<span><small>Écrire</small>Par e-mail</span></a>` : `<a href="contact.html" class="q-contact">${IC.mail}<span><small>Contact</small>Formulaire & coordonnées</span></a>`}</div>
 <p class="chat-foot">Estimation indicative, sans engagement. Aperçu : aucune donnée n’est transmise.</p>`;
     this.log = $('.chat-log', host); this.inp = $('.chat-input', host); this.err = $('.chat-err', host);
     $('.c-reset', host).onclick = () => this.start(this.preset || '');
@@ -295,7 +301,7 @@ class Chat {
   choices(list, one = false) {
     return new Promise(res => {
       const g = document.createElement('div'); g.className = 'choices' + (one ? ' one' : ''); g.setAttribute('role', 'group');
-      list.forEach(([k, b, s]) => { const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'choice'; btn.innerHTML = `${IC[k] || ''}<b>${b}</b><small>${s}</small>`; btn.onclick = () => { g.remove(); this.user(b + (s ? ' · ' + s : '')); res(k); }; g.append(btn); });
+      list.forEach(([k, b, s]) => { const btn = document.createElement('button'); btn.type = 'button'; btn.className = 'choice' + (k === 'nsp' ? ' nsp' : ''); btn.innerHTML = `${k === 'nsp' ? IC.parler : (IC[k] || '')}<b>${b}</b><small>${s}</small>`; btn.onclick = () => { g.remove(); this.user(b + (s ? ' · ' + s : '')); res(k); }; g.append(btn); });
       this.log.append(g); this.scroll(); g.querySelector('button')?.focus({ preventScroll: true });
     });
   }
@@ -309,6 +315,29 @@ class Chat {
       $('.send', this.inp).onclick = go; i.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); go(); } };
       const sk = $('.c-skip', this.inp); if (sk) sk.onclick = () => { this.user('Je préfère ne pas le donner'); done(''); };
     });
+  }
+  async direct(d, run, intro) {
+    const alive = () => run === this.run;
+    this.progress(60);
+    await this.say(intro); if (!alive()) return;
+    const call = document.createElement('a'); call.href = 'tel:+33632735038'; call.dataset.tel = ''; call.className = 'callout'; call.innerHTML = `${IC.tel}<span><b>Envie d’en parler tout de suite ? Appelez David</b><br>${LISI.telAffiche}</span>`; this.log.append(call); this.scroll();
+    await this.say('Sinon, laissez-moi vos coordonnées : il vous rappelle pour en discuter. Comment vous appelez-vous ?'); if (!alive()) return;
+    d.prenom = await this.ask({ placeholder: 'Votre prénom', autocomplete: 'given-name', validate: v => v.length >= 2 ? '' : 'Indiquez votre prénom pour continuer.' }); if (!alive()) return;
+    const p = d.prenom.replace(/[<>&"]/g, '');
+    this.progress(75);
+    await this.say(`Merci, ${p} ! À quel numéro David peut-il vous joindre ?`); if (!alive()) return;
+    d.tel = await this.ask({ type: 'tel', placeholder: '06 12 34 56 78', autocomplete: 'tel', inputmode: 'tel', validate: v => /^[+\d][\d\s.-]{7,}$/.test(v) ? '' : 'Ce numéro semble incomplet.' }); if (!alive()) return;
+    this.progress(90);
+    await this.say('Et votre e-mail, pour garder une trace de l’échange ? (facultatif)'); if (!alive()) return;
+    d.email = await this.ask({ type: 'email', placeholder: 'vous@exemple.fr', optional: true, autocomplete: 'email', validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? '' : 'Cette adresse e-mail semble incomplète.' }); if (!alive()) return;
+    const b = BESOINS.find(x => x[0] === d.besoin);
+    await LISI.envoyer({ ...d, besoin: b && d.besoin !== 'nsp' ? b[1] : 'À définir ensemble', rappel: true });
+    this.progress(100);
+    await this.say('C’est noté ! 🙌 David vous rappelle très vite pour échanger sur votre projet.'); if (!alive()) return;
+    const rc = document.createElement('div'); rc.className = 'recap';
+    [['Projet', b && d.besoin !== 'nsp' ? b.slice(1).join(' · ') : 'À définir ensemble'], ['Demande', 'Être rappelé(e) par David'], ['Prénom', p], ['Téléphone', d.tel], ['E-mail', d.email || 'Non communiqué']]
+      .forEach(([a, v]) => { const r = document.createElement('div'); const x = document.createElement('span'); x.textContent = a; const y = document.createElement('span'); y.textContent = v; r.append(x, y); rc.append(r); });
+    this.log.append(rc); this.scroll();
   }
   uid() { this._u = Math.random().toString(36).slice(2, 8); return this._u; }
   estimate(d) {
@@ -324,9 +353,11 @@ class Chat {
     await this.say('Bonjour ! 👋 Vous avez un projet de peinture ou de rénovation en tête ? Dites-moi tout, on l’estime ensemble en 1 minute chrono.'); if (!alive()) return;
     if (preset && LISI.tarifs[preset]) { const b = BESOINS.find(x => x[0] === preset); this.user(b[1] + ' · ' + b[2]); d.besoin = preset; }
     else { d.besoin = await this.choices(BESOINS); } if (!alive()) return;
+    if (d.besoin === 'nsp') return this.direct(d, run, 'Aucun souci, c’est souvent plus simple de vive voix ! David fera le point avec vous sur votre projet.');
     this.progress(30);
     await this.say('Super projet ! Pour vous donner une fourchette de prix réaliste, quelle est la surface environ ?'); if (!alive()) return;
     const s = await this.choices(SURF); if (!alive()) return;
+    if (s === 'nsp') return this.direct(d, run, 'Pas de problème ! La visite technique est gratuite : David prendra les mesures sur place et vous remettra un devis précis.');
     if (s === 'exact') {
       await this.say('Parfait, indiquez-moi la surface en m².');
       const v = await this.ask({ type: 'text', placeholder: 'Ex. 45', inputmode: 'numeric', validate: v => { const n = parseFloat(v.replace(',', '.')); return n >= 5 && n <= 3000 ? '' : 'Indiquez une surface entre 5 et 3 000 m².'; } });
@@ -335,6 +366,7 @@ class Chat {
     if (!alive()) return; this.progress(55);
     await this.say('Dernière petite question pour affiner : dans quel état sont les murs actuellement ?'); if (!alive()) return;
     d.etat = await this.choices(ETATS, true); if (!alive()) return;
+    if (d.etat === 'nsp') { d.etat = 'moyen'; d.etatInconnu = true; await this.say('Je pars sur un état moyen pour l’estimation, David affinera sur place.'); if (!alive()) return; }
     this.progress(75);
     const ld = document.createElement('div'); ld.className = 'loading'; ld.innerHTML = `<span class="lt" data-lt="sceau"><span class="lt-static">${SEAL}</span></span><div style="flex:1">Analyse de votre projet en cours…<div class="bar"><i></i></div></div>`; this.log.append(ld); this.scroll(); playLt($('.lt', ld));
     await this.wait(1500); ld.remove(); if (!alive()) return;
@@ -353,11 +385,11 @@ class Chat {
     this.progress(95);
     await this.say('Et votre numéro de téléphone, si notre chef de chantier souhaite vous appeler pour valider les détails (zéro spam, promis) ?'); if (!alive()) return;
     d.tel = await this.ask({ type: 'tel', placeholder: '06 12 34 56 78', optional: true, autocomplete: 'tel', inputmode: 'tel', validate: v => /^[+\d][\d\s.-]{7,}$/.test(v) ? '' : 'Ce numéro semble incomplet.' }); if (!alive()) return;
-    await LISI.envoyer({ ...d, besoin: BESOINS.find(x => x[0] === d.besoin)[1], etat: ETATS.find(x => x[0] === d.etat)[1] });
+    await LISI.envoyer({ ...d, besoin: BESOINS.find(x => x[0] === d.besoin)[1], etat: d.etatInconnu ? 'À évaluer sur place' : ETATS.find(x => x[0] === d.etat)[1] });
     this.progress(100);
     await this.say('C’est tout bon ! 🎉 Votre dossier est transmis à notre équipe technique, on vous recontacte sous 24 h ouvrées et vous souhaite une excellente journée !'); if (!alive()) return;
     const rc = document.createElement('div'); rc.className = 'recap';
-    const rows = [['Projet', BESOINS.find(x => x[0] === d.besoin).slice(1).join(' · ')], ['Surface', d.surface], ['État des murs', ETATS.find(x => x[0] === d.etat)[1]], ['Estimation', d.fourchette], ['Prénom', p], ['E-mail', d.email], ['Téléphone', d.tel || 'Non communiqué']];
+    const rows = [['Projet', BESOINS.find(x => x[0] === d.besoin).slice(1).join(' · ')], ['Surface', d.surface], ['État des murs', d.etatInconnu ? 'À évaluer sur place' : ETATS.find(x => x[0] === d.etat)[1]], ['Estimation', d.fourchette], ['Prénom', p], ['E-mail', d.email], ['Téléphone', d.tel || 'Non communiqué']];
     rows.forEach(([a, b]) => { const r = document.createElement('div'); const x = document.createElement('span'); x.textContent = a; const y = document.createElement('span'); y.textContent = b; r.append(x, y); rc.append(r); });
     this.log.append(rc);
     const n = document.createElement('div'); n.className = 'msg note'; n.textContent = 'Version de présentation : le dossier sera réellement transmis une fois l’assistante branchée à la messagerie de l’atelier.'; this.log.append(n);
