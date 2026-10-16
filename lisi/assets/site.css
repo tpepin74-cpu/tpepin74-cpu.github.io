@@ -853,6 +853,30 @@ html,body{overflow-x:clip}
 .hero-video .cover-copy{padding-bottom:clamp(56px,6.5vw,100px)}
 @media (max-width:600px){.hero-kick{font-size:13px;letter-spacing:.18em;gap:8px}.hero-kick b{padding:.5em .8em}.hero-kick .sep{width:18px;height:18px}}
 
+/* Accueil : deux métiers en vis-à-vis */
+.svc-intro{padding-bottom:clamp(20px,3vw,40px)}
+.svc-intro .wrap{display:grid;gap:14px}
+.svc{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:stretch;min-height:clamp(560px,78svh,860px);background:var(--chaux)}
+.svc.rev{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.svc.rev .svc-img{order:-1}
+.svc-copy{display:grid;align-content:center;gap:clamp(18px,2vw,28px);padding:clamp(48px,6vw,110px) clamp(28px,4.5vw,90px) clamp(48px,6vw,110px) max(var(--pad),calc((100vw - 1560px)/2 + var(--pad)))}
+.svc.rev .svc-copy{padding-left:clamp(28px,4.5vw,90px);padding-right:max(var(--pad),calc((100vw - 1560px)/2 + var(--pad)))}
+.svc-copy .mega{font-size:clamp(44px,4.6vw,86px);line-height:.98}
+.svc-copy .lede{font-size:clamp(19px,1.45vw,23px);max-width:34ch}
+.svc-n{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--laiton);font-weight:500}
+.svc-list{list-style:none;margin:0;padding:0;display:grid;border-top:1px solid var(--filet);max-width:440px}
+.svc-list li{padding:12px 0;border-bottom:1px solid var(--filet);font-size:15px;display:flex;gap:12px;align-items:baseline}
+.svc-list li::before{content:"";width:14px;height:1px;background:var(--laiton);flex:none;transform:translateY(-4px)}
+.svc-img{margin:0;position:relative;overflow:hidden;min-height:420px}
+.svc-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+@media (hover:hover){.svc:hover .svc-img img{transform:scale(1.03)}}
+.svc+.svc{border-top:clamp(10px,1.2vw,18px) solid var(--chaux)}
+@media (max-width:900px){
+  .svc,.svc.rev{grid-template-columns:1fr;min-height:0}
+  .svc .svc-img,.svc.rev .svc-img{order:-1;min-height:0;aspect-ratio:4/3}
+  .svc-copy,.svc.rev .svc-copy{padding:36px 20px 56px}
+}
+
 .hero-video .pane video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .vid-toggle{background:none;border:0;color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
 .chat-dialog{z-index:80}
