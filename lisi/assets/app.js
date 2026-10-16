@@ -76,7 +76,7 @@ addEventListener('scroll', onScroll, { passive: true });
 /* ───────── Pages ───────── */
 function setCurrent(page) { $$('a[href]').forEach(a => { const p = a.getAttribute('href').split(/[?#]/)[0]; if (p === page + '.html') a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); }); }
 function initPage(page) {
-  hydrate(main); initLottie(document); setCurrent(page); onScroll();
+  hydrate(main); initLottie(document); setCurrent(page); onScroll(); initAvis(main);
   // galerie
   $$('.filter').forEach(b => b.addEventListener('click', () => { const k = b.dataset.filter; $$('.filter').forEach(x => x.setAttribute('aria-pressed', String(x === b))); let n = 0; $$('.g-item').forEach(c => { c.hidden = k !== 'all' && c.dataset.kind !== k; if (!c.hidden) n++; }); $('#filter-status').textContent = n + ' images affichées.'; }));
   $$('.g-open').forEach(b => b.addEventListener('click', () => { const d = $('#lightbox'); $('#lb-img').src = IMG[b.dataset.img] || ''; $('#lb-img').alt = b.dataset.title; $('#lb-cap').textContent = b.dataset.title + ' · ' + b.dataset.caption; d.showModal(); }));
@@ -188,6 +188,21 @@ function initConfig() {
     await LISI.envoyer({ type: 'devis-atmosphere', nom, email: mail, tel, description: desc, ...cfgState() });
     form.hidden = true; $('#devis-ok').hidden = false;
   });
+}
+function initAvis(root) {
+  const rot = $('.avis-rot', root); if (!rot) return;
+  const slides = $$('.avis-slide', rot), dots = $$('.avis-dot', rot), pb = $('.avis-pause', rot);
+  if (slides.length < 2) { if (pb) pb.hidden = true; return; }
+  const D = 6500; rot.style.setProperty('--avis-d', D + 'ms');
+  let i = 0, t = 0, paused = false, hover = false;
+  const show = n => { i = (n + slides.length) % slides.length; slides.forEach((s, k) => s.hidden = k !== i); dots.forEach((d, k) => k === i ? d.setAttribute('aria-current', 'true') : d.removeAttribute('aria-current')); arm(); };
+  const arm = () => { clearTimeout(t); rot.classList.remove('run'); void rot.offsetWidth; if (paused || hover || reduce) return; rot.classList.add('run'); t = setTimeout(() => show(i + 1), D); };
+  dots.forEach((d, k) => d.addEventListener('click', () => show(k)));
+  pb.addEventListener('click', () => { paused = !paused; pb.setAttribute('aria-pressed', paused); pb.setAttribute('aria-label', paused ? 'Reprendre le défilement des avis' : 'Mettre en pause le défilement des avis'); arm(); });
+  rot.addEventListener('pointerenter', () => { hover = true; arm(); }); rot.addEventListener('pointerleave', () => { hover = false; arm(); });
+  rot.addEventListener('focusin', () => { hover = true; arm(); }); rot.addEventListener('focusout', () => { hover = false; arm(); });
+  if (reduce) { paused = true; pb.setAttribute('aria-pressed', 'true'); }
+  arm();
 }
 function route() {
   if (window.LISI_STATIC) { const key = document.body.dataset.page; current = { key, anchor: '' }; initPage(key); const h = location.hash.slice(1); const t = h && document.getElementById(h); if (t) requestAnimationFrame(() => t.scrollIntoView()); return; }

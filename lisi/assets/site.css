@@ -787,6 +787,38 @@ main{position:relative}
 .avis-card figcaption span{opacity:.6}
 .avis-vide p{margin:0;font-family:var(--f-display);font-size:clamp(20px,1.8vw,26px);line-height:1.35}
 
+/* Avis : rotation */
+.avis-rot{position:relative;display:grid;border:1px solid var(--filet);padding:clamp(28px,4vw,52px);min-height:clamp(300px,30vw,380px);align-content:space-between;gap:28px;overflow:hidden}
+.avis-slide{grid-area:1/1;margin:0;display:grid;gap:20px;align-content:start;transition:opacity .6s var(--ease),transform .6s var(--ease),filter .6s var(--ease)}
+.avis-slide[hidden]{display:grid;visibility:hidden;opacity:0;transform:translateY(10px);filter:blur(3px)}
+.avis-slide blockquote{margin:0;font-family:var(--f-display);font-size:clamp(21px,1.9vw,29px);line-height:1.38;text-wrap:pretty}
+.avis-slide figcaption{font-size:12px;letter-spacing:.2em;text-transform:uppercase;display:grid;gap:6px}
+.avis-slide figcaption span{display:inline-flex;align-items:center;gap:8px;opacity:.6;letter-spacing:.16em}.avis-slide figcaption .g{width:13px;height:13px}
+.avis-ctrl{grid-area:2/1;display:flex;justify-content:space-between;align-items:center}
+.avis-dots{display:flex;gap:10px}
+.avis-dot{width:26px;height:26px;padding:0;border:0;background:none;cursor:pointer;position:relative}
+.avis-dot::before{content:"";position:absolute;left:4px;right:4px;top:50%;height:1px;background:currentColor;opacity:.3;transition:opacity .2s ease}
+.avis-dot[aria-current]::before{opacity:1;background:var(--laiton);height:2px}
+.avis-pause{width:34px;height:34px;border:1px solid var(--filet);border-radius:50%;background:none;cursor:pointer;display:grid;place-items:center;color:inherit;transition:transform .16s var(--ease)}
+.avis-pause:active{transform:scale(.95)}
+.avis-pause i{width:8px;height:10px;border-left:2px solid currentColor;border-right:2px solid currentColor}
+.avis-pause[aria-pressed="true"] i{border:0;width:0;height:0;border-left:9px solid currentColor;border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:3px}
+.avis-bar{position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--laiton);transform-origin:0 50%;transform:scaleX(0)}
+.avis-rot.run .avis-bar{animation:avis-bar var(--avis-d,6.5s) linear forwards}
+.avis-rot.paused .avis-bar{animation-play-state:paused}
+@keyframes avis-bar{to{transform:scaleX(1)}}
+
+/* Logo du header : animation en boucle, discrète */
+.brand .wm .lg:first-child .lg-svg path[stroke]{stroke-dasharray:6000;animation:wm-ticks 9s var(--ease) infinite}
+@keyframes wm-ticks{0%,8%{stroke-dashoffset:6000}26%,88%{stroke-dashoffset:0}100%{stroke-dashoffset:-6000}}
+.brand .wm .lg:last-child .lg-svg path[stroke]{stroke-dasharray:340;animation:wm-plumb 9s var(--ease) infinite}
+@keyframes wm-plumb{0%,14%{stroke-dashoffset:340}28%,90%{stroke-dashoffset:0}100%{stroke-dashoffset:340}}
+.brand .wm .lg:last-child .lg-svg path[fill="currentColor"]:last-child{transform-box:fill-box;transform-origin:50% 0;animation:wm-bob 9s ease-in-out infinite}
+@keyframes wm-bob{0%,20%{opacity:0;transform:translateY(-40%)}28%{opacity:1;transform:translateY(0) rotate(10deg)}36%{transform:rotate(-7deg)}44%{transform:rotate(4deg)}52%{transform:rotate(-2deg)}60%,88%{opacity:1;transform:none}96%,100%{opacity:0;transform:translateY(-40%)}}
+.brand small .sep{transform-origin:50% 15%;animation:wm-sep 9s var(--ease) infinite}
+@keyframes wm-sep{0%,30%{transform:none}38%{transform:rotate(-24deg)}48%{transform:rotate(14deg)}56%,100%{transform:none}}
+@media (prefers-reduced-motion:reduce){.brand .wm .lg-svg path,.brand small .sep{animation:none!important}}
+
 .hero-video .pane video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .vid-toggle{background:none;border:0;color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
 .chat-dialog{z-index:80}
