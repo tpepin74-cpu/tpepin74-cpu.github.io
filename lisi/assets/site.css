@@ -767,7 +767,7 @@ main{position:relative}
 .index-list.depts h3{font-size:clamp(22px,1.9vw,30px);white-space:nowrap}
 .index-list.depts li p{margin:0}
 .villes{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 26px}
-.villes a{font-family:var(--display);font-size:clamp(20px,1.8vw,26px);text-decoration:none;color:inherit;border-bottom:1px solid var(--filet);transition:color .2s ease,border-color .2s ease}
+.villes a{font-family:var(--f-display);font-size:clamp(20px,1.8vw,26px);text-decoration:none;color:inherit;border-bottom:1px solid var(--filet);transition:color .2s ease,border-color .2s ease}
 @media (hover:hover){.villes a:hover{color:var(--laiton);border-color:var(--laiton)}}
 .geo-card{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:clamp(24px,5vw,80px);padding-block:clamp(10px,2vw,30px);border-top:1px solid var(--filet)}
 .geo-card h2{grid-row:span 2;font-size:clamp(26px,2.4vw,36px);margin:0}
@@ -777,6 +777,15 @@ main{position:relative}
 .nap{font-style:normal;line-height:1.7}
 .nap a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.22)}
 @media (hover:hover){.nap a:hover{color:var(--laiton-clair)}}
+
+.avis .label{display:inline-flex;align-items:center;gap:10px}.avis .label .g{width:16px;height:16px}
+.avis-grid{display:grid;gap:18px}
+.avis-card,.avis-vide{margin:0;padding:clamp(24px,3vw,38px);border:1px solid var(--filet);display:grid;gap:16px}
+.stars{display:flex;gap:4px;color:var(--laiton)}.stars svg{width:18px;height:18px}
+.avis-card blockquote{margin:0;font-family:var(--f-display);font-size:clamp(19px,1.6vw,24px);line-height:1.4}
+.avis-card figcaption{font-size:12px;letter-spacing:.2em;text-transform:uppercase;display:flex;gap:14px}
+.avis-card figcaption span{opacity:.6}
+.avis-vide p{margin:0;font-family:var(--f-display);font-size:clamp(20px,1.8vw,26px);line-height:1.35}
 
 .hero-video .pane video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .vid-toggle{background:none;border:0;color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
