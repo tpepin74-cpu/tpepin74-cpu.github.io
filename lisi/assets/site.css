@@ -820,6 +820,13 @@ main{position:relative}
 @keyframes wm-sep{0%,30%{transform:none}38%{transform:rotate(-24deg)}48%{transform:rotate(14deg)}56%,100%{transform:none}}
 @media (prefers-reduced-motion:reduce){.brand .wm .lg-svg path,.brand small .sep{animation:none!important}}
 
+.note-g{display:inline-flex;align-items:center;gap:16px;text-decoration:none;color:inherit;justify-self:start}
+.note-g b{font-family:var(--f-display);font-size:clamp(46px,4.4vw,64px);line-height:1;font-weight:560}
+.note-g>span{display:grid;gap:6px}
+.note-g small{font-size:11px;letter-spacing:.22em;text-transform:uppercase;opacity:.75}
+@media (hover:hover){.note-g:hover small{opacity:1;color:var(--laiton)}}
+@media (max-width:600px){.avis-slide blockquote{font-size:19px}}
+
 .hero-video .pane video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .vid-toggle{background:none;border:0;color:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
 .chat-dialog{z-index:80}
