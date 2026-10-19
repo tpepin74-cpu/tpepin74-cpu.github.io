@@ -36,3 +36,15 @@ body{font-family:var(--sans);font-size:var(--type-body);line-height:1.65}p{line-
 #site-shell .collection-chips{gap:8px;flex-wrap:wrap}
 #site-shell .collection-chips button{padding:10px 18px}
 @media(prefers-reduced-motion:reduce){#site-shell :is(.button,.search-submit,.concierge-launch,.collection-chips button){transition:none}}
+
+/* Transparent opening over photography; solid header after the first scroll. */
+#site-shell.immersive-header main{padding-top:0}
+#site-shell.immersive-header .site-header{transition:background-color .3s,color .3s,border-color .3s,backdrop-filter .3s}
+#site-shell.immersive-header .site-header:not(.scrolled){background:transparent;color:#fff;border-bottom-color:transparent;backdrop-filter:none}
+#site-shell.immersive-header .site-header:not(.scrolled) .logo{color:#fff}
+#site-shell.immersive-header .site-header.scrolled{background:#fffffff5;color:#000;border-bottom-color:#00000015;backdrop-filter:blur(14px)}
+#site-shell.immersive-header .landscape-hero,#site-shell.immersive-header .product-hero{height:100svh}
+#site-shell.immersive-header .product-hero-copy{padding-top:clamp(130px,17vh,180px)}
+#site-shell.immersive-header .landscape-title{top:max(130px,17%)}
+@media(max-width:760px){#site-shell.immersive-header .product-hero-copy{padding-top:112px}#site-shell.immersive-header .landscape-title{top:112px}}
+@media(prefers-reduced-motion:reduce){#site-shell.immersive-header .site-header{transition:none}}
