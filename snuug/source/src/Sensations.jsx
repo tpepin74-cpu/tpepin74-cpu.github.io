@@ -1,5 +1,3 @@
 import React from 'react';
-import {Image,Arrow} from './Editorial';
-import {photos} from './data';
-// Native sticky panels follow the document scroll: no wheel interception or render loop.
-export function Sensations(){return <section className="sensations-scroll" aria-label="Les quatre sensations SNUUG">{[['Souffler',photos.forest,'S’évader à deux','amoureux'],['Savourer',photos.tea,'Découvrir les saveurs','vacances'],['Contempler',photos.horizon,'Prendre le temps','deconnexion'],['Explorer',photos.golf,'Vivre les escapades','golf']].map(([verb,src,cta,target],i)=><article className="sensation-panel" key={verb} style={{zIndex:i+1}}><Image src={src} alt=""/><div className="sensation-caption"><span>0{i+1} / 04</span><h2>{verb}</h2><a className="sensation-cta" href={'/snuug/experiences#'+target}>{cta}<Arrow/></a></div></article>)}</section>}
+import {Image} from './Editorial';
+export function Sensations(){return <section className="sensations-scroll" aria-label="Les quatre sensations SNUUG">{[['Souffler','golf-1514','Les sentiers autour du Golf de Neuchâtel'],['Savourer','golf-1574','Le petit-déjeuner sur la terrasse'],['Contempler','noirmont-1982','Le panorama depuis la terrasse du Noirmont'],['Explorer','golf-1540','Le parcours du Golf de Neuchâtel']].map(([verb,photo,alt],i)=><article className="sensation-panel" key={verb} style={{zIndex:i+1}}><Image src={'/images/official/'+photo+'.webp'} alt={alt}/><div className="sensation-caption"><h2>{verb}.</h2></div></article>)}</section>}
