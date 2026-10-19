@@ -1,12 +1,11 @@
 import React,{useEffect,useState} from 'react';
-import {House,MapPin,BedDouble,Sparkles,Leaf,CalendarDays} from 'lucide-react';
+import {House,BedDouble,Sparkles,Leaf,CalendarDays} from 'lucide-react';
 import Dock from './Dock';
 export const siteDockItems=[
  {id:'accueil',label:'Accueil',icon:House,href:'/snuug/'},
  {id:'reserver',label:'Réserver',icon:CalendarDays,href:'/snuug/reservation'},
  {id:'chambres',label:'La suite',icon:BedDouble,href:'/snuug/la-suite'},
  {id:'sensations',label:'Sensations',icon:Leaf,href:'/snuug/experiences'},
- {id:'lieu',label:'Destinations',icon:MapPin,href:'/snuug/reservation'},
  {id:'a-vivre',label:'Expériences',icon:Sparkles,href:'/snuug/experiences'}
 ];
 export default function SiteDock({path}){
@@ -34,6 +33,6 @@ export default function SiteDock({path}){
   if(item.id==='accueil'&&home){window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});return}
   window.location.assign(item.href);
  };
- const pageActive=path.includes('/la-suite')?'chambres':path.includes('/sejours/')?'lieu':path.includes('/reservation')?'reserver':path.includes('/experiences')?'a-vivre':null;
+ const pageActive=path.includes('/la-suite')?'chambres':path.includes('/sejours/')?'reserver':path.includes('/reservation')?'reserver':path.includes('/experiences')?'a-vivre':null;
  return <Dock items={siteDockItems.map(item=>({...item,currentType:home?'location':'page'}))} active={home?active:pageActive} onSelect={select}/>;
 }
