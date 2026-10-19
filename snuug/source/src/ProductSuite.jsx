@@ -1,5 +1,5 @@
-import React,{useState} from 'react';
-import {motion,useReducedMotion} from 'framer-motion';
+import LiquidGallery from './LiquidGallery';
+import React from 'react';
 import {Image,Arrow,Plus,Reveal} from './Editorial';
 import {equipment} from './stays';
 import {SignatureSection} from './Content';
@@ -13,7 +13,6 @@ const views=[
  {label:'La terrasse',image:'golf-1574',title:'Votre pièce à ciel ouvert.',copy:'Cinq mètres carrés pour un petit-déjeuner à deux, un livre ou simplement le paysage.',alt:'Petit-déjeuner sur la terrasse face au Golf de Neuchâtel'}
 ];
 export default function ProductSuite({beforeSuite,afterSuite}){
- const [view,setView]=useState(0),reduced=useReducedMotion();const chosen=views[view];
  return <div className="product-suite">
   <section className="product-hero" aria-label="Découvrir la suite SNUUG">
    <Image eager src="/images/official/golf-1535.webp" alt="Une suite SNUUG et sa terrasse au cœur du Golf de Neuchâtel"/>
@@ -26,11 +25,7 @@ export default function ProductSuite({beforeSuite,afterSuite}){
   <section className="product-panorama" id="interieur"><Image src="/images/official/golf-1997.webp" alt="Vue d’ensemble de l’intérieur d’une suite SNUUG, du salon à la chambre"/><div><span className="eyebrow">Bienvenue à l’intérieur</span><h2>Tout est là.<br/>L’esprit est ailleurs.</h2></div></section>
   <section className="product-explorer" aria-label="Explorer les espaces de la suite">
    <div className="product-section-head"><span className="eyebrow">Une suite, dans les moindres détails</span><h2>Prenez le temps<br/>de faire le tour.</h2></div>
-   <div className="product-tabs" role="tablist" aria-label="Les espaces">{views.map((item,i)=><button key={item.label} id={'space-tab-'+i} role="tab" aria-selected={i===view} aria-controls="space-panel" tabIndex={i===view?0:-1} onClick={()=>setView(i)} onKeyDown={event=>{let next;if(event.key==='ArrowRight')next=(i+1)%views.length;if(event.key==='ArrowLeft')next=(i-1+views.length)%views.length;if(event.key==='Home')next=0;if(event.key==='End')next=views.length-1;if(next!==undefined){event.preventDefault();setView(next);document.getElementById('space-tab-'+next)?.focus()}}}>{item.label}</button>)}</div>
-   <div id="space-panel" role="tabpanel" aria-labelledby={'space-tab-'+view} tabIndex={0}>
-    <div className="product-view-image">{views.map((item,i)=><motion.div key={item.image} className="product-view-frame" aria-hidden={i!==view} initial={false} animate={{opacity:i===view?1:0}} transition={{duration:reduced?0:.45}}><Image src={'/images/official/'+item.image+'.webp'} alt={i===view?item.alt:''}/></motion.div>)}</div>
-    <div className="product-view-caption"><span>0{view+1} / 05</span><h3>{chosen.title}</h3><p>{chosen.copy}</p></div>
-   </div>
+   <LiquidGallery items={views.map(v=>({src:'/images/official/'+v.image+'.webp',alt:v.alt,title:v.label,eyebrow:v.title,text:v.copy,badge:v.label==='La chambre'?'Arrivée dès 15 h':undefined}))} label="Explorer les espaces de la suite"/>
   </section>
   <section id="equipements" className="product-comfort"><div className="product-comfort-photo"><Image src="/images/official/golf-1613.webp" alt="Le café et les petites attentions dans la suite SNUUG"/></div><div className="product-comfort-copy"><span className="eyebrow">Le luxe de n’avoir à penser à rien</span><h2>Discret.<br/>Et pourtant essentiel.</h2><p>Du premier café aux derniers instants de la journée, chaque détail accompagne votre séjour.</p><div className="equipment-disclosures">{equipment.map(([icon,title,copy])=><details key={title}><summary>{title}<Plus/></summary><p>{copy}</p></details>)}</div></div></section>
   <section className="product-materials"><div><span className="eyebrow">Des signatures, une harmonie</span><Reveal><h2>Le design se voit.<br/>Le confort se ressent.</h2></Reveal><p>Le bois, les textiles, les objets que l’on touche chaque jour. Une sélection de maisons qui partagent le goût du détail.</p><div className="product-partners"><span>Ligne Roset</span><span>Garnier-Thiebaut</span><span>Aesop</span><span>Laufen</span><span>Loxone</span></div></div><Image src="/images/official/golf-1592.webp" alt="Le bois et les détails de finition dans la suite SNUUG"/></section>
