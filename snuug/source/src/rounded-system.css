@@ -1,0 +1,35 @@
+/* One shape language across SNUUG. Only edge-to-edge photography stays square. */
+:root{--snuug-radius:24px;--snuug-radius-small:16px;--snuug-pill:999px}
+#site-shell .image{border-radius:var(--snuug-radius);overflow:hidden}
+#site-shell :is(.gallery-main,.gallery-thumbs button,.stay-card-photo,.stay-mosaic,.product-view-image,.stay-moving-photo,.agenda-visual,.address-page-image,.experience-card,.journal-page-card,.app-stay-preview,.activities-grid>a,.pack-grid>article,.news-editorial-grid>article,.stay-card,.results-map,.booking-card,.stay-search,.app-search-summary,.empty-results,.partner-editorial .contact-form,.search-intro,.contact-form>fieldset){border-radius:var(--snuug-radius)}
+#site-shell :is(.gallery-main,.gallery-thumbs button,.stay-card-photo,.stay-mosaic,.product-view-image,.stay-moving-photo,.address-page-image,.experience-card,.results-map){overflow:hidden}
+#site-shell :is(.button,.search-submit,.gallery-expand,.all-photos,.collection-chips button,.stay-actions button,.favourites-filter,.app-view-toggle,.choice-grid>button,.concierge-suggestions button,.search-help,.map-reset,.image-failed button){border-radius:var(--snuug-pill)}
+#site-shell :is(input:not([type=checkbox]):not([type=radio]):not([type=range]),select,textarea){border-radius:var(--snuug-radius-small)}
+#site-shell :is(.contact-form,.gift-layout) :is(input,select,textarea){border:1px solid #cbc3b6;background:#ffffff70;padding:14px 16px;box-sizing:border-box}
+#site-shell .booking-card .dates-fields{border-radius:16px;overflow:hidden}
+#site-shell .booking-guests{border-radius:16px;border-top:1px solid var(--line);margin-top:12px}
+#site-shell .stay-search>label{border-right:0}
+#site-shell .stay-search :is(input,select){padding:8px 12px;background:#efebe550}
+#site-shell .card-specs span{border-radius:999px}
+#site-shell :is(.gallery-thumbs,.stay-lightbox-thumbs) img{border-radius:16px}
+#site-shell .map-reset{width:44px;height:44px;box-shadow:0 4px 16px #00000015}
+#site-shell .leaflet-control-zoom{border-radius:22px;overflow:hidden}
+#site-shell .leaflet-control-zoom a{border-radius:0}
+#site-shell .leaflet-control-zoom a:first-child{border-radius:22px 22px 0 0}
+#site-shell .leaflet-control-zoom a:last-child{border-radius:0 0 22px 22px}
+#site-shell .concierge-question,#site-shell .concierge-answer{border-radius:20px}
+.dialog{border-radius:26px;overflow:auto}
+.dialog :is(input,select,textarea){border-radius:16px}
+.dialog :is(.button,.dialog-close,.concierge-suggestions button,.concierge-bottom form button){border-radius:999px}
+.dialog :is(.concierge-answer,.concierge-question,.concierge-bottom form){border-radius:20px}
+.dialog :is(.stay-lightbox-thumbs button,.stay-lightbox-thumbs img){border-radius:14px}
+/* These photographs touch both viewport edges. No rounded corners. */
+#site-shell :is(.landscape-hero,.landscape-frame,.product-hero,.product-panorama,.product-finale,.editorial-hero,.editorial-hero-photo,.sensation-panel,.home-experience-feature),
+#site-shell :is(.landscape-hero,.product-hero,.product-panorama,.product-finale,.editorial-hero,.sensation-panel,.home-experience-feature) .image,
+#site-shell .refined-experiences .refined-experience>.image{border-radius:0}
+@media(max-width:760px){
+ :root{--snuug-radius:20px;--snuug-radius-small:14px}
+ #site-shell :is(.home-news-feature,.refined-equipment,.design-story,.signature-section,.product-comfort,.gift-layout)>.image,
+ #site-shell .product-comfort-photo>.image{border-radius:0}
+ .app-sheet .dialog{border-radius:26px 26px 0 0}
+}
