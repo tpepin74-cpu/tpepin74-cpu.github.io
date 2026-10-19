@@ -41,3 +41,11 @@ footer{background:#232A1B;color:#fff;padding:65px 6vw 35px}.footer-top p{font-si
 .press-columns{display:grid;grid-template-columns:1fr 1fr;gap:9%;margin:45px 0}.press-columns h3{font-size:21px}.press-facts>div{border-bottom:1px solid #ccc;padding:16px 0}.brand-press>.fineprint{max-width:800px}
 @media(max-width:760px){.sensation-caption{left:6%;bottom:calc(110px + env(safe-area-inset-bottom));display:block}.sensation-caption h2{font-size:clamp(27px,8vw,60px);margin-top:20px}.destination-story,.press-columns{grid-template-columns:1fr;gap:30px}.destination-story{margin:55px 0}.destination-story .image{height:400px}.pack-grid,.news-editorial-grid{grid-template-columns:1fr;gap:24px}.destination-packs{padding:35px 0}.sensation-panel{min-height:480px}}
 @media(prefers-reduced-motion:reduce){.sensation-panel{position:relative;height:80svh}}
+
+/* Keep each sensation and its next step above the mobile controls. */
+.sensation-caption{top:42%;bottom:auto;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.sensation-caption h2{margin:0}
+.sensation-panel:after{pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.42),rgba(0,0,0,.08)),linear-gradient(transparent 70%,rgba(0,0,0,.25))}
+.sensation-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:50px;padding:14px 22px;background:#fff;color:#000;border:1px solid #fff;border-radius:2px;font-size:13px;line-height:1.5;transition:background .2s,color .2s}
+.sensation-cta:hover{background:#EFEBE5;border-color:#EFEBE5}.sensation-cta:focus-visible{outline:3px solid #C5E241;outline-offset:5px}
+@media(max-width:760px){.sensation-caption{top:42%;bottom:auto;gap:18px;left:6%;right:6%}.sensation-caption h2{margin:0}.sensation-cta{font-size:12px;min-height:48px;max-width:100%;padding:13px 18px}}
