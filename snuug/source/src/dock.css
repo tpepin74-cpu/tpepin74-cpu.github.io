@@ -1,0 +1,14 @@
+/* Tailwind utilities only: no Preflight reset on the existing SNUUG site. */
+@layer theme, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) source(none);
+@source "./Dock.jsx";
+:root{--dock-bg:#fff;--dock-accent:#C5E241;--dock-text:#000;--dock-bubble-text:#000;--dock-border:#00000015;--dock-shadow:#00000020;--dock-glow:#C5E24155}
+[data-dock-theme="dark"]{--dock-bg:#151515;--dock-text:#fff;--dock-border:#ffffff22;--dock-shadow:#00000050;--dock-glow:#C5E24138}
+[data-dock-theme="light"]{--dock-bg:#fff;--dock-text:#000;--dock-border:#00000015;--dock-shadow:#00000020;--dock-glow:#C5E24155}
+.liquid-dock{position:fixed;z-index:70;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);width:calc(var(--dock-count,5)*76px + 48px);max-width:calc(100vw - 24px);height:72px;color:var(--dock-text);font-family:Arial,Helvetica,sans-serif;overflow:visible}
+.dock-shape{overflow:visible;filter:drop-shadow(0 8px 16px var(--dock-shadow))}.dock-shape path{fill:var(--dock-bg);stroke:var(--dock-border);stroke-width:1;vector-effect:non-scaling-stroke}.dock-items{padding:0 24px;z-index:3}.dock-item{height:72px;flex:1;min-width:0;border:0;background:transparent;color:var(--dock-text);cursor:pointer;padding:0;touch-action:manipulation;border-radius:16px}.dock-item:focus-visible{outline:2px solid var(--dock-text);outline-offset:-5px}.dock-item>span:first-child{margin-top:-2px}.dock-bubble{border-radius:50%;background:var(--dock-accent);color:var(--dock-bubble-text);box-shadow:0 3px 18px var(--dock-glow);z-index:2;transform-origin:center}.dock-label{top:48px;width:80px;font-size:11px;font-weight:500;line-height:16px;white-space:nowrap;color:var(--dock-text);z-index:4}.dock-active-dot{width:5px;height:5px;border-radius:50%;background:var(--dock-accent);bottom:10px;left:calc(50% - 2.5px)}
+#accueil,#lieu,#chambres,#a-vivre,#reserver{scroll-margin-top:96px}#site-shell footer{padding-bottom:128px}#site-shell .concierge-launch{bottom:calc(112px + env(safe-area-inset-bottom,0px))}#site-shell .concierge-launch:hover{background:#EFEBE5;color:#000}#site-shell .home-suite-chapter .gallery-thumbs button{width:100%}.agenda-date-range time span{font-size:12px}
+@media(max-width:760px){#site-shell footer{padding-bottom:132px}#site-shell .concierge-launch{bottom:calc(112px + env(safe-area-inset-bottom,0px))}.stay-panorama .stay-photo-caption{font-size:12px}.detail-mobile-book{display:none}}
+@media(max-width:420px){.liquid-dock{width:calc(var(--dock-count,5)*52px + 48px);bottom:calc(14px + env(safe-area-inset-bottom,0px))}.dock-label{font-size:10px}.dock-item svg{width:21px;height:21px}#accueil,#lieu,#chambres,#a-vivre,#reserver{scroll-margin-top:84px}}
+@media(prefers-reduced-motion:reduce){.dock-bubble,.dock-item{transition:none}}
