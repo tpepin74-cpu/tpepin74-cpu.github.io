@@ -1,0 +1,99 @@
+/* Shared editorial rhythm. Functional widgets keep their own compact layout. */
+:root{--layout-gutter:clamp(24px,6vw,88px);--layout-width:1480px;--section-space:80px;--block-space:32px;--copy-space:16px;--heading-space:24px;--card-gap:24px}
+.page-container,.page-intro,.brand-section{max-width:var(--layout-width);padding-inline:var(--layout-gutter);margin-inline:auto}
+.page-intro{padding-block:64px 40px}
+.page-intro .eyebrow{margin:0 0 var(--copy-space)}
+.page-intro h1{margin:0}
+.page-intro>p{margin:var(--heading-space) 0 0;max-width:640px}
+.brand-section{padding-block:var(--section-space)}
+.brand-heading{gap:var(--block-space);margin-bottom:var(--block-space)}
+.brand-heading h2,.brand-manifesto h2,.grouped-heading h2,.content-split h2,.suite-concept h2,.suite-equipment h2,.brand-around h2,.brand-updates h2,.brand-press h2,.destination-packs h2{margin:var(--copy-space) 0 0}
+.brand-heading>p{margin:0}
+.brand-manifesto{gap:6vw}
+:is(.brand-manifesto,.brand-destination,.destination-story,.brand-shortcuts,.brand-experience-grid,.pack-grid,.news-editorial-grid,.press-columns,.content-split,.concept-columns,.design-story,.signature-section,.food-story,.regional-feature,.swiss-making,.rse-solutions,.gift-explanation,.legal-page) p{line-height:1.8}
+:is(.brand-manifesto,.brand-destination,.destination-story,.brand-shortcuts,.brand-experience-grid,.pack-grid,.news-editorial-grid,.press-columns,.content-split,.concept-columns,.design-story,.signature-section,.food-story,.regional-feature,.swiss-making,.rse-solutions,.gift-explanation,.legal-page) p+p{margin-top:var(--copy-space)}
+:is(.brand-destination,.destination-story,.brand-shortcuts,.brand-experience-grid,.pack-grid,.news-editorial-grid,.press-columns,.design-story,.signature-section,.food-story,.regional-feature,.swiss-making,.rse-solutions) :is(h2,h3){margin-block:var(--copy-space)}
+:is(.brand-manifesto,.brand-destination,.destination-story,.brand-shortcuts,.brand-experience-grid,.content-split,.design-story,.signature-section,.food-story,.regional-feature) p+:is(.text-button,.button){margin-top:var(--heading-space)}
+:is(.brand-destination,.destination-story) .fineprint{margin-top:var(--copy-space)}
+.brand-manifesto .brand-lead{margin-bottom:var(--copy-space)}
+.brand-suite{padding-top:var(--block-space)}
+.brand-collections,.brand-experiences{margin-top:48px}
+.brand-collections>a{display:flex;flex-direction:column;align-items:flex-start;padding:var(--block-space) var(--heading-space)}
+.brand-collections h3{margin:var(--copy-space) 0 8px}.brand-collections p{margin:0 0 var(--copy-space)}.brand-collections>a>.arrow{margin-top:auto;flex-shrink:0}
+.brand-experiences{gap:var(--card-gap)}
+.brand-experiences>a{display:flex;flex-direction:column;min-width:0}.brand-experiences h3{margin:var(--heading-space) 0 var(--copy-space)}.brand-experiences>a>span{margin-top:auto;min-height:40px}
+.brand-destination>div{padding:40px}.brand-destination h3{margin-top:var(--copy-space)}
+.destination-story{gap:6%;margin-block:var(--section-space)}
+.destination-facts{margin-block:var(--heading-space);padding-block:var(--heading-space);gap:var(--heading-space)}
+.destination-packs{padding-block:48px}
+.pack-grid,.news-editorial-grid{gap:var(--block-space);margin-block:var(--block-space)}
+.pack-grid article,.news-editorial-grid article{padding-top:var(--heading-space);min-width:0}
+.pack-grid h3,.news-editorial-grid h3{font-size:22px!important;line-height:1.35!important;min-height:3.8em}
+.pack-grid .text-button,.press-columns .text-button{margin-block:var(--copy-space);gap:var(--copy-space);max-width:100%}
+.text-button .arrow,.button .arrow,.sensation-cta .arrow{flex-shrink:0}
+.button,.sensation-cta{min-height:52px;padding:14px 24px;border-radius:7px;gap:20px;line-height:1.5}
+.text-button{min-height:44px;align-items:center;line-height:1.5}
+.brand-shortcuts>a{padding-block:64px}.brand-shortcuts h2{margin-block:var(--copy-space)}
+.brand-experience-grid{gap:56px var(--block-space);padding-bottom:var(--section-space)}
+.brand-experience-grid .image{margin-bottom:var(--heading-space)}
+.brand-experience-grid details{margin-block:var(--heading-space)}
+.brand-experience-grid details>p{margin-top:var(--copy-space)}
+.brand-experience-grid article{margin-block:var(--heading-space)}
+.brand-upcoming{margin-top:48px;padding-block:var(--heading-space)}
+.brand-upcoming[open]>p{margin-top:var(--copy-space)}
+.brand-upcoming .text-button{margin-top:var(--copy-space)}
+.suite-concept,.suite-equipment,.content-split,.gift-explanation{padding-block:64px}
+.concept-columns{gap:var(--block-space);margin-block:var(--block-space) 48px}
+.signature-section{margin-top:48px}.signature-section p{color:#333}.signature-section .fineprint{color:#555}
+.signature-section>div:last-child,.design-story>div:last-child{padding:56px clamp(24px,5vw,72px)}
+.signature-section .text-button{display:flex;width:fit-content;margin-top:var(--heading-space);max-width:100%}
+.grouped-heading{padding-block:48px var(--block-space)}
+.grouped-folds{padding-block:var(--block-space)}
+.editorial-fold>summary{padding-block:var(--heading-space);gap:var(--heading-space)}
+.editorial-fold>summary h2{margin:12px 0 0}
+.fold-body{padding-block:var(--heading-space) var(--block-space)}
+.fold-body .content-split{padding-block:var(--block-space)}
+.brand-around,.brand-updates,.brand-press{padding-block:64px}
+.brand-around>p{margin-top:var(--heading-space)}.brand-around>.text-button{margin-top:var(--copy-space)}
+.press-columns{gap:6%;margin-block:var(--block-space)}
+.news-editorial-grid details{margin-top:var(--copy-space)}
+.stay-moments-grid{gap:var(--card-gap)}
+.stay-moment{display:flex;flex-direction:column;min-width:0}.stay-moment-copy{display:flex;flex-direction:column;flex:1;padding-top:var(--heading-space)}
+.stay-moment-copy h3{margin-block:12px var(--copy-space)}.stay-moment-copy p{margin-bottom:var(--copy-space);line-height:1.8}.stay-moment-copy .text-button{margin-top:auto}
+.included-grid h3{font-size:16px!important;line-height:1.5!important;letter-spacing:0!important;margin-bottom:8px}
+.included-grid p{font-size:13px!important}
+.practical-group summary{padding-block:var(--heading-space)}
+.practical-group details p{line-height:1.8;padding-bottom:var(--heading-space)}
+.conditions-list section{padding-block:var(--heading-space)}
+.conditions-list h2{margin:0 0 var(--copy-space)}
+.page-cta{margin-top:48px;padding-block:64px}.page-cta h2{margin:var(--heading-space) 0 var(--block-space)}
+.legal-page{padding-block:64px}.legal-page h1{margin:var(--copy-space) 0 var(--block-space)}
+.page-sections{margin-bottom:var(--block-space)}
+.page-sections>a{line-height:1.5}
+@media(max-width:1000px) and (min-width:761px){.pack-grid,.news-editorial-grid{gap:24px}.pack-grid h3,.news-editorial-grid h3{font-size:19px!important}.brand-experiences{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+ :root{--layout-gutter:22px;--section-space:48px;--block-space:24px;--heading-space:20px;--card-gap:16px}
+ .page-intro{padding-block:40px 32px}.page-intro>p{margin-top:20px}
+ .brand-heading>p,.brand-heading>.text-button{margin-top:20px}
+ .brand-manifesto{gap:24px}.brand-manifesto h2{margin-bottom:0}
+ .brand-collections,.brand-experiences{margin-top:32px}
+ .brand-collections>a,.brand-collections>a:first-child{padding:24px 12px}
+ .brand-destination>div{padding:24px 22px}
+ .destination-story{gap:24px}.destination-packs{padding-block:32px}
+ .pack-grid h3,.news-editorial-grid h3{font-size:21px!important;min-height:0}
+ .brand-shortcuts>a{padding:40px var(--layout-gutter)}
+ .brand-experience-grid{gap:40px;padding-top:8px}
+ .brand-upcoming{margin-top:32px}
+ .suite-concept,.suite-equipment,.content-split,.gift-explanation{padding-block:40px}
+ .concept-columns{margin-block:24px 32px}
+ .signature-section{margin-top:32px}.signature-section>div:last-child,.design-story>div:last-child{padding:32px 22px}
+ .grouped-heading{padding-block:40px 24px}
+ .brand-around,.brand-updates,.brand-press{padding-block:40px}
+ .page-cta{margin-top:32px;padding:40px 22px}.page-cta .button{min-width:0;max-width:100%}
+ .page-sections{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:24px;scrollbar-width:thin}
+ .page-sections>a{flex-shrink:0;min-height:56px;white-space:nowrap}
+ .stay-moment-copy{padding-top:16px}.stay-moment-copy h3{margin-top:12px}
+ .stay-moment-copy .text-button{font-size:12px!important}
+ .legal-page{padding-block:40px}.included-grid{gap:24px 16px}
+ .sensation-caption{gap:20px}.sensation-cta{min-height:50px;padding:14px 20px}
+}
