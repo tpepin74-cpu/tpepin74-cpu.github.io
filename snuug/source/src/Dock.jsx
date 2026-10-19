@@ -18,6 +18,7 @@ export function notchGeometry(width,center,speed=0,compact=false){
 export default function Dock(props){return <MotionConfig reducedMotion="user"><DockSurface {...props}/></MotionConfig>}
 function DockSurface({items,active,onSelect}){
  const reduced=useReducedMotion(),ref=useRef(null),[preview,setPreview]=useState(null);
+ useEffect(()=>setPreview(null),[active]);
  const [layout,setLayout]=useState({width:items.length*76+48,compact:false});
  const activeIndex=Math.max(0,items.findIndex(item=>item.id===active));
  const index=preview===null?activeIndex:Math.min(preview,items.length-1);
