@@ -4,7 +4,7 @@ import React,{useState,useEffect,useRef,useCallback} from 'react';
 import {createPortal} from 'react-dom';
 
 import {motion,AnimatePresence,MotionConfig,useScroll,useTransform,useReducedMotion,useMotionValueEvent} from 'framer-motion';
-import {photos,experiences,gallery,articles,faqs} from './data';
+import {officialPhotos as photos,experiences,gallery,articles,faqs} from './data';
 import {localDate,nextDate,nightsBetween,displayDate,validateStay,emailLink} from './utils';
 
 import ImmersiveHero from './ImmersiveHero';

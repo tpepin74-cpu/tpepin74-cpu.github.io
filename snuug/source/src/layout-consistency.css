@@ -97,3 +97,5 @@
  .legal-page{padding-block:40px}.included-grid{gap:24px 16px}
  .sensation-caption{gap:20px}.sensation-cta{min-height:50px;padding:14px 20px}
 }
+.official-destination-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}.official-destination-gallery .image{height:180px}.official-destination-gallery figcaption{font-size:10px;line-height:1.6;margin-top:8px}.destination-story:has(.official-destination-gallery){align-items:start}
+@media(max-width:760px){.official-destination-gallery{gap:10px}.official-destination-gallery .image{height:140px}}

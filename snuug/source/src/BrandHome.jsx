@@ -4,7 +4,7 @@ import React,{useState} from 'react';
 import {Image,Arrow,Reveal,SuiteGallery,Plus} from './Editorial';
 import ImmersiveHero from './ImmersiveHero';
 import {DateFields} from './Booking';
-import {photos,experiences} from './data';
+import {officialPhotos as photos,experiences} from './data';
 import {validateStay} from './utils';
 import {searchParams} from './stays';
 export function HomeBooking(){const [value,setValue]=useState({arrival:'',departure:'',guests:'2'}),[error,setError]=useState('');return <section className="brand-booking" aria-label="Préparer votre réservation"><div><span className="eyebrow">votre prochaine échappée</span><p>On part quand ?</p></div><form onSubmit={e=>{e.preventDefault();const err=value.arrival||value.departure?validateStay(value.arrival,value.departure,false):'';setError(err);if(!err)window.location.assign('/snuug/reservation'+searchParams(value))}}><DateFields value={value} onChange={setValue}/><label>Voyageurs<select value={value.guests} onChange={e=>setValue({...value,guests:e.target.value})}><option value="2">2 adultes</option><option value="1">1 adulte</option></select></label><button className="button dark" type="submit">Explorer<Arrow/></button>{error&&<p className="search-error" role="alert">{error}</p>}</form></section>}
