@@ -22,17 +22,16 @@ function DockSurface({items,active,onSelect}){
  const activeIndex=Math.max(0,items.findIndex(item=>item.id===active));
  const index=preview===null?activeIndex:Math.min(preview,items.length-1);
  const targetX=24+(layout.width-48)/items.length*(index+.5);
- const target=useMotionValue(targetX),animated=useSpring(target,spring);
- const velocity=useVelocity(animated);
+ const target=useMotionValue(targetX),x=useSpring(target,spring);
+ const velocity=useVelocity(x);
  // A single shared MotionValue drives both the path and the floating bubble.
- const x=useTransform(animated,value=>Math.max(48,Math.min(layout.width-48,value)));
  const path=useTransform([x,velocity],([position,speed])=>notchGeometry(layout.width,position,reduced?0:speed,layout.compact));
  const scaleX=useTransform(velocity,v=>reduced?1:1+Math.min(Math.abs(v)/1400,1)*.28);
  const scaleY=useTransform(velocity,v=>reduced?1:1-Math.min(Math.abs(v)/1400,1)*.14);
  const size=layout.compact?46:50;
- const bubbleLeft=useTransform(x,v=>v-size/2);
- const labelLeft=useTransform(x,v=>v-40);
- useEffect(()=>{if(reduced)animated.jump(targetX);target.set(targetX)},[targetX,reduced,target,animated]);
+ const bubbleLeft=useTransform(x,v=>Math.max(48,Math.min(layout.width-48,v))-size/2);
+ const labelLeft=useTransform(x,v=>Math.max(48,Math.min(layout.width-48,v))-40);
+ useEffect(()=>{if(reduced)x.jump(targetX);target.set(targetX)},[targetX,reduced,target,x]);
  useEffect(()=>{const node=ref.current;if(!node)return;const query=window.matchMedia('(max-width:420px)');const measure=()=>setLayout({width:node.getBoundingClientRect().width,compact:query.matches});measure();const observer=new ResizeObserver(measure);observer.observe(node);query.addEventListener('change',measure);return()=>{observer.disconnect();query.removeEventListener('change',measure)}},[]);
  const chosen=items[index],BubbleIcon=chosen?.icon;
  if(!items.length)return null;
