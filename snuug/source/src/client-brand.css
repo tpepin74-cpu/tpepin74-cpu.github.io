@@ -18,3 +18,4 @@ footer{background:#232A1B;color:#fff;padding:65px 6vw 35px}.footer-top p{font-si
 /* Leave separate touch targets for skipping the immersion and opening the concierge. */
 .immersion-skip{bottom:92px}
 @media(max-width:760px){.immersion-hero .immersion-skip{bottom:calc(var(--app-nav-height,76px) + env(safe-area-inset-bottom) + 72px)}}
+@media(max-width:760px){.search-toolbar{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center}.search-toolbar .collection-chips{grid-column:1/-1;min-width:0;width:100%}.search-toolbar .favourites-filter{width:auto;justify-self:start}.search-toolbar .app-view-toggle{justify-self:end;margin:0}}
