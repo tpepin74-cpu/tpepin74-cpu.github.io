@@ -1,14 +1,15 @@
 import React,{useEffect,useState} from 'react';
-import {House,BedDouble,Sparkles,Leaf,CalendarDays} from 'lucide-react';
+import {House,BedDouble,Sparkles,Leaf,CalendarDays,BellRing} from 'lucide-react';
 import Dock from './Dock';
 export const siteDockItems=[
  {id:'accueil',label:'Accueil',icon:House,href:'/snuug/'},
  {id:'reserver',label:'Réserver',icon:CalendarDays,href:'/snuug/reservation'},
  {id:'chambres',label:'La suite',icon:BedDouble,href:'/snuug/la-suite'},
  {id:'sensations',label:'Sensations',icon:Leaf,href:'/snuug/experiences'},
- {id:'a-vivre',label:'Expériences',icon:Sparkles,href:'/snuug/experiences'}
+ {id:'a-vivre',label:'Expériences',icon:Sparkles,href:'/snuug/experiences'},
+ {id:'concierge',label:'Concierge',icon:BellRing,hasPopup:'dialog'}
 ];
-export default function SiteDock({path}){
+export default function SiteDock({path,onConcierge}){
  const home=path==='/snuug';
  const [active,setActive]=useState('accueil');
  useEffect(()=>{
@@ -30,6 +31,7 @@ export default function SiteDock({path}){
   return()=>{observer.disconnect();resize.disconnect();cancelAnimationFrame(frame);window.removeEventListener('scroll',schedule);window.removeEventListener('resize',schedule);window.removeEventListener('hashchange',schedule);};
  },[home]);
  const select=item=>{
+  if(item.id==='concierge'){onConcierge?.();return}
   if(item.id==='accueil'&&home){window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});return}
   window.location.assign(item.href);
  };
