@@ -5,7 +5,7 @@ export const siteDockItems=[
  {id:'accueil',label:'Accueil',icon:House,href:'/snuug/'},
  {id:'reserver',label:'Réserver',icon:CalendarDays,href:'/snuug/reservation'},
  {id:'chambres',label:'La suite',icon:BedDouble,href:'/snuug/la-suite'},
- {id:'sensations',label:'Activités',icon:Leaf,href:'/snuug/informations/'},
+ {id:'sensations',label:'Séjour',icon:Leaf,href:'/snuug/informations/'},
  {id:'a-vivre',label:'Expériences',icon:Sparkles,href:'/snuug/experiences'},
  {id:'concierge',label:'Concierge',icon:BellRing,hasPopup:'dialog'}
 ];
