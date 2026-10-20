@@ -70,3 +70,5 @@ body{font-size:var(--type-body);line-height:1.65}
 .landscape-frame{overflow:hidden}
 .landscape-motion{position:absolute;inset:0;transform-origin:center;will-change:transform}
 @media(prefers-reduced-motion:reduce){.landscape-motion{will-change:auto;transform:none!important}}
+/* Clean header edge on every route and in both scroll states. */
+#site-shell .site-header,#site-shell .site-header.scrolled{border-bottom:0;box-shadow:none}
