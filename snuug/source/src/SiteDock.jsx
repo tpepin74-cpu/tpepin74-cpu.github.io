@@ -5,7 +5,7 @@ export const siteDockItems=[
  {id:'accueil',label:'Accueil',icon:House,href:'/snuug/'},
  {id:'reserver',label:'Réserver',icon:CalendarDays,href:'/snuug/reservation'},
  {id:'chambres',label:'La suite',icon:BedDouble,href:'/snuug/la-suite'},
- {id:'sensations',label:'Sensations',icon:Leaf,href:'/snuug/#sensations'},
+ {id:'sensations',label:'Activités',icon:Leaf,href:'/snuug/informations/'},
  {id:'a-vivre',label:'Expériences',icon:Sparkles,href:'/snuug/experiences'},
  {id:'concierge',label:'Concierge',icon:BellRing,hasPopup:'dialog'}
 ];
@@ -33,10 +33,9 @@ export default function SiteDock({path,onConcierge}){
  },[home]);
  const select=item=>{
   if(item.id==='concierge'){onConcierge?.();return}
-  if(item.id==='sensations'&&home){document.getElementById('sensations')?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion:reduce), (pointer:coarse)').matches?'instant':'smooth',block:'start'});setActive('sensations');window.history.replaceState(null,'','#sensations');return}
   if(item.id==='accueil'&&home){window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});return}
   window.location.assign(item.href);
  };
- const pageActive=path.includes('/la-suite')?'chambres':path.includes('/sejours/')?'reserver':path.includes('/reservation')?'reserver':path.includes('/experiences')?'a-vivre':null;
+ const pageActive=path.includes('/la-suite')?'chambres':path.includes('/sejours/')?'reserver':path.includes('/reservation')?'reserver':path.includes('/experiences')?'a-vivre':path.includes('/informations')?'sensations':null;
  return <Dock items={siteDockItems.map(item=>({...item,currentType:home?'location':'page'}))} active={home?active:pageActive} onSelect={select}/>;
 }
