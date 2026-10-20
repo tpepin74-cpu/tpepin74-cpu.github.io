@@ -65,3 +65,8 @@ body{font-size:var(--type-body);line-height:1.65}
  #site-shell .booking-card .dates-fields input{appearance:none;-webkit-appearance:none;min-width:0;max-width:100%;min-height:36px;padding:4px 0}
 }
 @media(min-width:1000px) and (max-height:819px){#site-shell .booking-sticky{position:relative;top:auto}}
+
+/* Animate only the photograph, keeping text and frame stationary. */
+.landscape-frame{overflow:hidden}
+.landscape-motion{position:absolute;inset:0;transform-origin:center;will-change:transform}
+@media(prefers-reduced-motion:reduce){.landscape-motion{will-change:auto;transform:none!important}}
