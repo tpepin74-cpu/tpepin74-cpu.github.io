@@ -22,7 +22,8 @@ function DockSurface({items,active,onSelect}){
  const [layout,setLayout]=useState({width:items.length*76+48,compact:false,light:false});
  const activeIndex=Math.max(0,items.findIndex(item=>item.id===active));
  const index=preview===null?activeIndex:Math.min(preview,items.length-1);
- const targetX=24+(layout.width-48)/items.length*(index+.5);
+ const gutter=layout.width<320?16:24;
+ const targetX=gutter+(layout.width-2*gutter)/items.length*(index+.5);
  const target=useMotionValue(targetX),x=useSpring(target,layout.light?{stiffness:260,damping:30,mass:.7}:spring);
  const velocity=useVelocity(x);
  // A single shared MotionValue drives both the path and the floating bubble.
@@ -36,7 +37,7 @@ function DockSurface({items,active,onSelect}){
  useEffect(()=>{const node=ref.current;if(!node)return;const query=window.matchMedia('(max-width:760px), (pointer:coarse)');const measure=()=>{const width=node.getBoundingClientRect().width;setLayout(prev=>prev.width===width&&prev.light===query.matches?prev:{width,compact:window.innerWidth<=420,light:query.matches})};measure();const observer=new ResizeObserver(measure);observer.observe(node);query.addEventListener('change',measure);return()=>{observer.disconnect();query.removeEventListener('change',measure)}},[]);
  const chosen=items[index],BubbleIcon=chosen?.icon;
  if(!items.length)return null;
- return <nav ref={ref} className="liquid-dock fixed isolate" aria-label="Explorer SNUUG" data-light={layout.light||undefined} style={{'--dock-count':items.length}} onMouseLeave={()=>setPreview(null)} onBlur={event=>{if(!event.currentTarget.contains(event.relatedTarget))setPreview(null)}}>
+ return <nav ref={ref} className="liquid-dock fixed isolate" aria-label="Explorer SNUUG" data-light={layout.light||undefined} style={{'--dock-count':items.length,'--dock-gutter':`${gutter}px`}} onMouseLeave={()=>setPreview(null)} onBlur={event=>{if(!event.currentTarget.contains(event.relatedTarget))setPreview(null)}}>
   <svg className="dock-shape absolute inset-0 pointer-events-none" width="100%" height="72" viewBox={`0 0 ${layout.width} 72`} aria-hidden="true"><motion.path d={path}/></svg>
   <motion.div className="dock-bubble absolute pointer-events-none flex items-center justify-center" style={{left:0,x:bubbleLeft,width:size,height:size,top:9-size/2,scaleX,scaleY}} aria-hidden="true"><AnimatePresence mode="popLayout" initial={false}><motion.div key={chosen.id} className="absolute flex items-center justify-center" initial={reduced?false:{scale:.3,rotate:-40,opacity:0}} animate={{scale:1,rotate:0,opacity:1}} exit={reduced?{opacity:0}:{scale:.3,rotate:35,opacity:0}} transition={reduced?{duration:0}:layout.light?{duration:.16,ease:'easeOut'}:spring}><BubbleIcon size={23} strokeWidth={1.65}/></motion.div></AnimatePresence></motion.div>
   <motion.span className="dock-label absolute pointer-events-none text-center" style={{left:0,x:labelLeft}} aria-hidden="true">{chosen.label}</motion.span>
