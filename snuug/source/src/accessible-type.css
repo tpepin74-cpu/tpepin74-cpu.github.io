@@ -44,3 +44,9 @@ body{font-size:var(--type-body);line-height:1.65}
  .liquid-card-title{font-size:1.5rem}
 }
 @media(prefers-contrast:more){#site-shell :is(.fineprint,.agenda-footnote,.map-disclaimer){color:#171914}#site-shell :is(input,select,textarea){border-color:#171914}}
+/* Keep the reservation panel within the story column and below the header. */
+@media(min-width:1000px){
+ #site-shell .booking-sticky{position:sticky;top:104px;align-self:start;max-height:calc(100dvh - 224px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;border-radius:var(--snuug-radius);scroll-padding-block:20px}
+ #site-shell .booking-sticky>.booking-card{position:static;margin:0;box-shadow:none}
+ #site-shell .booking-sticky:focus-visible{outline:3px solid #171914;outline-offset:4px}
+}
