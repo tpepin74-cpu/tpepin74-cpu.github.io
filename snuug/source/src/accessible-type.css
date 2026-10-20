@@ -85,3 +85,6 @@ body{font-size:var(--type-body);line-height:1.65}
 @media(max-width:760px){
  #site-shell :is(.page-sections,.product-chapters,.stay-section-nav){min-height:72px;padding-block:12px}
 }
+
+#site-shell .product-chapters{justify-content:flex-start;padding-inline:5vw}
+@media(max-width:760px){#site-shell .product-chapters{padding-inline:24px}}
