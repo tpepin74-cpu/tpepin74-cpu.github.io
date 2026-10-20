@@ -65,3 +65,5 @@
  #site-shell .brand-booking .dates-fields{grid-template-columns:minmax(0,1fr);gap:16px}
  #site-shell .brand-booking form{width:100%;max-width:100%;grid-template-columns:minmax(0,1fr)}
 }
+/* Match the fine vector arrows used by the main SNUUG calls to action. */
+.snuug-inline-arrow{display:inline-block;width:1.2em;height:1.2em;min-width:1.2em;flex-shrink:0;vertical-align:-.2em;margin-left:.35em;color:inherit;overflow:visible}
