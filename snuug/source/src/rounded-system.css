@@ -53,3 +53,5 @@
 #site-shell :is(.future-collections,.home-collection-fold,.editorial-fold,.product-destination-details){border-radius:var(--snuug-radius)}
 #site-shell :is(.future-collections,.home-collection-fold,.editorial-fold,.product-destination-details)>summary{border-radius:var(--snuug-radius-small)}
 #site-shell .agenda-controls button,#site-shell .agenda-filters button{border-radius:var(--snuug-pill)}
+
+.landscape-accessible-pause{position:absolute;clip-path:inset(50%);width:1px;height:1px;overflow:hidden;white-space:nowrap}.landscape-accessible-pause:focus-visible{clip-path:none;width:auto;height:auto;bottom:24px;right:24px;padding:12px 20px;border-radius:999px;background:#fff;color:#171914;z-index:5}
