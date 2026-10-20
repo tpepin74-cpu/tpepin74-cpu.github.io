@@ -14,7 +14,7 @@ export default function useSectionNavigation(path){
     if(!menu.entries.length)continue;
     const navStyle=getComputedStyle(menu.nav);
     const navTop=Number.parseFloat(navStyle.top)||headerBottom;
-    const line=Math.max(headerBottom,navTop)+menu.nav.offsetHeight+24;
+    const line=Math.max(headerBottom,navTop)+menu.nav.offsetHeight+64;
     let current=menu.entries[0];
     for(const entry of menu.entries){
      if(entry.section.getBoundingClientRect().top<=line)current=entry;
