@@ -40,3 +40,28 @@
  #site-shell .agenda-event h3{font-size:20px!important}
  #site-shell .liquid-card-title{font-size:24px}
 }
+
+/* Shared active chapter treatment: SNUUG lime, dark readable text. */
+#site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a{
+ position:relative;border-radius:999px;padding-inline:16px;flex-shrink:0;
+ transition:background-color .18s ease,color .18s ease;
+}
+#site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a[aria-current="location"]{
+ background:#c5e241;color:#171914;box-shadow:inset 0 0 0 1px #17191412;
+}
+#site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a:focus-visible{
+ outline:2px solid #71851e;outline-offset:-3px;
+}
+@media(prefers-reduced-motion:reduce){
+ #site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a{transition:none}
+}
+/* Safari date controls must not impose their intrinsic width on grid tracks. */
+#site-shell .brand-booking .dates-fields{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+#site-shell .brand-booking label{min-width:0;max-width:100%}
+#site-shell .brand-booking input[type=date]{appearance:none;-webkit-appearance:none;min-width:0;max-width:100%;width:100%;display:block;box-sizing:border-box}
+#site-shell .brand-booking input[type=date]::-webkit-date-and-time-value{min-width:0;text-align:left;line-height:28px}
+#site-shell .brand-booking input[type=date]::-webkit-datetime-edit{min-width:0;padding:0}
+@media(max-width:760px){
+ #site-shell .brand-booking .dates-fields{grid-template-columns:minmax(0,1fr);gap:16px}
+ #site-shell .brand-booking form{width:100%;max-width:100%;grid-template-columns:minmax(0,1fr)}
+}
