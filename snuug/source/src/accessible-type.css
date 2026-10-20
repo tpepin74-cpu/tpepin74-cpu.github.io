@@ -74,3 +74,14 @@ body{font-size:var(--type-body);line-height:1.65}
 #site-shell .site-header,#site-shell .site-header.scrolled{border-bottom:0;box-shadow:none}
 
 #contenu:focus{outline:none}
+
+/* Air around chapter pills, without separator lines below the header. */
+#site-shell :is(.page-sections,.product-chapters,.stay-section-nav){
+ border:0;box-shadow:none;height:auto;min-height:80px;padding-block:16px;align-items:center;
+}
+#site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a{
+ min-height:48px;padding-block:10px;
+}
+@media(max-width:760px){
+ #site-shell :is(.page-sections,.product-chapters,.stay-section-nav){min-height:72px;padding-block:12px}
+}
