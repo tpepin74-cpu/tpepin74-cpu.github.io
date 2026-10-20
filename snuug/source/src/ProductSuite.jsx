@@ -17,8 +17,7 @@ export default function ProductSuite({beforeSuite,afterSuite}){
   <section className="product-hero" aria-label="Découvrir la suite SNUUG">
    <Image eager src="/images/official/golf-1535.webp" alt="Une suite SNUUG et sa terrasse au cœur du Golf de Neuchâtel"/>
    <div className="product-hero-shade"/>
-   <div className="product-hero-copy"><span>The supernature hotel</span><h1>SNUUG.<br/>L’essentiel, ailleurs.</h1><p>Une suite pour deux. Le paysage pour horizon.</p><a className="button light" href="/snuug/reservation">Choisir mon paysage<Arrow/></a></div>
-   <a className="product-scroll" href="#suite">Découvrir la suite <span>↓</span></a>
+   <div className="product-hero-copy"><span>The supernature hotel</span><h1>SNUUG.<br/>L’essentiel, ailleurs.</h1><p>Une suite pour deux. Le paysage pour horizon.</p><a className="button light" href="#suite">Découvrir<Arrow direction="down"/></a></div>
   </section>
   <nav className="product-chapters" aria-label="Les chapitres de la suite"><span>SNUUG</span>{[['La suite','suite'],['L’intérieur','interieur'],['Le confort','equipements'],['Les matières','design-histoire'],['Les lieux','signature']].map(([label,id])=><a key={id} href={'#'+id}>{label}</a>)}</nav>
   <section id="suite" className="product-intro"><Reveal><span className="eyebrow">L’architecture de l’intime</span><h2>Un petit espace.<br/>Une autre dimension.</h2></Reveal><div className="product-intro-side"><p>Le confort d’une suite d’hôtel, dans un lieu qui ne ressemble qu’à lui. SNUUG réunit le design, l’intimité et la liberté de vivre à son rythme.</p><dl className="product-specs"><div><dt>Surface intérieure</dt><dd>20 <small>m²</small></dd></div><div><dt>Voyageurs</dt><dd>2</dd></div><div><dt>Terrasse privée</dt><dd>5 <small>m²</small></dd></div></dl></div></section>

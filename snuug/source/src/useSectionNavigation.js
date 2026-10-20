@@ -1,4 +1,5 @@
 import {useEffect} from 'react';
+import {anchorOffset} from './anchorNavigation';
 
 // Shared scrollspy for every editorial chapter menu, including mobile overflow.
 export default function useSectionNavigation(path){
@@ -14,7 +15,7 @@ export default function useSectionNavigation(path){
     if(!menu.entries.length)continue;
     const navStyle=getComputedStyle(menu.nav);
     const navTop=Number.parseFloat(navStyle.top)||headerBottom;
-    const line=Math.max(headerBottom,navTop)+menu.nav.offsetHeight+64;
+    const line=anchorOffset(menu.entries[0].section)+8;
     let current=menu.entries[0];
     for(const entry of menu.entries){
      if(entry.section.getBoundingClientRect().top<=line)current=entry;

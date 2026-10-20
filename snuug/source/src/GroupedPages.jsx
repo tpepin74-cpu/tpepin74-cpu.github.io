@@ -1,4 +1,5 @@
 import EditorialHero from './EditorialHero';
+import {scrollToAnchor} from './anchorNavigation';
 import {DestinationPacks,NewsAndPress} from './DestinationStories';
 import {Agenda} from './Agenda';
 import React,{useEffect} from 'react';
@@ -15,18 +16,23 @@ export function Fold({id,label,title,children}){return <details id={id} classNam
 // Deep links open their containing disclosure, including nested questions, before scrolling.
 export function DeepLink(){useEffect(()=>{
   let timer;
-  const reveal=(hash=window.location.hash)=>{
+  const reveal=(hash=window.location.hash,behavior='instant')=>{
     let id;try{id=decodeURIComponent(hash.slice(1))}catch{return}
     if(!id)return;const target=document.getElementById(id);if(!target)return;
     let element=target;while(element){if(element.tagName==='DETAILS')element.open=true;element=element.parentElement}
-    cancelAnimationFrame(timer);timer=requestAnimationFrame(()=>target.scrollIntoView({behavior:'instant',block:'start'}));
+    cancelAnimationFrame(timer);timer=requestAnimationFrame(()=>scrollToAnchor(target,behavior));
   };
   const hashchange=()=>reveal();
   const click=event=>{
     if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
     const link=event.target.closest?.('a[href]');if(!link||link.target==='_blank')return;
     const url=new URL(link.href,location.href);
-    if(url.origin===location.origin&&url.pathname===location.pathname&&url.search===location.search&&url.hash)reveal(url.hash);
+    if(url.origin===location.origin&&url.pathname.replace(/\/$/,'')===location.pathname.replace(/\/$/,'')&&url.search===location.search&&url.hash){
+      let target;try{target=document.getElementById(decodeURIComponent(url.hash.slice(1)))}catch{return}
+      if(!target)return;event.preventDefault();
+      if(location.hash!==url.hash)history.pushState({...history.state},'',url.hash);
+      reveal(url.hash,'smooth');
+    }
   };
   reveal();window.addEventListener('hashchange',hashchange);document.addEventListener('click',click);
   return()=>{cancelAnimationFrame(timer);window.removeEventListener('hashchange',hashchange);document.removeEventListener('click',click)};
