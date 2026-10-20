@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import {House,BedDouble,Sparkles,Leaf,CalendarDays,BellRing} from 'lucide-react';
 import Dock from './Dock';
+import {navigatePage} from './navigation';
 export const siteDockItems=[
  {id:'accueil',label:'Accueil',icon:House,href:'/snuug/'},
  {id:'reserver',label:'Réserver',icon:CalendarDays,href:'/snuug/reservation'},
@@ -34,7 +35,7 @@ export default function SiteDock({path,onConcierge}){
  const select=item=>{
   if(item.id==='concierge'){onConcierge?.();return}
   if(item.id==='accueil'&&home){window.scrollTo({top:0,behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});return}
-  window.location.assign(item.href);
+  navigatePage(item.href);
  };
  const pageActive=path.includes('/la-suite')?'chambres':path.includes('/sejours/')?'reserver':path.includes('/reservation')?'reserver':path.includes('/experiences')?'a-vivre':path.includes('/informations')?'sensations':null;
  return <Dock items={siteDockItems.map(item=>({...item,currentType:home?'location':'page'}))} active={home?active:pageActive} onSelect={select}/>;

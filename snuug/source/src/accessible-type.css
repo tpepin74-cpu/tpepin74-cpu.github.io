@@ -72,3 +72,5 @@ body{font-size:var(--type-body);line-height:1.65}
 @media(prefers-reduced-motion:reduce){.landscape-motion{will-change:auto;transform:none!important}}
 /* Clean header edge on every route and in both scroll states. */
 #site-shell .site-header,#site-shell .site-header.scrolled{border-bottom:0;box-shadow:none}
+
+#contenu:focus{outline:none}
