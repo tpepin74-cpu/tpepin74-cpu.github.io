@@ -8,6 +8,6 @@ export default function EditorialHero({eyebrow,title,second,copy,image,alt,href,
  return <section ref={ref} className="editorial-hero">
   <motion.div className="editorial-hero-photo" style={{y:reduced?0:y}}><Image eager src={image} alt={alt}/></motion.div>
   <div className="editorial-hero-shade"/>
-  <div className="editorial-hero-copy"><span className="eyebrow">{eyebrow}</span><h1>{title}<br/>{second}</h1>{copy&&<p>{copy}</p>}{href&&<a className="button light" href={href}>{label}<Arrow/></a>}</div>
+  <div className="editorial-hero-copy"><span className="eyebrow">{eyebrow}</span><h1>{title}<br/>{second}</h1>{copy&&<p>{copy}</p>}{href&&<a className="button light" href={href}>{label}<Arrow direction="down"/></a>}</div>
  </section>
 }
