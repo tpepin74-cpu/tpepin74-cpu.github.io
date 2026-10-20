@@ -1,0 +1,46 @@
+/* Legible type hierarchy. rem units follow the reader's default text size. */
+:root{--type-body:1.0625rem;--type-small:.9375rem;--muted:#444;--olive:#444}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-size:var(--type-body);line-height:1.65}
+#site-shell :is(h1,h2,h3,h4){overflow-wrap:break-word;line-height:1.2;letter-spacing:-.035em}
+#site-shell p:not(.stay-lead):not(.serif-lead):not(.concept-lead):not(.landscape-title p){font-size:var(--type-body);line-height:1.7}
+#site-shell :is(.stay-story,.legal-page,.conditions-list,.practical-group) p{max-width:68ch}
+#site-shell :is(.stay-lead,.serif-lead){font-size:clamp(1.5rem,1.2rem + 1.3vw,2rem);line-height:1.4;max-width:48ch}
+#site-shell :is(.fineprint,.booking-note,.booking-conditions p,.booking-assurance,.availability-note,.agenda-footnote,.map-disclaimer,.footer-bottom,.footer-contact,.card-specs,.stay-key-facts,.stay-signatures,.practical-grid p,.equipment-grid p){font-size:var(--type-small)!important;line-height:1.65}
+#site-shell :is(small,figcaption){font-size:.875rem;line-height:1.6}
+#site-shell :is(.eyebrow,.booking-card label,.brand-booking label){font-size:.875rem!important;line-height:1.5;letter-spacing:.04em}
+#site-shell :is(.button,.text-button,.search-submit,.all-photos,.gallery-expand,.collection-chips button,.search-help){font-size:1rem!important;line-height:1.4;min-height:3rem;white-space:normal}
+#site-shell :is(input,select,textarea),.dialog :is(input,select,textarea){font-size:1rem!important;line-height:1.5;max-width:100%}
+#site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a{font-size:.9375rem;line-height:1.5}
+#site-shell :is(.equipment-grid,.practical-grid) h3{font-size:1.125rem!important;line-height:1.4;margin-bottom:.75rem}
+#site-shell .booking-card{padding:1.75rem;min-width:0}
+#site-shell .booking-card :is(.booking-note,.booking-assurance,.booking-conditions){color:#333}
+#site-shell .booking-card .dates-fields{grid-template-columns:minmax(0,1fr);gap:.75rem;border:0;overflow:visible}
+#site-shell .booking-card .dates-fields>label{padding:.75rem 1rem;border:1px solid #aaa;border-radius:14px}
+#site-shell .booking-card .dates-fields input{min-width:0;width:100%;min-height:2.75rem}
+#site-shell .booking-card h2{font-size:clamp(1.5rem,1.25rem + .7vw,1.875rem)!important;line-height:1.3}
+#site-shell .stay-signatures{gap:1.5rem;flex-wrap:wrap}
+#site-shell .stay-signatures>span{line-height:1.6}
+#site-shell .booking-sticky{align-self:start}
+#site-shell .booking-card .button{gap:1rem}
+#site-shell :is(.search-toolbar,.stay-actions,.results-heading,.footer-bottom){flex-wrap:wrap}
+#site-shell :is(.contact-form,.gift-form) label{font-size:1rem;line-height:1.5}
+.dialog :is(.concierge-answer p,.concierge-welcome p,.concierge-question){font-size:1rem;line-height:1.65}
+.dialog :is(.concierge-foot,.concierge-foot small,.concierge-foot a,.concierge-suggestions button){font-size:.875rem;line-height:1.5}
+#site-shell :is(.fineprint,.agenda-footnote,.map-disclaimer){color:#444}
+#site-shell :is(a,button,input,select,textarea,summary):focus-visible,.dialog :is(a,button,input,textarea):focus-visible{outline:3px solid #171914;outline-offset:4px;box-shadow:0 0 0 6px #fff}
+.dock-label{width:96px;font-size:.8125rem!important;line-height:1.4}
+@media(min-width:1000px){:root{--type-body:1.125rem}#site-shell .stay-content-grid{grid-template-columns:minmax(0,1fr) minmax(340px,380px);gap:clamp(32px,5vw,80px)}}
+@media(max-width:760px){
+ #site-shell :is(.stay-story,.legal-page,.conditions-list) p{max-width:100%}
+ #site-shell .stay-signatures{display:grid;grid-template-columns:1fr;gap:1.25rem}
+ #site-shell .booking-card{padding:1.5rem}
+ #site-shell .brand-booking .button{height:auto;min-height:3.375rem}
+ #site-shell :is(.editorial-hero,.product-hero,.landscape-hero){height:auto;min-height:calc(100svh - 76px);max-height:none}
+ #site-shell .landscape-title{position:relative;top:auto;left:auto;right:auto;padding:5rem 24px 10rem}
+ #site-shell .editorial-hero-copy{padding-bottom:8rem}
+ #site-shell .product-hero-copy{position:relative;inset:auto;padding-bottom:8rem}
+ .liquid-card-description{font-size:1rem;line-height:1.5}
+ .liquid-card-title{font-size:1.5rem}
+}
+@media(prefers-contrast:more){#site-shell :is(.fineprint,.agenda-footnote,.map-disclaimer){color:#171914}#site-shell :is(input,select,textarea){border-color:#171914}}

@@ -32,7 +32,7 @@ function DockSurface({items,active,onSelect}){
  const scaleY=useTransform(velocity,v=>reduced||layout.light?1:1-Math.min(Math.abs(v)/1400,1)*.14);
  const size=layout.compact?46:50;
  const bubbleLeft=useTransform(x,v=>Math.max(48,Math.min(layout.width-48,v))-size/2);
- const labelLeft=useTransform(x,v=>Math.max(48,Math.min(layout.width-48,v))-40);
+ const labelLeft=useTransform(x,v=>Math.max(48,Math.min(layout.width-48,v))-48);
  useEffect(()=>{if(reduced)x.jump(targetX);target.set(targetX)},[targetX,reduced,target,x]);
  useEffect(()=>{const node=ref.current;if(!node)return;const query=window.matchMedia('(max-width:760px), (pointer:coarse)');const measure=()=>{const width=node.getBoundingClientRect().width;setLayout(prev=>prev.width===width&&prev.light===query.matches?prev:{width,compact:window.innerWidth<=420,light:query.matches})};measure();const observer=new ResizeObserver(measure);observer.observe(node);query.addEventListener('change',measure);return()=>{observer.disconnect();query.removeEventListener('change',measure)}},[]);
  const chosen=items[index],BubbleIcon=chosen?.icon;

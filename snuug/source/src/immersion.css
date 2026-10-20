@@ -9,11 +9,11 @@
 .immersion-arrow{width:22px;height:22px;flex-shrink:0}
 .immersion-skip{position:absolute;z-index:8;right:4%;bottom:calc(23px + env(safe-area-inset-bottom));width:44px;height:44px;display:grid;place-items:center;border:1px solid #ffffff70;border-radius:50%;background:#1118;backdrop-filter:blur(8px)}
 .immersion-intro{position:absolute;z-index:6;left:6%;bottom:14%;text-shadow:0 2px 20px #0005}
-.immersion-intro h1{font-size:clamp(68px,9vw,145px);line-height:1;letter-spacing:-.055em}
-.immersion-enter{display:flex;align-items:center;gap:32px;min-height:44px;margin-top:20px;font-size:10px;letter-spacing:1px}
+.immersion-intro h1{font-size:clamp(4.25rem,9vw,9.0625rem);line-height:1;letter-spacing:-.055em}
+.immersion-enter{display:flex;align-items:center;gap:32px;min-height:44px;margin-top:20px;font-size:0.875rem;letter-spacing:1px}
 .immersion-enter .immersion-arrow{width:18px;height:18px}
 .immersion-finish{position:absolute;z-index:6;left:6%;bottom:14%}
-.immersion-finish .button,.immersion-static-book{min-width:175px;min-height:50px;font-size:11px;padding:14px 20px}
+.immersion-finish .button,.immersion-static-book{min-width:175px;min-height:50px;font-size:0.875rem;padding:14px 20px}
 .immersion-wayfinding{position:absolute;z-index:8;left:calc(6% - 14px);bottom:calc(23px + env(safe-area-inset-bottom))}
 .immersion-wayfinding nav{display:flex}
 .immersion-wayfinding nav button{display:grid;place-items:center;width:44px;height:44px}
@@ -28,14 +28,14 @@
 .immersion-look button:focus-visible,.immersion-wayfinding button:focus-visible,.immersion-manual button:focus-visible{outline:2px solid white;outline-offset:3px}
 .immersion-look button:disabled{opacity:.65;cursor:wait}
 .immersion-look svg{width:20px;height:20px;flex-shrink:0}
-.immersion-tilt{padding:9px 15px;font-size:11px;letter-spacing:.015em}
+.immersion-tilt{padding:9px 15px;font-size:0.875rem;letter-spacing:.015em}
 .immersion-tilt.is-on{background:#EFEBE5!important;color:#000000!important;text-shadow:none!important}
 .immersion-center{width:44px;padding:0}
-.immersion-off{font-size:19px;font-weight:300;line-height:1}
-.immersion-look-message{font-size:10px;line-height:1.5;text-align:right;margin:9px 2px 0;max-width:285px;text-shadow:0 1px 8px #000,0 1px 2px #000}
+.immersion-off{font-size:1.1875rem;font-weight:300;line-height:1}
+.immersion-look-message{font-size:0.875rem;line-height:1.5;text-align:right;margin:9px 2px 0;max-width:285px;text-shadow:0 1px 8px #000,0 1px 2px #000}
 .immersion-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.immersion-manual{position:absolute;z-index:8;top:110px;right:6%;display:flex;align-items:center;gap:6px;background:#000000a0;border:1px solid #ffffff60;border-radius:99px;font-size:11px;font-variant-numeric:tabular-nums}
-.immersion-manual button{width:44px;height:44px;font-size:20px}
+.immersion-manual{position:absolute;z-index:8;top:110px;right:6%;display:flex;align-items:center;gap:6px;background:#000000a0;border:1px solid #ffffff60;border-radius:99px;font-size:0.875rem;font-variant-numeric:tabular-nums}
+.immersion-manual button{width:44px;height:44px;font-size:1.25rem}
 .immersion-manual button:disabled{opacity:.3}
 #site-shell:has(.immersion-hero[data-immersing="true"]) .mobile-dock{display:none}
 #site-shell:has(.immersion-hero[data-immersing="true"]) .site-header{background:transparent;color:var(--paper);border-bottom-color:#ffffff30;text-shadow:0 1px 12px #0006}
@@ -46,14 +46,14 @@
 @media(max-width:600px){
  .immersion-hero{height:800svh}
  .immersion-intro{left:7%;bottom:17%}
- .immersion-intro h1{font-size:clamp(68px,19vw,100px)}
- .immersion-enter{margin-top:12px;font-size:9px}
+ .immersion-intro h1{font-size:clamp(4.25rem,19vw,6.25rem)}
+ .immersion-enter{margin-top:12px;font-size:0.875rem}
  .immersion-finish,.immersion-static-book{left:7%;bottom:17%}
  .immersion-wayfinding{left:calc(7% - 10px)}
  .immersion-wayfinding nav button{width:28px}
  .immersion-visual{background-image:url('./assets/images/immersion/snuug-v2-mobile-960.webp')}
  .immersion-look{right:6%;top:92px}
- .immersion-look-message{font-size:10px}
+ .immersion-look-message{font-size:0.875rem}
  .immersion-skip{right:6%}
 }
 @media(prefers-reduced-motion:reduce){
