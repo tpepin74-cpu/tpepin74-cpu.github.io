@@ -19,29 +19,29 @@ export default function Dock(props){return <MotionConfig reducedMotion="user"><D
 function DockSurface({items,active,onSelect}){
  const reduced=useReducedMotion(),ref=useRef(null),[preview,setPreview]=useState(null);
  useEffect(()=>setPreview(null),[active]);
- const [layout,setLayout]=useState({width:items.length*76+48,compact:false});
+ const [layout,setLayout]=useState({width:items.length*76+48,compact:false,light:false});
  const activeIndex=Math.max(0,items.findIndex(item=>item.id===active));
  const index=preview===null?activeIndex:Math.min(preview,items.length-1);
  const targetX=24+(layout.width-48)/items.length*(index+.5);
- const target=useMotionValue(targetX),x=useSpring(target,spring);
+ const target=useMotionValue(targetX),x=useSpring(target,layout.light?{stiffness:260,damping:30,mass:.7}:spring);
  const velocity=useVelocity(x);
  // A single shared MotionValue drives both the path and the floating bubble.
- const path=useTransform([x,velocity],([position,speed])=>notchGeometry(layout.width,position,reduced?0:speed,layout.compact));
- const scaleX=useTransform(velocity,v=>reduced?1:1+Math.min(Math.abs(v)/1400,1)*.28);
- const scaleY=useTransform(velocity,v=>reduced?1:1-Math.min(Math.abs(v)/1400,1)*.14);
+ const path=useTransform(x,position=>notchGeometry(layout.width,position,reduced||layout.light?0:velocity.get(),layout.compact));
+ const scaleX=useTransform(velocity,v=>reduced||layout.light?1:1+Math.min(Math.abs(v)/1400,1)*.28);
+ const scaleY=useTransform(velocity,v=>reduced||layout.light?1:1-Math.min(Math.abs(v)/1400,1)*.14);
  const size=layout.compact?46:50;
  const bubbleLeft=useTransform(x,v=>Math.max(48,Math.min(layout.width-48,v))-size/2);
  const labelLeft=useTransform(x,v=>Math.max(48,Math.min(layout.width-48,v))-40);
  useEffect(()=>{if(reduced)x.jump(targetX);target.set(targetX)},[targetX,reduced,target,x]);
- useEffect(()=>{const node=ref.current;if(!node)return;const query=window.matchMedia('(max-width:420px)');const measure=()=>setLayout({width:node.getBoundingClientRect().width,compact:query.matches});measure();const observer=new ResizeObserver(measure);observer.observe(node);query.addEventListener('change',measure);return()=>{observer.disconnect();query.removeEventListener('change',measure)}},[]);
+ useEffect(()=>{const node=ref.current;if(!node)return;const query=window.matchMedia('(max-width:760px), (pointer:coarse)');const measure=()=>{const width=node.getBoundingClientRect().width;setLayout(prev=>prev.width===width&&prev.light===query.matches?prev:{width,compact:window.innerWidth<=420,light:query.matches})};measure();const observer=new ResizeObserver(measure);observer.observe(node);query.addEventListener('change',measure);return()=>{observer.disconnect();query.removeEventListener('change',measure)}},[]);
  const chosen=items[index],BubbleIcon=chosen?.icon;
  if(!items.length)return null;
- return <nav ref={ref} className="liquid-dock fixed isolate" aria-label="Explorer SNUUG" style={{'--dock-count':items.length}} onMouseLeave={()=>setPreview(null)} onBlur={event=>{if(!event.currentTarget.contains(event.relatedTarget))setPreview(null)}}>
+ return <nav ref={ref} className="liquid-dock fixed isolate" aria-label="Explorer SNUUG" data-light={layout.light||undefined} style={{'--dock-count':items.length}} onMouseLeave={()=>setPreview(null)} onBlur={event=>{if(!event.currentTarget.contains(event.relatedTarget))setPreview(null)}}>
   <svg className="dock-shape absolute inset-0 pointer-events-none" width="100%" height="72" viewBox={`0 0 ${layout.width} 72`} aria-hidden="true"><motion.path d={path}/></svg>
-  <motion.div className="dock-bubble absolute pointer-events-none flex items-center justify-center" style={{left:bubbleLeft,width:size,height:size,top:9-size/2,scaleX,scaleY}} aria-hidden="true"><AnimatePresence mode="popLayout" initial={false}><motion.div key={chosen.id} className="absolute flex items-center justify-center" initial={reduced?false:{scale:.3,rotate:-40,opacity:0}} animate={{scale:1,rotate:0,opacity:1}} exit={reduced?{opacity:0}:{scale:.3,rotate:35,opacity:0}} transition={reduced?{duration:0}:spring}><BubbleIcon size={23} strokeWidth={1.65}/></motion.div></AnimatePresence></motion.div>
-  <motion.span className="dock-label absolute pointer-events-none text-center" style={{left:labelLeft}} aria-hidden="true">{chosen.label}</motion.span>
-  <div className="dock-items relative flex h-full">{items.map((item,i)=>{const Icon=item.icon;return <button key={item.id} type="button" className="dock-item relative flex items-center justify-center select-none" aria-label={item.label} aria-haspopup={item.hasPopup} aria-current={item.id===active?(item.currentType||(item.href?.startsWith('#')?'location':'page')):undefined} title={item.label} onPointerEnter={event=>{if(event.pointerType==='mouse')setPreview(i)}} onPointerDown={event=>{if(event.pointerType!=='mouse')setPreview(i)}} onFocus={event=>{if(event.currentTarget.matches(':focus-visible'))setPreview(i)}} onClick={()=>{setPreview(null);onSelect?.(item)}} onKeyDown={event=>{let next;if(event.key==='ArrowRight')next=(i+1)%items.length;if(event.key==='ArrowLeft')next=(i-1+items.length)%items.length;if(event.key==='Home')next=0;if(event.key==='End')next=items.length-1;if(next!==undefined){event.preventDefault();ref.current.querySelectorAll('button')[next]?.focus()}}}>
-    <motion.span className="flex items-center justify-center" animate={{y:i===index?22:0,opacity:i===index?0:1,scale:i===index ? .5 : 1}} transition={reduced?{duration:0}:spring}><Icon size={22} strokeWidth={1.65} aria-hidden="true"/></motion.span>
+  <motion.div className="dock-bubble absolute pointer-events-none flex items-center justify-center" style={{left:0,x:bubbleLeft,width:size,height:size,top:9-size/2,scaleX,scaleY}} aria-hidden="true"><AnimatePresence mode="popLayout" initial={false}><motion.div key={chosen.id} className="absolute flex items-center justify-center" initial={reduced?false:{scale:.3,rotate:-40,opacity:0}} animate={{scale:1,rotate:0,opacity:1}} exit={reduced?{opacity:0}:{scale:.3,rotate:35,opacity:0}} transition={reduced?{duration:0}:layout.light?{duration:.16,ease:'easeOut'}:spring}><BubbleIcon size={23} strokeWidth={1.65}/></motion.div></AnimatePresence></motion.div>
+  <motion.span className="dock-label absolute pointer-events-none text-center" style={{left:0,x:labelLeft}} aria-hidden="true">{chosen.label}</motion.span>
+  <div className="dock-items relative flex h-full">{items.map((item,i)=>{const Icon=item.icon;return <button key={item.id} type="button" className="dock-item relative flex items-center justify-center select-none" aria-label={item.label} aria-haspopup={item.hasPopup} aria-current={item.id===active?(item.currentType||(item.href?.startsWith('#')?'location':'page')):undefined} title={item.label} onPointerEnter={event=>{if(event.pointerType==='mouse')setPreview(i)}} onFocus={event=>{if(event.currentTarget.matches(':focus-visible'))setPreview(i)}} onClick={()=>{setPreview(null);onSelect?.(item)}} onKeyDown={event=>{let next;if(event.key==='ArrowRight')next=(i+1)%items.length;if(event.key==='ArrowLeft')next=(i-1+items.length)%items.length;if(event.key==='Home')next=0;if(event.key==='End')next=items.length-1;if(next!==undefined){event.preventDefault();ref.current.querySelectorAll('button')[next]?.focus()}}}>
+    <motion.span className="flex items-center justify-center" animate={{y:i===index?22:0,opacity:i===index?0:1,scale:i===index ? .5 : 1}} transition={reduced?{duration:0}:layout.light?{duration:.16,ease:'easeOut'}:spring}><Icon size={22} strokeWidth={1.65} aria-hidden="true"/></motion.span>
     {item.id===active&&index!==activeIndex&&<span className="dock-active-dot absolute" aria-hidden="true"/>}
    </button>})}</div>
  </nav>;

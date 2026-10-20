@@ -18,3 +18,8 @@
 .liquid-dock .dock-item{height:92px;padding-top:20px;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 .liquid-dock .dock-shape,.liquid-dock .dock-bubble,.liquid-dock .dock-label{pointer-events:none}
 .liquid-dock .dock-item>span{pointer-events:none}
+
+/* Mobile: avoid repainting a filtered SVG and composit the moving bubble. */
+.liquid-dock[data-light] .dock-shape{filter:none}
+.liquid-dock[data-light] .dock-bubble{box-shadow:0 2px 8px #00000018}
+.dock-bubble,.dock-label{will-change:transform}
