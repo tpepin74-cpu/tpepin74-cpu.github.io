@@ -12,3 +12,9 @@
 @media(max-width:760px){#site-shell footer{padding-bottom:132px}#site-shell .concierge-launch{bottom:calc(112px + env(safe-area-inset-bottom,0px))}.stay-panorama .stay-photo-caption{font-size:12px}.detail-mobile-book{display:none}}
 @media(max-width:420px){.liquid-dock{width:calc(var(--dock-count,5)*52px + 48px);bottom:calc(14px + env(safe-area-inset-bottom,0px))}.dock-label{font-size:10px}.dock-item svg{width:21px;height:21px}#sensations,#accueil,#lieu,#chambres,#a-vivre,#reserver{scroll-margin-top:84px}}
 @media(prefers-reduced-motion:reduce){.dock-bubble,.dock-item{transition:none}}
+
+/* Include the raised bubble in each touch target; keep icons at their original baseline. */
+.liquid-dock .dock-items{top:-20px;height:92px;box-sizing:border-box}
+.liquid-dock .dock-item{height:92px;padding-top:20px;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+.liquid-dock .dock-shape,.liquid-dock .dock-bubble,.liquid-dock .dock-label{pointer-events:none}
+.liquid-dock .dock-item>span{pointer-events:none}
