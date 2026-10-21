@@ -1,0 +1,33 @@
+# ESM Portes de l'Isère (ESMPI)
+
+> Établissement de santé mentale de la Fondation Georges Boissel (fondation reconnue d'utilité publique). Établissement de santé privé d'intérêt collectif (ESPIC) de psychiatrie couvrant le Nord-Isère (Bourgoin-Jallieu, La Tour-du-Pin, Villefontaine, Pont-de-Chéruy, Crémieu) et l'Isère rhodanienne (Vienne, Péage-de-Roussillon, Beaurepaire). Soins du nouveau-né à la personne âgée : périnatalité, enfants, adolescents, adultes, 65 ans et plus.
+
+## Faits essentiels
+- Standard : 04 74 83 53 00 (accueil administratif du lundi au vendredi, 8 h 30 – 16 h 30 ; unités d'hospitalisation ouvertes 24 h/24).
+- Siège : 100 avenue du Médipôle, CS 43016, 38307 Bourgoin-Jallieu Cedex. Second site d'hospitalisation : Montée du Docteur Chapuis, 38217 Vienne Cedex.
+- 7 secteurs de psychiatrie : adultes 38G11, 38G12, 38G13 (Nord-Isère), 38G14, 38G15 (Isère rhodanienne) ; enfants et adolescents 38i06 (Nord-Isère) et 38i07 (Isère rhodanienne).
+- Depuis le 1er janvier 2026, l'ESMPI assure la pédopsychiatrie sur tout le Nord-Isère. Point d'entrée unique pour les enfants et adolescents du Nord-Isère : POP'IN, 04 74 85 80 20.
+- Urgence vitale : 15 ou 112. Prévention du suicide : 3114 (gratuit, 24 h/24). Psychiatrie d'urgence et de liaison adultes : CHPO Bourgoin-Jallieu 04 69 15 78 21, CHV Vienne 04 37 02 11 22.
+- Certification de la Haute Autorité de Santé : « qualité des soins confirmée » (visite de décembre 2022).
+- Soutien aux proches : programme BREF (avec l'UNAFAM), Temps Écoute Famille (un lundi par mois, 18 h 30 – 20 h), pair-aidance ESPAIRS38, Maison des usagers à Bourgoin-Jallieu et Vienne.
+- Accès aux soins : généralement sur orientation médicale ; les CMP sont la porte d'entrée de proximité. Demande de rendez-vous en ligne : https://esm.fondation-boissel.fr/rendez-vous.html
+
+## Pages
+- [Accueil](https://esm.fondation-boissel.fr/): Psychiatrie du nouveau-né à la personne âgée à Bourgoin-Jallieu, Vienne et en Nord-Isère : CMP, hôpitaux de jour, hospitalisation. Fondation Georges Boissel.
+- [Périnatalité, enfants et adolescents](https://esm.fondation-boissel.fr/perinatalite-enfants-adolescents.html): Périnatalité, enfants et adolescents : POP'IN, CMP, hôpitaux de jour et équipes mobiles de l'ESM Portes de l'Isère, de Bourgoin-Jallieu à Vienne.
+- [Psychiatrie adulte](https://esm.fondation-boissel.fr/psychiatrie-adulte.html): CMP adultes, hôpitaux de jour, CATTG, hospitalisation complète et équipes spécialisées (addictologie, trauma, précarité, urgences) de l'ESM Portes de l'Isère.
+- [Géronto-psychiatrie](https://esm.fondation-boissel.fr/geronto-psychiatrie.html): L'équipe mobile de géronto-psychiatrie de l'ESMPI intervient à domicile et en EHPAD, en Nord-Isère et à Vienne : dépression, anxiété, démences.
+- [Proches & aidants](https://esm.fondation-boissel.fr/proches-aidants.html): Programme BREF avec l'UNAFAM, Temps Écoute Famille, pair-aidance ESPAIRS38, Maison des usagers : le soutien de l'ESM Portes de l'Isère aux familles et aux aidants.
+- [Votre séjour](https://esm.fondation-boissel.fr/votre-sejour.html): Préparer une hospitalisation à l'ESM Portes de l'Isère : bureau des entrées, documents, frais de séjour, soins libres ou sans consentement, visites, repas et sortie.
+- [Droits des patients](https://esm.fondation-boissel.fr/droits-patients.html): Charte de la personne hospitalisée, accès au dossier médical, personne de confiance, Commission des usagers, comité d'éthique et protection des données à l'ESMPI.
+- [Nos engagements](https://esm.fondation-boissel.fr/engagements-qualite.html): Certification HAS « qualité des soins confirmée », satisfaction des patients, culture et santé, développement durable et recherche à l'ESMPI.
+- [Professionnels de santé](https://esm.fondation-boissel.fr/professionnels-de-sante.html): Critères d'orientation, modalités d'accès, numéros directs et formulaire d'adressage pour les médecins et partenaires de l'ESM Portes de l'Isère.
+- [Trouver un lieu de soins](https://esm.fondation-boissel.fr/lieux-de-soins.html): Carte des 56 lieux de soins de l'ESMPI : CMP adultes et enfants, hôpitaux de jour, CATTG, unités et équipes mobiles, avec numéros directs.
+- [Demander un rendez-vous](https://esm.fondation-boissel.fr/rendez-vous.html): Demande de premier rendez-vous en ligne : nous identifions le CMP ou le service adapté à votre âge et à votre commune, puis le secrétariat vous rappelle.
+- [Actualités](https://esm.fondation-boissel.fr/actualites.html): Les dernières nouvelles de l'ESM Portes de l'Isère et de la Fondation Georges Boissel : pédopsychiatrie, aide aux aidants, culture et santé, prévention.
+- [Contact & accès](https://esm.fondation-boissel.fr/contact.html): Standard 04 74 83 53 00, adresses de Bourgoin-Jallieu et Vienne, numéros de tous les services, urgences (15, 3114), Maison des usagers et formulaire de contact.
+- [Questions fréquentes](https://esm.fondation-boissel.fr/faq.html): Accès aux soins, droits, dossier médical, soutien aux familles, adressage : les réponses aux questions les plus fréquentes sur l'ESM Portes de l'Isère.
+- [Plan du site](https://esm.fondation-boissel.fr/plan-du-site.html): Toutes les pages du site de l'ESM Portes de l'Isère.
+
+## Optionnel
+- [Liste complète des lieux de soins et numéros](https://esm.fondation-boissel.fr/llms-full.txt)

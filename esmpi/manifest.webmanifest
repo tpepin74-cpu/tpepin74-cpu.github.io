@@ -1,0 +1,43 @@
+{
+  "name": "ESM Portes de l'Isère",
+  "short_name": "ESMPI",
+  "lang": "fr-FR",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#212121",
+  "description": "Santé mentale à chaque âge de la vie, en Nord-Isère et en Isère rhodanienne.",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Demander un rendez-vous",
+      "url": "rendez-vous.html"
+    },
+    {
+      "name": "Trouver un lieu de soins",
+      "url": "lieux-de-soins.html"
+    },
+    {
+      "name": "Urgences et contacts",
+      "url": "contact.html#urgence"
+    }
+  ]
+}
