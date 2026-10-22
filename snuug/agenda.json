@@ -163,6 +163,42 @@
       "source": "Neuchâtel Vins et Terroir"
     },
     {
+      "id": "la-paulee-2026",
+      "title": "La Paulée",
+      "start": "2026-11-19",
+      "end": "2026-11-19",
+      "place": "Hôtel Palafitte Route des Gouttes-d'Or 2 2000 Neuchâtel",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/la-paulee-2026/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/10/admin-ajax.jpeg",
+        "width": 450,
+        "height": 600,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/la-paulee-2026/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
+      "id": "le-marche-de-noel-de-lhotel-palafitte",
+      "title": "Le marché de Noël de l’Hôtel Palafitte",
+      "start": "2026-12-04",
+      "end": "2026-12-05",
+      "place": "Hôtel Palafitte Route des Gouttes-d'Or 2, 2000 Neuchâtel",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/le-marche-de-noel-de-lhotel-palafitte/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/10/Capture-decran-2026-10-21-132500.png",
+        "width": 568,
+        "height": 377,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/le-marche-de-noel-de-lhotel-palafitte/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
       "id": "caves-ouvertes-neuchateloises-2027",
       "title": "Caves Ouvertes neuchâteloises 2027",
       "start": "2027-04-23",
@@ -181,7 +217,7 @@
       "source": "Neuchâtel Vins et Terroir"
     }
   ],
-  "updatedAt": "2026-10-21T10:17:03.449Z",
+  "updatedAt": "2026-10-22T10:18:17.248Z",
   "partial": false,
   "source": "https://neuchatel-vins-terroir.ch/evenement/",
   "stale": false
