@@ -274,7 +274,9 @@ strong{font-weight:700;color:var(--ink)}
 .fact span{display:block;margin-top:10px;color:var(--mute);font-size:var(--fs-sm);line-height:1.45}
 
 /* ---------- Les 3 parcours en cercles (comme les 3 pôles) ---------- */
-.poles{position:relative;overflow:hidden;background:#fff url("../img/deco/arcs.svg") center/cover no-repeat}
+.poles{position:relative;overflow:hidden;background:#fff;isolation:isolate}
+.poles::before{content:"";position:absolute;inset:0;z-index:-1;background:url("../img/deco/arcs.svg") center/cover no-repeat;pointer-events:none;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 18%,#000 66%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0%,#000 18%,#000 66%,transparent 100%)}
 .poles .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,4vw,60px);align-items:center;min-height:min(820px,90svh)}
 .poles h2{font-size:var(--fs-h1);margin:0 0 26px}
 .poles__text p{max-width:46ch}
@@ -658,8 +660,12 @@ strong{font-weight:700;color:var(--ink)}
 /* ---------- Décors (motifs « molécule » de la Fondation) ---------- */
 .deco-left,.deco-right{position:relative;isolation:isolate}
 .deco-left::before,.deco-right::before{content:"";position:absolute;z-index:-1;top:50%;translate:0 -50%;width:clamp(160px,16vw,300px);aspect-ratio:420/760;background:center/contain no-repeat;pointer-events:none}
-.deco-left::before{left:0;background-image:url("../img/deco/motif-gauche.svg")}
-.deco-right::before{right:0;background-image:url("../img/deco/motif-droit.svg")}
+.deco-left::before{left:0;background-image:url("../img/deco/motif-gauche.svg");
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 20%,#000 80%,transparent),linear-gradient(90deg,#000 45%,transparent);-webkit-mask-composite:source-in;
+  mask-image:linear-gradient(180deg,transparent,#000 20%,#000 80%,transparent),linear-gradient(90deg,#000 45%,transparent);mask-composite:intersect}
+.deco-right::before{right:0;background-image:url("../img/deco/motif-droit.svg");
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 20%,#000 80%,transparent),linear-gradient(270deg,#000 45%,transparent);-webkit-mask-composite:source-in;
+  mask-image:linear-gradient(180deg,transparent,#000 20%,#000 80%,transparent),linear-gradient(270deg,#000 45%,transparent);mask-composite:intersect}
 .ring{position:absolute;z-index:-1;width:clamp(240px,30vw,460px);aspect-ratio:1;background:url("../img/deco/anneau.svg") center/contain no-repeat;pointer-events:none}
 
 /* ---------- Barre d'onglets mobile (expérience application) ---------- */
@@ -836,7 +842,7 @@ strong{font-weight:700;color:var(--ink)}
   .cols-3{grid-template-columns:1fr}
   .page-hero{min-height:clamp(420px,70svh,560px)}
   .subnav{top:var(--header-h)}
-  .deco-left::before,.deco-right::before{opacity:.6;width:120px}
+  .deco-left::before,.deco-right::before{opacity:.8;width:130px}
 
   /* Barre d'onglets façon application */
   .tabbar{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:65;height:calc(var(--tabbar-h) + var(--safe-b));padding-bottom:var(--safe-b);
