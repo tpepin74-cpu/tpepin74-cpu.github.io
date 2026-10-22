@@ -34,9 +34,19 @@ window.ESMPILieux = function () {
     if (window.L && mapEl) {
       try {
         map = L.map(mapEl, { scrollWheelZoom: false, zoomControl: true, attributionControl: true }).setView([45.55, 5.15], 9);
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-          maxZoom: 18, subdomains: 'abcd', attribution: '&copy; OpenStreetMap &copy; CARTO'
+        /* Fond de carte : Plan IGN (Géoplateforme, gratuit et sans clé) ; OpenStreetMap prend le relais en cas d'indisponibilité */
+        var ign = L.tileLayer('https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}', {
+          minZoom: 6, maxZoom: 18, attribution: '&copy; <a href="https://www.ign.fr/" target="_blank" rel="noopener">IGN</a> – Géoplateforme'
         }).addTo(map);
+        var tileErrors = 0;
+        ign.on('tileerror', function () {
+          if (++tileErrors === 4) {
+            map.removeLayer(ign);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              maxZoom: 18, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>'
+            }).addTo(map);
+          }
+        });
         if (fallback) fallback.remove();
         D.lieux.forEach(function (l) {
           var ic = L.divIcon({ className: '', html: '<div class="pin ' + (tone(l) ? 'pin--' + tone(l) : '') + '" data-id="' + l.id + '"></div>', iconSize: [26, 32], iconAnchor: [13, 32], popupAnchor: [0, -30] });
