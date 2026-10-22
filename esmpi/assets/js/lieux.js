@@ -33,7 +33,14 @@ window.ESMPILieux = function () {
     var map = null, markers = {};
     if (window.L && mapEl) {
       try {
-        map = L.map(mapEl, { scrollWheelZoom: false, zoomControl: true, attributionControl: true }).setView([45.55, 5.15], 9);
+        var touch = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+        /* Sur écran tactile, un doigt fait défiler la page : la carte ne se déplace qu'après un premier appui */
+        map = L.map(mapEl, { scrollWheelZoom: false, dragging: !touch, tap: false, zoomControl: true, attributionControl: true }).setView([45.55, 5.15], 9);
+        if (touch) {
+          var hint = document.createElement('p'); hint.className = 'map-hint'; hint.textContent = 'Touchez la carte pour la déplacer';
+          mapEl.parentNode.appendChild(hint);
+          map.on('click', function () { map.dragging.enable(); hint.classList.add('is-off'); });
+        }
         /* Fond de carte : Plan IGN (Géoplateforme, gratuit et sans clé) ; OpenStreetMap prend le relais en cas d'indisponibilité */
         var ign = L.tileLayer('https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/png&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}', {
           minZoom: 6, maxZoom: 18, attribution: '&copy; <a href="https://www.ign.fr/" target="_blank" rel="noopener">IGN</a> – Géoplateforme'

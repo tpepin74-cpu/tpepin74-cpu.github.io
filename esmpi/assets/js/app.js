@@ -102,20 +102,53 @@
     orient.addEventListener('submit', function (e) { e.preventDefault(); if (sB.value) window.ESMPINav(sB.value); });
   }
 
-  /* Sous-navigation : section active */
-  var sublinks = $$('.subnav a');
-  if (sublinks.length && 'IntersectionObserver' in window) {
-    var map = {};
-    sublinks.forEach(function (a) { var s = document.getElementById(a.getAttribute('href').slice(1)); if (s) map[s.id] = a; });
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          sublinks.forEach(function (a) { a.classList.remove('is-active'); });
-          var a = map[en.target.id]; if (a) { a.classList.add('is-active'); a.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' }); }
-        }
+  /* Sous-navigation d'ancres : défilement fluide sous l'en-tête, section active suivie au défilement */
+  var subnav = $('.subnav');
+  if (!subnav && window.__esmpiSpy) { window.removeEventListener('scroll', window.__esmpiSpy); window.__esmpiSpy = null; }
+  if (subnav) {
+    var ul = $('ul', subnav), sublinks = $$('a', subnav), targets = [];
+    sublinks.forEach(function (a) { var t = document.getElementById(a.getAttribute('href').slice(1)); if (t) targets.push([t, a]); });
+    var offset = function () { return (header ? header.getBoundingClientRect().height : 0) + subnav.getBoundingClientRect().height; };
+    var current = null;
+    var activate = function (a) {
+      if (a === current) return; current = a;
+      sublinks.forEach(function (x) { x.classList.toggle('is-active', x === a); if (x === a) x.setAttribute('aria-current', 'location'); else x.removeAttribute('aria-current'); });
+      if (a && ul && ul.scrollWidth > ul.clientWidth + 2) { var li = a.parentElement; ul.scrollTo({ left: li.offsetLeft - (ul.clientWidth - li.offsetWidth) / 2, behavior: 'smooth' }); }
+    };
+    var locked = false, lockT;
+    var spy = function () {
+      if (locked) return;
+      var line = offset() + 24, pick = null, best = -Infinity;
+      targets.forEach(function (p) {
+        var top = Math.round(p[0].getBoundingClientRect().top);
+        if (top > line) return;
+        /* sections côte à côte (même hauteur) : on garde celle déjà active */
+        if (top > best + 2 || (Math.abs(top - best) <= 2 && p[1] === current)) { best = top; pick = p[1]; }
       });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    Object.keys(map).forEach(function (id) { io.observe(document.getElementById(id)); });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4 && targets.length) pick = targets[targets.length - 1][1];
+      activate(pick);
+    };
+    var ticking = false;
+    if (window.__esmpiSpy) window.removeEventListener('scroll', window.__esmpiSpy);
+    window.__esmpiSpy = function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; spy(); }); } };
+    window.addEventListener('scroll', window.__esmpiSpy, { passive: true });
+    sublinks.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var t = document.getElementById(a.getAttribute('href').slice(1)); if (!t) return;
+        e.preventDefault();
+        var y = t.getBoundingClientRect().top + window.scrollY - offset() + 1;
+        activate(a); locked = true; clearTimeout(lockT);
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
+        if (history.replaceState) history.replaceState(null, '', '#' + t.id);
+        lockT = setTimeout(function () { locked = false; spy(); }, 900);
+        t.setAttribute('tabindex', '-1'); t.focus({ preventScroll: true });
+      });
+    });
+    /* fondus latéraux seulement quand la barre déborde */
+    var edges = function () { if (!ul) return; var max = ul.scrollWidth - ul.clientWidth; ul.classList.toggle('fade-l', ul.scrollLeft > 2); ul.classList.toggle('fade-r', max > 2 && ul.scrollLeft < max - 2); };
+    if (ul) { ul.addEventListener('scroll', edges, { passive: true }); window.addEventListener('resize', edges); edges(); }
+    spy();
   }
 
   /* Onglets */
