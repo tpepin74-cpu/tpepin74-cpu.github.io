@@ -198,6 +198,9 @@ strong{font-weight:700;color:var(--ink)}
 .quick a:focus-visible{outline:none}
 .quick svg{width:46px;height:46px;stroke-width:1.1}
 .quick b{font-size:1.125rem;font-weight:600;line-height:1.2;text-wrap:balance;max-width:17ch}
+.quick--3 ul{grid-template-columns:repeat(3,1fr);max-width:940px}
+.quick--3 a{min-height:150px;padding:26px 34px 18px;justify-content:flex-start}
+.quick--3 b{font-size:1.25rem;max-width:20ch}
 
 /* Bandeau d'annonce */
 .announce{background:var(--pink-pale);border-bottom:1px solid #f6cfe0}
@@ -815,6 +818,9 @@ strong{font-weight:700;color:var(--ink)}
   .quick a{min-height:112px;padding:12px 14px;gap:8px}
   .quick svg{width:34px;height:34px}
   .quick b{font-size:.9rem}
+  .quick--3 ul{display:grid;grid-template-columns:1.4fr 1fr 1fr;overflow:visible;padding-inline:4px}
+  .quick--3 a{min-height:112px;padding:14px 10px 10px}
+  .quick--3 b{font-size:.9rem;max-width:none}
 
   .announce .wrap{grid-template-columns:1fr;gap:12px}
   .orient{grid-template-columns:1fr}
