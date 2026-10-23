@@ -91,24 +91,6 @@
       "source": "Neuchâtel Vins et Terroir"
     },
     {
-      "id": "accords-mets-et-vins-avec-le-domaine-de-la-grillette",
-      "title": "Accords mets et vins avec le Domaine de La Grillette",
-      "start": "2026-10-22",
-      "end": "2026-10-22",
-      "place": "Restaurant La Maison du Prussien à Neuchâtel",
-      "region": "Neuchâtel",
-      "url": "https://neuchatel-vins-terroir.ch/evenement/accords-mets-et-vins-avec-le-domaine-de-la-grillette/",
-      "image": {
-        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/09/Capture-decran-2026-09-22-111301.png",
-        "width": 462,
-        "height": 445,
-        "fit": "contain",
-        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/accords-mets-et-vins-avec-le-domaine-de-la-grillette/",
-        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
-      },
-      "source": "Neuchâtel Vins et Terroir"
-    },
-    {
       "id": "marche-du-terroir",
       "title": "Marché du terroir",
       "start": "2026-10-24",
@@ -217,7 +199,7 @@
       "source": "Neuchâtel Vins et Terroir"
     }
   ],
-  "updatedAt": "2026-10-22T10:18:17.248Z",
+  "updatedAt": "2026-10-23T10:11:39.779Z",
   "partial": false,
   "source": "https://neuchatel-vins-terroir.ch/evenement/",
   "stale": false
