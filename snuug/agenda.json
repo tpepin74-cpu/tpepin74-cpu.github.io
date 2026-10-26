@@ -73,60 +73,6 @@
       "source": "Neuchâtel Vins et Terroir"
     },
     {
-      "id": "foire-du-jura",
-      "title": "Foire du Jura",
-      "start": "2026-10-16",
-      "end": "2026-10-25",
-      "place": "À côté de la Halle des expositions Rue Emile-Boéchat 60 2800 Delémont",
-      "region": "Jura",
-      "url": "https://neuchatel-vins-terroir.ch/evenement/foire-du-jura/",
-      "image": {
-        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/09/Capture-decran-2026-09-30-134208.png",
-        "width": 256,
-        "height": 234,
-        "fit": "contain",
-        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/foire-du-jura/",
-        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
-      },
-      "source": "Neuchâtel Vins et Terroir"
-    },
-    {
-      "id": "marche-du-terroir",
-      "title": "Marché du terroir",
-      "start": "2026-10-24",
-      "end": "2026-10-25",
-      "place": "Mycorama Cernier",
-      "region": "Neuchâtel",
-      "url": "https://neuchatel-vins-terroir.ch/evenement/marche-du-terroir/",
-      "image": {
-        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2025/07/VinTerroir_Mycorama-23-2-1024x683.jpg",
-        "width": 1024,
-        "height": 683,
-        "fit": "cover",
-        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/marche-du-terroir/",
-        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
-      },
-      "source": "Neuchâtel Vins et Terroir"
-    },
-    {
-      "id": "grande-torree-neuchateloise",
-      "title": "Grande torrée neuchâteloise",
-      "start": "2026-10-25",
-      "end": "2026-10-25",
-      "place": "Montagne de Chaumont",
-      "region": "Neuchâtel",
-      "url": "https://neuchatel-vins-terroir.ch/evenement/grande-torree-neuchateloise/",
-      "image": {
-        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/09/Capture-decran-2026-09-14-162409-1.png",
-        "width": 473,
-        "height": 669,
-        "fit": "contain",
-        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/grande-torree-neuchateloise/",
-        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
-      },
-      "source": "Neuchâtel Vins et Terroir"
-    },
-    {
       "id": "salon-des-vins-lache-moi-la-grappe-2",
       "title": "Salon des Vins Lâche-moi la Grappe",
       "start": "2026-10-29",
@@ -199,7 +145,7 @@
       "source": "Neuchâtel Vins et Terroir"
     }
   ],
-  "updatedAt": "2026-10-25T09:54:07.102Z",
+  "updatedAt": "2026-10-26T11:13:15.424Z",
   "partial": false,
   "source": "https://neuchatel-vins-terroir.ch/evenement/",
   "stale": false
