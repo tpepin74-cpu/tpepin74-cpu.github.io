@@ -127,6 +127,24 @@
       "source": "Neuchâtel Vins et Terroir"
     },
     {
+      "id": "caves-ouvertes-mauler",
+      "title": "Caves ouvertes Mauler",
+      "start": "2026-12-11",
+      "end": "2026-12-12",
+      "place": "Caves Mauler, Le Prieuré St-Pierre, 2112 Môtiers Rue Centrale 7",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes-mauler/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/10/Caves-ouvertes-A5-FR-730x1024.jpg",
+        "width": 730,
+        "height": 1024,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes-mauler/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
       "id": "caves-ouvertes-neuchateloises-2027",
       "title": "Caves Ouvertes neuchâteloises 2027",
       "start": "2027-04-23",
@@ -145,7 +163,7 @@
       "source": "Neuchâtel Vins et Terroir"
     }
   ],
-  "updatedAt": "2026-10-26T11:13:15.424Z",
+  "updatedAt": "2026-10-27T10:40:43.506Z",
   "partial": false,
   "source": "https://neuchatel-vins-terroir.ch/evenement/",
   "stale": false
