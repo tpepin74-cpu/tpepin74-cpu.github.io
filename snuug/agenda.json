@@ -19,24 +19,6 @@
       "source": "Neuchâtel Vins et Terroir"
     },
     {
-      "id": "caveau-de-degustation-des-vins-de-cortaillod",
-      "title": "Caveau de dégustation des vins de Cortaillod",
-      "start": "2026-04-17",
-      "end": "2026-10-31",
-      "place": "Petit-Cortaillod 19 · 2016 Cortaillod",
-      "region": "Neuchâtel",
-      "url": "https://neuchatel-vins-terroir.ch/evenement/caveau-de-degustation-des-vins-de-cortaillod/",
-      "image": {
-        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/06/Cortaillod-1-1024x767.jpg",
-        "width": 1024,
-        "height": 767,
-        "fit": "cover",
-        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/caveau-de-degustation-des-vins-de-cortaillod/",
-        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
-      },
-      "source": "Neuchâtel Vins et Terroir"
-    },
-    {
       "id": "le-marche-de-neuchatel",
       "title": "Marché de Neuchâtel",
       "start": "2026-05-02",
@@ -50,24 +32,6 @@
         "height": 637,
         "fit": "cover",
         "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/le-marche-de-neuchatel/",
-        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
-      },
-      "source": "Neuchâtel Vins et Terroir"
-    },
-    {
-      "id": "caveau-de-degustation-des-vins-de-boudry",
-      "title": "Caveau de dégustation des vins de Boudry",
-      "start": "2026-06-05",
-      "end": "2026-10-31",
-      "place": "Ruelle du Château · 2017 Boudry",
-      "region": "Neuchâtel",
-      "url": "https://neuchatel-vins-terroir.ch/evenement/caveau-de-degustation-des-vins-de-boudry/",
-      "image": {
-        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/06/Boudry-3.png",
-        "width": 643,
-        "height": 745,
-        "fit": "contain",
-        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/caveau-de-degustation-des-vins-de-boudry/",
         "credit": "Visuel publié par Neuchâtel Vins et Terroir"
       },
       "source": "Neuchâtel Vins et Terroir"
@@ -163,7 +127,7 @@
       "source": "Neuchâtel Vins et Terroir"
     }
   ],
-  "updatedAt": "2026-10-30T11:28:13.433Z",
+  "updatedAt": "2026-10-31T10:59:03.964Z",
   "partial": false,
   "source": "https://neuchatel-vins-terroir.ch/evenement/",
   "stale": false
