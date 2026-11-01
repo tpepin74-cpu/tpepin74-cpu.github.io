@@ -37,24 +37,6 @@
       "source": "Neuchâtel Vins et Terroir"
     },
     {
-      "id": "salon-des-vins-lache-moi-la-grappe-2",
-      "title": "Salon des Vins Lâche-moi la Grappe",
-      "start": "2026-10-29",
-      "end": "2026-10-31",
-      "place": "Anciens Abattoirs, La Chaux-de-Fonds",
-      "region": "Neuchâtel",
-      "url": "https://neuchatel-vins-terroir.ch/evenement/salon-des-vins-lache-moi-la-grappe-2/",
-      "image": {
-        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/09/Capture-decran-2026-09-28-152120.png",
-        "width": 831,
-        "height": 420,
-        "fit": "contain",
-        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/salon-des-vins-lache-moi-la-grappe-2/",
-        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
-      },
-      "source": "Neuchâtel Vins et Terroir"
-    },
-    {
       "id": "la-paulee-2026",
       "title": "La Paulée",
       "start": "2026-11-19",
@@ -127,7 +109,7 @@
       "source": "Neuchâtel Vins et Terroir"
     }
   ],
-  "updatedAt": "2026-10-31T10:59:03.964Z",
+  "updatedAt": "2026-11-01T11:54:10.837Z",
   "partial": false,
   "source": "https://neuchatel-vins-terroir.ch/evenement/",
   "stale": false
