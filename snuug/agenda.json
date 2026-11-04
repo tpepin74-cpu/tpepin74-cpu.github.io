@@ -107,9 +107,99 @@
         "credit": "Visuel publié par Neuchâtel Vins et Terroir"
       },
       "source": "Neuchâtel Vins et Terroir"
+    },
+    {
+      "id": "caves-ouvertes-2026",
+      "title": "Caves Ouvertes",
+      "start": "2027-04-23",
+      "end": "2027-04-24",
+      "place": "Canton de Neuchâtel",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes-2026/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2025/05/145_CavesOuvertes2025-1024x683.jpg",
+        "width": 1024,
+        "height": 683,
+        "fit": "cover",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes-2026/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
+      "id": "fete-la-terre",
+      "title": "Fête la Terre",
+      "start": "2027-08-21",
+      "end": "2027-08-29",
+      "place": "Evologia 2053 Cernier",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/fete-la-terre/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2025/07/puid_8baa5a6b-77e5-4a58-8837-92e43dea4321_eiplace_IF_ImageSliderPart_3400_3474-1024x436.jpg",
+        "width": 1024,
+        "height": 436,
+        "fit": "cover",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/fete-la-terre/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
+      "id": "fete-des-vendanges-2026",
+      "title": "Fête des Vendanges",
+      "start": "2027-09-25",
+      "end": "2027-09-27",
+      "place": "Neuchâtel Rue du Seyon, 2000 Neuchâtel",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/fete-des-vendanges-2026/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2025/07/FDV24_27092024_VainqueurGerleOr_ATvision-1-1024x683.jpg",
+        "width": 1024,
+        "height": 683,
+        "fit": "cover",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/fete-des-vendanges-2026/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
+      "id": "marche-des-produits-du-terroir-2026",
+      "title": "Marché des Produits du Terroir",
+      "start": "2027-10-23",
+      "end": "2027-10-24",
+      "place": "Mycorama Pass. des Cèpes 3, 2053 Cernier",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/marche-des-produits-du-terroir-2026/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2025/07/VinTerroir_Mycorama-23-1024x683.jpg",
+        "width": 1024,
+        "height": 683,
+        "fit": "cover",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/marche-des-produits-du-terroir-2026/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
+      "id": "marche-de-noel-evologia-2",
+      "title": "Marché de Noël Evologia",
+      "start": "2027-11-24",
+      "end": "2027-11-28",
+      "place": "Mycorama Pass. des Cèpes 3, 2053 Cernier",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/marche-de-noel-evologia-2/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2025/07/juho-luomala-XNau4plT3Vs-unsplash-1024x576.jpg",
+        "width": 1024,
+        "height": 576,
+        "fit": "cover",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/marche-de-noel-evologia-2/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
     }
   ],
-  "updatedAt": "2026-11-03T12:52:11.666Z",
+  "updatedAt": "2026-11-04T13:05:09.672Z",
   "partial": false,
   "source": "https://neuchatel-vins-terroir.ch/evenement/",
   "stale": false
