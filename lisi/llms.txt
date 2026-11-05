@@ -5,24 +5,24 @@
 - Métiers : rénovation complète d’appartement, de maison et de chalet (activité principale) ; peinture intérieure ; peinture à l’airless ; ponçage et vitrification de parquet ; plâtrerie ; préparation et reprise des supports ; enduits décoratifs ; peinture des boiseries ; conseil couleur.
 - Communes autour de Grenoble : Saint-Martin-d’Hères, Échirolles, Fontaine, Voiron, Meylan, Saint-Égrève, Seyssinet-Pariset, Sassenage, Eybens, Le Pont-de-Claix.
 - Avis clients : note de 5,0 sur 5 sur Google, plus de 31 avis.
-- Méthode : estimation indicative en ligne (1 minute), visite technique gratuite, devis détaillé.
+- Méthode : demande de devis personnalisée en ligne, visite technique gratuite, devis détaillé.
 - Valeurs : fidélité, honnêteté, fraternité, courage, générosité, discipline, patience (valeurs des Compagnons du Devoir).
 - Entreprise : LISI RENOVATION, SARL, SIRET 993 618 602 00011, RCS Grenoble, gérant David Lisi.
 - Adresse : 28 avenue de la Combe, 38610 Gières, France · Téléphone : +33 6 32 73 50 38 · E-mail : david.lisi.38@hotmail.fr
 - Réseaux : https://www.instagram.com/lisipeinture/ · https://www.facebook.com/lisipeinture/
 
 ## Pages
-- [Rénovation & peinture à Grenoble, Lyon, Genève | Lisi Rénovation](https://tpepin74-cpu.github.io/lisi/): Rénovation intérieure et peinture par un Compagnon du Devoir. Grenoble, Isère, Savoie, Haute-Savoie, Lyon et Genève. Estimation en ligne en 1 minute.
+- [Rénovation & peinture à Grenoble, Lyon, Genève | Lisi Rénovation](https://tpepin74-cpu.github.io/lisi/): Rénovation intérieure et peinture par un Compagnon du Devoir. Grenoble, Isère, Savoie, Haute-Savoie, Lyon et Genève. Demandez votre devis personnalisé.
 - [Artisan rénovation & peinture à Grenoble | Notre atelier Lisi](https://tpepin74-cpu.github.io/lisi/entreprise.html): Lisi Rénovation, atelier de rénovation intérieure et de peinture à Grenoble : un interlocuteur unique, une méthode claire, des finitions soignées.
 - [David, Compagnon du Devoir peintre & rénovation | Lisi Rénovation](https://tpepin74-cpu.github.io/lisi/david.html): Le parcours de David, Compagnon du Devoir : préparation des supports, enduits, peinture et rénovation intérieure à Grenoble et en Rhône-Alpes.
 - [Les 7 valeurs des Compagnons du Devoir appliquées au chantier](https://tpepin74-cpu.github.io/lisi/valeurs.html): Fidélité, honnêteté, fraternité, courage, générosité, discipline, patience : les valeurs du compagnonnage traduites en engagements sur votre chantier.
 - [Rénovation intérieure à Grenoble, Isère & Genève | Lisi Rénovation](https://tpepin74-cpu.github.io/lisi/renovation.html): Rénovation d’appartement, de maison ou de chalet : reprise des supports, enduits, sols et finitions. Devis détaillé après visite technique gratuite.
-- [Peintre à Grenoble : peinture intérieure & finitions | Lisi](https://tpepin74-cpu.github.io/lisi/peinture.html): Artisan peintre à Grenoble et en Rhône-Alpes : murs, plafonds, boiseries, enduits décoratifs, conseil couleur. Estimation indicative en ligne.
+- [Peintre à Grenoble : peinture intérieure & finitions | Lisi](https://tpepin74-cpu.github.io/lisi/peinture.html): Artisan peintre à Grenoble et en Rhône-Alpes : murs, plafonds, boiseries, enduits décoratifs, conseil couleur. Devis personnalisé sur demande.
 - [Peinture à l’airless à Grenoble & en Isère | Lisi Rénovation](https://tpepin74-cpu.github.io/lisi/airless.html): Peinture airless à Grenoble : plafonds, grands murs, cages d’escalier, logements vides. Rendu sans trace, chantier plus court. Artisan Compagnon du Devoir.
 - [Ponçage & vitrification de parquet à Grenoble | Lisi](https://tpepin74-cpu.github.io/lisi/parquet.html): Ponçage, reprise et vitrification de parquets anciens à Grenoble et en Isère : point de Hongrie, bâton rompu, lames. Vitrificateur ou huile, devis gratuit.
 - [Réalisations & inspirations rénovation et peinture | Lisi](https://tpepin74-cpu.github.io/lisi/inspirations.html): Images de chantier réelles et ambiances d’inspiration pour vos projets de rénovation et de peinture intérieure à Grenoble, Lyon, Annecy et Genève.
-- [Zones d’intervention : Isère, Savoie, Rhône, Genève | Lisi](https://tpepin74-cpu.github.io/lisi/interventions.html): Rénovation et peinture à Grenoble, en Isère, Savoie, Haute-Savoie, Rhône, Drôme et dans le canton de Genève. Trouvez votre ville et estimez votre projet.
-- [Devis rénovation & peinture à Grenoble | Contact Lisi](https://tpepin74-cpu.github.io/lisi/contact.html): Demandez votre devis de rénovation ou de peinture : estimation en 1 minute avec Lisi, formulaire de contact ou appel direct à l’atelier de Grenoble.
+- [Zones d’intervention : Isère, Savoie, Rhône, Genève | Lisi](https://tpepin74-cpu.github.io/lisi/interventions.html): Rénovation et peinture à Grenoble, en Isère, Savoie, Haute-Savoie, Rhône, Drôme et dans le canton de Genève. Trouvez votre ville et demandez votre devis.
+- [Devis rénovation & peinture à Grenoble | Contact Lisi](https://tpepin74-cpu.github.io/lisi/contact.html): Demandez votre devis de rénovation ou de peinture : demande personnalisée avec Lisi, formulaire de contact ou appel direct à l’atelier de Grenoble.
 - [Peintre & rénovation intérieure à Grenoble | Lisi Rénovation](https://tpepin74-cpu.github.io/lisi/grenoble.html): Lisi Rénovation, artisan peintre basé à Gières : rénovation d’appartements et peinture intérieure à Grenoble et dans la métropole. Visite technique gratuite.
 - [Rénovation d’appartement & peinture à Lyon | Lisi Rénovation](https://tpepin74-cpu.github.io/lisi/lyon.html): Rénovation d’appartements anciens et peinture à Lyon : moulures, grandes hauteurs, boiseries. Artisan Compagnon du Devoir, devis détaillé après visite.
 - [Peintre à Annecy : chalets, maisons, appartements | Lisi Rénovation](https://tpepin74-cpu.github.io/lisi/annecy.html): Peinture et rénovation intérieure à Annecy et autour du lac : chalets, boiseries, enduits à la chaux. Artisan Compagnon du Devoir, visite technique gratuite.
