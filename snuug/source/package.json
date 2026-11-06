@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "vite build && node build-pages.mjs"
+    "build": "vite build && node build-pages.mjs",
+    "prepare:publish": "npm run build && node sync-publish.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
