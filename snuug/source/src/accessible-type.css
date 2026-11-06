@@ -98,9 +98,9 @@ body{font-size:var(--type-body);line-height:1.65}
 #site-shell .souffler-parallax h2{color:#fff;font-size:clamp(3rem,7vw,7rem)!important;margin:0;padding:24px;text-shadow:0 2px 24px #0005}
 @media(max-width:760px){.souffler-parallax{height:70svh;min-height:380px}}
 /* Quiet, underlined discovery links in opening photo sections. */
-#site-shell :is(.landscape-hero,.editorial-hero,.product-hero) :is(a.button,button.button){background:transparent;color:inherit;border:0;border-radius:0;box-shadow:none;min-width:0;padding:12px 0;min-height:44px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;gap:14px}
-#site-shell :is(.landscape-hero,.editorial-hero,.product-hero) :is(a.button,button.button):hover{text-decoration-thickness:2px;background:transparent}
-#site-shell :is(.landscape-hero,.editorial-hero,.product-hero) :is(a.button,button.button):focus-visible{outline:2px solid currentColor;outline-offset:5px}
+#site-shell :is(.landscape-hero,.editorial-hero,.product-hero,.home-experience-feature) :is(a.button,button.button){background:transparent;color:inherit;border:0;border-radius:0;box-shadow:none;min-width:0;padding:12px 0;min-height:44px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;gap:14px}
+#site-shell :is(.landscape-hero,.editorial-hero,.product-hero,.home-experience-feature) :is(a.button,button.button):hover{text-decoration-thickness:2px;background:transparent}
+#site-shell :is(.landscape-hero,.editorial-hero,.product-hero,.home-experience-feature) :is(a.button,button.button):focus-visible{outline:2px solid currentColor;outline-offset:5px}
 /* Compact editorial footer, with comfortable touch targets. */
 #site-shell footer{padding:48px 5vw calc(112px + env(safe-area-inset-bottom,0px))}
 #site-shell .footer-top{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:40px;align-items:start}
