@@ -1,0 +1,115 @@
+name: La Bonne Auberge - publication
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'bonne-auberge-v11.zip'
+      - 'bonne-auberge/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: bonne-auberge-publication
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Recuperer tous les sites existants
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Importer uniquement le dossier bonne-auberge
+        id: import
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib
+          import os
+          import stat
+          import zipfile
+          from pathlib import Path, PurePosixPath
+
+          archive = Path('bonne-auberge-v11.zip')
+          destination = Path('bonne-auberge')
+          expected = '80c5e9dd6e379530af61654a75e8c9770dc4a1ae1631a16c7c04bff50636a6ad'
+          if archive.exists():
+              if hashlib.sha256(archive.read_bytes()).hexdigest() != expected:
+                  raise SystemExit('Archive inattendue : utiliser bonne-auberge-v11.zip prepare pour cette publication.')
+              if destination.exists():
+                  raise SystemExit('Le dossier bonne-auberge existe deja. Import interrompu pour preserver son contenu.')
+              with zipfile.ZipFile(archive) as bundle:
+                  entries = bundle.infolist()
+                  if len(entries) != 85 or sum(i.file_size for i in entries) > 20_000_000:
+                      raise SystemExit('Archive non conforme.')
+                  for entry in entries:
+                      path = PurePosixPath(entry.filename)
+                      if path.is_absolute() or '..' in path.parts or not path.parts or path.parts[0] != 'bonne-auberge':
+                          raise SystemExit('Chemin refuse : ' + entry.filename)
+                      if stat.S_ISLNK(entry.external_attr >> 16):
+                          raise SystemExit('Lien symbolique refuse.')
+                  bundle.extractall('.')
+              archive.unlink()
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+                  output.write('imported=true\n')
+          if not (destination / 'index.html').is_file():
+              raise SystemExit('Site absent. Deposer bonne-auberge-v11.zip a la racine du depot puis valider le commit.')
+          required = ['assets/site.css', 'assets/site.js', 'assets/site-data.js', 'assets/logo-bonne-auberge.svg', 'restaurant.html', 'epicerie.html', 'chambres.html']
+          for name in required:
+              if not (destination / name).is_file():
+                  raise SystemExit('Ressource manquante : ' + name)
+          print('La Bonne Auberge V11 : fichiers controles, autres sites preserves.')
+          PY
+          node --check bonne-auberge/assets/site.js
+          node --check bonne-auberge/assets/site-data.js
+
+      - name: Enregistrer uniquement La Bonne Auberge
+        if: steps.import.outputs.imported == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- bonne-auberge
+          git add -u -- bonne-auberge-v11.zip
+          git diff --cached --name-only | while IFS= read -r path; do
+            case "$path" in
+              bonne-auberge/*|bonne-auberge-v11.zip) ;;
+              *) echo "Modification hors perimetre : $path"; exit 1 ;;
+            esac
+          done
+          git commit -m 'Publish La Bonne Auberge V11 with animated logo'
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then break; fi
+            if [ "$attempt" -eq 3 ]; then exit 1; fi
+            sleep 2
+          done
+
+      - name: Prepar­er tous les sites pour GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Publier les sites en preservant les dossiers existants
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Adresse de La Bonne Auberge
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          printf '## La Bonne Auberge V11\n\n%sbonne-auberge/\n\nRestaurant, epicerie Click & Collect de demonstration et chambres.\n' "$PAGE_URL" >> "$GITHUB_STEP_SUMMARY"
