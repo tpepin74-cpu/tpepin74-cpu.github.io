@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths:
+      - 'bonne-auberge-leger.zip'
       - 'bonne-auberge-v11.zip'
       - 'bonne-auberge/**'
   workflow_dispatch:
@@ -43,35 +44,41 @@ jobs:
           import zipfile
           from pathlib import Path, PurePosixPath
 
-          archive = Path('bonne-auberge-v11.zip')
+          accepted = {
+              'bonne-auberge-leger.zip': '837f3179cf0eaad1dea42724b8c57c031f0429cfc011c1789cde1b759bc23469',
+              'bonne-auberge-v11.zip': '80c5e9dd6e379530af61654a75e8c9770dc4a1ae1631a16c7c04bff50636a6ad',
+          }
+          archive = next((Path(name) for name in accepted if Path(name).is_file()), None)
           destination = Path('bonne-auberge')
-          expected = '80c5e9dd6e379530af61654a75e8c9770dc4a1ae1631a16c7c04bff50636a6ad'
-          if archive.exists():
-              if hashlib.sha256(archive.read_bytes()).hexdigest() != expected:
-                  raise SystemExit('Archive inattendue : utiliser bonne-auberge-v11.zip prepare pour cette publication.')
+          if archive is not None:
+              if hashlib.sha256(archive.read_bytes()).hexdigest() != accepted[archive.name]:
+                  raise SystemExit('Archive inattendue : utiliser le ZIP prepare pour cette publication sans le modifier.')
               if destination.exists():
                   raise SystemExit('Le dossier bonne-auberge existe deja. Import interrompu pour preserver son contenu.')
               with zipfile.ZipFile(archive) as bundle:
                   entries = bundle.infolist()
                   if len(entries) != 85 or sum(i.file_size for i in entries) > 20_000_000:
                       raise SystemExit('Archive non conforme.')
+                  names = set()
                   for entry in entries:
                       path = PurePosixPath(entry.filename)
-                      if path.is_absolute() or '..' in path.parts or not path.parts or path.parts[0] != 'bonne-auberge':
+                      if path.is_absolute() or '..' in path.parts or not path.parts or path.parts[0] != 'bonne-auberge' or '\\' in entry.filename:
                           raise SystemExit('Chemin refuse : ' + entry.filename)
-                      if stat.S_ISLNK(entry.external_attr >> 16):
-                          raise SystemExit('Lien symbolique refuse.')
+                      if stat.S_ISLNK(entry.external_attr >> 16) or entry.filename in names:
+                          raise SystemExit('Lien symbolique ou doublon refuse.')
+                      names.add(entry.filename)
                   bundle.extractall('.')
               archive.unlink()
               with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
                   output.write('imported=true\n')
+                  output.write('archive=' + archive.name + '\n')
           if not (destination / 'index.html').is_file():
-              raise SystemExit('Site absent. Deposer bonne-auberge-v11.zip a la racine du depot puis valider le commit.')
+              raise SystemExit('Site absent. Deposer bonne-auberge-leger.zip a la racine du depot puis valider le commit.')
           required = ['assets/site.css', 'assets/site.js', 'assets/site-data.js', 'assets/logo-bonne-auberge.svg', 'restaurant.html', 'epicerie.html', 'chambres.html']
           for name in required:
               if not (destination / name).is_file():
                   raise SystemExit('Ressource manquante : ' + name)
-          print('La Bonne Auberge V11 : fichiers controles, autres sites preserves.')
+          print('La Bonne Auberge : fichiers controles, autres sites preserves.')
           PY
           node --check bonne-auberge/assets/site.js
           node --check bonne-auberge/assets/site-data.js
@@ -79,19 +86,21 @@ jobs:
       - name: Enregistrer uniquement La Bonne Auberge
         if: steps.import.outputs.imported == 'true'
         shell: bash
+        env:
+          IMPORT_ARCHIVE: ${{ steps.import.outputs.archive }}
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- bonne-auberge
-          git add -u -- bonne-auberge-v11.zip
+          git add -u -- "$IMPORT_ARCHIVE"
           git diff --cached --name-only | while IFS= read -r path; do
             case "$path" in
-              bonne-auberge/*|bonne-auberge-v11.zip) ;;
+              bonne-auberge/*|bonne-auberge-v11.zip|bonne-auberge-leger.zip) ;;
               *) echo "Modification hors perimetre : $path"; exit 1 ;;
             esac
           done
-          git commit -m 'Publish La Bonne Auberge V11 with animated logo'
+          git commit -m 'Publish La Bonne Auberge optimized site'
           for attempt in 1 2 3; do
             git pull --rebase origin main
             if git push origin HEAD:main; then break; fi
@@ -99,7 +108,7 @@ jobs:
             sleep 2
           done
 
-      - name: Prepar­er tous les sites pour GitHub Pages
+      - name: Preparer tous les sites pour GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
@@ -112,4 +121,4 @@ jobs:
         env:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
         run: |
-          printf '## La Bonne Auberge V11\n\n%sbonne-auberge/\n\nRestaurant, epicerie Click & Collect de demonstration et chambres.\n' "$PAGE_URL" >> "$GITHUB_STEP_SUMMARY"
+          printf '## La Bonne Auberge\n\n%sbonne-auberge/\n\nRestaurant, epicerie Click & Collect de demonstration et chambres.\n' "$PAGE_URL" >> "$GITHUB_STEP_SUMMARY"
