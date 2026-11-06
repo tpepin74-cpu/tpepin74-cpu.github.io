@@ -1,3 +1,9 @@
-import React from 'react';
-import {Image} from './Editorial';
-export function Sensations(){return <section id="sensations" className="sensations-scroll" aria-label="Les quatre sensations SNUUG">{[['Souffler','golf-1514','Les sentiers autour du Golf de Neuchâtel'],['Savourer','golf-1574','Le petit-déjeuner sur la terrasse'],['Contempler','noirmont-1982','Le panorama depuis la terrasse du Noirmont'],['Explorer','golf-1540','Le parcours du Golf de Neuchâtel']].map(([verb,photo,alt],i)=><article className="sensation-panel" key={verb} style={{zIndex:i+1}}><Image src={'/images/official/'+photo+'.webp'} alt={alt}/><div className="sensation-caption"><h2>{verb}.</h2></div></article>)}</section>}
+import React,{useRef} from 'react';
+import {motion,useScroll,useTransform,useReducedMotion} from 'framer-motion';
+import {imageAsset} from './image-assets';
+export function Sensations(){
+ const section=useRef(null),reduced=useReducedMotion();
+ const {scrollYProgress}=useScroll({target:section,offset:['start end','end start']});
+ const y=useTransform(scrollYProgress,[0,1],['-8%','8%']);
+ return <section ref={section} id="sensations" className="souffler-parallax" aria-labelledby="souffler-title"><motion.img src={imageAsset('/images/official/golf-1514.webp')} alt="La nature autour du Golf de Neuchâtel" loading="lazy" style={{y:reduced?0:y}}/><h2 id="souffler-title">Souffler.</h2></section>
+}

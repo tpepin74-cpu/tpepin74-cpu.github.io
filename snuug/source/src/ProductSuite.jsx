@@ -1,4 +1,5 @@
 import LiquidGallery from './LiquidGallery';
+import NatureCollection from './NatureCollection';
 import React from 'react';
 import {Image,Arrow,Plus,Reveal} from './Editorial';
 import {equipment} from './stays';
@@ -30,6 +31,7 @@ export default function ProductSuite({beforeSuite,afterSuite}){
   <section className="product-materials"><div><span className="eyebrow">Des signatures, une harmonie</span><Reveal><h2>Le design se voit.<br/>Le confort se ressent.</h2></Reveal><p>Le bois, les textiles, les objets que l’on touche chaque jour. Une sélection de maisons qui partagent le goût du détail.</p><div className="product-partners"><span>Ligne Roset</span><span>Garnier-Thiebaut</span><span>Aesop</span><span>Laufen</span><span>Loxone</span></div></div><Image src="/images/official/golf-1592.webp" alt="Le bois et les détails de finition dans la suite SNUUG"/></section>
   {afterSuite}
   <div className="product-concept">{beforeSuite}</div>
+  <NatureCollection/>
   <SignatureSection/>
   <details className="product-destination-details"><summary><span><small>La collection Signature</small><strong>SNUUG-CJ. Le Jura, grandeur nature.</strong></span><Plus/></summary><div className="page-container"><CJDestination/></div></details>
   <section className="product-finale"><Image src="/images/official/noirmont-1982.webp" alt="La terrasse SNUUG-CJ ouverte sur le paysage du Noirmont"/><div><span className="eyebrow">À vous de choisir la suite</span><h2>Le prochain paysage.<br/>Le vôtre.</h2><a className="button light" href="/snuug/reservation">Découvrir les destinations<Arrow/></a></div></section>
