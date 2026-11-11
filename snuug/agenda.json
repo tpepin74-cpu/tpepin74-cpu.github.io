@@ -55,6 +55,42 @@
       "source": "Neuchâtel Vins et Terroir"
     },
     {
+      "id": "encavage-de-trois-rods-caves-ouvertes",
+      "title": "Encavage de Trois-Rods / Caves ouvertes",
+      "start": "2026-11-20",
+      "end": "2026-11-21",
+      "place": "2017 Boudry Trois - Rods 11",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/encavage-de-trois-rods-caves-ouvertes/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/11/chasselas-scaled-e1794393091290-1021x1024.jpg",
+        "width": 1021,
+        "height": 1024,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/encavage-de-trois-rods-caves-ouvertes/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
+      "id": "cave-ouvertre-de-fin-dannee",
+      "title": "Caves ouvertes de fin d’année chez Alain Gerber",
+      "start": "2026-11-26",
+      "end": "2026-11-28",
+      "place": "Cave Alain Gerber impasse Alphonse-Albert 8, 2068 Hauterive",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/cave-ouvertre-de-fin-dannee/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/11/WhatsApp-Image-2026-10-23-at-11.18.04-e1794391996577-1024x1024.jpeg",
+        "width": 1024,
+        "height": 1024,
+        "fit": "cover",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/cave-ouvertre-de-fin-dannee/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
       "id": "degustations-automnales-les-vins-porret",
       "title": "Dégustations Automnales – Les vins Porret",
       "start": "2026-11-26",
@@ -68,6 +104,42 @@
         "height": 670,
         "fit": "cover",
         "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/degustations-automnales-les-vins-porret/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
+      "id": "cave-ouvertes-de-fin-dannee-chez-nicolet-vins",
+      "title": "Caves ouvertes de fin d’année chez Nicolet Vins",
+      "start": "2026-11-27",
+      "end": "2026-11-29",
+      "place": "2022 Bevaix Rue de la Gare 5",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/cave-ouvertes-de-fin-dannee-chez-nicolet-vins/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/11/format-agenda-4-1024x1024.png",
+        "width": 1024,
+        "height": 1024,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/cave-ouvertes-de-fin-dannee-chez-nicolet-vins/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
+      "id": "caves-ouvertes",
+      "title": "Caves Ouvertes",
+      "start": "2026-11-28",
+      "end": "2026-11-29",
+      "place": "Route du Camp 3 2028 Vaumarcus",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/11/format-agenda-3-1024x1024.png",
+        "width": 1024,
+        "height": 1024,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes/",
         "credit": "Visuel publié par Neuchâtel Vins et Terroir"
       },
       "source": "Neuchâtel Vins et Terroir"
@@ -235,7 +307,7 @@
       "source": "Neuchâtel Vins et Terroir"
     }
   ],
-  "updatedAt": "2026-11-10T13:34:22.399Z",
+  "updatedAt": "2026-11-11T12:49:38.043Z",
   "partial": false,
   "source": "https://neuchatel-vins-terroir.ch/evenement/",
   "stale": false
