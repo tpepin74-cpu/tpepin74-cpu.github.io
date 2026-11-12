@@ -109,6 +109,24 @@
       "source": "Neuchâtel Vins et Terroir"
     },
     {
+      "id": "cave-ouverte-de-noel-au-domaine-lavanchy-a-neuchatel",
+      "title": "Cave ouverte de Noël au domaine Lavanchy",
+      "start": "2026-11-27",
+      "end": "2026-11-28",
+      "place": "Neuchâtel Rue de la Dîme 48 2000 Neuchâtel",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/cave-ouverte-de-noel-au-domaine-lavanchy-a-neuchatel/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/11/IMG_E9441-838x1024.jpg",
+        "width": 838,
+        "height": 1024,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/cave-ouverte-de-noel-au-domaine-lavanchy-a-neuchatel/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
       "id": "cave-ouvertes-de-fin-dannee-chez-nicolet-vins",
       "title": "Caves ouvertes de fin d’année chez Nicolet Vins",
       "start": "2026-11-27",
@@ -307,7 +325,7 @@
       "source": "Neuchâtel Vins et Terroir"
     }
   ],
-  "updatedAt": "2026-11-11T12:49:38.043Z",
+  "updatedAt": "2026-11-12T13:52:04.325Z",
   "partial": false,
   "source": "https://neuchatel-vins-terroir.ch/evenement/",
   "stale": false
