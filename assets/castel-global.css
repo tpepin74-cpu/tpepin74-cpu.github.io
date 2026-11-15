@@ -201,3 +201,8 @@ main dt{font-size:14px}
 main .wine-group-count span{font-size:14px}
 .booking-strip label,.booking-strip .eyebrow{font-size:13px!important}
 main dl dt{font-size:14px!important}
+/* Footer : réseaux sociaux */
+.footer-minimal .footer-social{display:flex;justify-content:center;gap:16px}
+.footer-minimal .footer-social a{display:grid;place-items:center;width:44px;height:44px;border:1px solid #b2a38466;border-radius:50%;color:#b2a384;transition:color .3s,border-color .3s}
+.footer-minimal .footer-social a:hover,.footer-minimal .footer-social a:focus-visible{color:#d9cdb2;border-color:#d9cdb2;text-decoration:none}
+.footer-minimal .footer-social svg{width:17px;height:17px;display:block}
