@@ -142,3 +142,62 @@ h3{letter-spacing:.18em!important;font-size-adjust:.3!important}
 .hero-film h1.keyword-band__list,.hero-film h1.keyword-band__list *{font-weight:700!important;letter-spacing:.32em!important}
 @media(max-width:760px){h1,h2{letter-spacing:.12em!important;font-size-adjust:.31!important}}
 html[lang^=ru] body{font-size-adjust:none}
+
+/* ——— Sans italique : titres, sous-titres et accroches restent droits, comme le logo ——— */
+*,*::before,*::after{font-style:normal!important}
+blockquote p,main p em,main p i,main li em{font-style:italic!important}
+
+/* ——— Lisibilité : tailles relevées (corps 18 px, libellés 13 px) ——— */
+:root{--stack:clamp(28px,3vw,44px)}
+main p{font-size:18px!important;line-height:1.75}
+main p.note,main p[class*="note"],main p[class*="status"],main p[class*="message"],main p.source-links,main p[class*="location"],main p[class*="price"],main p[class*="guests"],main p[class*="features"],main figcaption,main .caption,main small{font-size:15px!important;line-height:1.65}
+main p[class*="mood"],main p.signature,main p.producer-house,main p.menu-choice{font-size:22px!important;line-height:1.45}
+main li{font-size:max(16px,1em)}
+h1{font-size:clamp(44px,5.4vw,80px)!important}
+h2{font-size:clamp(34px,3.6vw,52px)!important}
+h3{font-size:clamp(22px,2vw,28px)!important}
+.eyebrow{font-size:13px!important;letter-spacing:.26em}
+.button,.textlink,.water-discover,.hero-film-discover,.room-choice-link,.nav-shortcuts a,.footer .footer-actions a,[data-filter],.universe-link,.universe-book,.sheet-family,.outline,.chapter-nav a,.chapter-nav span{font-size:13px!important;letter-spacing:.2em}
+.choice-grid button{font-size:14px!important;letter-spacing:.16em}
+.house-notes__list h3{font-size:14px!important}
+.house-notes__num{font-size:13px}
+.booking-strip label,.booking-strip .eyebrow{font-size:12px!important}
+.booking-strip input,.booking-strip select,.booking-strip span{font-size:16px}
+@media(min-width:761px){.menu-button span,.editorial-header .button,.header-gift,.header-location{font-size:12px!important}}
+.nav-panel .nav-links nav a{font-size:clamp(16px,1.3vw,19px)}
+.nav-contact{font-size:14px}
+.footer-minimal .footer-address,.footer-minimal .footer-address a{font-size:16px}
+.footer-minimal .footer-bottom,.footer-minimal .footer-bottom a,.footer-minimal .footer-bottom button{font-size:12px!important}
+/* Légendes des cartes (offres, inspirations, plaisirs) */
+.mosaic-caption>span,.framed-controls>span{font-family:var(--display)!important;font-weight:700;font-size:13px!important;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
+.mosaic-caption p,.framed-caption p{font-size:17px!important;line-height:1.65}
+.mosaic-caption>span+p{margin-top:12px!important}
+
+/* ——— Rythme vertical unique : surtitre, titre, paragraphe et média séparés par le même espace ——— */
+.eyebrow:has(+ h1),.eyebrow:has(+ h2),.eyebrow:has(+ h3){display:block;margin-bottom:0!important}
+.eyebrow + h1,.eyebrow + h2,.eyebrow + h3{margin-top:var(--stack)!important}
+h1:has(+ p),h2:has(+ p){margin-bottom:0!important}
+h1 + p,h2 + p{margin-top:var(--stack)!important}
+@media(max-width:760px){
+ :root{--stack:28px}
+ main p{font-size:17px!important}
+ h1{font-size:40px!important}
+ h2{font-size:32px!important}
+ h3{font-size:21px!important}
+ .choice-grid button{font-size:13px!important}
+ .editorial-header .button{font-size:0!important}
+}
+.water-discover{text-transform:uppercase}
+/* Derniers petits textes remontés à une taille confortable */
+main .meta,main article.day>span,main p.person-role,main .producer-role,main .castel-history-date+*{font-size:13px!important}
+main .meta{font-family:var(--display)!important;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+main .castel-history-date{font-size:15px!important}
+main ul.equipments li,main .distinctions li,main .restaurant-booking-steps li,main ul:not([class]) li,main details summary,main details .archive{font-size:16px!important;line-height:1.6}
+main .restaurant-booking-steps li span{font-size:13px!important}
+main .breadcrumbs,main .breadcrumbs a{font-size:14px!important}
+main blockquote footer{font-size:14px!important}
+main form label,main form label a{font-size:14px!important}
+main dt{font-size:14px}
+main .wine-group-count span{font-size:14px}
+.booking-strip label,.booking-strip .eyebrow{font-size:13px!important}
+main dl dt{font-size:14px!important}
