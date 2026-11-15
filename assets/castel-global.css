@@ -206,3 +206,25 @@ main dl dt{font-size:14px!important}
 .footer-minimal .footer-social a{display:grid;place-items:center;width:44px;height:44px;border:1px solid #b2a38466;border-radius:50%;color:#b2a384;transition:color .3s,border-color .3s}
 .footer-minimal .footer-social a:hover,.footer-minimal .footer-social a:focus-visible{color:#d9cdb2;border-color:#d9cdb2;text-decoration:none}
 .footer-minimal .footer-social svg{width:17px;height:17px;display:block}
+
+/* — Commandes flottantes : accessibilité discrète à gauche, concierge sur la même ligne à droite — */
+.accessibility-toggle{height:40px;min-height:0;padding:0 9px;gap:0;border:1px solid #f3f0e93d;background:#16302680;color:#f3f0e9;box-shadow:none;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:.75;overflow:hidden;transition:opacity .25s,gap .35s cubic-bezier(.22,.61,.36,1),padding .35s cubic-bezier(.22,.61,.36,1),background-color .25s}
+.accessibility-toggle svg{width:20px;height:20px}
+.accessibility-toggle span{display:block;max-width:0;opacity:0;white-space:nowrap;font-size:11px;letter-spacing:.16em;text-transform:uppercase;transition:max-width .35s cubic-bezier(.22,.61,.36,1),opacity .2s}
+@media(min-width:761px){
+ .accessibility-toggle{left:22px;bottom:24px}
+ .accessibility-toggle:hover,.accessibility-toggle:focus-visible{opacity:1;gap:10px;padding:0 16px 0 9px;background:#253e35eb}
+ .accessibility-toggle:hover span,.accessibility-toggle:focus-visible span{max-width:180px;opacity:1}
+ .chat-toggle{bottom:22px;right:28px;height:44px;min-height:44px;padding:0 18px 0 14px;gap:10px}
+ .chat-toggle .concierge-icon{width:24px;height:24px}
+}
+@media(max-width:760px){.accessibility-toggle{padding:0 9px}.accessibility-toggle span{display:none}}
+
+/* — Hero : simple flèche centrée, animée doucement, qui invite à descendre — */
+.hero-film-discover{gap:0;width:44px;height:44px;min-height:44px;padding:0;justify-content:center;color:#f3f0e9;opacity:.85;transition:opacity .25s}
+.hero-film-discover:hover,.hero-film-discover:focus-visible{opacity:1}
+.hero-film-discover .ui-arrow{width:22px;height:22px;animation:castel-scroll-hint 2.6s cubic-bezier(.45,0,.55,1) infinite}
+.home-hero-logo .hero-film-discover{bottom:22px}
+@keyframes castel-scroll-hint{0%,100%{transform:translateY(-3px);opacity:.65}50%{transform:translateY(4px);opacity:1}}
+@media(prefers-reduced-motion:reduce){.hero-film-discover .ui-arrow{animation:none}}
+@media(max-width:760px){.hero-film-discover{left:50%;transform:translateX(-50%)}}
