@@ -1,0 +1,84 @@
+/* Castel Damandre — styles globaux : typographie du logo (Josefin Sans auto-hébergée, OFL) et footer minimaliste. Chargé en dernier sur toutes les pages. */
+@font-face{font-family:'Josefin Sans';font-style:normal;font-weight:300;font-display:swap;src:url(/assets/fonts/josefin-sans-latin-300-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Josefin Sans';font-style:normal;font-weight:300;font-display:swap;src:url(/assets/fonts/josefin-sans-latin-ext-300-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Josefin Sans';font-style:italic;font-weight:300;font-display:swap;src:url(/assets/fonts/josefin-sans-latin-300-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Josefin Sans';font-style:italic;font-weight:300;font-display:swap;src:url(/assets/fonts/josefin-sans-latin-ext-300-italic.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Josefin Sans';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/josefin-sans-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Josefin Sans';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/josefin-sans-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Josefin Sans';font-style:italic;font-weight:400;font-display:swap;src:url(/assets/fonts/josefin-sans-latin-400-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Josefin Sans';font-style:italic;font-weight:400;font-display:swap;src:url(/assets/fonts/josefin-sans-latin-ext-400-italic.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Josefin Sans';font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/josefin-sans-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Josefin Sans';font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/josefin-sans-latin-ext-600-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Josefin Sans';font-style:italic;font-weight:600;font-display:swap;src:url(/assets/fonts/josefin-sans-latin-600-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Josefin Sans';font-style:italic;font-weight:600;font-display:swap;src:url(/assets/fonts/josefin-sans-latin-ext-600-italic.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Castel Cyrillic';font-style:normal;font-weight:300;font-display:swap;src:url(/assets/fonts/jost-cyrillic-300-normal.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Castel Cyrillic';font-style:italic;font-weight:300;font-display:swap;src:url(/assets/fonts/jost-cyrillic-300-italic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Castel Cyrillic';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/jost-cyrillic-400-normal.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Castel Cyrillic';font-style:italic;font-weight:400;font-display:swap;src:url(/assets/fonts/jost-cyrillic-400-italic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+
+/* Une seule famille, partout */
+:root{--serif:'Josefin Sans','Castel Cyrillic','Helvetica Neue',Arial,sans-serif;--sans:'Josefin Sans','Castel Cyrillic','Helvetica Neue',Arial,sans-serif}
+html[lang^=ru]{--serif:'Josefin Sans','Castel Cyrillic','Helvetica Neue',Arial,sans-serif;--sans:'Josefin Sans','Castel Cyrillic','Helvetica Neue',Arial,sans-serif}
+html[lang^=ja],html[lang^=zh]{--serif:'Josefin Sans',"Noto Sans CJK JP","Noto Sans CJK SC","Hiragino Sans","PingFang SC","Yu Gothic","Microsoft YaHei",sans-serif;--sans:'Josefin Sans',"Noto Sans CJK JP","Noto Sans CJK SC","Hiragino Sans","PingFang SC","Yu Gothic","Microsoft YaHei",sans-serif}
+html,body{font-family:var(--sans)}
+button,input,select,textarea,option,label,legend,figcaption,small,blockquote,cite,q,dialog{font-family:inherit}
+.brand span,.concierge-seal{font-family:var(--serif)!important}
+
+/* Réglages : le Josefin se porte léger, sans approche négative, comme le logo */
+body{font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-kerning:normal}
+h1,h2,h3,h4{font-weight:300!important;letter-spacing:.01em!important;font-synthesis:none}
+h1 *,h2 *,h3 *,h4 *{font-weight:300!important}
+/* Le Josefin a un petit œil : on aligne sa hauteur d'x sur l'ancienne police pour garder des textes lisibles. */
+body{font-size-adjust:.43}
+h1,h2,h3,h4,.hero-film,.keyword-band,.brand,.mobile-dock,.editorial-header{font-size-adjust:none}
+h5,h6{font-weight:400}
+strong,b{font-weight:600}
+.eyebrow{font-weight:400}
+
+/* Footer minimaliste (toutes les pages) */
+.footer.footer-minimal{padding:96px 8% 34px;text-align:center}
+.footer-minimal .footer-top{display:flex;flex-direction:column;align-items:center;gap:24px;grid-template-columns:none}
+.footer-minimal .brand.footer-logo{display:inline-block;margin:0 0 10px;text-align:center}
+.footer-minimal .footer-address{display:flex;flex-direction:column;align-items:center;gap:10px;font-style:normal;font-size:14px;line-height:1.6;letter-spacing:.04em;color:#d6dbd1}
+.footer-minimal .footer-address a{font-size:14px}
+.footer-minimal .footer-contact{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px}
+.footer-minimal .footer-dot{opacity:.45}
+.footer .footer-actions{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 18px;margin-top:18px;padding-top:30px;border-top:1px solid #f3f0e91f;min-width:min(520px,100%)}
+.footer .footer-actions a{font-size:11px;letter-spacing:.24em;text-transform:uppercase;padding:6px 0;border-bottom:1px solid transparent;transition:border-color .3s}
+.footer .footer-actions a:hover,.footer .footer-actions a:focus-visible{text-decoration:none;border-bottom-color:currentColor}
+.footer-minimal .footer-bottom{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;margin-top:64px;padding-top:24px;text-align:center;letter-spacing:.06em}
+.footer-minimal .footer-bottom div{margin:0}
+@media(max-width:760px){
+ .footer.footer-minimal{padding:72px 24px calc(var(--dock-height,76px) + 44px + env(safe-area-inset-bottom))}
+ .footer-minimal .footer-address{font-size:13px}
+ .footer .footer-actions{flex-direction:column;gap:6px}
+ .footer .footer-actions .footer-dot{display:none}
+}
+.footer-minimal .footer-bottom,.footer-minimal .footer-bottom a,.footer-minimal .footer-bottom button{font-size:11px!important;letter-spacing:.08em;color:#bfc7bc}
+.footer-minimal .footer-bottom a:hover{color:var(--paper)}
+
+/* Menu « Explorer » épuré (toutes les pages) */
+.nav-panel{background:#1d362e}
+.nav-intro .eyebrow{letter-spacing:.3em;color:#c9cfc2}
+.nav-intro h2{font-size:clamp(46px,5.2vw,78px);line-height:1.08;margin:26px 0 44px}
+.nav-photo{max-width:420px}
+.nav-photo img{filter:brightness(.78) saturate(.9)}
+.nav-photo span{font-size:19px;letter-spacing:.02em}
+.nav-panel .nav-links nav a{font:300 clamp(15px,1.2vw,18px)/1.4 var(--serif);letter-spacing:.26em;text-transform:uppercase;padding:19px 0;min-height:0;gap:26px;border-bottom:1px solid #f4f1e914;transition:color .35s,padding .35s}
+.nav-panel .nav-links nav a:first-child{border-top:1px solid #f4f1e914}
+.nav-panel .nav-links nav a:hover,.nav-panel .nav-links nav a:focus-visible{color:#d9cdb2;padding-left:8px}
+.nav-panel .nav-links nav a[aria-current=page]{color:#d9cdb2}
+.nav-number{font:400 10px var(--sans);letter-spacing:.18em;color:#b2a384;opacity:1;min-width:22px}
+.nav-panel .nav-arrow{display:none}
+.nav-shortcuts{gap:12px;padding:40px 0 0}
+.nav-shortcuts a{display:inline-flex;align-items:center;min-height:46px;padding:0 24px;border:1px solid #f4f1e959;font:400 11px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;text-decoration:none;transition:background .3s,color .3s}
+.nav-shortcuts a:first-child{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.nav-shortcuts a:hover{background:#f4f1e91a}
+.nav-shortcuts a:first-child:hover{background:#e7e2d6}
+.nav-contact{margin-top:28px;font-size:12px;letter-spacing:.14em;color:#c9cfc2}
+@media(max-width:760px){
+ .nav-intro h2{font-size:40px;margin:14px 0 26px}
+ .nav-panel .nav-links nav a{font-size:14px;letter-spacing:.2em;padding:16px 0}
+ .nav-shortcuts{padding-top:28px}
+ .nav-shortcuts a{flex:1 1 auto;justify-content:center;padding:0 14px}
+}
