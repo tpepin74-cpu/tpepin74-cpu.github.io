@@ -1,0 +1,18 @@
+CAVIAR DREAMS — LAUREN THOMPSON / NYMPHONT
+
+Métadonnées du fichier fourni :
+Caviar Dreams © Lauren Thompson 2010. All rights reserved.
+Caviar Dreams may be used personally or commercially however the font data itself
+may not be redistributed sold at any measure or time in any form. Donations are
+appreciated and can be sent to nymphont@yahoo.com.
+
+Source de la licence publiée par le distributeur autorisé :
+https://www.fontsquirrel.com/license/Caviar-Dreams
+Page de la famille et kit web :
+https://www.fontsquirrel.com/fonts/caviar-dreams
+
+La licence publiée indique un usage personnel et commercial et interdit les dérivés,
+les modifications et la redistribution non autorisée. Le distributeur propose
+un kit pour l'incorporation web @font-face. Les fichiers de ce kit conservent
+les contours et les métadonnées d'origine ; seuls leurs conteneurs sont convertis.
+Les réglages d'espacement et la composition du nom se trouvent dans le CSS et les SVG.
