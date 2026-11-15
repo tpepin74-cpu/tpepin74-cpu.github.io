@@ -31,3 +31,10 @@
  }
  document.readyState==='loading'?addEventListener('DOMContentLoaded',addSocial):addSocial();
 })();
+/* Réservation par catégorie (dates + catégorie transmises à Reservit) et flèches des galeries photo : chargé sans bloquer l'affichage. */
+(()=>{'use strict';
+ if(document.querySelector('script[data-castel-reservation]'))return;
+ const s=document.createElement('script');
+ s.src='/assets/castel-reservation.js?v=20261115';s.async=true;s.dataset.castelReservation='';
+ document.head.appendChild(s);
+})();
