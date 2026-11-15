@@ -82,3 +82,45 @@ strong,b{font-weight:600}
  .nav-shortcuts{padding-top:28px}
  .nav-shortcuts a{flex:1 1 auto;justify-content:center;padding:0 14px}
 }
+
+/* Style du logo : capitales espacées pour les titres et tous les libellés d'interface (les paragraphes restent en bas de casse pour la lecture) */
+h1,h2,h3{text-transform:uppercase;letter-spacing:.08em!important;font-size-adjust:.27}
+h3{letter-spacing:.14em!important;font-size-adjust:.3}
+h1 em,h2 em,h3 em{font-style:normal}
+.hero-film .keyword-band__list{font-size-adjust:none}
+.menu-button span,.header-location,.language-picker>span,.header-gift,.button,.textlink,.choice-grid button,.hero-film-discover,.room-choice-link,.booking-strip label,.booking-strip button,.mobile-stay-prompt small{text-transform:uppercase;font-style:normal;font-weight:400;letter-spacing:.2em}
+.header-location{font-size:11px!important;letter-spacing:.3em}
+@media(min-width:761px){.menu-button span,.editorial-header .button,.header-gift{font-size:11px!important}}
+.button,.textlink{font-size:11px}
+.choice-grid button{font-size:12px;letter-spacing:.18em}
+.hero-film-discover{font-size:10px;letter-spacing:.26em}
+@media(max-width:760px){
+ h1,h2{font-size-adjust:.29}
+ .choice-grid button{font-size:11px;letter-spacing:.14em}
+}
+
+/* Échelle typographique unique, appliquée partout (titres en capitales du logo, textes lisibles et réguliers) */
+h1{font-size:clamp(42px,5.2vw,78px)!important;line-height:1.14!important;font-size-adjust:.27!important}
+h2{font-size:clamp(32px,3.4vw,50px)!important;line-height:1.22!important;font-size-adjust:.27!important}
+h3{font-size:clamp(19px,1.6vw,24px)!important;line-height:1.45!important;font-size-adjust:.3!important}
+h1 span:not(.sr-only),h2 span:not(.sr-only),h3 span:not(.sr-only),h1 em,h2 em,h3 em{font-size:inherit!important}
+.eyebrow{font-size:11px!important;letter-spacing:.28em}
+main p{font-size:16px!important;line-height:1.85}
+main p.note,main p[class*="note"],main p[class*="status"],main p[class*="message"],main p.source-links,main p[class*="location"],main p[class*="price"],main p[class*="guests"],main p[class*="features"],main figcaption,main .caption,main small{font-size:13px!important;line-height:1.7}
+main p[class*="mood"],main p.signature,main p.producer-house,main p.menu-choice{font-size:20px!important;line-height:1.5}
+main p.person-role{font-size:11px!important;letter-spacing:.24em;text-transform:uppercase}
+/* Exceptions voulues : bandeau du film et libellés de liste */
+.hero-film h1.keyword-band__list{font-size:clamp(14px,1.3vw,19px)!important;line-height:1.4!important;font-size-adjust:none!important;letter-spacing:.34em!important}
+.house-notes__list h3{font-size:12px!important;line-height:1.6!important;font-size-adjust:none!important;letter-spacing:.2em!important}
+.nav-panel .nav-intro h2{font-size:clamp(40px,4.6vw,68px)!important}
+@media(max-width:760px){
+ h1{font-size:38px!important;font-size-adjust:.28!important}
+ h2{font-size:30px!important;font-size-adjust:.28!important}
+ h3{font-size:18px!important}
+ main p{font-size:15px!important}
+ .hero-film h1.keyword-band__list{font-size:13px!important;letter-spacing:.3em!important}
+ .nav-panel .nav-intro h2{font-size:36px!important}
+}
+/* Libellés d'interface restants : même voix que le logo */
+[data-filter],.universe-link,.universe-book,.sheet-family,.outline,.chapter-nav a,.chapter-nav span,.room-tabs button,.scene-tabs button{text-transform:uppercase;letter-spacing:.2em;font-size:11px!important;font-style:normal;font-weight:400}
+main p.person-role{font-style:normal}
