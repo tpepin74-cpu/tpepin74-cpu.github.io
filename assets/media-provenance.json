@@ -13,25 +13,25 @@
     "kind": "user-supplied-ambience-video",
     "durationSeconds": 34,
     "desktop": {
-      "av1": "/assets/castel-film-20261115-720-av1.mp4",
-      "hevc": "/assets/castel-film-20261115-720-hevc.mp4",
-      "h264": "/assets/castel-film-20261115-720-h264.mp4"
+      "av1": "/assets/castel-film-20261115b-720-av1.mp4",
+      "hevc": "/assets/castel-film-20261115b-720-hevc.mp4",
+      "h264": "/assets/castel-film-20261115b-720-h264.mp4"
     },
     "mobile": {
-      "av1": "/assets/castel-film-20261115-m-av1.mp4",
-      "hevc": "/assets/castel-film-20261115-m-hevc.mp4",
-      "h264": "/assets/castel-film-20261115-m-h264.mp4"
+      "av1": "/assets/castel-film-20261115b-m-av1.mp4",
+      "hevc": "/assets/castel-film-20261115b-m-hevc.mp4",
+      "h264": "/assets/castel-film-20261115b-m-h264.mp4"
     },
     "poster": {
       "desktop": [
-        "/assets/castel-film-20261115-poster-960.avif",
-        "/assets/castel-film-20261115-poster-1280.avif",
-        "/assets/castel-film-20261115-poster-1920.avif"
+        "/assets/castel-film-20261115b-poster-960.avif",
+        "/assets/castel-film-20261115b-poster-1280.avif",
+        "/assets/castel-film-20261115b-poster-1920.avif"
       ],
-      "mobile": "/assets/castel-film-20261115-poster-m.avif",
+      "mobile": "/assets/castel-film-20261115b-poster-m.avif",
       "note": "WebP and JPEG fallbacks alongside; poster is the exact first frame."
     },
-    "processing": "Silent, metadata stripped, fast-start. Desktop 1280x720 24 fps; mobile = centre 9:16 crop (608x1080) scaled to 540x960. AV1 10-bit (SVT-AV1 preset 5, CRF 56 desktop / 54 mobile), HEVC hvc1 (x265 slow) for Safari without AV1, H.264 High (x264 veryslow) as universal fallback. GOP 10 s.",
+    "processing": "Silent, metadata stripped, fast-start. 30 % zoom baked in (centre 1476x830 of the source). Desktop 1280x720 24 fps; mobile = centre 9:16 crop of that zoom (466x830) scaled to 540x960. AV1 10-bit (SVT-AV1 preset 5, CRF 56 desktop / 54 mobile), HEVC hvc1 (x265 slow) for Safari without AV1, H.264 High (x264 veryslow) as universal fallback. GOP 10 s.",
     "loading": "Poster <picture> (AVIF/WebP/JPEG) is the LCP image with fetchpriority=high. No video byte is requested before window load; the film is fetched on first interaction or after ~3.5 s idle, only when visible, never with reduced motion, eco mode, Save-Data or 2G/3G connections. One codec and one framing per device.",
     "fallback": "Poster for reduced motion, eco mode, data saver, slow networks, blocked autoplay or decoding error (next codec tried first). Pauses offscreen and in hidden tabs."
   },
