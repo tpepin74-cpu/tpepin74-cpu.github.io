@@ -124,3 +124,21 @@ main p.person-role{font-size:11px!important;letter-spacing:.24em;text-transform:
 /* Libellés d'interface restants : même voix que le logo */
 [data-filter],.universe-link,.universe-book,.sheet-family,.outline,.chapter-nav a,.chapter-nav span,.room-tabs button,.scene-tabs button{text-transform:uppercase;letter-spacing:.2em;font-size:11px!important;font-style:normal;font-weight:400}
 main p.person-role{font-style:normal}
+
+/* Titres et sous-titres : Caviar Dreams (Lauren Thompson / Nymphont, usage commercial autorisé), la typographie du logo */
+@font-face{font-family:'Castel Titres';src:url(/assets/fonts/caviar-dreams-regular.woff2) format('woff2');font-weight:100 500;font-style:normal;font-display:swap}
+@font-face{font-family:'Castel Titres';src:url(/assets/fonts/caviar-dreams-bold.woff2) format('woff2');font-weight:600 900;font-style:normal;font-display:swap}
+@font-face{font-family:'Castel Titres';src:url(/assets/fonts/caviar-dreams-italic.woff2) format('woff2');font-weight:100 500;font-style:italic;font-display:swap}
+@font-face{font-family:'Castel Titres';src:url(/assets/fonts/caviar-dreams-bold-italic.woff2) format('woff2');font-weight:600 900;font-style:italic;font-display:swap}
+:root{--display:'Castel Titres','Josefin Sans','Helvetica Neue',Arial,sans-serif}
+html[lang^=ja],html[lang^=zh]{--display:'Castel Titres',"Noto Sans CJK JP","Noto Sans CJK SC","Hiragino Sans","PingFang SC","Yu Gothic","Microsoft YaHei",sans-serif}
+h1,h2,h3,h1 *,h2 *,h3 *,.eyebrow,.nav-intro .eyebrow{font-family:var(--display)!important;font-synthesis:none}
+h1,h2,h3,h1 *,h2 *,h3 *{font-weight:700!important}
+h1,h2{letter-spacing:.16em!important;font-size-adjust:.3!important}
+h3{letter-spacing:.18em!important;font-size-adjust:.3!important}
+.eyebrow,.house-notes__list h3,.hero-film h1.keyword-band__list{font-weight:700!important}
+.eyebrow,.eyebrow *{font-weight:700!important;letter-spacing:.3em}
+.house-notes__list h3,.house-notes__list h3 *{font-weight:700!important;letter-spacing:.24em!important;font-size-adjust:none!important}
+.hero-film h1.keyword-band__list,.hero-film h1.keyword-band__list *{font-weight:700!important;letter-spacing:.32em!important}
+@media(max-width:760px){h1,h2{letter-spacing:.12em!important;font-size-adjust:.31!important}}
+html[lang^=ru] body{font-size-adjust:none}
