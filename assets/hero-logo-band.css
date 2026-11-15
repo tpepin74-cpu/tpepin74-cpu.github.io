@@ -1,0 +1,52 @@
+/* Accueil FR : logo officiel centré dans le film d'ambiance + bandeau de mots-clés défilant (H1). */
+
+/* — Header : le logo est désormais porté par le hero — */
+.home-hero-logo .editorial-header .tools{grid-column:3}
+
+/* — Hero : logo complet, centré, grand format — */
+.hero-film .hero-brand{position:relative;max-width:none;width:auto;padding:0;margin:0 auto;display:flex;justify-content:center;align-items:center}
+.hero-film .hero-brand::before{content:"";position:absolute;inset:-34% -40%;z-index:-1;background:radial-gradient(closest-side,#0d241c5c 0%,#0d241c2e 55%,#0d241c00 100%);pointer-events:none}
+.hero-logo{display:block;width:clamp(220px,min(26vw,46svh),400px);height:auto;max-width:none;filter:drop-shadow(0 2px 30px #0d241c66);animation:castel-logo-in 2.2s cubic-bezier(.22,.61,.36,1) .2s both}
+@keyframes castel-logo-in{from{opacity:0;transform:translateY(16px) scale(.985);filter:drop-shadow(0 2px 30px #0d241c00) blur(4px)}to{opacity:1;transform:none;filter:drop-shadow(0 2px 30px #0d241c66) blur(0)}}
+
+/* — Bandeau défilant sous le hero — */
+.keyword-band{position:relative;overflow:hidden;background:var(--ink,#223b32);color:var(--paper,#f3f0e9);border-top:1px solid #b2a38440;border-bottom:1px solid #b2a38440;padding:clamp(20px,2.3vw,32px) 0}
+.keyword-band::before,.keyword-band::after{content:"";position:absolute;top:0;bottom:0;z-index:1;width:clamp(40px,8vw,140px);pointer-events:none}
+.keyword-band::before{left:0;background:linear-gradient(90deg,var(--ink,#223b32),#223b3200)}
+.keyword-band::after{right:0;background:linear-gradient(270deg,var(--ink,#223b32),#223b3200)}
+.keyword-band__track{display:flex;width:max-content;animation:castel-band 70s linear infinite;will-change:transform}
+.keyword-band:hover .keyword-band__track,.keyword-band:focus-within .keyword-band__track{animation-play-state:paused}
+.keyword-band__list{display:flex;flex:none;align-items:center;margin:0;padding:0;font:400 clamp(26px,3vw,44px)/1.15 var(--serif,'Cormorant Garamond',Georgia,serif);letter-spacing:.012em;white-space:nowrap;color:inherit;text-shadow:none}
+.keyword-band__item{display:inline-block}
+.keyword-band__item em{font-style:italic;font-weight:400;color:#d9cdb2}
+.keyword-band__sep{flex:none;display:inline-block;width:.2em;height:.2em;margin-inline:clamp(28px,3.2vw,56px);background:var(--gold,#b2a384);transform:rotate(45deg) translateY(-.06em)}
+@keyframes castel-band{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+
+/* Mouvement réduit (préférence système, mode éco ou panneau Accessibilité) : bandeau statique, centré. */
+@media(prefers-reduced-motion:reduce){
+ .hero-logo{animation:none}
+ .keyword-band{padding-inline:5%}
+ .keyword-band::before,.keyword-band::after{display:none}
+ .keyword-band__track{animation:none;width:auto;justify-content:center}
+ .keyword-band__list{flex:1 1 auto;width:100%;flex-wrap:wrap;justify-content:center;white-space:normal;row-gap:6px;text-align:center;font-size:clamp(22px,2.2vw,32px)}
+ .keyword-band__list>.keyword-band__sep:last-child,.keyword-band__list[aria-hidden=true]{display:none}
+ .keyword-band__sep{margin-inline:clamp(16px,1.8vw,30px)}
+}
+html[data-motion-off=true] .hero-logo{animation:none}
+html[data-motion-off=true] .keyword-band{padding-inline:5%}
+html[data-motion-off=true] .keyword-band::before,html[data-motion-off=true] .keyword-band::after{display:none}
+html[data-motion-off=true] .keyword-band__track{animation:none;width:auto;justify-content:center}
+html[data-motion-off=true] .keyword-band__list{flex:1 1 auto;width:100%;flex-wrap:wrap;justify-content:center;white-space:normal;row-gap:6px;text-align:center;font-size:clamp(22px,2.2vw,32px)}
+html[data-motion-off=true] .keyword-band__list>.keyword-band__sep:last-child,html[data-motion-off=true] .keyword-band__list[aria-hidden=true]{display:none}
+html[data-motion-off=true] .keyword-band__sep{margin-inline:clamp(16px,1.8vw,30px)}
+html[data-high-contrast=true] .keyword-band{background:#0b1a14;color:#fff}
+html[data-high-contrast=true] .keyword-band::before,html[data-high-contrast=true] .keyword-band::after{display:none}
+html[data-high-contrast=true] .keyword-band__item em{color:#fff}
+
+@media(max-width:760px){
+ .hero-logo{width:clamp(190px,58vw,270px)}
+ .keyword-band{padding:18px 0}
+ .keyword-band__list{font-size:clamp(24px,7vw,30px)}
+ .keyword-band__sep{margin-inline:22px}
+ .keyword-band__track{animation-duration:55s}
+}
