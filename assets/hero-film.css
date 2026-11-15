@@ -1,6 +1,11 @@
 /* A single quiet film replaces the home photo slider. */
 .hero-film{position:relative;isolation:isolate;height:100svh;min-height:660px;overflow:hidden;padding:160px 30px 170px;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;text-align:center}
-.hero-film-video{position:absolute;inset:0;z-index:-2;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;pointer-events:none}
+.hero-film-poster,.hero-film-poster img{position:absolute;inset:0;width:100%;height:100%;max-width:none}
+.hero-film-poster{z-index:-3;pointer-events:none}
+.hero-film-poster img{object-fit:cover;object-position:center}
+.hero-film-video{position:absolute;inset:0;z-index:-2;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;pointer-events:none;opacity:0;transition:opacity .9s ease}
+.hero-film.is-film-playing .hero-film-video{opacity:1}
+@media(prefers-reduced-motion:reduce){.hero-film-video{transition:none}}
 .hero-film:after{background:linear-gradient(180deg,#10231c50 0%,#0d241c1f 25%,#0d241c52 55%,#0d241c6b 100%);pointer-events:none}
 .hero-film-copy{max-width:720px;padding:0 20px}
 .hero-film .eyebrow{font:400 10px/1.8 var(--sans);letter-spacing:.24em;margin:0 0 32px}

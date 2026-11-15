@@ -5,20 +5,35 @@
     "https://www.casteldamandre.com/fr/",
     "https://www.castel-damandre.fr/"
   ],
-  "result": "Home hero replaced with the user-supplied castel-damandre-hero-1080p.mp4 on 2026-10-11. Complete 39.5-second sequence retained.",
+  "result": "Home hero replaced on 2026-11-15 with the user-supplied film « Castel d_Amandre film_ silent.mp4 » (single continuous take, 34 s, complete sequence retained).",
   "kind": "user-supplied-hero-video-and-original-photographs",
   "motionFallback": "Static poster for reduced motion, data saver or blocked autoplay. No visible controls.",
   "heroVideo": {
-    "source": "User attachment: castel-damandre-hero-1080p.mp4",
+    "source": "User file: Castel d_Amandre film_ silent.mp4 (H.264 1920x1080, 24 fps, 34 s, 49 MB)",
     "kind": "user-supplied-ambience-video",
-    "durationSeconds": 39.5,
-    "asset": "/assets/castel-hero-20261011-web.mp4",
-    "mobileAsset": "/assets/castel-hero-20261011-mobile.mp4",
-    "poster": "/assets/castel-hero-20261011-poster.webp",
-    "processing": "Original H.264 1920x1080 at 30 fps retained without quality loss, remuxed as silent fast-start MP4. Mobile H.264 854x480 at 24 fps, target 650 kbps, capped at 900 kbps. Complete sequence; only selected version loads. WebP poster from 5 seconds.",
-    "fallback": "Poster for reduced motion, data saver, failed autoplay or video error. Pauses offscreen and in hidden tabs.",
-    "sourceLibraryId": "libfile_bacf3f01a5588191902df67c9f37d23d",
-    "sourceDimensions": "1920x1080"
+    "durationSeconds": 34,
+    "desktop": {
+      "av1": "/assets/castel-film-20261115-720-av1.mp4",
+      "hevc": "/assets/castel-film-20261115-720-hevc.mp4",
+      "h264": "/assets/castel-film-20261115-720-h264.mp4"
+    },
+    "mobile": {
+      "av1": "/assets/castel-film-20261115-m-av1.mp4",
+      "hevc": "/assets/castel-film-20261115-m-hevc.mp4",
+      "h264": "/assets/castel-film-20261115-m-h264.mp4"
+    },
+    "poster": {
+      "desktop": [
+        "/assets/castel-film-20261115-poster-960.avif",
+        "/assets/castel-film-20261115-poster-1280.avif",
+        "/assets/castel-film-20261115-poster-1920.avif"
+      ],
+      "mobile": "/assets/castel-film-20261115-poster-m.avif",
+      "note": "WebP and JPEG fallbacks alongside; poster is the exact first frame."
+    },
+    "processing": "Silent, metadata stripped, fast-start. Desktop 1280x720 24 fps; mobile = centre 9:16 crop (608x1080) scaled to 540x960. AV1 10-bit (SVT-AV1 preset 5, CRF 56 desktop / 54 mobile), HEVC hvc1 (x265 slow) for Safari without AV1, H.264 High (x264 veryslow) as universal fallback. GOP 10 s.",
+    "loading": "Poster <picture> (AVIF/WebP/JPEG) is the LCP image with fetchpriority=high. No video byte is requested before window load; the film is fetched on first interaction or after ~3.5 s idle, only when visible, never with reduced motion, eco mode, Save-Data or 2G/3G connections. One codec and one framing per device.",
+    "fallback": "Poster for reduced motion, eco mode, data saver, slow networks, blocked autoplay or decoding error (next codec tried first). Pauses offscreen and in hidden tabs."
   },
   "waterSectionVideo": {
     "source": "User-supplied gemini_generated_video_7CB8EE3C.mp4",
