@@ -1,0 +1,15 @@
+/* Castel Damandre — ouverture : le monogramme se trace, le nom s'écrit, puis le film apparaît.
+   Une fois par visite, ignorée si l'utilisateur limite les animations. Purement décorative (aria-hidden). */
+.cd-intro{display:none}
+html.cd-intro-on .cd-intro{position:fixed;inset:0;z-index:2147483000;display:grid;place-items:center;background:#1d362e;color:#f3f0e9;cursor:pointer;animation:cd-intro-out .55s cubic-bezier(.4,0,.2,1) 1.95s forwards}
+html.cd-intro-on.cd-intro-leave .cd-intro{animation:cd-intro-out .45s cubic-bezier(.4,0,.2,1) forwards}
+.cd-intro svg{display:block;width:clamp(220px,min(26vw,46svh),400px);height:auto;transform:translateY(-5px);overflow:visible}
+.cd-intro .m,.cd-intro .w{fill:none;stroke:currentColor;stroke-dasharray:1 2;stroke-dashoffset:1;animation:cd-draw var(--d,.8s) cubic-bezier(.65,0,.35,1) var(--t,0s) forwards}
+.cd-intro .m{stroke-width:15.65;stroke-linecap:butt}
+.cd-intro .w{stroke-width:3.1;stroke-linejoin:miter;stroke-miterlimit:3;--d:.38s}
+@keyframes cd-draw{to{stroke-dashoffset:0}}
+@keyframes cd-intro-out{to{opacity:0;visibility:hidden}}
+/* Le logo du film est déjà en place sous le rideau : pas de seconde apparition */
+html.cd-intro-on .hero-logo{animation:none}
+@media(max-width:760px){.cd-intro svg{width:clamp(190px,58vw,270px);transform:translateY(-25px)}}
+@media(prefers-reduced-motion:reduce){html.cd-intro-on .cd-intro{display:none}}
