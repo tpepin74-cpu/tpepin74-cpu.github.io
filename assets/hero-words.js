@@ -2,6 +2,8 @@
 (()=>{'use strict';
  const title=document.querySelector('[data-re-headline]');if(!title)return;
  const words=[...title.querySelectorAll('[data-re-word]')];
+ const prefix=title.querySelector('[data-re-prefix]:not([data-re-word])');const basePrefix=prefix?prefix.textContent:'';
+ const setPrefix=word=>{if(prefix)prefix.textContent=word.dataset.rePrefix||basePrefix;};
  if(words.length<2)return;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  let current=0,timer=null,cleanup=null,visible=!('IntersectionObserver' in window),hovered=false;
@@ -13,7 +15,7 @@
  function next(){
   timer=null;if(!allowed()){stop();return;}
   words[current].classList.remove('is-current');words[current].classList.add('is-leaving');
-  current=(current+1)%words.length;words[current].classList.remove('is-leaving');words[current].classList.add('is-current');
+  current=(current+1)%words.length;words[current].classList.remove('is-leaving');words[current].classList.add('is-current');setPrefix(words[current]);
   cleanup=setTimeout(()=>{settle();cleanup=null;},950);schedule();
  }
  function sync(){stop();schedule();}
