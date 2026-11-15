@@ -10,7 +10,7 @@
 .header .brand .brand-wordmark,.nav-panel .brand .brand-wordmark{-webkit-mask-image:url(/assets/logo-wordmark.svg);mask-image:url(/assets/logo-wordmark.svg);width:214px;height:14px;margin:0 auto;font-size:0!important;line-height:0;letter-spacing:0!important;overflow:hidden;text-indent:120%;white-space:nowrap}
 .header .brand small{margin-top:10px}
 .footer .brand.footer-logo{display:inline-block;margin-bottom:28px}
-.footer .brand .brand-lockup{-webkit-mask-image:url(/assets/logo-castel-damandre-mask.svg);mask-image:url(/assets/logo-castel-damandre-mask.svg);width:124px;height:137px;font-size:0!important;line-height:0;overflow:hidden;text-indent:120%;white-space:nowrap}
+.footer .brand .brand-lockup{-webkit-mask-image:url(/assets/logo-castel-damandre-mask.svg);mask-image:url(/assets/logo-castel-damandre-mask.svg);width:124px;height:145px;font-size:0!important;line-height:0;overflow:hidden;text-indent:120%;white-space:nowrap}
 .concierge-seal svg{display:block}
-@media(max-width:760px){.header .brand .brand-wordmark{width:168px;height:11px}.footer .brand .brand-lockup{width:104px;height:115px}}
+@media(max-width:760px){.header .brand .brand-wordmark{width:168px;height:11px}.footer .brand .brand-lockup{width:104px;height:122px}}
 @media(forced-colors:active){.brand-mark,.brand-wordmark,.brand-lockup{background-color:CanvasText}}
