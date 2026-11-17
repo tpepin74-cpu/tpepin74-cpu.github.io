@@ -19,24 +19,6 @@
       "source": "Neuchâtel Vins et Terroir"
     },
     {
-      "id": "le-marche-de-neuchatel",
-      "title": "Marché de Neuchâtel",
-      "start": "2026-05-02",
-      "end": "2026-12-19",
-      "place": "Neuchâtel",
-      "region": "Neuchâtel",
-      "url": "https://neuchatel-vins-terroir.ch/evenement/le-marche-de-neuchatel/",
-      "image": {
-        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2025/07/Marche-de-Neuchatel-une-journee-au-marche-en-ete-2023-43-8fbfd9a1-1024x637.webp",
-        "width": 1024,
-        "height": 637,
-        "fit": "cover",
-        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/le-marche-de-neuchatel/",
-        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
-      },
-      "source": "Neuchâtel Vins et Terroir"
-    },
-    {
       "id": "la-paulee-2026",
       "title": "La Paulée",
       "start": "2026-11-19",
@@ -73,6 +55,24 @@
       "source": "Neuchâtel Vins et Terroir"
     },
     {
+      "id": "caves-ouvertes-dautomne-a-la-grillette-domaine-grisoni",
+      "title": "Caves ouvertes d’automne à La Grillette & Domaine Grisoni",
+      "start": "2026-11-26",
+      "end": "2026-11-28",
+      "place": "Cressier Rue Molondin 2",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes-dautomne-a-la-grillette-domaine-grisoni/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/11/Invitation-CO-2026-1-1024x1024.png",
+        "width": 1024,
+        "height": 1024,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes-dautomne-a-la-grillette-domaine-grisoni/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
       "id": "cave-ouvertre-de-fin-dannee",
       "title": "Caves ouvertes de fin d’année chez Alain Gerber",
       "start": "2026-11-26",
@@ -104,6 +104,42 @@
         "height": 670,
         "fit": "cover",
         "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/degustations-automnales-les-vins-porret/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
+      "id": "caves-ouvertes-de-fin-dannee-sandoz-vins",
+      "title": "Caves ouvertes de fin d’année- Sandoz Vins",
+      "start": "2026-11-27",
+      "end": "2026-11-28",
+      "place": "Cave Sandoz Vins, Neuchâtel Rue de la Dîme 98, 2000 Neuchâtel",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes-de-fin-dannee-sandoz-vins/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/11/SANDOZ_VINS_23_BERGERTAM_HD-6037-683x1024.jpg",
+        "width": 683,
+        "height": 1024,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes-de-fin-dannee-sandoz-vins/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
+      "id": "a-la-decouverte-du-comte-louis-notre-nouvelle-cuvee-dexception",
+      "title": "À la découverte du Comte Louis – Notre nouvelle cuvée d’exception",
+      "start": "2026-11-27",
+      "end": "2026-11-28",
+      "place": "Domaine Hôpital Pourtalès Rte de Troub 17, 2088 Cressier",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/a-la-decouverte-du-comte-louis-notre-nouvelle-cuvee-dexception/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/11/Comte-Louis-Pinot-Noir-2023-36-mois_1.jpg",
+        "width": 958,
+        "height": 639,
+        "fit": "cover",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/a-la-decouverte-du-comte-louis-notre-nouvelle-cuvee-dexception/",
         "credit": "Visuel publié par Neuchâtel Vins et Terroir"
       },
       "source": "Neuchâtel Vins et Terroir"
@@ -163,6 +199,60 @@
       "source": "Neuchâtel Vins et Terroir"
     },
     {
+      "id": "noel-au-chateau",
+      "title": "Noël au Château",
+      "start": "2026-12-02",
+      "end": "2026-12-02",
+      "place": "Château de Boudry Ruelle du Château 1 | CH-2017 Boudry",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/noel-au-chateau/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/11/Noel-au-Chateau-02.12.2026-carree.jpeg",
+        "width": 899,
+        "height": 900,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/noel-au-chateau/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
+      "id": "caves-ouvertes-domaine-brunner",
+      "title": "Caves ouvertes Domaine Brunner",
+      "start": "2026-12-03",
+      "end": "2026-12-05",
+      "place": "Rue de Neuchâtel 1, 2022 Bevaix Rue de Neuchâtel 1",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes-domaine-brunner/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/11/rubis-1024x1024.jpeg",
+        "width": 1024,
+        "height": 1024,
+        "fit": "cover",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes-domaine-brunner/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
+      "id": "degustation-de-fin-dannee",
+      "title": "Dégustation de fin d’année Vouga vins",
+      "start": "2026-12-04",
+      "end": "2026-12-12",
+      "place": "Cortaillod Rue des Courtils 31",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/degustation-de-fin-dannee/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/11/Caves-Ouvertes-Duo-1024x994.png",
+        "width": 1024,
+        "height": 994,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/degustation-de-fin-dannee/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
       "id": "le-marche-de-noel-de-lhotel-palafitte",
       "title": "Le marché de Noël de l’Hôtel Palafitte",
       "start": "2026-12-04",
@@ -176,6 +266,24 @@
         "height": 377,
         "fit": "contain",
         "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/le-marche-de-noel-de-lhotel-palafitte/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
+      "id": "le-vin-autrement",
+      "title": "Le vin autrement…",
+      "start": "2026-12-11",
+      "end": "2026-12-12",
+      "place": "D I M I T R I E N G E L V I N S Rue Daniel-Dardel 17 - CH - 2072 Saint-Blaise",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/le-vin-autrement/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/11/Capture-decran-2026-11-17-091412.png",
+        "width": 321,
+        "height": 227,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/le-vin-autrement/",
         "credit": "Visuel publié par Neuchâtel Vins et Terroir"
       },
       "source": "Neuchâtel Vins et Terroir"
@@ -217,24 +325,6 @@
       "source": "Neuchâtel Vins et Terroir"
     },
     {
-      "id": "caves-ouvertes-2026",
-      "title": "Caves Ouvertes",
-      "start": "2027-04-23",
-      "end": "2027-04-24",
-      "place": "Canton de Neuchâtel",
-      "region": "Neuchâtel",
-      "url": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes-2026/",
-      "image": {
-        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2025/05/145_CavesOuvertes2025-1024x683.jpg",
-        "width": 1024,
-        "height": 683,
-        "fit": "cover",
-        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes-2026/",
-        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
-      },
-      "source": "Neuchâtel Vins et Terroir"
-    },
-    {
       "id": "marathon-des-2-vignobles-2027-une-course-entre-sport-vin-et-convivialite",
       "title": "Marathon des 2 Vignobles 2027 – Une course entre sport, vin et convivialité !",
       "start": "2027-06-26",
@@ -266,24 +356,6 @@
         "height": 436,
         "fit": "cover",
         "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/fete-la-terre/",
-        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
-      },
-      "source": "Neuchâtel Vins et Terroir"
-    },
-    {
-      "id": "fete-des-vendanges-2026",
-      "title": "Fête des Vendanges",
-      "start": "2027-09-25",
-      "end": "2027-09-27",
-      "place": "Neuchâtel Rue du Seyon, 2000 Neuchâtel",
-      "region": "Neuchâtel",
-      "url": "https://neuchatel-vins-terroir.ch/evenement/fete-des-vendanges-2026/",
-      "image": {
-        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2025/07/FDV24_27092024_VainqueurGerleOr_ATvision-1-1024x683.jpg",
-        "width": 1024,
-        "height": 683,
-        "fit": "cover",
-        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/fete-des-vendanges-2026/",
         "credit": "Visuel publié par Neuchâtel Vins et Terroir"
       },
       "source": "Neuchâtel Vins et Terroir"
@@ -325,7 +397,7 @@
       "source": "Neuchâtel Vins et Terroir"
     }
   ],
-  "updatedAt": "2026-11-16T13:47:08.565Z",
+  "updatedAt": "2026-11-17T14:36:28.903Z",
   "partial": false,
   "source": "https://neuchatel-vins-terroir.ch/evenement/",
   "stale": false
