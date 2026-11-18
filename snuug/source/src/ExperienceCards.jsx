@@ -1,4 +1,5 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
+import {scrollToAnchor} from './anchorNavigation';
 import {Image,Arrow} from './Editorial';
 import {experiences} from './data';
 import './experience-stay-client.css';
@@ -10,8 +11,10 @@ const programs={
 };
 export function ExperienceCards(){return <div className="experience-card-grid page-container">{experiences.map(e=><ExperienceCard key={e.id} experience={e}/>)}</div>}
 function ExperienceCard({experience:e}){
+ const card=useRef(null);
  const [open,setOpen]=useState(false),title=e.id==='golf'?'Escapade sportive':e.label;
- return <section className={'experience-flip-card '+(open?'is-open':'')} id={e.id} aria-labelledby={'experience-'+e.id}>
+ useEffect(()=>{if(!open)return;const frame=requestAnimationFrame(()=>scrollToAnchor(card.current,'smooth'));return()=>cancelAnimationFrame(frame)},[open]);
+ return <section ref={card} className={'experience-flip-card '+(open?'is-open':'')} id={e.id} aria-labelledby={'experience-'+e.id}>
   {!open&&<Image src={e.image} alt={e.label+' dans un paysage SNUUG'}/>}
   <div className="experience-card-content">
    {open&&<span className="eyebrow">Un exemple sur deux jours</span>}

@@ -71,3 +71,17 @@ body,button,input,select,textarea{font-family:var(--sans)}
 #site-shell#site-shell :is(.snuug-booking-bar label,.snuug-search-bar label,.agenda-status,.agenda-status span,.agenda-date em,.liquid-room-caption,.itinerary-route button>span,.itinerary-route button>small,.home-news-tab span,.gift-mark){font-size:var(--type-menu)!important;line-height:1.4;letter-spacing:.1em}
 #site-shell#site-shell .agenda-date time{font-size:var(--type-body)!important;line-height:1.4;font-weight:700}
 #site-shell#site-shell .agenda-image-placeholder>span:not(.eyebrow){font-size:var(--type-body)!important;line-height:1.4}
+@media(max-width:767px){#site-shell#site-shell.home-site .site-header{justify-content:flex-start}#site-shell#site-shell .landscape-hero:has(.home-hero-booking){min-height:max(800px,100svh);height:auto!important}}
+#site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav){display:flex;flex-wrap:nowrap;padding-inline:var(--client-gutter)}
+#site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a::after{display:block!important}
+#site-shell#site-shell :is(.page-container,.brand-section){padding-inline:var(--client-gutter)}
+#site-shell#site-shell .product-destination-details .page-container{padding-inline:0}
+#site-shell#site-shell .agenda-heading{border:0;box-shadow:none}
+.dialog .snuug-booking-bar label{font-size:var(--type-menu)!important;line-height:1.4}
+@media(max-width:767px){#site-shell#site-shell .snuug-search-bar label:nth-child(2){grid-column:1}#site-shell#site-shell .snuug-search-bar label:nth-child(3){grid-column:2}}
+.dialog-backdrop{z-index:100}
+#site-shell[inert] :is(.liquid-dock,.home-news-tab){visibility:hidden}
+.dialog-backdrop.app-sheet .snuug-booking-bar label{padding:10px 12px;border-right:1px solid #b5b6ae;gap:5px}
+.dialog-backdrop.app-sheet .snuug-booking-bar .dates-fields{gap:0}
+.dialog-backdrop.app-sheet .snuug-booking-bar .dates-fields>label:last-child{border-right:0}
+.dialog-backdrop.app-sheet .snuug-booking-bar .booking-bar-destination{border-right:0}
