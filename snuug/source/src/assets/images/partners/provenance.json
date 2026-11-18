@@ -1,0 +1,16 @@
+{
+  "chemins-de-fer-du-jura.svg": {
+    "source": "https://www.les-cj.ch/Content/images/Les-CJ_logo.svg",
+    "provider": "Chemins de fer du Jura",
+    "retrieved": "2026-11-18",
+    "use": "Logo du partenaire SNUUG-CJ, lien vers le site officiel"
+  },
+  "train-cj.webp": {
+    "source": "https://www.les-cj.ch/FileDownload/Thumbnail/31169?width=1200&height=800&cropToAspectRatio=True&cropAddWhiteBorders=False",
+    "sourcePage": "https://www.les-cj.ch/",
+    "provider": "Chemins de fer du Jura",
+    "retrieved": "2026-11-18",
+    "description": "Photo officielle d’un train CJ dans un paysage enneigé, rubrique Les CJ vus du ciel",
+    "format": "WebP, 1200 × 800"
+  }
+}

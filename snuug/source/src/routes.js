@@ -12,7 +12,7 @@ export const routes={
 };
 export const redirects={
  '/snuug/la-suite':'/snuug/le-concept',
- '/snuug/le-sejour':'/snuug/informations#services',
+ '/snuug/le-sejour':'/snuug/informations#moments',
  '/snuug/tourisme-durable':'/snuug/le-concept#engagements',
  '/snuug/autour-de-neuchatel':'/snuug/sejours/neuchatel#alentours',
  '/snuug/conditions':'/snuug/informations#conditions',

@@ -1,0 +1,53 @@
+/* Concept page: the client’s editorial hierarchy, without nested panels. */
+.product-suite .product-section-head{display:block}
+.product-suite .product-section-head h2{width:auto;margin:0!important;text-align:left}
+.product-suite .product-comfort.concept-comfort{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,8vw,120px);padding:clamp(64px,8vw,120px) var(--product-gutter);align-items:start}
+.product-suite .concept-comfort .product-comfort-copy{padding:0;min-width:0}
+.product-suite .concept-comfort h2{margin:0 0 24px!important}
+.product-suite .concept-comfort p{margin:0;max-width:32em}
+#site-shell .concept-comfort .equipment-disclosures{width:100%;min-width:0;border-top:1px solid #232a1b40!important}
+#site-shell .concept-comfort .equipment-disclosures details{border:0!important;border-bottom:1px solid #232a1b40!important;border-radius:0!important;padding:0!important;background:transparent!important;box-shadow:none!important;margin:0!important}
+.product-suite .concept-comfort .equipment-disclosures summary{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:72px;padding:22px 0!important;line-height:1.6}
+.product-suite .concept-comfort .equipment-disclosures details p{padding:0 36px 24px 0}
+.product-suite .concept-commitments{background:#232a1b;color:#fff;padding:clamp(64px,8vw,120px) var(--product-gutter)}
+.product-suite .concept-commitments-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,8vw,120px);align-items:start;margin-bottom:64px}
+.product-suite .concept-commitments-heading h2{margin:0!important;text-align:left}
+.product-suite .concept-commitments-heading>p{margin:0;max-width:32em}
+#site-shell .concept-commitment-list{border-top:1px solid #ffffff50!important}
+#site-shell .concept-commitments details.concept-commitment{border:0!important;border-bottom:1px solid #ffffff50!important;border-radius:0!important;padding:0!important;margin:0!important;background:transparent!important;box-shadow:none!important;color:inherit}
+.product-suite .concept-commitment>summary{display:grid;grid-template-columns:32px minmax(0,1fr) 24px;align-items:center;gap:24px;min-height:100px;padding:28px 0!important;cursor:pointer;list-style:none;line-height:1.6}
+.product-suite .concept-commitment>summary::-webkit-details-marker{display:none}
+.product-suite .concept-commitment>summary:focus-visible{outline:2px solid #c5e241;outline-offset:6px}
+.product-suite .concept-commitment>summary .plus{justify-self:end;flex-shrink:0}
+.product-suite .concept-commitment>summary:hover,.product-suite .concept-commitment[open]>summary{color:#c5e241}
+.product-suite .concept-commitment-number{font-size:.8125rem;line-height:1.4;letter-spacing:.1em}
+.product-suite .concept-commitment-body{padding:8px 0 56px 56px}
+.product-suite .concept-commitment-body h3{margin:0 0 20px}
+.product-suite .concept-commitment-body p{margin:0 0 24px;max-width:45em}
+.product-suite .concept-commitment-body p+h3{margin-top:40px}
+.product-suite .concept-commitment-body figure{margin:0;min-width:0}
+.product-suite .concept-commitment-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,88px);align-items:start}
+.product-suite .concept-commitment-split figure .image{height:auto;aspect-ratio:4/3;border-radius:0!important;overflow:hidden}
+.product-suite .concept-commitments figcaption{margin-top:16px;font-size:.8125rem;line-height:1.6;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.product-suite .concept-resource-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.product-suite .concept-resource-grid p{margin-bottom:0}
+.product-suite .concept-landscape-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:32px 0}
+.product-suite .concept-landscape-grid .image{height:auto;aspect-ratio:3/2;border-radius:0!important;overflow:hidden}
+.product-suite .concept-landscape-grid a{display:block;min-width:0;color:inherit}
+.product-suite .concept-landscape-grid a>span{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 0;min-height:44px}
+.product-suite .concept-landscape-grid a:focus-visible{outline:2px solid #c5e241;outline-offset:6px}
+.product-suite .concept-vine-note{max-width:48em}
+.product-suite .concept-text-link{display:inline-flex;align-items:center;gap:16px;min-height:44px;color:inherit;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+.product-suite .concept-text-link:hover{color:#c5e241}
+.product-suite .concept-text-link:focus-visible{outline:2px solid #c5e241;outline-offset:6px}
+.product-suite .concept-link-stack{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.product-suite .concept-final-links{display:flex;flex-wrap:wrap;align-items:center;gap:16px 32px}
+.product-suite .concept-final-links .concept-text-link{color:#fff}
+@media(max-width:1023px){.product-suite .concept-resource-grid{grid-template-columns:1fr;gap:32px}.product-suite .concept-resource-grid p{max-width:50em}.product-suite .concept-commitment-body{padding-left:0}}
+@media(max-width:767px){.product-suite .product-comfort.concept-comfort{grid-template-columns:1fr;gap:36px;padding:64px var(--product-gutter)}.product-suite .concept-comfort .equipment-disclosures summary{gap:20px;min-height:68px;padding:20px 0!important}.product-suite .concept-commitments-heading{grid-template-columns:1fr;gap:24px;margin-bottom:36px}.product-suite .concept-commitment>summary{grid-template-columns:minmax(0,1fr) 20px;gap:20px;min-height:88px;padding:24px 0!important}.product-suite .concept-commitment-number{display:none}.product-suite .concept-commitment-split{grid-template-columns:1fr;gap:24px}.product-suite .concept-commitment-body{padding:4px 0 36px}.product-suite .concept-commitment-body p+h3{margin-top:32px}.product-suite .concept-landscape-grid{grid-template-columns:1fr;gap:24px}.product-suite .concept-final-links{flex-direction:column;align-items:flex-start;gap:12px}.product-suite .concept-commitment-split figure .image{aspect-ratio:4/3}}
+
+.product-suite .concept-cj-logo-link{display:inline-block;margin-bottom:32px;min-height:63px}
+.product-suite .concept-cj-logo{width:157px;height:63px;aspect-ratio:157/63}
+.product-suite .concept-cj-logo img{object-fit:contain}
+.product-suite .concept-signature-photos{display:grid;gap:24px}
+.product-suite .concept-signature-photos figure .image{aspect-ratio:16/9}

@@ -1,0 +1,3 @@
+import React from 'react';
+export function Instagram({size=22,strokeWidth=1.5,...props}){return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} {...props}><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>}
+export function Linkedin({size=22,strokeWidth,...props}){return <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" {...props}><path d="M5.4 8.2H2V22h3.4V8.2ZM3.7 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM22 13.9c0-4.1-2.2-6-5.1-6a4.4 4.4 0 0 0-4 2.2V8.2H9.5V22h3.4v-7.7c0-2 1-3.3 2.8-3.3 1.8 0 2.9 1.3 2.9 3.3V22H22v-8.1Z"/></svg>}

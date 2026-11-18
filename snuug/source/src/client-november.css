@@ -1,0 +1,73 @@
+/* Client charter, 12 November 2026. Five type roles; mobile breakpoint 768px. */
+:root{--sans:'Comfortaa',sans-serif;--serif:var(--sans);--brand-display:var(--sans);--type-body:1.125rem;--type-small:.8125rem;--type-title:2.5rem;--type-hero:4rem;--type-eyebrow:1rem;--type-menu:.8125rem;--dark:#232a1b;--client-green:#c5e241;--client-gutter:clamp(24px,5vw,80px)}
+body,button,input,select,textarea{font-family:var(--sans)}
+#site-shell#site-shell *, .dialog *{font-family:var(--sans)!important;font-size:inherit!important;font-weight:inherit;font-style:normal}
+#site-shell#site-shell :is(strong,b),.dialog :is(strong,b){font-weight:700}
+#site-shell#site-shell{font-size:var(--type-body);line-height:1.6}
+#site-shell#site-shell :is(p,li,dd,summary,input,select,textarea,.button,.text-button,.search-submit,.search-help,.stay-lead,.serif-lead,.concept-lead){font-size:var(--type-body)!important;line-height:1.6!important;letter-spacing:normal;font-weight:400}
+#site-shell#site-shell :is(h1,h2){font-size:var(--type-title)!important;font-weight:400!important;line-height:1.15!important;letter-spacing:normal!important;text-wrap:balance}
+#site-shell#site-shell :is(h3,h4){font-size:var(--type-body)!important;font-weight:700!important;line-height:1.4!important;letter-spacing:normal!important}
+#site-shell#site-shell :is(.landscape-title,.editorial-hero-copy,.product-hero-copy) h1{font-size:var(--type-hero)!important;line-height:1.05!important}
+#site-shell#site-shell :is(.eyebrow,.section-label,.product-hero-copy>span,.landscape-title>span){font-size:var(--type-eyebrow)!important;font-weight:400!important;line-height:1.4!important;letter-spacing:.14em!important;text-transform:uppercase}
+#site-shell#site-shell :is(.page-sections a,.product-chapters a,.stay-section-nav a,figcaption,.fineprint,.booking-note,.booking-assurance,.availability-note,.agenda-footnote,.map-disclaimer,.card-specs,.stay-key-facts,.stay-signatures,.collection-chips button,.agenda-filters button,.product-partners span,.product-specs dt,small){font-size:var(--type-menu)!important;line-height:1.4!important;font-weight:400;letter-spacing:.1em;text-transform:uppercase}
+#site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav){gap:24px;height:auto;min-height:72px;padding-block:14px;align-items:center;overflow-x:auto;scrollbar-width:thin;background:#fff;box-shadow:none;border:0}
+#site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a{position:relative;min-height:44px;flex:none;border:0!important;border-radius:0!important;padding:8px 0!important;background:transparent!important;color:#232a1b!important;box-shadow:none!important;text-decoration:none!important;white-space:nowrap}
+#site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a:is(:hover,:focus-visible,[aria-current]){font-weight:700!important}
+#site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a::before{display:none!important}
+#site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:2px;background:transparent;transform:none;border:0;box-shadow:none;width:auto}
+#site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a[aria-current]::after{background:#c5e241}
+/* Retain the rounded liquid navigation only. All editorial surfaces have straight edges. */
+#site-shell#site-shell :not(.liquid-dock):not(.liquid-dock *),.dialog,.dialog *{border-radius:0!important}
+#site-shell#site-shell .liquid-dock .dock-bubble{border-radius:50%!important}
+#site-shell#site-shell .liquid-dock .dock-item{border-radius:16px!important}
+#site-shell#site-shell .liquid-dock .dock-active-dot{border-radius:50%!important}
+#site-shell#site-shell .dock-label{font-size:var(--type-menu)!important;font-weight:400;line-height:1.4!important;text-transform:none;letter-spacing:0}
+#site-shell#site-shell :is(button,a,input,select,textarea,summary):focus-visible,.dialog :is(button,a,input,textarea):focus-visible{outline:2px solid currentColor;outline-offset:5px}
+#site-shell#site-shell :is(.button,.text-button,summary){min-height:44px}
+#site-shell#site-shell :is(.equipment-disclosures,.practical-group) details{border-top:1px solid #c4c4be!important}
+#site-shell#site-shell :is(.equipment-disclosures,.practical-group) details:last-child{border-bottom:1px solid #c4c4be!important}
+#site-shell#site-shell details>summary{box-shadow:none!important}
+#site-shell#site-shell .product-specs dd{font-size:var(--type-title)!important;line-height:1.15!important;letter-spacing:0}
+#site-shell#site-shell footer{background:#232a1b;color:#fff}
+#site-shell#site-shell footer :is(p,a,span,small){font-size:var(--type-menu)!important;line-height:1.4!important;letter-spacing:.1em}
+#site-shell#site-shell footer :is(nav a,.footer-contact>span,.footer-bottom,.footer-more .eyebrow){text-transform:uppercase}
+#site-shell#site-shell .footer-brand-title{display:block;font-size:var(--type-eyebrow);font-weight:700;letter-spacing:0}
+#site-shell#site-shell .footer-top>div:first-child p{margin-top:16px;line-height:1.8!important;letter-spacing:0}
+#site-shell#site-shell .social-links a{display:inline-flex;align-items:center;justify-content:center;width:44px;min-height:44px;gap:0}
+#site-shell#site-shell .footer-contact>a:first-child{text-transform:none;letter-spacing:0}
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.dialog :is(p,input,textarea,.button,.text-button){font-size:var(--type-body)!important;line-height:1.6}
+.dialog h2{font-size:var(--type-title)!important;font-weight:400!important;line-height:1.15}
+.dialog :is(small,.concierge-foot,.concierge-header span){font-size:var(--type-menu)!important;line-height:1.4}
+/* One compact field system for stays and regional event searches. */
+#site-shell#site-shell .snuug-search-bar{display:grid;grid-template-columns:minmax(180px,1.3fr) minmax(150px,1fr) minmax(150px,1fr) auto;gap:0;padding:0;border:1px solid #b5b6ae;background:#fff;color:#232a1b}
+#site-shell#site-shell .snuug-search-bar label{display:flex;flex-direction:column;justify-content:center;gap:5px;min-width:0;padding:12px 16px;border:0;border-right:1px solid #b5b6ae;font-size:var(--type-menu);line-height:1.4;text-transform:uppercase;letter-spacing:.1em}
+#site-shell#site-shell .snuug-search-bar :is(input,select){width:100%;min-width:0;max-width:100%;height:34px;min-height:34px;margin:0;padding:0;border:0;background:transparent;color:inherit;box-shadow:none}
+#site-shell#site-shell :is(.booking-bar-submit,.snuug-search-bar>button){font-size:var(--type-body);line-height:1.6;font-weight:400}
+#site-shell#site-shell .snuug-search-bar>button{display:flex;align-items:center;justify-content:center;gap:12px;align-self:stretch;padding:12px 20px;min-height:64px;background:#232a1b;color:#fff;border:0;text-decoration:none;cursor:pointer}
+#site-shell#site-shell :is(.booking-bar-prompt,.saved-help){font-size:var(--type-body)!important;line-height:1.6!important}
+#site-shell#site-shell .agenda-footnote p{font-size:var(--type-menu)!important;line-height:1.4!important;letter-spacing:.1em;text-transform:uppercase}
+@media(min-width:768px) and (max-width:1100px){#site-shell#site-shell .snuug-search-bar{grid-template-columns:1.2fr 1fr 1fr}#site-shell#site-shell .snuug-search-bar>button{grid-column:1/-1}}
+@media(max-width:767px){
+ :root{--type-body:1rem;--type-title:1.875rem;--type-hero:2.5rem;--client-gutter:24px}
+ #site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav){min-height:64px;padding-block:10px;gap:24px}
+ #site-shell#site-shell :is(.landscape-title,.editorial-hero-copy,.product-hero-copy){max-width:100%}
+ #site-shell#site-shell :is(.product-specs,.included-grid,.equipment-grid){min-width:0}
+ #site-shell#site-shell footer .footer-top{gap:24px}
+ #site-shell#site-shell .snuug-search-bar{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ #site-shell#site-shell .snuug-search-bar label{padding:10px 12px}
+ #site-shell#site-shell .snuug-search-bar label:first-child{grid-column:1/-1;border-right:0;border-bottom:1px solid #b5b6ae}
+ #site-shell#site-shell .snuug-search-bar label:nth-child(3){border-right:0}
+ #site-shell#site-shell .snuug-search-bar>button{grid-column:1/-1}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}#site-shell *{animation-duration:.01ms!important;animation-iteration-count:1!important}}
+#site-shell#site-shell .agenda-event{grid-template-columns:minmax(180px,260px) 120px minmax(0,1fr)}
+@media(min-width:768px) and (max-width:1000px){#site-shell#site-shell .agenda-event{grid-template-columns:180px 100px minmax(0,1fr);gap:20px}}
+@media(max-width:767px){#site-shell#site-shell .agenda-event{grid-template-columns:96px minmax(0,1fr);gap:20px}#site-shell#site-shell .agenda-event>.agenda-visual{grid-column:1/-1}}
+
+@media(max-width:1100px){#site-shell#site-shell .experience-card-grid{grid-template-columns:1fr}}
+@media(max-width:767px){#site-shell#site-shell .home-news-tab{position:fixed;top:18px;right:24px;writing-mode:horizontal-tb;padding:10px 12px;z-index:65;min-height:44px}#site-shell#site-shell .experience-card-content h2{text-transform:none}}
+
+#site-shell#site-shell :is(.snuug-booking-bar label,.snuug-search-bar label,.agenda-status,.agenda-status span,.agenda-date em,.liquid-room-caption,.itinerary-route button>span,.itinerary-route button>small,.home-news-tab span,.gift-mark){font-size:var(--type-menu)!important;line-height:1.4;letter-spacing:.1em}
+#site-shell#site-shell .agenda-date time{font-size:var(--type-body)!important;line-height:1.4;font-weight:700}
+#site-shell#site-shell .agenda-image-placeholder>span:not(.eyebrow){font-size:var(--type-body)!important;line-height:1.4}
