@@ -31,7 +31,7 @@ function JourneyPath({points,width,height,progress,phase,reduced}){
 export default function HomeItinerary(){
  const stage=useRef(null),activeIndex=useRef(0),phase=useMotionValue(0),reduced=useReducedMotion();
  const visible=useInView(stage,{amount:.25});
- const [size,setSize]=useState({width:1120,mobile:false}),[paused,setPaused]=useState(false),[hovered,setHovered]=useState(false),[focused,setFocused]=useState(false),[hidden,setHidden]=useState(false),[active,setActive]=useState(0);
+ const [size,setSize]=useState(()=>({width:1120,mobile:typeof window!=='undefined'&&window.innerWidth<768})),[paused,setPaused]=useState(false),[hovered,setHovered]=useState(false),[focused,setFocused]=useState(false),[hidden,setHidden]=useState(false),[active,setActive]=useState(0);
  const progress=useTransform(phase,value=>{const i=Math.floor(value),fraction=Math.min(1,Math.max(0,(value-i-animation.dwell)/(1-animation.dwell)));return Math.min(6,i+fraction*fraction*(3-2*fraction))});
  useMotionValueEvent(progress,'change',value=>{const next=Math.round(value);if(next!==activeIndex.current){activeIndex.current=next;setActive(next)}});
  useEffect(()=>{
