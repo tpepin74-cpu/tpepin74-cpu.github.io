@@ -68,7 +68,7 @@ body,button,input,select,textarea{font-family:var(--sans)}
 @media(max-width:1100px){#site-shell#site-shell .experience-card-grid{grid-template-columns:1fr}}
 @media(max-width:767px){#site-shell#site-shell .home-news-tab{position:fixed;top:18px;right:24px;writing-mode:horizontal-tb;padding:10px 12px;z-index:65;min-height:44px}#site-shell#site-shell .experience-card-content h2{text-transform:none}}
 
-#site-shell#site-shell :is(.snuug-booking-bar label,.snuug-search-bar label,.agenda-status,.agenda-status span,.agenda-date em,.liquid-room-caption,.itinerary-route button>span,.itinerary-route button>small,.home-news-tab span,.gift-mark){font-size:var(--type-menu)!important;line-height:1.4;letter-spacing:.1em}
+#site-shell#site-shell :is(.snuug-booking-bar label,.snuug-search-bar label,.agenda-status,.agenda-status span,.agenda-date em,.liquid-room-caption,.home-news-tab span,.gift-mark){font-size:var(--type-menu)!important;line-height:1.4;letter-spacing:.1em}
 #site-shell#site-shell .agenda-date time{font-size:var(--type-body)!important;line-height:1.4;font-weight:700}
 #site-shell#site-shell .agenda-image-placeholder>span:not(.eyebrow){font-size:var(--type-body)!important;line-height:1.4}
 @media(max-width:767px){#site-shell#site-shell.home-site .site-header{justify-content:flex-start}#site-shell#site-shell .landscape-hero:has(.home-hero-booking){min-height:max(800px,100svh);height:auto!important}}
