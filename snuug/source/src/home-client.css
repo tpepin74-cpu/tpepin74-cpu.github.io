@@ -3,11 +3,6 @@
 #site-shell .landscape-hero:has(.home-hero-booking){display:flex;flex-direction:column;justify-content:space-between;min-height:800px;height:100svh;max-height:none}
 #site-shell .landscape-hero:has(.home-hero-booking) .landscape-title{position:relative;top:auto;left:auto;right:auto;padding:140px 5vw 48px}
 #site-shell .landscape-hero:has(.home-hero-booking) .landscape-shade{background:linear-gradient(180deg,#0008,transparent 60%,#0009)}
-#site-shell .home-hero-booking .snuug-booking-bar{background:#232a1be8;color:#fff;border-color:#ffffff70}
-#site-shell .home-hero-booking .snuug-booking-bar label{border-color:#ffffff70}
-#site-shell .home-hero-booking .snuug-booking-bar select option{background:#232a1b;color:#fff}
-#site-shell .home-hero-booking .booking-bar-submit{background:#fff;color:#232a1b}
-#site-shell .home-hero-booking input{color-scheme:dark}
 #site-shell .home-news-feature{scroll-margin-top:120px}.home-news-feature .text-button:hover{text-decoration-thickness:2px}
 #site-shell .liquid-room-caption{position:absolute;left:0;right:0;bottom:0;padding:40px 20px 20px;background:linear-gradient(transparent,#000a);color:#fff;opacity:0;transform:translateY(5px);transition:opacity .2s,transform .2s;font-size:.8125rem;text-transform:uppercase;letter-spacing:.1em;line-height:1.4}
 #site-shell .liquid-gallery-card:is(:hover,:focus-visible) .liquid-room-caption{opacity:1;transform:none}

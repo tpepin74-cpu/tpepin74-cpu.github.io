@@ -99,7 +99,6 @@
  #site-shell#site-shell .app-search-summary strong{font-size:16px!important;line-height:1.5!important}
  #site-shell#site-shell .app-search-summary small{font-size:11px!important;line-height:1.5!important}
  #site-shell#site-shell .app-search-edit{font-size:13px!important;text-decoration:none}
- #site-shell#site-shell .snuug-booking-bar .booking-bar-submit{font-size:14px!important}
  #site-shell#site-shell .liquid-room-caption{left:16px;bottom:16px}
 }
 :root{--site-header-height:88px}
@@ -112,9 +111,3 @@
 #site-shell#site-shell :is(.legal-page,.conditions-list) :is(p,li){font-size:.875rem!important;line-height:1.75!important}
 #site-shell#site-shell :is(.legal-page,.conditions-list) h2:not(.privacy-title){font-size:1.25rem!important;line-height:1.4!important}
 @media(max-width:767px){:root{--site-header-height:76px}}
-
-@media(max-width:767px){.dialog-backdrop .dialog .snuug-booking-bar .booking-bar-submit{font-size:14px!important}}
-@media(max-width:359px){
- :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .dates-fields{grid-template-columns:minmax(0,1fr)}
- :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar:not(.booking-bar-compact) .dates-fields>label:first-child{border-right:0;border-bottom:1px solid var(--booking-bar-line,#d3d5cd)}
-}

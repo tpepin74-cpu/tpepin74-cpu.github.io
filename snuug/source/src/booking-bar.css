@@ -1,30 +1,114 @@
-/* Shared booking form. The two typography variables can be adjusted without changing the component. */
-:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar{display:grid;grid-template-columns:minmax(160px,1.25fr) minmax(270px,2fr) minmax(112px,.75fr) auto;align-items:stretch;gap:0;width:100%;min-width:0;margin:0;border:1px solid var(--booking-bar-line,#d3d5cd);background:var(--booking-bar-bg,#fff);color:var(--booking-bar-ink,#232a1b);box-shadow:none;padding:0;border-radius:var(--surface-radius,24px)}
-:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar label{display:flex;flex-direction:column;gap:2px;justify-content:center;min-width:0;margin:0;padding:8px 14px;border:0;border-right:1px solid var(--booking-bar-line,#d3d5cd);line-height:1.4!important;font-size:var(--booking-label-size,var(--type-menu,.8125rem))!important;text-transform:uppercase;letter-spacing:.08em}
-:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .dates-fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-width:0;gap:0;margin:0;padding:0;border:0;border-radius:0;overflow:visible}
-:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar :is(input,select){display:block;width:100%;height:32px;min-height:32px;max-width:100%;min-width:0;border:0;border-radius:0;background:transparent;color:inherit;padding:0;margin:0;box-shadow:none;font:inherit;font-size:var(--booking-control-size,1rem)!important;line-height:1.4!important;letter-spacing:0;text-transform:none}
-:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-bar-submit{display:flex;align-items:center;justify-content:center;gap:12px;min-height:48px;margin:6px;padding:10px 20px;background:var(--booking-button-bg,#171914);color:var(--booking-button-ink,#fff);border:0;border-radius:999px;font:inherit;font-size:var(--booking-control-size,1rem)!important;line-height:1.4!important;text-decoration:none;cursor:pointer}
-:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-bar-submit .arrow{width:20px;height:20px;flex-shrink:0}
-:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .search-error{grid-column:1/-1;padding:12px 16px;margin:0;color:#9f2424;background:#fff;border-radius:0 0 var(--surface-radius,24px) var(--surface-radius,24px);font-size:var(--booking-control-size,1rem)!important}
-:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar :focus-visible{outline:2px solid #60711e;outline-offset:3px}
-#site-shell#site-shell .home-hero-booking .snuug-booking-bar{--booking-bar-bg:#232a1be8;--booking-bar-ink:#fff;--booking-bar-line:#ffffff70;--booking-button-bg:#fff;--booking-button-ink:#232a1b}
-:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar.booking-bar-compact{grid-template-columns:minmax(0,1fr);gap:12px;border:0;background:transparent;border-radius:0}
-:is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .dates-fields{gap:10px}
-:is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact label{padding:9px 12px;border:1px solid #d3d5cd;border-radius:14px;background:#fff;color:#232a1b}
-:is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .booking-bar-submit{grid-column:1/-1;width:100%;margin:4px 0 0;min-height:48px;padding:12px 16px}
-@media(min-width:768px) and (max-width:1100px){:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar:not(.booking-bar-compact){grid-template-columns:1.1fr 1.8fr .8fr}:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar:not(.booking-bar-compact) .booking-bar-submit{grid-column:1/-1;margin:6px}}
+/* Shared reservation search. Native fields, one light segmented capsule. */
+:root{--booking-label-size:0.875rem;--booking-control-size:1rem}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-shell{
+ --booking-ink:#232a1b;--booking-muted:#62665d;--booking-line:#e3e5de;--booking-accent:#c5e241;
+ width:100%;min-width:0;color:var(--booking-ink);text-align:left;
+}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar{
+ display:grid;grid-template-columns:minmax(180px,1.5fr) minmax(300px,2.2fr) minmax(120px,.85fr) 68px;
+ align-items:center;gap:0;width:100%;min-width:0;margin:0;padding:6px;
+ border:1px solid #e5e6e0;border-radius:999px;background:#fff;color:var(--booking-ink);
+ box-shadow:0 8px 30px #17200e12,0 1px 3px #17200e09;isolation:isolate;
+ transition:box-shadow .2s,border-color .2s;
+}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar:focus-within{border-color:#b0b6a6;box-shadow:0 10px 32px #17200e1c,0 0 0 3px #c5e24128}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-segment{
+ position:relative;display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;min-height:72px;
+ margin:0;padding:12px 24px;border:0;border-radius:999px;background:transparent;color:var(--booking-ink);
+ font-family:inherit;font-size:14px!important;font-weight:400;line-height:1.35!important;letter-spacing:0;text-transform:none;
+ cursor:pointer;transition:background .18s;
+}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-segment::after{content:'';position:absolute;right:0;top:50%;height:30px;width:1px;transform:translateY(-50%);background:var(--booking-line);pointer-events:none}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-bar-guests::after{display:none}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-segment:is(:hover,:focus-within){background:#f2f3ee}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-segment:is(:hover,:focus-within)::after{opacity:0}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-field-label{display:block;font-size:var(--booking-label-size)!important;font-weight:700;line-height:1.4!important;letter-spacing:0;text-transform:none;color:var(--booking-ink)}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .dates-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;min-width:0;margin:0;padding:0;border:0;border-radius:0;overflow:visible}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar :is(input,select){display:block;width:100%;height:28px;min-height:28px;max-width:100%;min-width:0;margin:0;padding:0;border:0;border-radius:0;background:transparent;background-image:none;color:var(--booking-muted);box-shadow:none;font:inherit;font-size:var(--booking-control-size)!important;line-height:1.5!important;letter-spacing:0;text-transform:none;cursor:pointer;color-scheme:light}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar select{appearance:none;padding-right:18px;text-overflow:ellipsis}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar select option{background:#fff;color:var(--booking-ink)}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar :is(input,select):focus{outline:none}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-segment:has(:focus-visible){outline:2px solid #657125;outline-offset:-2px}
+.booking-select-control,.booking-date-control{position:relative;display:block;min-width:0}
+.booking-select-control>svg{position:absolute;right:0;top:50%;transform:translateY(-50%);pointer-events:none;color:#62665d}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-date-control input::-webkit-calendar-picker-indicator{width:16px;height:16px;padding:2px;margin:0;opacity:.55;cursor:pointer}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-date-control input::-webkit-datetime-edit{padding:0}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-date-control.is-empty input:not(:focus){color:transparent}
+.booking-date-placeholder{position:absolute;left:0;top:50%;transform:translateY(-50%);pointer-events:none;font-size:16px!important;line-height:1.5!important;color:#62665d;letter-spacing:0}
+.booking-date-control:focus-within .booking-date-placeholder{display:none}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-bar-submit{display:flex;align-items:center;justify-content:center;gap:10px;width:56px;height:56px;min-height:56px;margin:0 6px;padding:0;border:0;border-radius:999px;background:var(--booking-accent);color:#232a1b;font:inherit;font-size:16px!important;font-weight:700;line-height:1.5!important;letter-spacing:0;text-decoration:none;white-space:nowrap;box-shadow:none;cursor:pointer;transition:background .18s,transform .18s}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-bar-submit svg{width:22px;height:22px;flex:none}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-bar-submit>span{display:none}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-bar-submit:hover{background:#d0ec55;transform:scale(1.04)}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-bar-submit:active{transform:scale(.97)}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-bar-submit:focus-visible{outline:2px solid #232a1b;outline-offset:3px}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-search-error{padding:12px 18px;margin:12px 0 0;background:#fff;border:1px solid #dcb8b1;border-radius:16px;color:#9f2424;font-size:14px!important;line-height:1.5!important;letter-spacing:0}
+#site-shell#site-shell .home-hero-booking{width:min(960px,calc(100% - 64px));max-width:960px;margin-inline:auto}
+#site-shell#site-shell .home-hero-booking .booking-bar-prompt{text-align:center;font-size:16px!important;line-height:1.5!important;margin:0 0 18px;text-shadow:0 2px 10px #0004}
+#site-shell#site-shell .home-hero-booking .snuug-booking-bar{box-shadow:0 14px 48px #10170e30,0 2px 8px #10170e12}
+.booking-mobile-summary{display:none}
+/* The Golf card uses the same fields, with a clear full-width action. */
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar.booking-bar-compact{grid-template-columns:minmax(0,1fr);gap:0;padding:0;border:1px solid var(--booking-line);border-radius:20px;background:#fff;box-shadow:none}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .booking-segment{padding:14px 16px;min-height:80px;border-radius:16px}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .dates-fields{border-bottom:1px solid var(--booking-line)}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .dates-fields>label:last-child::after{display:none}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .booking-bar-submit{width:calc(100% - 20px);margin:4px 10px 10px;background:#232a1b;color:#fff}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .booking-bar-submit:hover{background:#37412a;transform:none}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .booking-bar-submit>span{display:inline}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .booking-bar-submit svg{width:19px;height:19px}
+@media(min-width:768px) and (max-width:1100px){
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar:not(.booking-bar-compact){grid-template-columns:minmax(150px,1.25fr) minmax(270px,2fr) minmax(112px,.8fr) 60px}
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar:not(.booking-bar-compact) .booking-segment{padding-inline:16px}
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar:not(.booking-bar-compact) .booking-bar-submit{width:52px;height:52px;min-height:52px;margin-inline:4px}
+}
+/* Mobile opens the full search in a focused sheet, keeping the hero photographic. */
 @media(max-width:767px){
- :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
- :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-bar-destination{grid-column:1/-1;border-right:0;border-bottom:1px solid var(--booking-bar-line,#d3d5cd)}
- :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .dates-fields{grid-column:1/-1;border-bottom:1px solid var(--booking-bar-line,#d3d5cd)}
- :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .dates-fields>label:last-child{border-right:0}
- :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar label{padding:8px 12px}
- :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar :is(input,select){height:36px;min-height:36px}
- :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-bar-submit{grid-column:auto;min-height:48px;padding:10px;gap:8px}
- :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar.booking-bar-compact{grid-template-columns:minmax(0,1fr)}
- :is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .dates-fields{border:0}
- :is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .dates-fields>label:last-child{border-right:1px solid #d3d5cd}
- :is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .booking-bar-submit{grid-column:1/-1}
+ #site-shell#site-shell .booking-desktop-full{display:none}
+ #site-shell#site-shell .booking-mobile-summary{display:flex;align-items:center;gap:14px;width:100%;min-height:84px;padding:12px 12px 12px 22px;margin:0;border:1px solid #e5e6e0;border-radius:999px;background:#fff;color:#232a1b;text-align:left;box-shadow:0 10px 36px #17200e26;cursor:pointer}
+ .booking-mobile-summary>svg{flex:none}
+ .booking-mobile-copy{display:flex;flex:1;min-width:0;flex-direction:column;gap:5px}
+ #site-shell#site-shell .booking-mobile-copy strong{font-size:16px!important;line-height:1.4!important;letter-spacing:0;font-weight:700}
+ #site-shell#site-shell .booking-mobile-copy>span{font-size:12px!important;line-height:1.5!important;letter-spacing:0;color:#62665d}
+ .booking-mobile-copy b{font-weight:400}
+ .booking-mobile-search{display:grid;place-items:center;width:48px;height:48px;flex:none;border-radius:50%;background:#c5e241}
+ #site-shell#site-shell .booking-mobile-summary:focus-visible{outline:3px solid #c5e241;outline-offset:5px}
+ #site-shell#site-shell .home-hero-booking{width:calc(100% - 40px);max-width:480px;margin-inline:auto;padding-bottom:124px}
+ #site-shell#site-shell .home-hero-booking .booking-bar-prompt{margin-bottom:16px;font-size:15px!important}
+ #site-shell#site-shell.home-site .landscape-hero:has(.home-hero-booking){min-height:max(660px,100svh)}
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar:not(.booking-bar-compact){grid-template-columns:1fr;padding:0;border-radius:24px;box-shadow:none;background:#fff}
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-segment{min-height:84px;padding:16px 18px;border-radius:20px}
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .dates-fields{grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--booking-line);border-bottom:1px solid var(--booking-line)}
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-bar-destination::after,:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .dates-fields>label:last-child::after{display:none}
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar :is(input,select){height:32px;min-height:32px}
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-bar-submit{width:calc(100% - 24px);height:54px;min-height:54px;margin:4px 12px 12px;gap:10px;font-size:16px!important}
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-bar-submit>span{display:inline}
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .dates-fields{border-top:0}
+ .booking-search-sheet.dialog-backdrop{align-items:flex-end;padding:0;z-index:1100}
+ .booking-search-sheet.dialog-backdrop .dialog{width:100%;max-width:560px;max-height:calc(100dvh - 24px);margin:0 auto;padding:62px 24px max(24px,env(safe-area-inset-bottom));border-radius:28px 28px 0 0;background:#fafaf7;overflow:auto}
+ .booking-search-sheet .dialog .dialog-close{position:absolute;top:16px;right:20px;background:transparent;border:0;box-shadow:none}
+ .booking-sheet-heading{padding:0 4px 26px;color:#232a1b}
+ .booking-sheet-heading>span{font-size:12px!important;line-height:1.5;letter-spacing:.05em}
+ .booking-sheet-heading h2{font-family:inherit;font-size:28px!important;font-weight:400;line-height:1.3!important;letter-spacing:-.04em;margin:12px 0}
+ .booking-sheet-heading p{font-size:14px!important;line-height:1.6!important;margin:0;color:#62665d}
+}
+@media(max-width:359px){
+ #site-shell#site-shell .booking-mobile-summary{gap:10px;padding-left:17px}
+ .booking-mobile-summary>svg{display:none}
+ .booking-search-sheet.dialog-backdrop .dialog{padding-inline:16px}
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-segment{padding-inline:12px}
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .dates-fields{grid-template-columns:1fr}
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .dates-fields>label:first-child{border-bottom:1px solid var(--booking-line)}
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .dates-fields>label:first-child::after{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar,:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-segment,:is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .booking-bar-submit{transition:none;transform:none!important}
 }
 
-@media(max-width:380px){:is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .dates-fields{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:767px){
+ #site-shell#site-shell .app-search-summary{min-height:84px;grid-template-columns:20px minmax(0,1fr) 44px;gap:12px;padding:12px 12px 12px 20px;border:1px solid #e5e6e0;border-radius:999px;background:#fff;box-shadow:0 5px 20px #17200e0d;color:#232a1b}
+ #site-shell#site-shell .app-search-edit{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:#c5e241;color:#232a1b}
+ #site-shell#site-shell .app-search-summary small{font-size:12px!important;letter-spacing:0;text-transform:none;color:#62665d}
+}
+
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .booking-bar-submit{height:auto;min-height:54px;padding:14px 12px;white-space:normal;text-align:center}
+:is(#site-shell#site-shell,.dialog-backdrop .dialog) .booking-bar-compact .booking-bar-submit svg{display:none}

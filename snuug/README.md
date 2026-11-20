@@ -26,7 +26,7 @@ Tous les chemins suivants sont relatifs à la racine du dépôt. Il n’y a pas 
 
 | Réglage | Fichier | Modification |
 |---|---|---|
-| Typographie de réservation | `snuug/source/src/booking-bar.css` | `--booking-label-size` pour les libellés ; `--booking-control-size` pour les champs et le bouton. Valeurs par défaut : 13 px et 16 px. |
+| Typographie de réservation | `snuug/source/src/booking-bar.css` | `--booking-label-size` pour les libellés ; `--booking-control-size` pour les champs et le bouton. Valeurs par défaut : 14 px et 16 px. Capsule blanche sur ordinateur, recherche compacte ouvrant une feuille sur mobile. |
 | Étapes de l’itinéraire | `snuug/source/src/journey-stops.json` | Modifier `name`, `place`, `href` et `icon` pour chaque étape. |
 | Rythme de l’itinéraire | `snuug/source/src/itinerary-motion.json` | `stepDuration`, en millisecondes, vaut 1900 ; une valeur plus faible accélère l’animation. `dwell` règle la part de pause sur chaque étape. |
 
@@ -34,7 +34,7 @@ Exemple à ajouter dans `booking-bar.css` pour définir explicitement les taille
 
 ```css
 :root {
-  --booking-label-size: 0.8125rem;
+  --booking-label-size: 0.875rem;
   --booking-control-size: 1rem;
 }
 ```
