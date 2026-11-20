@@ -30,7 +30,7 @@
 #site-shell#site-shell .booking-card>p,.dialog-backdrop .dialog .booking-card>p{margin:0;font-size:1rem!important;line-height:1.5!important}
 #site-shell#site-shell .booking-card form,.dialog-backdrop .dialog .booking-card form{margin:2px 0 0}
 #site-shell#site-shell .booking-card :is(.booking-note,.booking-assurance,.booking-conditions),.dialog-backdrop .dialog .booking-card :is(.booking-note,.booking-assurance,.booking-conditions){margin:0;padding:0;border:0;text-align:left;font-size:var(--type-menu,.8125rem)!important;line-height:1.5!important;letter-spacing:0;text-transform:none;color:#505747}
-#site-shell#site-shell .booking-card .booking-conditions a,.dialog-backdrop .dialog .booking-card .booking-conditions a{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:var(--type-menu,.8125rem)!important;line-height:1.5!important;text-decoration:underline;text-underline-offset:5px}
+#site-shell#site-shell .booking-card .booking-conditions a,.dialog-backdrop .dialog .booking-card .booking-conditions a{display:inline-flex;align-items:center;gap:12px;min-height:44px;font-size:var(--editorial-cta-size,1rem)!important;line-height:1.5!important;text-decoration:none}
 #site-shell#site-shell .stay-neighbourhood{padding-block:48px 64px;margin-bottom:0;border:0}
 .stay-neighbourhood-heading{max-width:780px;margin-bottom:36px}
 .stay-neighbourhood-heading h2{margin:20px 0 24px}
@@ -61,3 +61,8 @@
  #site-shell#site-shell .lodging-page .stay-section-nav{padding-inline:0;scroll-padding-inline:0}
 }
 @media(prefers-reduced-motion:reduce){#site-shell#site-shell .reservation-page .collection-chips button::after{transition:none}}
+
+#site-shell#site-shell .booking-card .booking-conditions a:hover,.dialog-backdrop .dialog .booking-card .booking-conditions a:hover{font-weight:700!important}
+#site-shell#site-shell .booking-card .booking-conditions a svg,.dialog-backdrop .dialog .booking-card .booking-conditions a svg{width:18px;height:18px;flex:none;transition:translate .2s}
+#site-shell#site-shell .booking-card .booking-conditions a:hover svg,.dialog-backdrop .dialog .booking-card .booking-conditions a:hover svg{translate:2px -2px}
+@media(prefers-reduced-motion:reduce){#site-shell#site-shell .booking-card .booking-conditions a svg,.dialog-backdrop .dialog .booking-card .booking-conditions a svg{transition:none;translate:none}}

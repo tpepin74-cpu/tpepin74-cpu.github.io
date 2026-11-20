@@ -1,0 +1,83 @@
+/* Responsive corrections verified against the shared page components. */
+
+/* Nested disclosures keep the same content edge as their parent section. */
+#site-shell#site-shell .stay-guide-folds .fold-body > .page-container {
+  width: 100%;
+  max-width: 100%;
+  padding-inline: 0;
+}
+
+#site-shell#site-shell .practical-page > *,
+#site-shell#site-shell .practical-page nav > a,
+#site-shell#site-shell .conditions-list > section > div {
+  min-width: 0;
+}
+
+#site-shell#site-shell .practical-page :is(summary, p, h2, a) {
+  overflow-wrap: anywhere;
+}
+
+#site-shell#site-shell .practical-page .button {
+  max-width: 100%;
+  white-space: normal;
+}
+
+/* A caption may wrap without competing with a fixed-width arrow. */
+#site-shell#site-shell .nature-photo > span {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+#site-shell#site-shell .nature-photo > span > .arrow {
+  display: inline-block;
+  margin-inline-start: 8px;
+  vertical-align: middle;
+}
+
+@media (max-width: 767px) {
+  #site-shell#site-shell .practical-page {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #site-shell#site-shell .practical-page > aside {
+    position: static;
+  }
+
+  #site-shell#site-shell .practical-page nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  #site-shell#site-shell .practical-page nav {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #site-shell#site-shell .product-specs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  #site-shell#site-shell .product-specs > div {
+    min-width: 0;
+  }
+
+  #site-shell#site-shell .product-specs dt {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* The booking card clears both the header and the 72px chapter navigation. */
+@media (min-width: 1000px) and (min-height: 900px) {
+  #site-shell#site-shell .booking-sticky {
+    top: calc(var(--site-header-height) + 92px);
+  }
+}
+
+/* Preserve access to the complete card on shorter desktop viewports. */
+@media (min-width: 1000px) and (max-height: 899px) {
+  #site-shell#site-shell .booking-sticky {
+    position: relative;
+    top: auto;
+  }
+}

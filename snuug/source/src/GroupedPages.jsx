@@ -18,11 +18,11 @@ export function Fold({id,label,title,children}){return <details id={id} classNam
 // Deep links open their containing disclosure, including nested questions, before scrolling.
 export function DeepLink(){useEffect(()=>{
   let timer;
-  const reveal=(hash=window.location.hash,behavior='instant')=>{
+  const reveal=(hash=window.location.hash,behavior='instant',focus=false)=>{
     let id;try{id=decodeURIComponent(hash.slice(1))}catch{return}
     if(!id)return;const target=document.getElementById(id);if(!target)return;
     let element=target;while(element){if(element.tagName==='DETAILS')element.open=true;element=element.parentElement}
-    cancelAnimationFrame(timer);timer=requestAnimationFrame(()=>scrollToAnchor(target,behavior));
+    cancelAnimationFrame(timer);timer=requestAnimationFrame(()=>{scrollToAnchor(target,behavior);if(focus)target.focus({preventScroll:true})});
   };
   const hashchange=()=>reveal();
   const click=event=>{
@@ -33,7 +33,7 @@ export function DeepLink(){useEffect(()=>{
       let target;try{target=document.getElementById(decodeURIComponent(url.hash.slice(1)))}catch{return}
       if(!target)return;event.preventDefault();
       if(location.hash!==url.hash)history.pushState({...history.state},'',url.hash);
-      reveal(url.hash,'smooth');
+      reveal(url.hash,'smooth',link.classList.contains('skip-link'));
     }
   };
   reveal();window.addEventListener('hashchange',hashchange);document.addEventListener('click',click);

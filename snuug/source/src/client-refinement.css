@@ -1,11 +1,11 @@
 /* Client corrections, 20 November 2026. Editorial shapes, not a global radius reset. */
 :root{--surface-radius:24px;--editorial-cta-size:1rem;--separator-color:#c4c7bd}
 #site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a:is(:hover,:focus-visible)::after{background:var(--client-green)}
-#site-shell#site-shell :is(.button,.text-button,.concept-text-link){display:inline-flex;align-items:center;justify-content:flex-start;gap:12px;min-height:44px;padding:8px 0;border:0!important;border-radius:0;background:transparent;box-shadow:none!important;color:inherit;font-size:var(--editorial-cta-size)!important;font-weight:400;text-decoration:none!important;line-height:1.5!important;letter-spacing:0!important;text-transform:none;transition:color .2s}
-#site-shell#site-shell :is(.button,.text-button,.concept-text-link)::after{border:0;background:none}
-#site-shell#site-shell :is(.button,.text-button,.concept-text-link):hover{font-weight:700!important}
-#site-shell#site-shell :is(.button,.text-button,.concept-text-link) :is(.arrow,.snuug-inline-arrow){width:18px;height:18px;flex:none;transform:none!important;transition:translate .2s}
-#site-shell#site-shell :is(.button,.text-button,.concept-text-link):hover :is(.arrow,.snuug-inline-arrow){translate:2px -2px}
+#site-shell#site-shell :is(.button,.text-button,.concept-text-link,.search-help,.coming-grid article>a,.conditions-layout>aside>a,.location-address>a,.card-location>button){display:inline-flex;align-items:center;justify-content:flex-start;gap:12px;min-height:44px;padding:8px 0;border:0!important;border-radius:0;background:transparent;box-shadow:none!important;color:inherit;font-size:var(--editorial-cta-size)!important;font-weight:400;text-decoration:none!important;line-height:1.5!important;letter-spacing:0!important;text-transform:none;transition:color .2s}
+#site-shell#site-shell :is(.button,.text-button,.concept-text-link,.search-help,.coming-grid article>a,.conditions-layout>aside>a,.location-address>a,.card-location>button)::after{border:0;background:none}
+#site-shell#site-shell :is(.button,.text-button,.concept-text-link,.search-help,.coming-grid article>a,.conditions-layout>aside>a,.location-address>a,.card-location>button):hover{font-weight:700!important}
+#site-shell#site-shell :is(.button,.text-button,.concept-text-link,.search-help,.coming-grid article>a,.conditions-layout>aside>a,.location-address>a,.card-location>button) :is(.arrow,.snuug-inline-arrow){width:18px;height:18px;flex:none;transform:none!important;transition:translate .2s}
+#site-shell#site-shell :is(.button,.text-button,.concept-text-link,.search-help,.coming-grid article>a,.conditions-layout>aside>a,.location-address>a,.card-location>button):hover :is(.arrow,.snuug-inline-arrow){translate:2px -2px}
 #site-shell#site-shell :is(.reserve-button,.button[href^="/snuug/reservation"],.button[href="#reserver"]){display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:48px;padding:12px 26px;background:#000;color:#fff;border:0!important;border-radius:999px!important;font-size:var(--editorial-cta-size)!important;line-height:1.5!important;text-decoration:none!important;white-space:nowrap}
 #site-shell#site-shell .reserve-button:hover{background:#232a1b}
 #site-shell#site-shell .reserve-button svg{width:18px;height:18px;transition:translate .2s}
@@ -13,7 +13,7 @@
 #site-shell#site-shell :is(.editorial-hero-copy,.product-hero-copy,.landscape-title) .button{background:transparent!important;border:0!important;border-radius:0!important;padding:8px 0!important;color:#fff!important;text-decoration:none!important;min-width:0;box-shadow:none!important}
 #site-shell#site-shell details{border-left:0!important;border-right:0!important;border-radius:0!important;box-shadow:none!important}
 #site-shell#site-shell details>summary{border:0!important;border-radius:0!important;box-shadow:none!important}
-#site-shell#site-shell :is(.editorial-fold,.home-collection-fold,.future-collections){border-top:1px solid var(--separator-color)!important;border-bottom:1px solid var(--separator-color)!important;background:transparent}
+#site-shell#site-shell :is(.editorial-fold,.home-collection-fold,.future-collections,.quiet-disclosure,.suite-nature-fold,.product-destination-details){border-top:1px solid var(--separator-color)!important;border-bottom:1px solid var(--separator-color)!important;background:transparent}
 #site-shell#site-shell :is(.fineprint,.booking-note,.booking-assurance,.availability-note,.map-disclaimer,.agenda-footnote,.saved-help),#site-shell#site-shell .agenda-footnote p{font-size:.8125rem!important;line-height:1.6!important;letter-spacing:0!important;text-transform:none!important}
 #site-shell#site-shell .departure-cta{padding:clamp(64px,8vw,112px) var(--client-gutter);text-align:center;background:#fff;display:flex;flex-direction:column;align-items:center;gap:28px}
 #site-shell#site-shell .departure-cta h2{margin:0}
@@ -74,7 +74,7 @@
  .concierge-overlay .concierge-welcome h2{font-size:26px!important}
 }
 @media(prefers-reduced-motion:reduce){
- #site-shell#site-shell :is(.button,.text-button,.concept-text-link,.reserve-button) svg{transition:none;translate:none}
+ #site-shell#site-shell :is(.button,.text-button,.concept-text-link,.search-help,.coming-grid article>a,.conditions-layout>aside>a,.location-address>a,.card-location>button,.reserve-button) svg{transition:none;translate:none}
 }
 
 #site-shell#site-shell .destination-photo-open{display:block;width:100%;padding:0;border:0;background:transparent;border-radius:var(--surface-radius);overflow:hidden;cursor:zoom-in}
@@ -111,3 +111,9 @@
 #site-shell#site-shell :is(.legal-page,.conditions-list) :is(p,li){font-size:.875rem!important;line-height:1.75!important}
 #site-shell#site-shell :is(.legal-page,.conditions-list) h2:not(.privacy-title){font-size:1.25rem!important;line-height:1.4!important}
 @media(max-width:767px){:root{--site-header-height:76px}}
+
+/* Secondary disclosures and utility CTAs follow the same editorial rules. */
+#site-shell#site-shell .suite-nature-fold+.product-destination-details{border-top:0!important}
+#site-shell#site-shell .practical-group details{border-top-color:var(--separator-color)!important;border-bottom-color:var(--separator-color)!important}
+#site-shell#site-shell .home-text-shortcuts .arrow{width:18px;height:18px;flex:none;transition:translate .2s}
+#site-shell#site-shell :is(.experience-program-note,#conditions>.fold-body>.fold-intro){font-size:.8125rem!important;line-height:1.6!important;letter-spacing:0!important;text-transform:none!important}

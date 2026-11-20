@@ -3,10 +3,12 @@ import {AnimatePresence,MotionConfig,motion,useMotionValue,useReducedMotion,useS
 import './dock.css';
 
 const spring={stiffness:260,damping:22,mass:0.9};
+// Keep the notch inside the straight top edge without displacing an end item.
+const safeCenter=(width,center)=>Math.max(23,Math.min(width-23,center));
 export function notchGeometry(width,center,speed=0,compact=false){
  const radius=22,height=72,half=compact?52:60,depth=compact?38:42;
  const deformation=Math.min(Math.abs(speed)/1400,1);
- const x=Math.max(radius+26,Math.min(width-radius-26,center));
+ const x=safeCenter(width,center);
  const w=Math.max(0,Math.min(half+24*deformation,x-radius-1,width-radius-1-x));
  const d=depth-7*deformation;
  return `M ${radius} 0 H ${x-w} C ${x-w*.5} 0 ${x-w*.5} ${d} ${x} ${d} C ${x+w*.5} ${d} ${x+w*.5} 0 ${x+w} 0 H ${width-radius} Q ${width} 0 ${width} ${radius} V ${height-radius} Q ${width} ${height} ${width-radius} ${height} H ${radius} Q 0 ${height} 0 ${height-radius} V ${radius} Q 0 0 ${radius} 0 Z`;
@@ -31,8 +33,8 @@ function DockSurface({items,active,onSelect}){
  const scaleX=useTransform(velocity,v=>reduced||layout.light?1:1+Math.min(Math.abs(v)/1400,1)*.28);
  const scaleY=useTransform(velocity,v=>reduced||layout.light?1:1-Math.min(Math.abs(v)/1400,1)*.14);
  const size=layout.compact?46:50;
- const bubbleLeft=useTransform(x,v=>Math.max(48,Math.min(layout.width-48,v))-size/2);
- const labelLeft=useTransform(x,v=>Math.max(48,Math.min(layout.width-48,v))-48);
+ const bubbleLeft=useTransform(x,v=>safeCenter(layout.width,v)-size/2);
+ const labelLeft=useTransform(x,v=>safeCenter(layout.width,v)-48);
  useEffect(()=>{if(reduced)x.jump(targetX);target.set(targetX)},[targetX,reduced,target,x]);
  useEffect(()=>{const node=ref.current;if(!node)return;const query=window.matchMedia('(max-width:760px), (pointer:coarse)');const measure=()=>{const width=node.getBoundingClientRect().width;setLayout(prev=>prev.width===width&&prev.light===query.matches?prev:{width,compact:window.innerWidth<=420,light:query.matches})};measure();const observer=new ResizeObserver(measure);observer.observe(node);query.addEventListener('change',measure);return()=>{observer.disconnect();query.removeEventListener('change',measure)}},[]);
  const chosen=items[index],BubbleIcon=chosen?.icon;
