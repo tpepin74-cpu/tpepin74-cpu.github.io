@@ -19,24 +19,6 @@
       "source": "Neuchâtel Vins et Terroir"
     },
     {
-      "id": "la-paulee-2026",
-      "title": "La Paulée",
-      "start": "2026-11-19",
-      "end": "2026-11-19",
-      "place": "Hôtel Palafitte Route des Gouttes-d'Or 2 2000 Neuchâtel",
-      "region": "Neuchâtel",
-      "url": "https://neuchatel-vins-terroir.ch/evenement/la-paulee-2026/",
-      "image": {
-        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/10/admin-ajax.jpeg",
-        "width": 450,
-        "height": 600,
-        "fit": "contain",
-        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/la-paulee-2026/",
-        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
-      },
-      "source": "Neuchâtel Vins et Terroir"
-    },
-    {
       "id": "encavage-de-trois-rods-caves-ouvertes",
       "title": "Encavage de Trois-Rods / Caves ouvertes",
       "start": "2026-11-20",
@@ -397,7 +379,7 @@
       "source": "Neuchâtel Vins et Terroir"
     }
   ],
-  "updatedAt": "2026-11-19T14:32:45.046Z",
+  "updatedAt": "2026-11-20T14:09:46.844Z",
   "partial": false,
   "source": "https://neuchatel-vins-terroir.ch/evenement/",
   "stale": false
