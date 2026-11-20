@@ -1,7 +1,7 @@
 /* Client-approved journey and inspiration pages, November 2026. */
 #site-shell .experience-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;padding-block:64px}
-#site-shell .experience-flip-card{position:relative;isolation:isolate;display:flex;min-height:600px;scroll-margin-top:170px;background:#232a1b;color:#fff;overflow:hidden;border-radius:0}
-#site-shell .experience-flip-card>.image{position:absolute;inset:0;width:100%;height:100%;z-index:-2;border-radius:0}
+#site-shell .experience-flip-card{position:relative;isolation:isolate;display:flex;min-height:600px;scroll-margin-top:170px;background:#232a1b;color:#fff;overflow:hidden;border-radius:var(--surface-radius,24px)}
+#site-shell .experience-flip-card>.image{position:absolute;inset:0;width:100%;height:100%;z-index:-2;border-radius:inherit}
 #site-shell .experience-flip-card:not(.is-open)::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0001,#000b);z-index:-1}
 #site-shell .experience-card-content{width:100%;padding:40px;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;gap:20px}
 #site-shell .experience-card-content h2{margin:0;text-transform:uppercase}
@@ -9,15 +9,14 @@
 #site-shell .experience-program{display:grid;gap:24px;width:100%}
 #site-shell .experience-program article{display:grid;gap:10px}
 #site-shell .experience-program article h3,#site-shell .experience-program article p{margin:0}
-#site-shell .experience-program-toggle{display:inline-flex;align-items:center;gap:16px;min-height:48px;background:transparent;color:inherit;border:0;border-radius:0;text-decoration:underline;text-underline-offset:6px;cursor:pointer;padding:8px 0;margin-top:4px}
+#site-shell .experience-program-toggle{display:inline-flex;align-items:center;gap:16px;min-height:48px;background:transparent;color:inherit;border:0;border-radius:0;text-decoration:none;cursor:pointer;padding:8px 0;margin-top:4px}
 #site-shell .experience-program-toggle:focus-visible{outline:2px solid currentColor;outline-offset:6px}
 #site-shell .experience-flip-card.is-open{background:#efebe5;color:#171914}
 #site-shell .experience-flip-card.is-open .experience-card-content{justify-content:flex-start}
 #site-shell .experience-program-note{margin:0;opacity:.85}
-#site-shell .experience-booking{display:flex;align-items:center;justify-content:space-between;gap:28px;padding-block:64px;background:#efebe5}
-#site-shell .experience-booking h2{margin:0}
 #site-shell .stay-moments-heading h2{margin:20px 0 32px}
-#site-shell .stay-moment-number{font-size:1rem;letter-spacing:.1em;line-height:1.4}
+#site-shell#site-shell .stay-moment .stay-moving-photo{border-radius:var(--surface-radius,24px)}
+#site-shell#site-shell .stay-moment-number{font-size:2rem!important;font-weight:400!important;letter-spacing:0;line-height:1.2;text-transform:none}
 #site-shell .stay-moment-copy{padding-top:24px}
 #site-shell .agenda-event{grid-template-columns:minmax(180px,260px) 120px minmax(0,1fr);border-radius:0;border-bottom:1px solid #232a1b30}
 #site-shell .agenda-date{gap:8px;text-align:left;line-height:1.4;white-space:nowrap}
@@ -28,7 +27,15 @@
 #site-shell .agenda-region-promo h2{margin:20px 0}
 #site-shell .agenda-region-promo p{max-width:650px}
 #site-shell .agenda-region-promo>.text-button{align-self:center}
-#site-shell .stay-direct-contact{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:center;padding-block:64px;background:#efebe5}
-#site-shell .stay-direct-contact p{max-width:650px}
+#site-shell .experience-packs #packs{scroll-margin-top:170px}
+#site-shell .experience-packs .destination-packs .pack-grid{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:32px;row-gap:20px;align-items:stretch}
+#site-shell .experience-packs .pack-grid>article{display:grid;grid-template-rows:subgrid;grid-row:span 4;min-width:0;padding-top:24px}
+#site-shell .experience-packs .pack-grid :is(h3,p){margin:0;min-height:0}
+#site-shell .experience-packs .pack-links{display:flex;flex-direction:column;align-items:flex-start;align-self:start;gap:12px;min-width:0}
+#site-shell .experience-packs .pack-links>.text-button{margin:0;min-height:44px;max-width:100%;white-space:normal;align-items:flex-start}
+#site-shell .experience-packs .pack-links>.text-button .arrow{flex-shrink:0;margin-top:3px}
+#site-shell#site-shell .stay-guide-folds>.editorial-fold{border-block:1px solid var(--disclosure-line,#c4c4be)!important;border-radius:0!important}
+#site-shell#site-shell .stay-guide-folds>.editorial-fold+.editorial-fold{border-top:0!important}
+#site-shell#site-shell .stay-guide-folds>.editorial-fold>summary{border:0!important;border-radius:0!important}
 @media(max-width:1000px){#site-shell .experience-card-content{padding:28px}#site-shell .agenda-event{grid-template-columns:180px 100px minmax(0,1fr);gap:20px}#site-shell .agenda-region-promo{grid-template-columns:1fr}#site-shell .agenda-region-promo>div{grid-row:auto}}
-@media(max-width:767px){#site-shell .experience-card-grid{grid-template-columns:1fr;padding-block:40px;gap:20px}#site-shell .experience-flip-card{min-height:520px;scroll-margin-top:150px}#site-shell .experience-card-content{padding:28px 24px;gap:20px}#site-shell .experience-flip-card.is-open{min-height:0}#site-shell .experience-booking{padding-block:48px;flex-direction:column;align-items:flex-start}#site-shell .agenda-event{grid-template-columns:96px minmax(0,1fr);gap:20px}#site-shell .agenda-event>.agenda-visual{grid-column:1/-1}#site-shell .agenda-date{grid-column:1}#site-shell .agenda-region-promo{padding-block:32px;margin-top:20px}#site-shell .stay-direct-contact{grid-template-columns:1fr;gap:24px;padding-block:48px}}
+@media(max-width:767px){#site-shell .experience-card-grid{grid-template-columns:1fr;padding-block:40px;gap:20px}#site-shell .experience-flip-card{min-height:520px;scroll-margin-top:150px}#site-shell .experience-card-content{padding:28px 24px;gap:20px}#site-shell .experience-flip-card.is-open{min-height:0}#site-shell .experience-packs #packs{scroll-margin-top:150px}#site-shell .experience-packs .destination-packs .pack-grid{grid-template-columns:1fr;gap:20px}#site-shell .experience-packs .pack-grid>article{grid-template-rows:auto auto auto auto;grid-row:auto;gap:20px}#site-shell#site-shell .stay-moment-number{font-size:1.5rem!important}#site-shell .agenda-event{grid-template-columns:96px minmax(0,1fr);gap:20px}#site-shell .agenda-event>.agenda-visual{grid-column:1/-1}#site-shell .agenda-date{grid-column:1}#site-shell .agenda-region-promo{padding-block:32px;margin-top:20px}}

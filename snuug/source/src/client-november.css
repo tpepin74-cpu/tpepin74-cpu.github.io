@@ -16,8 +16,7 @@ body,button,input,select,textarea{font-family:var(--sans)}
 #site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a::before{display:none!important}
 #site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:2px;background:transparent;transform:none;border:0;box-shadow:none;width:auto}
 #site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a[aria-current]::after{background:#c5e241}
-/* Retain the rounded liquid navigation only. All editorial surfaces have straight edges. */
-#site-shell#site-shell :not(.liquid-dock):not(.liquid-dock *),.dialog,.dialog *{border-radius:0!important}
+/* Surface radii are scoped by component in client-refinement.css. */
 #site-shell#site-shell .liquid-dock .dock-bubble{border-radius:50%!important}
 #site-shell#site-shell .liquid-dock .dock-item{border-radius:16px!important}
 #site-shell#site-shell .liquid-dock .dock-active-dot{border-radius:50%!important}

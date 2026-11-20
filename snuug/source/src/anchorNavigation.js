@@ -11,6 +11,14 @@ export function anchorOffset(target){
  return bottom+20;
 }
 export function scrollToAnchor(target,behavior='instant'){
- const top=target.getBoundingClientRect().top+window.scrollY-anchorOffset(target);
+ let top=target.getBoundingClientRect().top+window.scrollY-anchorOffset(target);
+ // When the first chapter follows the menu, bring the menu flush with the
+ // header instead of exposing a thin strip of the previous hero between them.
+ for(const nav of document.querySelectorAll(menus)){
+  const style=getComputedStyle(nav),previous=nav.previousElementSibling;
+  if(style.position!=='sticky'||!previous||!(nav.compareDocumentPosition(target)&Node.DOCUMENT_POSITION_FOLLOWING))continue;
+  const naturalTop=previous.getBoundingClientRect().bottom+window.scrollY+(parseFloat(style.marginTop)||0);
+  top=Math.max(top,naturalTop-(parseFloat(style.top)||0));
+ }
  window.scrollTo({top:Math.max(0,top),behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':behavior});
 }

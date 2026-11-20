@@ -1,4 +1,4 @@
-// Nine destinations, with in-page chapters for related content.
+// Public pages and redirects for preserved URLs.
 export const routes={
  '/snuug':['SNUUG · Ailleurs. Ensemble.','Une suite pour deux, des paysages suisses et quatre façons de s’évader.'],
  '/snuug/le-concept':['Découvrir SNUUG · Le concept, la suite & les engagements','Une suite indépendante de 20 m², le confort d’un hôtel et une autre idée de l’hospitalité suisse.'],
@@ -6,7 +6,8 @@ export const routes={
  '/snuug/reservation':['Choisir votre séjour · SNUUG','Découvrez la collection sur la carte, enregistrez vos favoris et préparez votre échappée.'],
  '/snuug/sejours/neuchatel':['Golf de Neuchâtel · Votre suite SNUUG','Photos, équipements, services, activités alentour et réservation de votre suite au Golf de Neuchâtel.'],
  '/snuug/offrir':['Offrir une échappée · SNUUG','Offrez du temps à partager : préparez votre demande de bon cadeau SNUUG.'],
- '/snuug/informations':['Votre séjour · Services, informations & contact SNUUG','Guest App, petit-déjeuner, arrivée, questions fréquentes, conditions et contact : préparez votre séjour simplement.'],
+ '/snuug/informations':['Votre séjour · Services & informations SNUUG','Guest App, petit-déjeuner, arrivée, questions fréquentes, conditions : préparez votre séjour simplement.'],
+ '/snuug/actualites':['Actualités & espace presse · SNUUG','Les adresses, les rencontres et les ressources presse du SupernatureHotel SNUUG.'],
  '/snuug/partenaires':['Anges-Gardiens et partenaires · SNUUG','Proposez un domaine, devenez Ange-Gardien ou rejoignez l’aventure SNUUG.'],
  '/snuug/mentions-legales':['Informations légales & confidentialité · SNUUG','Identité de SNUUG SA, contacts, confidentialité et informations légales.']
 };
@@ -16,17 +17,17 @@ export const redirects={
  '/snuug/tourisme-durable':'/snuug/le-concept#engagements',
  '/snuug/autour-de-neuchatel':'/snuug/sejours/neuchatel#alentours',
  '/snuug/conditions':'/snuug/informations#conditions',
- '/snuug/contact':'/snuug/informations#contact',
+ '/snuug/contact':'/snuug/mentions-legales#contact',
  '/snuug/confidentialite':'/snuug/mentions-legales#confidentialite',
  '/snuug/experiences/amoureux':'/snuug/experiences#amoureux',
  '/snuug/experiences/vacances':'/snuug/experiences#vacances',
  '/snuug/experiences/deconnexion':'/snuug/experiences#deconnexion',
  '/snuug/experiences/golf':'/snuug/experiences#golf',
  '/snuug/adresses':'/snuug/reservation',
- '/snuug/journal':'/snuug/experiences#inspirations',
- '/snuug/journal/rituels':'/snuug/experiences#rituels',
+ '/snuug/journal':'/snuug/actualites#actualite',
+ '/snuug/journal/rituels':'/snuug/experiences',
  '/snuug/journal/design':'/snuug/le-concept#design-histoire',
- '/snuug/journal/escapade':'/snuug/experiences#escapade'
+ '/snuug/journal/escapade':'/snuug/experiences'
 };
 export function redirectTarget(path,search='',hash=''){
  const destination=redirects[path];if(!destination)return path+search+hash;

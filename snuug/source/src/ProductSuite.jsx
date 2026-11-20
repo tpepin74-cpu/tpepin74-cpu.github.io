@@ -7,6 +7,7 @@ import {equipment} from './stays';
 import {CJDestination} from './DestinationStories';
 import './product-suite.css';
 import ConceptCommitments from './ConceptCommitments';
+import DepartureCTA from './DepartureCTA';
 const views=[
  {label:'L’extérieur',image:'golf-1535',title:'Une présence discrète.',copy:'Des lignes sobres, une terrasse protégée et un paysage qui prend toute la place.',alt:'La façade et la terrasse de la suite au Golf de Neuchâtel'},
  {label:'Le salon',image:'golf-1522',title:'Le temps prend ses aises.',copy:'Une chaise longue Ligne Roset, la lumière naturelle et le plaisir de ne rien prévoir.',alt:'Le salon SNUUG et sa chaise longue Ligne Roset'},
@@ -19,22 +20,20 @@ export default function ProductSuite(){
   <section className="product-hero" aria-label="Découvrir la suite SNUUG">
    <Image eager src="/images/official/golf-1535.webp" alt="Une suite SNUUG et sa terrasse au cœur du Golf de Neuchâtel"/>
    <div className="product-hero-shade"/>
-   <div className="product-hero-copy"><span>The supernature hotel</span><h1>Une suite.<br/>En pleine nature.</h1><p>Une suite pour deux. Le paysage pour horizon.</p><a className="button light" href="#suite">Découvrir<Arrow direction="down"/></a></div>
+   <div className="product-hero-copy"><span>The supernature hotel</span><h1>Une suite.<br/>En pleine nature.</h1><p>Une suite pour deux. Le paysage pour horizon.</p><a className="button light" href="#suite">Découvrir<Arrow/></a></div>
   </section>
-  <nav className="product-chapters" aria-label="Les chapitres de la suite">{[['Le concept','suite'],['L’intérieur','interieur'],['Le confort','equipements'],['Nos engagements','engagements'],['Les collections','collections']].map(([label,id])=><a key={id} href={'#'+id}>{label}</a>)}</nav>
+  <nav className="product-chapters" aria-label="Les chapitres de la suite">{[['Le concept','suite'],['L’intérieur','interieur'],['Le confort','equipements'],['Nos engagements','engagements'],['Choisir sa SNUUG','choisir-snuug']].map(([label,id])=><a key={id} href={'#'+id}>{label}</a>)}</nav>
   <section id="suite" className="product-intro"><Reveal><span className="eyebrow">Le concept SNUUG</span><h2>Votre chambre d’hôtel.<br/>Au cœur du paysage.</h2></Reveal><div className="product-intro-side"><p>SNUUG est une suite indépendante pour deux, installée dans un paysage choisi. À l’intérieur : un lit, un salon et une salle d’eau. Dehors : votre terrasse privée. Le confort d’un hôtel, au plus près de la nature.</p><dl className="product-specs"><div><dt>Surface intérieure</dt><dd>20 <small>m²</small></dd></div><div><dt>Voyageurs</dt><dd>2</dd></div><div><dt>Terrasse privée</dt><dd>5 <small>m²</small></dd></div></dl></div></section>
   <section className="product-panorama" id="interieur"><Image src="/images/official/golf-1997.webp" alt="Vue d’ensemble de l’intérieur d’une suite SNUUG, du salon à la chambre"/><div><span className="eyebrow">Bienvenue à l’intérieur</span><h2>Dormir. Se détendre.<br/>Profiter du paysage.</h2></div></section>
   <section className="product-explorer" aria-label="Explorer les espaces de la suite">
    <div className="product-section-head"><h2>Cinq espaces.<br/>Une seule suite.</h2></div>
-   <LiquidGallery items={views.map(v=>({src:'/images/official/'+v.image+'.webp',alt:v.alt,title:v.label,eyebrow:v.title,text:v.copy,badge:v.label==='La chambre'?'Arrivée dès 15 h':undefined}))} label="Explorer les espaces de la suite"/>
+   <LiquidGallery captions={true} items={views.map(v=>({caption:v.label,src:'/images/official/'+v.image+'.webp',alt:v.alt,title:v.label,eyebrow:v.title,text:v.copy,badge:v.label==='La chambre'?'Arrivée dès 15 h':undefined}))} label="Explorer les espaces de la suite"/>
   </section>
   <section id="equipements" className="product-comfort concept-comfort"><div className="product-comfort-copy"><h2>Le confort,<br/>dans chaque détail.</h2><p>Du premier café aux derniers instants de la journée, chaque détail accompagne votre séjour.</p></div><div className="equipment-disclosures">{equipment.map(([icon,title,copy])=><details key={title}><summary>{title}<Plus/></summary><p>{copy}</p></details>)}</div></section>
   <section id="design-histoire" className="product-materials"><div><span className="eyebrow">Des signatures, une harmonie</span><Reveal><h2>Le design se voit.<br/>Le confort se ressent.</h2></Reveal><p>Le bois, les textiles, les objets que l’on touche chaque jour. Une sélection de maisons qui partagent le goût du détail.</p><div className="product-partners"><span>Ligne Roset</span><span>Garnier-Thiebaut</span><span>Aesop</span><span>Laufen</span><span>Loxone</span></div></div><Image src="/images/official/golf-1592.webp" alt="Le bois et les détails de finition dans la suite SNUUG"/></section>
   <ConceptCommitments/>
-  <section id="collections" className="suite-collections page-container"><span className="eyebrow">Un concept, plusieurs paysages</span><h2>La même idée de l’ailleurs.<br/>Des univers différents.</h2><p>Nature, Vigne, Golf et Signature déclinent le concept SNUUG. Choisissez un cadre ; retrouvez l’intimité d’une suite indépendante.</p><div className="suite-collection-links"><a href="#snuug-nature">Nature · voir les photos<Arrow/></a><a href="/snuug/sejours/neuchatel">Golf · Neuchâtel<Arrow/></a><a href="#snuug-cj">Signature · Le Noirmont<Arrow/></a></div><p className="fineprint">La collection Vigne et les prochaines adresses seront présentées au fil de leur ouverture.</p></section>
   <details className="suite-nature-fold"><summary>Découvrir SNUUG Nature en images<Plus/></summary><NatureCollection/></details>
-  <span id="signature"/>
-  <details className="product-destination-details"><summary><span><small>La collection Signature</small><strong>SNUUG-CJ. Le Jura, grandeur nature.</strong></span><Plus/></summary><div className="page-container"><CJDestination/></div></details>
-  <section className="product-finale"><Image src="/images/official/noirmont-1982.webp" alt="La terrasse SNUUG-CJ ouverte sur le paysage du Noirmont"/><div><h2>On part quand ?</h2><div className="concept-final-links"><a className="button light" href="/snuug/reservation">Réserver<Arrow/></a><a className="concept-text-link" href="/snuug/informations">Préparez votre séjour<Arrow/></a></div></div></section>
+  <details id="signature" className="product-destination-details"><summary><span><small>La collection Signature</small><strong>SNUUG-CJ. Le Jura, grandeur nature.</strong></span><Plus/></summary><div className="page-container"><CJDestination/></div></details>
+  <DepartureCTA id="choisir-snuug"/>
  </div>
 }

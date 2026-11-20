@@ -1,0 +1,9 @@
+[
+ {"name":"SNUUG Golf","place":"Neuchâtel","icon":"snuug","href":"/snuug/sejours/neuchatel","endpoint":true},
+ {"name":"Le 19ème","icon":"restaurant","href":"/snuug/sejours/neuchatel#alentours"},
+ {"name":"Vignoble","icon":"vigne","href":"/snuug/sejours/neuchatel#alentours"},
+ {"name":"Train CJ","icon":"train","href":"https://www.les-cj.ch/"},
+ {"name":"Étang de la Gruère","icon":"lac","href":"https://www.myswitzerland.com/fr-ch/destinations/etang-de-la-gruere/"},
+ {"name":"Fromagerie","icon":"fromage","href":"https://fdfm.ch/"},
+ {"name":"SNUUG Noirmont","place":"Jura · Le Noirmont","icon":"snuug","href":"/snuug/le-concept#snuug-cj","endpoint":true}
+]

@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "vite build && node build-pages.mjs",
-    "prepare:publish": "npm run build && node sync-publish.mjs"
+    "prepare:publish": "npm run build && node sync-publish.mjs",
+    "dev": "vite --host 0.0.0.0"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

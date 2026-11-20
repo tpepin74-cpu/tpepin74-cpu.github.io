@@ -16,4 +16,4 @@ for(const [from,to] of Object.entries(redirects)){
 }
 await fs.writeFile('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${Object.keys(routes).map(route=>`<url><loc>${origin}${route}/</loc></url>`).join('')}</urlset>`);
 await fs.writeFile('dist/.nojekyll','');
-console.log('9 pages and 16 redirects generated under /snuug/.');
+console.log(`${Object.keys(routes).length} pages and ${Object.keys(redirects).length} redirects generated under /snuug/.`);

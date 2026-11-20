@@ -1,0 +1,120 @@
+/* Client corrections, 20 November 2026. Editorial shapes, not a global radius reset. */
+:root{--surface-radius:24px;--editorial-cta-size:1rem;--separator-color:#c4c7bd}
+#site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav) a:is(:hover,:focus-visible)::after{background:var(--client-green)}
+#site-shell#site-shell :is(.button,.text-button,.concept-text-link){display:inline-flex;align-items:center;justify-content:flex-start;gap:12px;min-height:44px;padding:8px 0;border:0!important;border-radius:0;background:transparent;box-shadow:none!important;color:inherit;font-size:var(--editorial-cta-size)!important;font-weight:400;text-decoration:none!important;line-height:1.5!important;letter-spacing:0!important;text-transform:none;transition:color .2s}
+#site-shell#site-shell :is(.button,.text-button,.concept-text-link)::after{border:0;background:none}
+#site-shell#site-shell :is(.button,.text-button,.concept-text-link):hover{font-weight:700!important}
+#site-shell#site-shell :is(.button,.text-button,.concept-text-link) :is(.arrow,.snuug-inline-arrow){width:18px;height:18px;flex:none;transform:none!important;transition:translate .2s}
+#site-shell#site-shell :is(.button,.text-button,.concept-text-link):hover :is(.arrow,.snuug-inline-arrow){translate:2px -2px}
+#site-shell#site-shell :is(.reserve-button,.button[href^="/snuug/reservation"],.button[href="#reserver"]){display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:48px;padding:12px 26px;background:#000;color:#fff;border:0!important;border-radius:999px!important;font-size:var(--editorial-cta-size)!important;line-height:1.5!important;text-decoration:none!important;white-space:nowrap}
+#site-shell#site-shell .reserve-button:hover{background:#232a1b}
+#site-shell#site-shell .reserve-button svg{width:18px;height:18px;transition:translate .2s}
+#site-shell#site-shell .reserve-button:hover svg{translate:2px -2px}
+#site-shell#site-shell :is(.editorial-hero-copy,.product-hero-copy,.landscape-title) .button{background:transparent!important;border:0!important;border-radius:0!important;padding:8px 0!important;color:#fff!important;text-decoration:none!important;min-width:0;box-shadow:none!important}
+#site-shell#site-shell details{border-left:0!important;border-right:0!important;border-radius:0!important;box-shadow:none!important}
+#site-shell#site-shell details>summary{border:0!important;border-radius:0!important;box-shadow:none!important}
+#site-shell#site-shell :is(.editorial-fold,.home-collection-fold,.future-collections){border-top:1px solid var(--separator-color)!important;border-bottom:1px solid var(--separator-color)!important;background:transparent}
+#site-shell#site-shell :is(.fineprint,.booking-note,.booking-assurance,.availability-note,.map-disclaimer,.agenda-footnote,.saved-help),#site-shell#site-shell .agenda-footnote p{font-size:.8125rem!important;line-height:1.6!important;letter-spacing:0!important;text-transform:none!important}
+#site-shell#site-shell .departure-cta{padding:clamp(64px,8vw,112px) var(--client-gutter);text-align:center;background:#fff;display:flex;flex-direction:column;align-items:center;gap:28px}
+#site-shell#site-shell .departure-cta h2{margin:0}
+#site-shell#site-shell .departure-collections{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:nowrap}
+#site-shell#site-shell .departure-collections a{position:relative;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px clamp(14px,2vw,28px);font-size:var(--editorial-cta-size)!important;line-height:1.5;text-decoration:none;white-space:nowrap}
+#site-shell#site-shell .departure-collections a+a::before{position:absolute;content:'';left:0;width:1px;height:18px;background:var(--separator-color)}
+#site-shell#site-shell .departure-collections a:hover{font-weight:700!important}
+#site-shell#site-shell .departure-collections svg{width:16px;height:16px;flex:none}
+/* A photographic ribbon: just the outside corners are rounded. */
+#site-shell#site-shell .liquid-gallery{gap:6px;border-radius:var(--surface-radius);overflow:hidden}
+#site-shell#site-shell .liquid-gallery-card{border-radius:0!important}
+#site-shell#site-shell .liquid-gallery-card:first-child{border-radius:var(--surface-radius) 0 0 var(--surface-radius)!important}
+#site-shell#site-shell .liquid-gallery-card:last-child{border-radius:0 var(--surface-radius) var(--surface-radius) 0!important}
+#site-shell#site-shell .liquid-gallery-card:focus-visible{outline:3px solid var(--client-green);outline-offset:-5px}
+#site-shell#site-shell .liquid-photo-surface{border-radius:0!important}
+#site-shell#site-shell .liquid-room-caption{padding:9px 12px;background:#0009;backdrop-filter:blur(5px);border-radius:5px!important;line-height:1.4!important;letter-spacing:.05em}
+.concierge-overlay .dialog{border-radius:24px}
+.concierge-overlay .dialog-close{background:transparent!important;border:0!important;box-shadow:none!important;color:#232a1b}
+.concierge-overlay .concierge-monogram{background:transparent!important;color:#232a1b;width:32px;height:36px;border-radius:0}
+.concierge-overlay .concierge-monogram svg{width:28px;height:28px}
+.concierge-overlay .concierge-header{gap:14px;padding:22px 74px 20px 24px;border-color:#d9ddd3}
+.concierge-overlay .concierge-header p{font-size:17px!important;font-weight:700;margin-bottom:4px}
+.concierge-overlay .concierge-header div>span{font-size:10px!important;letter-spacing:.12em}
+.concierge-overlay .concierge-thread{padding:24px;scrollbar-gutter:stable}
+.concierge-overlay .concierge-welcome{padding:0 0 16px}
+.concierge-overlay .concierge-welcome>span{font-size:11px!important;letter-spacing:.1em}
+.concierge-overlay .concierge-welcome h2{font-size:30px!important;line-height:1.2;margin:14px 0}
+.concierge-overlay :is(.concierge-welcome p,.concierge-answer p,.concierge-question){font-size:15px!important;line-height:1.65!important}
+.concierge-overlay .concierge-welcome-compact{padding-bottom:0}
+.concierge-overlay .concierge-welcome-compact>span,.concierge-overlay .concierge-welcome-compact>p{display:none}
+.concierge-overlay .concierge-welcome-compact h2{font-size:20px!important;margin-top:0}
+.concierge-overlay .concierge-question{border-radius:18px 18px 4px 18px;background:#232a1b;margin-bottom:20px}
+.concierge-overlay .concierge-answer{padding:4px 0 8px;border:0;border-radius:0;background:transparent}
+.concierge-overlay .concierge-answer h3{font-size:15px!important;font-weight:700;line-height:1.5}
+.concierge-overlay .concierge-answer a{font-size:14px!important;gap:8px;text-decoration:none}
+.concierge-overlay .concierge-bottom{padding:16px 22px 20px;border-color:#d9ddd3}
+.concierge-overlay .concierge-suggestions button{font-size:12px!important;line-height:1.5;min-height:44px;border-color:#d2d6ca;border-radius:999px;padding:9px 13px}
+.concierge-overlay .concierge-bottom form{border-radius:999px;padding:4px 5px 4px 10px;border-color:#b5bbae}
+.concierge-overlay .concierge-bottom input{font-size:16px!important;min-height:44px}
+.concierge-overlay .concierge-bottom form button{background:#232a1b;border:0;border-radius:50%;display:grid;place-items:center}
+.concierge-overlay .concierge-bottom form button svg{width:20px;height:20px;transform:rotate(-45deg)}
+.concierge-overlay .concierge-foot{gap:8px 16px;align-items:center;flex-wrap:wrap}
+.concierge-overlay .concierge-foot small{font-size:11px!important;line-height:1.5}
+.concierge-overlay .concierge-foot a{font-size:12px!important;line-height:1.5;min-height:44px;gap:8px;text-decoration:none}
+@media(max-width:859px){
+ #site-shell#site-shell .liquid-gallery{gap:4px}
+ #site-shell#site-shell .liquid-gallery-card:first-child{border-radius:var(--surface-radius) var(--surface-radius) 0 0!important}
+ #site-shell#site-shell .liquid-gallery-card:last-child{border-radius:0 0 var(--surface-radius) var(--surface-radius)!important}
+}
+@media(max-width:767px){
+ :root{--surface-radius:20px;--editorial-cta-size:.875rem}
+ #site-shell#site-shell .departure-cta{gap:22px}
+ #site-shell#site-shell .departure-collections a{padding-inline:14px}
+ .concierge-overlay .dialog{border-radius:24px 24px 0 0}
+ .concierge-overlay .concierge-thread{padding:22px 20px}
+ .concierge-overlay .concierge-header{padding-left:20px}
+ .concierge-overlay .concierge-bottom{padding:14px 20px max(14px,env(safe-area-inset-bottom))}
+ .concierge-overlay .concierge-welcome h2{font-size:26px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ #site-shell#site-shell :is(.button,.text-button,.concept-text-link,.reserve-button) svg{transition:none;translate:none}
+}
+
+#site-shell#site-shell .destination-photo-open{display:block;width:100%;padding:0;border:0;background:transparent;border-radius:var(--surface-radius);overflow:hidden;cursor:zoom-in}
+
+/* Straight rules stay straight, even next to rounded photographs. */
+#site-shell#site-shell .pack-grid>article{border-radius:0!important}
+#site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav){scrollbar-width:none}
+#site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav)::-webkit-scrollbar{display:none}
+#site-shell#site-shell .liquid-gallery-card::after{content:'';position:absolute;bottom:0;inset-inline:0;height:45%;background:linear-gradient(transparent,#0008);pointer-events:none}
+#site-shell#site-shell .liquid-room-caption{z-index:1;opacity:1;left:20px;right:auto;bottom:20px;padding:0;background:transparent;backdrop-filter:none;border-radius:0!important;transform:none;text-shadow:0 1px 8px #0008}
+@media(min-width:860px){#site-shell#site-shell .liquid-gallery-card[aria-expanded=false] .liquid-room-caption{writing-mode:vertical-rl;left:50%;bottom:24px;transform:translateX(-50%) rotate(180deg);white-space:nowrap}}
+#site-shell#site-shell .home-text-shortcuts>a{font-size:var(--editorial-cta-size)!important}
+#site-shell#site-shell .home-text-shortcuts>a:hover{font-weight:700!important}
+@media(max-width:1100px){
+ #site-shell .experience-packs .destination-packs .pack-grid{grid-template-columns:1fr;gap:32px}
+ #site-shell .experience-packs .pack-grid>article{grid-template-rows:auto auto auto auto;grid-row:auto;gap:18px}
+}
+@media(max-width:767px){
+ #site-shell#site-shell .reservation-page :is(.favourites-filter,.app-view-toggle){gap:8px;min-height:44px;padding:8px 0;border:0;background:transparent;border-radius:0;white-space:nowrap;font-size:14px!important;line-height:1.5!important}
+ #site-shell#site-shell .reservation-page .search-toolbar{column-gap:18px;justify-content:space-between}
+ #site-shell#site-shell .app-search-summary{gap:12px;padding:16px;grid-template-columns:20px minmax(0,1fr) auto}
+ #site-shell#site-shell .app-search-summary strong{font-size:16px!important;line-height:1.5!important}
+ #site-shell#site-shell .app-search-summary small{font-size:11px!important;line-height:1.5!important}
+ #site-shell#site-shell .app-search-edit{font-size:13px!important;text-decoration:none}
+ #site-shell#site-shell .snuug-booking-bar .booking-bar-submit{font-size:14px!important}
+ #site-shell#site-shell .liquid-room-caption{left:16px;bottom:16px}
+}
+:root{--site-header-height:88px}
+#site-shell#site-shell .site-header{height:var(--site-header-height)}
+#site-shell#site-shell :is(.page-sections,.product-chapters,.stay-section-nav){position:sticky;top:var(--site-header-height);z-index:25}
+#site-shell#site-shell .stay-neighbourhood-map{top:calc(var(--site-header-height) + 92px)}
+#site-shell#site-shell .agenda-event{border:0;border-bottom:1px solid var(--separator-color);border-radius:0}
+#site-shell#site-shell .reservation-collections{border-top:0}
+#site-shell#site-shell .actualites-photo .image,#site-shell#site-shell .stay-mosaic :is(button:not(.all-photos),.image){border-radius:0!important}
+#site-shell#site-shell :is(.legal-page,.conditions-list) :is(p,li){font-size:.875rem!important;line-height:1.75!important}
+#site-shell#site-shell :is(.legal-page,.conditions-list) h2:not(.privacy-title){font-size:1.25rem!important;line-height:1.4!important}
+@media(max-width:767px){:root{--site-header-height:76px}}
+
+@media(max-width:767px){.dialog-backdrop .dialog .snuug-booking-bar .booking-bar-submit{font-size:14px!important}}
+@media(max-width:359px){
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar .dates-fields{grid-template-columns:minmax(0,1fr)}
+ :is(#site-shell#site-shell,.dialog-backdrop .dialog) .snuug-booking-bar:not(.booking-bar-compact) .dates-fields>label:first-child{border-right:0;border-bottom:1px solid var(--booking-bar-line,#d3d5cd)}
+}

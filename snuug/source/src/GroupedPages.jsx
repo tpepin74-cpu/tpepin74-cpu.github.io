@@ -1,15 +1,16 @@
 import EditorialHero from './EditorialHero';
 import {scrollToAnchor} from './anchorNavigation';
-import {DestinationPacks,NewsAndPress} from './DestinationStories';
+import {DestinationPacks} from './DestinationStories';
 import {Agenda} from './Agenda';
 import React,{useEffect} from 'react';
-import {Image,Arrow,Plus,Reveal} from './Editorial';
-import {SuitePage,PageIntro,PageCTA,PrivacyPage} from './Pages';
-import {SustainabilityPage,StayLifePage,PracticalPage,ConditionsPage,ContactPage,LegalPage} from './Content';
+import {Image,Arrow,Plus} from './Editorial';
+import {SuitePage,PrivacyPage} from './Pages';
+import {PracticalPage,ConditionsPage,LegalPage} from './Content';
 import {experiences,articles} from './data';
 import './grouped.css';
 import {StayMoments} from './StayVisuals';
-import {ExperienceCards,ExperienceBooking} from './ExperienceCards';
+import {ExperienceCards} from './ExperienceCards';
+import DepartureCTA from './DepartureCTA';
 
 export function PageSections({items}){return <nav className="page-sections page-container" aria-label="Dans cette page">{items.map(([label,id])=><a key={id} href={'#'+id}>{label}<Arrow direction="right"/></a>)}</nav>}
 export function Reading({id}){const article=articles.find(a=>a.id===id);return <div className="grouped-reading"><Image src={article.image} alt={article.title.replace('\n',' ')}/><div><p className="serif-lead">{article.intro}</p>{article.paragraphs.map(p=><p key={p}>{p}</p>)}</div></div>}
@@ -43,10 +44,25 @@ function ConceptOverview(){return <section id="concept" className="content-split
 export function DiscoverPage(){return <SuitePage/>}
 
 
-export function InspirationPage(){return <><EditorialHero eyebrow="Les expériences SNUUG" title="Rien à prévoir." second="Tout à ressentir." copy="Quatre façons de vivre deux jours ailleurs. À vous de choisir votre rythme." image="/images/official/golf-1574.webp" alt="Petit-déjeuner à deux sur la terrasse SNUUG" href={'#'+experiences[0].id} label="Trouver votre rythme"/><PageSections items={experiences.map(e=>[e.id==='golf'?'Escapade sportive':e.label,e.id])}/><ExperienceCards/><div className="page-container"><details className="quiet-disclosure packs-fold"><summary>Les packs et les partenaires<Plus/></summary><DestinationPacks/></details></div><section id="inspirations" className="grouped-folds page-container">{articles.filter(a=>a.id!=='design').map(a=><Fold key={a.id} id={a.id} label={a.category} title={a.title.replace('\n',' ')}><Reading id={a.id}/></Fold>)}</section><ExperienceBooking/></>}
+export function InspirationPage(){return <>
+  <EditorialHero eyebrow="Les expériences SNUUG" title="Rien à prévoir." second="Tout à ressentir." copy="Quatre façons de vivre deux jours ailleurs. À vous de choisir votre rythme." image="/images/official/golf-1574.webp" alt="Petit-déjeuner à deux sur la terrasse SNUUG" href={'#'+experiences[0].id} label="Trouver votre rythme"/>
+  <PageSections items={[...experiences.map(e=>[e.id==='golf'?'Escapade sportive':e.label,e.id]),['Les packs','packs']]}/>
+  <ExperienceCards/>
+  <div className="experience-packs page-container"><details id="packs" className="quiet-disclosure packs-fold"><summary>Les packs et les partenaires<Plus/></summary><DestinationPacks id="packs-details"/></details></div>
+  <DepartureCTA/>
+</>}
 
 
-export function StayGuidePage(){return <><EditorialHero eyebrow="Votre séjour" title="Le temps est à vous." second="On pense au reste." copy="Des premières envies au dernier café, préparez votre parenthèse." image="/images/official/golf-1575.webp" alt="Un petit-déjeuner dans le lit de la suite SNUUG" href="#moments" label="Vivre le séjour"/><PageSections items={[["Au fil du temps","moments"],["Autour de vous","agenda"],["Questions fréquentes","questions"],["Les conditions","conditions"],["Nous contacter","contact"]]}/><StayMoments/><Agenda/><div className="grouped-folds page-container"><Fold id="questions" label="Les réponses essentielles" title="Toutes vos questions sur tout."><PracticalPage embedded/></Fold><Fold id="conditions" label="Avant de réserver" title="Les conditions en toute clarté."><p className="fold-intro">Les points essentiels des conditions publiées par SNUUG. Consultez toujours les modalités présentées avec votre offre avant de confirmer.</p><ConditionsPage embedded/></Fold></div><section id="contact" className="stay-direct-contact page-container"><div><span className="eyebrow">L’équipe est à votre écoute</span><h2>Nous contacter.</h2><p>Une question sur votre séjour ? Écrivez à l’équipe. Pour vous orienter dans le site, le concierge reste accessible dans le menu.</p></div><a className="text-button" href="mailto:hello@snuug.ch">hello@snuug.ch<Arrow/></a></section><div className="grouped-folds page-container"><Fold id="journal-presse" label="La vie de SNUUG" title="Actualités et espace presse"><NewsAndPress/></Fold></div></>}
+export function StayGuidePage(){return <>
+  <EditorialHero eyebrow="Votre séjour" title="Le temps est à vous." second="On pense au reste." copy="Des premières envies au dernier café, préparez votre parenthèse." image="/images/official/golf-1575.webp" alt="Un petit-déjeuner dans le lit de la suite SNUUG" href="#moments" label="Vivre le séjour"/>
+  <PageSections items={[["Au fil du temps","moments"],["Autour de vous","agenda"],["Questions fréquentes","questions"],["Les conditions","conditions"]]}/>
+  <StayMoments/>
+  <Agenda/>
+  <div className="grouped-folds stay-guide-folds page-container">
+    <Fold id="questions" label="Les réponses essentielles" title="Toutes vos questions sur tout."><PracticalPage embedded/></Fold>
+    <Fold id="conditions" label="Avant de réserver" title="Les conditions en toute clarté."><p className="fold-intro">Les points essentiels des conditions publiées par SNUUG. Consultez toujours les modalités présentées avec votre offre avant de confirmer.</p><ConditionsPage embedded/></Fold>
+  </div>
+</>}
 
 
 export function LegalInformationPage(){return <><LegalPage/><section id="confidentialite" className="grouped-privacy"><PrivacyPage embedded/></section></>}

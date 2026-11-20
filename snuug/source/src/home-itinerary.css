@@ -15,10 +15,10 @@
 .journey-endpoint .journey-pictogram{width:46px;height:46px}
 #site-shell#site-shell .journey-stop .journey-name,#site-shell#site-shell .journey-stop .journey-place{display:block;font-size:var(--type-menu)!important;line-height:1.4!important;letter-spacing:.1em;text-transform:uppercase;text-align:center;padding-inline:4px}
 .journey-name{margin-top:16px;background:#fff}.journey-place{margin-top:8px;color:#636a59;background:#fff}
-#site-shell#site-shell .journey-stop[data-active=true] .journey-name{font-weight:700;text-decoration:underline;text-decoration-color:#c5e241;text-decoration-thickness:2px;text-underline-offset:6px}
+#site-shell#site-shell .journey-stop .journey-name{font-weight:700;text-decoration:none}
 .journey-stop a:focus-visible{outline:2px solid #526537;outline-offset:6px}
-.journey-footer{position:relative;display:flex;align-items:center;justify-content:center;gap:24px;margin-top:12px;min-height:44px}
-#site-shell#site-shell .journey-inspirations{display:inline-flex;align-items:center;gap:14px;min-height:44px;font-size:var(--type-body)!important;line-height:1.6;text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:1px}
+.journey-footer{position:relative;display:flex;align-items:center;justify-content:flex-start;gap:24px;margin-top:12px;min-height:44px}
+#site-shell#site-shell .journey-inspirations{display:inline-flex;align-items:center;gap:14px;min-height:44px;font-size:var(--editorial-cta-size,1rem)!important;line-height:1.5;text-decoration:none}
 .journey-inspirations svg{flex-shrink:0;transition:transform .3s}
 .journey-motion-toggle{position:absolute;right:0;display:grid;place-items:center;width:44px;height:44px;border:0;background:transparent;color:#636a59;cursor:pointer}
 @media(hover:hover) and (pointer:fine){.journey-stop a:hover .journey-pictogram{transform:translateY(-3px) scale(1.08)}.journey-inspirations:hover svg{transform:translateX(4px)}}

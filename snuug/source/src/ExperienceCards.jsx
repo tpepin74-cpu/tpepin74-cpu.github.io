@@ -20,8 +20,7 @@ function ExperienceCard({experience:e}){
    {open&&<span className="eyebrow">Un exemple sur deux jours</span>}
    <h2 id={'experience-'+e.id}>{title}</h2>
    {open?<div id={'programme-'+e.id} className="experience-program">{programs[e.id].map(([day,title,copy])=><article key={day}><span className="eyebrow">{day}</span><h3>{title}</h3><p>{copy}</p></article>)}<p className="experience-program-note">Une inspiration à personnaliser. Activités, repas et attentions selon les disponibilités, à réserver séparément lorsqu’ils ne sont pas inclus.</p><a className="text-button" href={'/snuug/reservation?experience='+e.id}>Choisir mes dates<Arrow/></a></div>:null}
-   <button type="button" className="experience-program-toggle" aria-expanded={open} aria-controls={open?'programme-'+e.id:undefined} onClick={()=>setOpen(v=>!v)}>{open?'Revenir à la photo':'Voir le programme'}<Arrow direction={open?'left':'right'}/></button>
+   <button type="button" className="experience-program-toggle text-button" aria-expanded={open} aria-controls={open?'programme-'+e.id:undefined} onClick={()=>setOpen(v=>!v)}>{open?'Revenir à la photo':'Voir le programme'}<Arrow direction={open?'left':'right'}/></button>
   </div>
  </section>
 }
-export function ExperienceBooking(){return <section className="experience-booking page-container"><h2>On part quand ?</h2><a className="button dark" href="/snuug/reservation">Réserver<Arrow/></a></section>}
