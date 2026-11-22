@@ -19,24 +19,6 @@
       "source": "Neuchâtel Vins et Terroir"
     },
     {
-      "id": "encavage-de-trois-rods-caves-ouvertes",
-      "title": "Encavage de Trois-Rods / Caves ouvertes",
-      "start": "2026-11-20",
-      "end": "2026-11-21",
-      "place": "2017 Boudry Trois - Rods 11",
-      "region": "Neuchâtel",
-      "url": "https://neuchatel-vins-terroir.ch/evenement/encavage-de-trois-rods-caves-ouvertes/",
-      "image": {
-        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/11/chasselas-scaled-e1794393091290-1021x1024.jpg",
-        "width": 1021,
-        "height": 1024,
-        "fit": "contain",
-        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/encavage-de-trois-rods-caves-ouvertes/",
-        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
-      },
-      "source": "Neuchâtel Vins et Terroir"
-    },
-    {
       "id": "caves-ouvertes-dautomne-a-la-grillette-domaine-grisoni",
       "title": "Caves ouvertes d’automne à La Grillette & Domaine Grisoni",
       "start": "2026-11-26",
@@ -379,7 +361,7 @@
       "source": "Neuchâtel Vins et Terroir"
     }
   ],
-  "updatedAt": "2026-11-21T13:34:52.294Z",
+  "updatedAt": "2026-11-22T13:28:30.626Z",
   "partial": false,
   "source": "https://neuchatel-vins-terroir.ch/evenement/",
   "stale": false
