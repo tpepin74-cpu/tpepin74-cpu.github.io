@@ -199,6 +199,24 @@
       "source": "Neuchâtel Vins et Terroir"
     },
     {
+      "id": "caves-ouvertes-de-noel-au-domaine-saint-sebaste",
+      "title": "Caves Ouvertes de Noël au Domaine Saint-Sébaste",
+      "start": "2026-12-04",
+      "end": "2026-12-05",
+      "place": "Saint-Blaise Rue Daniel-Dardel 11",
+      "region": "Neuchâtel",
+      "url": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes-de-noel-au-domaine-saint-sebaste/",
+      "image": {
+        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2026/11/05-683x1024.jpg",
+        "width": 683,
+        "height": 1024,
+        "fit": "contain",
+        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/caves-ouvertes-de-noel-au-domaine-saint-sebaste/",
+        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
+      },
+      "source": "Neuchâtel Vins et Terroir"
+    },
+    {
       "id": "degustation-de-fin-dannee",
       "title": "Dégustation de fin d’année Vouga vins",
       "start": "2026-12-04",
@@ -325,24 +343,6 @@
       "source": "Neuchâtel Vins et Terroir"
     },
     {
-      "id": "marche-des-produits-du-terroir-2026",
-      "title": "Marché des Produits du Terroir",
-      "start": "2027-10-23",
-      "end": "2027-10-24",
-      "place": "Mycorama Pass. des Cèpes 3, 2053 Cernier",
-      "region": "Neuchâtel",
-      "url": "https://neuchatel-vins-terroir.ch/evenement/marche-des-produits-du-terroir-2026/",
-      "image": {
-        "url": "https://neuchatel-vins-terroir.ch/wp-content/uploads/2025/07/VinTerroir_Mycorama-23-1024x683.jpg",
-        "width": 1024,
-        "height": 683,
-        "fit": "cover",
-        "sourceUrl": "https://neuchatel-vins-terroir.ch/evenement/marche-des-produits-du-terroir-2026/",
-        "credit": "Visuel publié par Neuchâtel Vins et Terroir"
-      },
-      "source": "Neuchâtel Vins et Terroir"
-    },
-    {
       "id": "marche-de-noel-evologia-2",
       "title": "Marché de Noël Evologia",
       "start": "2027-11-24",
@@ -361,7 +361,7 @@
       "source": "Neuchâtel Vins et Terroir"
     }
   ],
-  "updatedAt": "2026-11-23T16:08:56.733Z",
+  "updatedAt": "2026-11-24T16:00:40.439Z",
   "partial": false,
   "source": "https://neuchatel-vins-terroir.ch/evenement/",
   "stale": false
